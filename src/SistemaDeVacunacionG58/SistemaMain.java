@@ -10,5 +10,7 @@ package SistemaDeVacunacionG58;
  * @author Walter Benítez
  */
 public class SistemaMain {
+    public static void main(String[] args){
     
+    }
 }
