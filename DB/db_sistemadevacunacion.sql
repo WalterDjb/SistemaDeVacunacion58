@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2023 a las 01:49:41
+-- Tiempo de generación: 05-10-2023 a las 01:55:44
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -52,11 +52,11 @@ INSERT INTO `acceso` (`usuario`, `contra`, `nivel`) VALUES
 CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
   `direccion` varchar(50) NOT NULL,
-  `cuitLaboratorio` int(11) NOT NULL,
-  `citaDni` int(8) NOT NULL,
   `stock` int(5) NOT NULL,
   `provincia` varchar(20) NOT NULL,
-  `localidad` varchar(20) NOT NULL
+  `localidad` varchar(20) NOT NULL,
+  `capacidad` int(4) NOT NULL,
+  `registrados` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -66,11 +66,10 @@ CREATE TABLE `centro` (
 --
 
 CREATE TABLE `cita` (
+  `id` int(8) NOT NULL,
   `dni` int(8) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
   `fHCita` datetime NOT NULL,
   `codRefuerzo` int(8) NOT NULL,
-  `cuitVacuna` int(11) NOT NULL,
   `fHAplicacion` datetime NOT NULL,
   `centro` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -105,7 +104,8 @@ CREATE TABLE `laboratorio` (
   `cuit` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `pais` varchar(20) NOT NULL,
-  `direccion` varchar(50) NOT NULL
+  `direccion` varchar(50) NOT NULL,
+  `stock` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ CREATE TABLE `laboratorio` (
 CREATE TABLE `vacuna` (
   `cuitLaboratorio` int(11) NOT NULL,
   `serie` int(15) NOT NULL,
-  `dosis` double NOT NULL,
+  `capacidadDosis` double NOT NULL,
   `marca` varchar(20) NOT NULL,
   `antigeno` varchar(15) NOT NULL,
   `caducidad` date NOT NULL,
@@ -138,7 +138,15 @@ ALTER TABLE `acceso`
 -- Indices de la tabla `centro`
 --
 ALTER TABLE `centro`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indices de la tabla `cita`
+--
+ALTER TABLE `cita`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indices de la tabla `ciudadano`
@@ -153,6 +161,13 @@ ALTER TABLE `ciudadano`
 ALTER TABLE `laboratorio`
   ADD PRIMARY KEY (`cuit`),
   ADD UNIQUE KEY `cuit` (`cuit`);
+
+--
+-- Indices de la tabla `vacuna`
+--
+ALTER TABLE `vacuna`
+  ADD PRIMARY KEY (`serie`),
+  ADD UNIQUE KEY `serie` (`serie`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
