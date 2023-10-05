@@ -2,7 +2,7 @@ package SistemaDeVacunacion.Entidades;
 
 public class Laboratorio {
     private String nombre, pais, domicilio;
-    private int cuit;
+    private int cuit, stock;
 
     public Laboratorio() {
     }
@@ -12,6 +12,7 @@ public class Laboratorio {
         this.pais = pais;
         this.domicilio = domicilio;
         this.cuit = cuit;
+        this.stock = stock;
     }
 
     public String getNombre() {
@@ -44,5 +45,13 @@ public class Laboratorio {
 
     public void setCuit(int cuit) {
         this.cuit = cuit;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }
