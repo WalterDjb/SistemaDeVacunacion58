@@ -5,6 +5,9 @@
  */
 package SistemaDeVacunacionG58;
 
+import SistemaDeVacunacion.Conexiones.LaboratorioData;
+import SistemaDeVacunacion.Entidades.Laboratorio;
+
 /**
  *
  * @author Walter Benítez
@@ -12,5 +15,9 @@ package SistemaDeVacunacionG58;
 public class SistemaMain {
     public static void main(String[] args){
     
+        Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "Misuri 3245", "20321231231",1000);
+        LaboratorioData ld= new LaboratorioData ();
+        //ld.guardarLaboratorio(aa);
+        ld.modificarStockLaboratorio(aa);
     }
 }

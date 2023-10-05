@@ -2,16 +2,16 @@ package SistemaDeVacunacion.Entidades;
 
 public class Laboratorio {
     private String nombre, pais, domicilio;
-    private int cuit, stock;
+    private long cuit, stock;
 
     public Laboratorio() {
     }
 
-    public Laboratorio(String nombre, String pais, String domicilio, int cuit) {
+    public Laboratorio(String nombre, String pais, String domicilio, String cuit, long stock) {
         this.nombre = nombre;
         this.pais = pais;
         this.domicilio = domicilio;
-        this.cuit = cuit;
+        this.cuit = Long.parseLong(cuit);
         this.stock = stock;
     }
 
@@ -39,19 +39,19 @@ public class Laboratorio {
         this.domicilio = domicilio;
     }
 
-    public int getCuit() {
+    public long getCuit() {
         return cuit;
     }
 
-    public void setCuit(int cuit) {
+    public void setCuit(long cuit) {
         this.cuit = cuit;
     }
 
-    public int getStock() {
+    public long getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(long stock) {
         this.stock = stock;
     }
 }
