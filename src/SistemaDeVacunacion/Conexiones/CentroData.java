@@ -32,7 +32,7 @@ public class CentroData {
             ps.close();
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Cant create Lab");
+            JOptionPane.showMessageDialog(null, "Error al agregar Centro");
         }
     }
     
