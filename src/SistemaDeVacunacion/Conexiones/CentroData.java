@@ -13,7 +13,7 @@ public class CentroData {
         con = Conexion.getConexion();
     }
     
-    public void agregarCentro(Centro centro){
+    public void agregar(Centro centro){
         try{
             PreparedStatement ps=con.prepareStatement("INSERT INTO centro VALUES (?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, "0");
@@ -44,7 +44,7 @@ public class CentroData {
         }
     }
     
-       public void eliminarCentroPorId(int id){
+       public void eliminarPorId(int id){
        try{
             PreparedStatement ps=con.prepareStatement("DELETE FROM laboratorio WHERE id = " + id);
             ps.executeUpdate();
