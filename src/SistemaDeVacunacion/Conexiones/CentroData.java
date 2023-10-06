@@ -43,4 +43,14 @@ public class CentroData {
             JOptionPane.showMessageDialog(null, "Error al intentar actualizar stock");
         }
     }
+    
+       public void eliminarCentroPorId(int id){
+       try{
+            PreparedStatement ps=con.prepareStatement("DELETE FROM laboratorio WHERE id = " + id);
+            ps.executeUpdate();
+            ps.close(); 
+       }catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de eliminar Centro");
+        }
+   }
 }
