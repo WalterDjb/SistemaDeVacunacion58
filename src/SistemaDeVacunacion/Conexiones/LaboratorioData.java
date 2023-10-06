@@ -42,12 +42,15 @@ public class LaboratorioData {
     
    public void modificarStockLaboratorio(Laboratorio laboratorio){
        
-       String sql = "UPDATE laboratorio set stock=? WHERE cuit=?" + laboratorio.getCuit();
+       String sql = "UPDATE laboratorio SET stock=? WHERE cuit=?";
        
        try{
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setLong(1, laboratorio.getStock());
-            
+            ps.setLong(2, laboratorio.getCuit());
+//ps.setString(1, String.valueOf(laboratorio.getStock()));
+            //ps.setString(2, String.valueOf(laboratorio.getCuit()));
+            System.out.println(laboratorio.getStock() +"actualizo");
             
             ps.executeUpdate();
             
@@ -60,16 +63,17 @@ public class LaboratorioData {
    
    public void eliminarLaboratorio(Laboratorio laboratorio){
        
-       String sql = "DELETE laboratorio WHERE cuit = ?";
+       String sql = "DELETE FROM laboratorio WHERE cuit = ?";
        try{
-            PreparedStatement ps=con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps=con.prepareStatement(sql);
             ps.setLong(1, laboratorio.getCuit());
             
-            ResultSet rs=ps.getGeneratedKeys();
-            if(rs.next()) {
-                JOptionPane.showMessageDialog(null, "Lab deleted");
+            ps.executeUpdate();
+            //ResultSet rs=ps.getGeneratedKeys();
+            //if(rs.next()) {
+            //    JOptionPane.showMessageDialog(null, "Lab deleted");
                 
-            }
+            //}
             
             ps.close(); 
        }catch (SQLException ex) {

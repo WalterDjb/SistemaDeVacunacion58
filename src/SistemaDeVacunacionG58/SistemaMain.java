@@ -15,9 +15,10 @@ import SistemaDeVacunacion.Entidades.Laboratorio;
 public class SistemaMain {
     public static void main(String[] args){
     
-        Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "Misuri 3245", "20321231231",1000);
+        Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "Misuri 3245", "20321231231",1200000);
         LaboratorioData ld= new LaboratorioData ();
         //ld.guardarLaboratorio(aa);
-        ld.modificarStockLaboratorio(aa);
+        //ld.modificarStockLaboratorio(aa);
+        ld.eliminarLaboratorio(aa);
     }
 }
