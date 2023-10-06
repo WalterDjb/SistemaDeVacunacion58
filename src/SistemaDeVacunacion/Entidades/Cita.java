@@ -3,17 +3,16 @@ package SistemaDeVacunacion.Entidades;
 import java.time.LocalDateTime;
 
 public class Cita {
-    private String fechaHoraCita;
     private Centro centro;
     private int dosis, codigo;
     private Ciudadano ciudadano;
-    private LocalDateTime fechaHoraColocacion;
+    private LocalDateTime fechaHoraCita, fechaHoraColocacion;
     private Vacuna vacuna;
 
     public Cita() {
     }
 
-    public Cita(String fechaHoraCita, int dosis, int codigo, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro) {
+    public Cita(LocalDateTime fechaHoraCita, int dosis, int codigo, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro) {
         this.centro = centro;
         this.fechaHoraCita = fechaHoraCita;
         this.dosis = dosis;
@@ -31,11 +30,11 @@ public class Cita {
         this.centro = centro;
     }
 
-    public String getFechaHoraCita() {
+    public LocalDateTime getFechaHoraCita() {
         return fechaHoraCita;
     }
 
-    public void setFechaHoraCita(String fechaHoraCita) {
+    public void setFechaHoraCita(LocalDateTime fechaHoraCita) {
         this.fechaHoraCita = fechaHoraCita;
     }
 

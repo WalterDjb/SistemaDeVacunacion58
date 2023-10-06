@@ -3,14 +3,15 @@ package SistemaDeVacunacion.Entidades;
 import java.util.ArrayList;
 
 public class Centro {
-    private int stock, capacidad, registrados;
+    private int id, stock, capacidad, registrados;
     private String domicilio, provincia, localidad;
     private ArrayList <Vacuna> vacunas;
 
     public Centro() {
     }
 
-    public Centro(int stock, String domicilio, String provincia, String localidad, int capacidad, int registrados) {
+    public Centro(int id, int stock, String domicilio, String provincia, String localidad, int capacidad, int registrados) {
+        this.id = id;
         this.stock = stock;
         this.domicilio = domicilio;
         this.provincia = provincia;
@@ -70,6 +71,14 @@ public class Centro {
 
     public void setRegistrados(int registrados) {
         this.registrados = registrados;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
