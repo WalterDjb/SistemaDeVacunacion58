@@ -10,15 +10,14 @@ import javax.swing.JOptionPane;
 
 public class CentroData {
     Connection con;
+    
     public CentroData() {
         con = Conexion.getConexion();
     }
     
     public void agregarCentro(Centro centro){
-        String sql ="INSERT INTO centro VALUES (?,?,?,?,?, ?, ?)";
-        
         try{
-            PreparedStatement ps=con.prepareStatement(sql);
+            PreparedStatement ps=con.prepareStatement("INSERT INTO centro VALUES (?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, "0");
             ps.setString(2, centro.getDomicilio());
             ps.setLong(3, centro.getStock());
@@ -28,7 +27,6 @@ public class CentroData {
             ps.setInt(7, centro.getRegistrados()); 
                     
             ps.executeUpdate();
-            
             ps.close();
             
         } catch (SQLException ex) {
@@ -36,4 +34,15 @@ public class CentroData {
         }
     }
     
+    public void modificarStock(int id, int stock) {
+        try {
+            PreparedStatement ps = con.prepareStatement("UPDATE centro SET stock=? WHERE id = " + id);
+            ps.setLong(1, stock);
+
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al intentar actualizar stock");
+        }
+    }
 }
