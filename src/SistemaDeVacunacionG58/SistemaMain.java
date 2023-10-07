@@ -1,24 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacionG58;
 
 import SistemaDeVacunacion.Conexiones.LaboratorioData;
+import SistemaDeVacunacion.Conexiones.VacunaData;
 import SistemaDeVacunacion.Entidades.Laboratorio;
+import SistemaDeVacunacion.Entidades.Vacuna;
+import java.time.LocalDate;
 
-/**
- *
- * @author Walter Benítez
- */
 public class SistemaMain {
     public static void main(String[] args){
     
-        Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "Misuri 3245", "20321231231",1200000);
-        LaboratorioData ld= new LaboratorioData ();
+        //Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "JorchWachinton3245", "20321231231",1200000);
+        //LaboratorioData ld= new LaboratorioData ();
         //ld.guardarLaboratorio(aa);
         //ld.modificarStockLaboratorio(aa);
-        ld.eliminarLaboratorio(aa);
+        //ld.eliminarLaboratorio(aa);
+        //LocalDate loc = LocalDate.of(2023, 11, 1);
+        //Vacuna bb = new Vacuna(aa, 000001, "vacunola lince", "caca de perro mensajero", true, loc, 2);
+        //VacunaData vd = new VacunaData ();
+       //try{ 
+       //vd.guardarVacuna(new Vacuna (aa, 000001, "vacunola lince", "caca de perro mensajero", true, loc, 2));
+    //}catch(Exception e){
+        
+    //}
     }
 }

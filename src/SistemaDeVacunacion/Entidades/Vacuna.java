@@ -1,21 +1,27 @@
 package SistemaDeVacunacion.Entidades;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Vacuna {
-    private Laboratorio laboratorio;
-    private int cantidad, serial;
-    private LocalDateTime vencimiento;
-    private boolean colocada = false;
     
+    public Laboratorio laboratorio;
+    public int serie;
+    public String marca, antigeno;
+    public boolean estado;
+    public LocalDate caducidad;
+    public double capacidadDosis;
+
     public Vacuna() {
     }
 
-    public Vacuna(Laboratorio laboratorio, int cantidad, int serial, LocalDateTime vencimiento) {
+    public Vacuna(Laboratorio laboratorio, int serie, String marca, String antigeno, boolean estado, LocalDate caducidad, double capacidadDosis) {
         this.laboratorio = laboratorio;
-        this.cantidad = cantidad;
-        this.serial = serial;
-        this.vencimiento = vencimiento;
+        this.serie = serie;
+        this.marca = marca;
+        this.antigeno = antigeno;
+        this.estado = estado;
+        this.caducidad = caducidad;
+        this.capacidadDosis = capacidadDosis;
     }
 
     public Laboratorio getLaboratorio() {
@@ -26,37 +32,51 @@ public class Vacuna {
         this.laboratorio = laboratorio;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getSerie() {
+        return serie;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setSerie(int serie) {
+        this.serie = serie;
     }
 
-    public int getSerial() {
-        return serial;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setSerial(int serial) {
-        this.serial = serial;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public LocalDateTime getVencimiento() {
-        return vencimiento;
+    public String getAntigeno() {
+        return antigeno;
     }
 
-    public void setVencimiento(LocalDateTime vencimiento) {
-        this.vencimiento = vencimiento;
+    public void setAntigeno(String antigeno) {
+        this.antigeno = antigeno;
     }
 
-    public boolean isColocada() {
-        return colocada;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setColocada(boolean colocada) {
-        this.colocada = colocada;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
-    
-    
+
+    public LocalDate getCaducidad() {
+        return caducidad;
+    }
+
+    public void setCaducidad(LocalDate caducidad) {
+        this.caducidad = caducidad;
+    }
+
+    public double getCapacidadDosis() {
+        return capacidadDosis;
+    }
+
+    public void setCapacidadDosis(double capacidadDosis) {
+        this.capacidadDosis = capacidadDosis;
+    }
 }
