@@ -47,6 +47,7 @@ public class Ciudadano extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
         jLabel7.setText("CIUDADANO");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel8.setText("Nombre completo:");
