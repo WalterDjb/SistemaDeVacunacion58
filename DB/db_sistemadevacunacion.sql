@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2023 a las 00:08:34
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.1
+-- Tiempo de generación: 11-10-2023 a las 02:36:17
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,18 +30,19 @@ USE `db_sistemadevacunacion`;
 --
 
 CREATE TABLE `acceso` (
-  `usuario` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `contra` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `nivel` int(1) NOT NULL
+  `nivel` int(2) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `contra` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `acceso`
 --
 
-INSERT INTO `acceso` (`usuario`, `contra`, `nivel`) VALUES
-('root', 'root', 1),
-('admin', 'admin', 2);
+INSERT INTO `acceso` (`nivel`, `usuario`, `contra`) VALUES
+(3, 'centro', 'centro'),
+(1, 'nacion', 'nacion'),
+(2, 'provincia', 'provincia');
 
 -- --------------------------------------------------------
 
@@ -51,10 +52,10 @@ INSERT INTO `acceso` (`usuario`, `contra`, `nivel`) VALUES
 
 CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
-  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `stock` int(5) NOT NULL,
-  `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `provincia` varchar(20) NOT NULL,
+  `localidad` varchar(20) NOT NULL,
   `capacidad` int(4) NOT NULL,
   `registrados` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -82,16 +83,16 @@ CREATE TABLE `cita` (
 
 CREATE TABLE `ciudadano` (
   `dni` int(8) NOT NULL,
-  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `apellido` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `provincia` varchar(20) NOT NULL,
+  `localidad` varchar(20) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `celular` int(10) NOT NULL,
-  `patologia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ambitoTrabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `patologia` varchar(50) NOT NULL,
+  `ambitoTrabajo` varchar(20) NOT NULL,
   `aplicaciones` int(2) NOT NULL,
-  `domicilio` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `domicilio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -102,9 +103,9 @@ CREATE TABLE `ciudadano` (
 
 CREATE TABLE `laboratorio` (
   `cuit` bigint(11) NOT NULL,
-  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `pais` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `pais` varchar(20) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `stock` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -118,8 +119,8 @@ CREATE TABLE `vacuna` (
   `cuitLaboratorio` bigint(11) NOT NULL,
   `serie` int(15) NOT NULL,
   `capacidadDosis` double NOT NULL,
-  `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `antigeno` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `marca` varchar(20) NOT NULL,
+  `antigeno` varchar(15) NOT NULL,
   `caducidad` date NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -132,7 +133,8 @@ CREATE TABLE `vacuna` (
 -- Indices de la tabla `acceso`
 --
 ALTER TABLE `acceso`
-  ADD PRIMARY KEY (`nivel`);
+  ADD PRIMARY KEY (`usuario`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
 
 --
 -- Indices de la tabla `centro`
