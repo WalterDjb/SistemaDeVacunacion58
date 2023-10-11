@@ -22,13 +22,16 @@ public class Conexion {
             try {
                 Class.forName("org.mariadb.jdbc.Driver"); 
                 connection = DriverManager.getConnection(URL+DB,USUARIO,PASSWORD);
-                JOptionPane.showMessageDialog(null, "Conectado");
+                //JOptionPane.showMessageDialog(null, "Conectado");
+                System.err.println("CONECTADO A LA BASE DE DATOS");
                 
             } catch (ClassNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "error cargar Driver");
+                //JOptionPane.showMessageDialog(null, "error cargar Driver");
+                System.err.println("ERROR AL CARGAR EL DRIVER");
                 
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "error de conexion");
+                //JOptionPane.showMessageDialog(null, "error de conexion");
+                System.err.println("ERROR DE CONEXION " + ex);
             }
         }
         return connection;
