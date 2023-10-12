@@ -60,9 +60,8 @@ public class LaboratorioData {
             JOptionPane.showMessageDialog(null, "No se pudo modificar el valor de stock del laboratorio.");
         }
 }
-   public void modificarLaboratorio(Laboratorio laboratorio){
-       //pendiente de ser probado -g-
-       String sql = "UPDATE laboratorio SET nombre = ?, pais = ?, domicilio= ?, stock= ?  WHERE cuit =?";
+   public void modificarLaboratorioXCuit(Laboratorio laboratorio){
+       String sql = "UPDATE laboratorio SET nombre = ?, pais = ?, direccion= ?, stock= ?  WHERE cuit =?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(5, laboratorio.getCuit());
@@ -73,9 +72,31 @@ public class LaboratorioData {
             int funca = ps.executeUpdate();
             if (funca==1){
                JOptionPane.showMessageDialog(null, "Datos de laboratorio modificados.");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudieron modificar los datos del laboratorio.");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudieron modificar los datos del laboratorio.");
+          JOptionPane.showMessageDialog(null, "No se pudo conectar con el laboratorio.");
+        }
+   }
+   
+   public void modificarLaboratorioXNombre(Laboratorio laboratorio){
+       String sql = "UPDATE laboratorio SET cuit = ?, pais = ?, direccion= ?, stock= ?  WHERE nombre =?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(5, laboratorio.getNombre());
+            ps.setLong(1, laboratorio.getCuit());
+            ps.setString(2, laboratorio.getPais());
+            ps.setString(3, laboratorio.getDomicilio());
+            ps.setLong(4, laboratorio.getStock());
+            int funca = ps.executeUpdate();
+            if (funca==1){
+               JOptionPane.showMessageDialog(null, "Datos de laboratorio modificados.");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudieron modificar los datos del laboratorio.");
+            }
+        } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, "No se pudo conectar con el laboratorio.");
         }
    }
    
@@ -86,17 +107,16 @@ public class LaboratorioData {
             PreparedStatement ps=con.prepareStatement(sql);
             ps.setLong(1, laboratorio.getCuit());
             
-            ps.executeUpdate();
-            //ResultSet rs=ps.getGeneratedKeys();
-            //if(rs.next()) {
-            //    JOptionPane.showMessageDialog(null, "Lab deleted");
-                
-            //}
+            int funca = ps.executeUpdate();
+                if(funca == 1) {
+                    JOptionPane.showMessageDialog(null, "Laboratorio eliminado.");
+                }else{
+                    JOptionPane.showMessageDialog(null, "No se pudo eliminar el laboratorio.");
+                }
             
             ps.close(); 
        }catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se puede crear el laboratorio.");
+            JOptionPane.showMessageDialog(null, "No se pudo conectar con el laboratorio.");
         }
    }
-   
 }

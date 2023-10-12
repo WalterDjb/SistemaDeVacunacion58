@@ -13,11 +13,8 @@ public class VacunaData {
     public VacunaData(){
         con=Conexion.getConexion();
     }
-    public void guardarVacuna(Vacuna vacuna){
-        
-        
 
-            
+    public void guardarVacuna(Vacuna vacuna){
        try {
            String sql ="INSERT INTO vacuna VALUES(?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement ps=con.prepareStatement(sql);
@@ -28,10 +25,10 @@ public class VacunaData {
            ps.setString(5, vacuna.getAntigeno());
            ps.setDate(6, Date.valueOf(vacuna.getCaducidad()));
            if (vacuna.estado){
-           ps.setInt(7, 1);
-           }else{
-               ps.setInt(7, 0);
-           }
+                ps.setInt(7, 1);
+                }else{
+                ps.setInt(7, 0);
+                }
            
            ps.executeUpdate();
            
@@ -40,5 +37,27 @@ public class VacunaData {
        } catch (SQLException ex){
            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla vacuna");
        }
+    }
+    
+//    private void modificarVacuna (Vacuna vacuna){
+//        String sql = "UPDATE vacuna SET laboratorio= ?,  "
+//    }
+    
+    private void eliminarVacuna (Vacuna vacuna){
+        String sql = "DELETE vacuna WHERE marca= ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, vacuna.marca);
+            
+            int  funca = ps.executeUpdate();
+            if (funca==1){
+                JOptionPane.showMessageDialog(null, "Vacuna eliminada.");
+            }else{
+                JOptionPane.showMessageDialog(null,"Error al eliminar la vacuna");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla vacuna");
+        }
+        
     }
 }

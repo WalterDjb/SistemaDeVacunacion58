@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class SistemaMain {
     public static void main(String[] args){
     
-        //Laboratorio aa= new Laboratorio("Pfizer", "EEUU", "JorchWachinton3245", "20321231231",1200000);
+        //Laboratorio aa= new Laboratorio("DawsonLab", "Peronia", "IngenieroBenitez666", "30123456789",2);
         //LaboratorioData ld= new LaboratorioData ();
         //ld.guardarLaboratorio(aa);
         //ld.modificarStockLaboratorio(aa);
@@ -19,8 +19,8 @@ public class SistemaMain {
         //VacunaData vd = new VacunaData ();
        //try{ 
        //vd.guardarVacuna(new Vacuna (aa, 000001, "vacunola lince", "caca de perro mensajero", true, loc, 2));
-    //}catch(Exception e){
-        
-    //}
+       //}catch(Exception e){
+       //}
+       //ld.modificarLaboratorio(aa);
     }
 }
