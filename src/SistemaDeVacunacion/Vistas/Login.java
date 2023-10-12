@@ -1,11 +1,13 @@
 package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.Conexion;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.util.prefs.Preferences;
 
 /**
  *
@@ -14,12 +16,19 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     public static String user;
     public static String pass;
+    private Preferences p = Preferences.userNodeForPackage(this.getClass());
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        if(p.get("user", null) != null){
+            txt_user.setText(p.get("user", null));
+            check_recordar_user.setSelected(true);
+            txt_user.setBackground(Color.lightGray);
+        }
     }
 
     /**
@@ -36,7 +45,7 @@ public class Login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        check_recordar_user = new javax.swing.JCheckBox();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         txt_password = new javax.swing.JPasswordField();
@@ -63,10 +72,10 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña:");
 
-        jCheckBox1.setText("Recordar usuario");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        check_recordar_user.setText("Recordar usuario");
+        check_recordar_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                check_recordar_userActionPerformed(evt);
             }
         });
 
@@ -117,7 +126,7 @@ public class Login extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(19, 19, 19)
                                                 .addComponent(jButton1))
-                                            .addComponent(jCheckBox1)))
+                                            .addComponent(check_recordar_user)))
                                     .addComponent(jLabel3)
                                     .addComponent(txt_password))
                                 .addGap(95, 95, 95))
@@ -144,7 +153,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(check_recordar_user)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
@@ -173,15 +182,27 @@ public class Login extends javax.swing.JFrame {
                 if(rs.next()){
                     Integer nivel = rs.getInt("nivel");
                     
-                    if(nivel == 1){
-                        dispose();
-                        new Rango_1().setVisible(true);
-                    } else if(nivel == 2){
-                        dispose();
-                        new Rango_2().setVisible(true);
-                    } else if(nivel == 3){
-                        dispose();
-                        new Rango_3().setVisible(true);
+                    if (check_recordar_user.isSelected()) {
+                        p.put("user", user);
+                    } else {
+                        p.remove("user");
+                    }
+                    
+                    switch (nivel) {
+                        case 1:
+                            dispose();
+                            new Rango_1().setVisible(true);
+                            break;
+                        case 2:
+                            dispose();
+                            new Rango_2().setVisible(true);
+                            break;
+                        case 3:
+                            dispose();
+                            new Rango_3().setVisible(true);
+                            break;
+                        default:
+                            break;
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos", "Error de credenciales", 0);
@@ -197,9 +218,11 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void check_recordar_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_recordar_userActionPerformed
+        if (!check_recordar_user.isSelected()) {
+            txt_user.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_check_recordar_userActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -244,18 +267,16 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox check_recordar_user;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
