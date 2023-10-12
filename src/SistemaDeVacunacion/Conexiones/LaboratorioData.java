@@ -28,14 +28,14 @@ public class LaboratorioData {
                     
             ResultSet rs=ps.executeQuery();
             if(rs.next()) {
-                JOptionPane.showMessageDialog(null, "Lab Created");
+                JOptionPane.showMessageDialog(null, "Laboratorio creado.");
                 
             }
             
             ps.close();
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Cant create Lab");
+            JOptionPane.showMessageDialog(null, "No se pudo crear el laboratorio.");
         }
                 
     }
@@ -50,16 +50,34 @@ public class LaboratorioData {
             ps.setLong(2, laboratorio.getCuit());
 //ps.setString(1, String.valueOf(laboratorio.getStock()));
             //ps.setString(2, String.valueOf(laboratorio.getCuit()));
-            System.out.println(laboratorio.getStock() +"actualizo");
+            System.out.println(laboratorio.getStock() +"Valor de stock actualizado.");
             
             ps.executeUpdate();
             
             ps.close(); 
             
         }catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Cant mod Lab");
+            JOptionPane.showMessageDialog(null, "No se pudo modificar el valor de stock del laboratorio.");
         }
 }
+   public void modificarLaboratorio(Laboratorio laboratorio){
+       //pendiente de ser probado -g-
+       String sql = "UPDATE laboratorio SET nombre = ?, pais = ?, domicilio= ?, stock= ?  WHERE cuit =?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setLong(5, laboratorio.getCuit());
+            ps.setString(1, laboratorio.getNombre());
+            ps.setString(2, laboratorio.getPais());
+            ps.setString(3, laboratorio.getDomicilio());
+            ps.setLong(4, laboratorio.getStock());
+            int funca = ps.executeUpdate();
+            if (funca==1){
+               JOptionPane.showMessageDialog(null, "Datos de laboratorio modificados.");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "No se pudieron modificar los datos del laboratorio.");
+        }
+   }
    
    public void eliminarLaboratorio(Laboratorio laboratorio){
        
@@ -77,7 +95,7 @@ public class LaboratorioData {
             
             ps.close(); 
        }catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Cant del Lab");
+            JOptionPane.showMessageDialog(null, "No se puede crear el laboratorio.");
         }
    }
    
