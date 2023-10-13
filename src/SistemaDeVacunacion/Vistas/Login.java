@@ -10,17 +10,19 @@ import javax.swing.JOptionPane;
 import java.util.prefs.Preferences;
 
 public class Login extends javax.swing.JFrame {
+
     public static String user;
     public static String pass;
     private Preferences p = Preferences.userNodeForPackage(this.getClass());
+
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-        
-        if(p.get("user", null) != null){
+
+        if (p.get("user", null) != null) {
             txt_user.setText(p.get("user", null));
             check_recordar_user.setSelected(true);
             txt_user.setBackground(Color.lightGray);
@@ -162,43 +164,56 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         user = txt_user.getText().trim();
         pass = txt_password.getText().trim();
-        
-        if(!user.equals("") && !pass.equals("")){
+
+        if (!user.equals("") && !pass.equals("")) {
             try {
                 Connection cn = Conexion.getConexion();
-                PreparedStatement pst = cn.prepareStatement("select nivel from acceso where usuario = '" + user + "' and contra = '" + pass + "'");
-                
+                PreparedStatement pst = cn.prepareStatement("select nivel, tipoContra from acceso where usuario = '" + user + "' and contra = '" + pass + "'");
+
                 ResultSet rs = pst.executeQuery();
-                
-                if(rs.next()){
+
+                if (rs.next()) {
                     Integer nivel = rs.getInt("nivel");
-                    
+                    String tipoContra = rs.getString("tipoContra");
+
                     if (check_recordar_user.isSelected()) {
                         p.put("user", user);
                     } else {
                         p.remove("user");
                     }
-                    
-                    switch (nivel) {
-                        case 1:
-                            dispose();
-                            new Rango_1().setVisible(true);
-                            break;
-                        case 2:
-                            dispose();
-                            new Rango_2().setVisible(true);
-                            break;
-                        case 3:
-                            dispose();
-                            new Rango_3().setVisible(true);
-                            break;
-                        default:
-                            break;
+
+                    if (tipoContra.equals("A")) {
+                        switch (nivel) {
+                            case 1:
+                                dispose();
+                                new Rango_1().setVisible(true);
+                                break;
+                            case 2:
+                                dispose();
+                                new Rango_2().setVisible(true);
+                                break;
+                            case 3:
+                                dispose();
+                                new Rango_3().setVisible(true);
+                                break;
+                            default:
+                                break;
+                        }
+                    } else {
+                        dispose();
+                        new CambioContra().setVisible(true);
                     }
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos", "Error de credenciales", 0);
-                    txt_user.setText("");
-                    txt_password.setText("");
+
+                    if (p.get("user", null) != null) {
+                        txt_password.setText("");
+                    } else {
+                        txt_user.setText("");
+                        txt_password.setText("");
+                    }
+
                 }
             } catch (SQLException e) {
                 System.err.println("Error en el botón ACCEDER " + e);
