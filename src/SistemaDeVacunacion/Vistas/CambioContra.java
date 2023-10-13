@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacion.Vistas;
+
+import SistemaDeVacunacion.Conexiones.AccesoData;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,22 +27,33 @@ public class CambioContra extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txt_nueva_contra = new javax.swing.JTextField();
+        txt_rep_contra = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        boton_cambiar_contraseña = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Cambio de contraseña");
 
+        txt_nueva_contra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nueva_contraActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Contraseña nueva");
 
         jLabel3.setText("Reingresar la contraseña");
 
-        jButton1.setText("Cambiar contraseña");
+        boton_cambiar_contraseña.setText("Cambiar contraseña");
+        boton_cambiar_contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_cambiar_contraseñaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -54,16 +63,16 @@ public class CambioContra extends javax.swing.JFrame {
                 .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_rep_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nueva_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(101, 101, 101))
                     .addComponent(jLabel2)))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
-                        .addComponent(jButton1))
+                        .addComponent(boton_cambiar_contraseña))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jLabel1)))
@@ -77,18 +86,40 @@ public class CambioContra extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_nueva_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_rep_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
-                .addComponent(jButton1)
+                .addComponent(boton_cambiar_contraseña)
                 .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_cambiar_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cambiar_contraseñaActionPerformed
+
+        if (txt_nueva_contra.getText().equals("") || txt_rep_contra.getText().equals("")) {
+            System.out.println("Se cumple el if 1");
+            JOptionPane.showMessageDialog(null, "Debe completar todos los campos", "Campo incompleto", 0);
+        } else if (txt_nueva_contra.getText().length() < 8 || txt_nueva_contra.getText().length() > 20) {
+            System.out.println("Se cumple el if 2");
+            JOptionPane.showMessageDialog(null, "La contraseña debe tener entre 8 y 40 carácteres", "Longitud inválida", 0);
+        } else if (!txt_nueva_contra.getText().equals(txt_rep_contra.getText())) {
+            System.out.println("Se cumple el if 3");
+            JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error de contraseña", 0);
+        } else {
+            AccesoData.modificarContraseñaProvisoria(txt_nueva_contra.getText());
+            dispose();
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_boton_cambiar_contraseñaActionPerformed
+
+    private void txt_nueva_contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nueva_contraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nueva_contraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,11 +157,11 @@ public class CambioContra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton boton_cambiar_contraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txt_nueva_contra;
+    private javax.swing.JTextField txt_rep_contra;
     // End of variables declaration//GEN-END:variables
 }
