@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2023 a las 02:36:17
+-- Tiempo de generación: 13-10-2023 a las 23:29:03
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,18 +31,21 @@ USE `db_sistemadevacunacion`;
 
 CREATE TABLE `acceso` (
   `nivel` int(2) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `usuario` varchar(20) NOT NULL,
-  `contra` varchar(20) NOT NULL
+  `contra` varchar(20) NOT NULL,
+  `tipoContra` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `acceso`
 --
 
-INSERT INTO `acceso` (`nivel`, `usuario`, `contra`) VALUES
-(3, 'centro', 'centro'),
-(1, 'nacion', 'nacion'),
-(2, 'provincia', 'provincia');
+INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoContra`) VALUES
+(3, '', '', 'centro', 'centro', 'A'),
+(1, '', '', 'nacion', 'nacion', 'A'),
+(2, '', 'walterdjb@gmail.com', 'provincia', 'perromalo', 'A');
 
 -- --------------------------------------------------------
 
