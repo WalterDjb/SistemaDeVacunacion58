@@ -2,6 +2,7 @@ package SistemaDeVacunacionG58;
 
 import SistemaDeVacunacion.Conexiones.LaboratorioData;
 import SistemaDeVacunacion.Conexiones.VacunaData;
+import SistemaDeVacunacion.Entidades.Correo;
 import SistemaDeVacunacion.Entidades.Laboratorio;
 import SistemaDeVacunacion.Entidades.Vacuna;
 import java.time.LocalDate;

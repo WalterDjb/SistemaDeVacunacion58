@@ -1,16 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacion.Vistas;
+
+import SistemaDeVacunacion.Conexiones.Conexion;
+import SistemaDeVacunacion.Entidades.Correo;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Walter Benítez
  */
 public class Recovery extends javax.swing.JFrame {
-
+    public static String correoRecuperacion;
     /**
      * Creates new form Recovery
      */
@@ -29,8 +29,8 @@ public class Recovery extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txt_recovery_correo = new javax.swing.JTextField();
+        boton_enviar_correo_recu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
@@ -39,7 +39,12 @@ public class Recovery extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Recuperar Contraseña");
 
-        jButton1.setText("Enviar correo de recuperación");
+        boton_enviar_correo_recu.setText("Enviar correo de recuperación");
+        boton_enviar_correo_recu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_enviar_correo_recuActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Correo:");
 
@@ -64,8 +69,8 @@ public class Recovery extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField1)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(txt_recovery_correo)
+                                        .addComponent(boton_enviar_correo_recu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(92, 92, 92))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -84,9 +89,9 @@ public class Recovery extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_recovery_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
-                .addComponent(jButton1)
+                .addComponent(boton_enviar_correo_recu)
                 .addContainerGap(185, Short.MAX_VALUE))
         );
 
@@ -97,6 +102,30 @@ public class Recovery extends javax.swing.JFrame {
         dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void boton_enviar_correo_recuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_enviar_correo_recuActionPerformed
+        if(!txt_recovery_correo.getText().equals("")){
+            correoRecuperacion = txt_recovery_correo.getText();
+            
+            try {
+                Connection cn = Conexion.getConexion();
+                PreparedStatement pst = cn.prepareStatement("select email from acceso where email = '" + correoRecuperacion + "'");
+                
+                ResultSet rs = pst.executeQuery();
+                
+                if(rs.next()){
+                    Correo.enviarPassword();
+                    dispose();
+                    new Login().setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Correo incorrecto", "Error de correo", 0);
+                }
+            } catch (Exception e) {
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe completar el campo de email");
+        }
+    }//GEN-LAST:event_boton_enviar_correo_recuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,10 +163,10 @@ public class Recovery extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton boton_enviar_correo_recu;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txt_recovery_correo;
     // End of variables declaration//GEN-END:variables
 }
