@@ -102,16 +102,13 @@ public class CambioContra extends javax.swing.JFrame {
     private void boton_cambiar_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cambiar_contraseñaActionPerformed
 
         if (txt_nueva_contra.getText().equals("") || txt_rep_contra.getText().equals("")) {
-            System.out.println("Se cumple el if 1");
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos", "Campo incompleto", 0);
         } else if (txt_nueva_contra.getText().length() < 8 || txt_nueva_contra.getText().length() > 20) {
-            System.out.println("Se cumple el if 2");
             JOptionPane.showMessageDialog(null, "La contraseña debe tener entre 8 y 40 carácteres", "Longitud inválida", 0);
         } else if (!txt_nueva_contra.getText().equals(txt_rep_contra.getText())) {
-            System.out.println("Se cumple el if 3");
             JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error de contraseña", 0);
         } else {
-            AccesoData.modificarContraseñaProvisoria(txt_nueva_contra.getText());
+            AccesoData.modificarContraseñaProvisoria(txt_nueva_contra.getText().trim());
             dispose();
             new Login().setVisible(true);
         }
