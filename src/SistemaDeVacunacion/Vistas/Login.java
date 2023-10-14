@@ -49,14 +49,14 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setText("BIENVENIDO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         txt_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 199, -1));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 199, -1));
 
         jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton1.setText("INGRESAR");
@@ -65,23 +65,24 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 150, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 150, 50));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Usuario:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Contraseña:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
+        check_recordar_user.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         check_recordar_user.setText("Recordar usuario");
         check_recordar_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 check_recordar_userActionPerformed(evt);
             }
         });
-        getContentPane().add(check_recordar_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
+        getContentPane().add(check_recordar_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
@@ -95,7 +96,7 @@ public class Login extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton3.setText("<-  Volver");
@@ -104,17 +105,17 @@ public class Login extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, 130, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 130, 40));
 
         txt_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 199, -1));
+        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 199, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Campaña px.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 601, 803));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

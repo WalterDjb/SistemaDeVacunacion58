@@ -42,8 +42,8 @@ public class Recovery extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setText("Recuperar contraseña");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
-        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 230, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
+        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, 30));
 
         boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_enviar_correo_recu.setText("Enviar correo de recuperación");
@@ -52,11 +52,11 @@ public class Recovery extends javax.swing.JFrame {
                 boton_enviar_correo_recuActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_enviar_correo_recu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
+        getContentPane().add(boton_enviar_correo_recu, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Introduzca su correo electrónico:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 270, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 270, 20));
 
         jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton2.setText("<-   Volver");
@@ -65,15 +65,15 @@ public class Recovery extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 130, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 130, 40));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Introduzca nuevamente su correo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 230, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 230, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Campaña px.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 800));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

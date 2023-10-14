@@ -40,7 +40,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 120, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 120, 50));
 
         jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton2.setText("Quiero vacunarme");
@@ -49,30 +49,30 @@ public class Main extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 200, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 50));
 
         jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton3.setText("Consultar turno");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 200, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 50));
 
         jButton4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton4.setText("Obtener certificado");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 200, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 200, 50));
 
         jButton5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton5.setText("Centros de salud");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 190, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 190, 50));
 
         jButton6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton6.setText("Cancelar turno");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 190, 50));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 190, 50));
 
         jButton7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton7.setText("Más información");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 190, 50));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 190, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Campaña px.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 800));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
