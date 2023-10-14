@@ -16,6 +16,9 @@ public class Citas extends javax.swing.JFrame {
      */
     public Citas() {
         initComponents();
+        setSize(800, 629);
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

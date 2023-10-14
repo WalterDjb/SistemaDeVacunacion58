@@ -16,6 +16,9 @@ public class Laboratorios extends javax.swing.JFrame {
      */
     public Laboratorios() {
         initComponents();
+        setSize(800, 629);
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

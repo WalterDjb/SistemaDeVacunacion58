@@ -16,6 +16,9 @@ public class Vacunas extends javax.swing.JFrame {
      */
     public Vacunas() {
         initComponents();
+        setSize(800, 629);
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

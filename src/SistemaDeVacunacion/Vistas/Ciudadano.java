@@ -16,6 +16,9 @@ public class Ciudadano extends javax.swing.JFrame {
      */
     public Ciudadano() {
         initComponents();
+        setSize(800, 629);
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

@@ -11,7 +11,9 @@ public class Rango_2 extends javax.swing.JFrame {
      */
     public Rango_2() {
         initComponents();
+        setSize(800, 629);
         setLocationRelativeTo(null);
+        setResizable(false);
         setTitle("RANGO 2");
     }
 

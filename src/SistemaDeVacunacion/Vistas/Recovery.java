@@ -16,7 +16,9 @@ public class Recovery extends javax.swing.JFrame {
      */
     public Recovery() {
         initComponents();
+        setSize(800, 629);
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

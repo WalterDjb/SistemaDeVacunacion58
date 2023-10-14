@@ -14,7 +14,9 @@ public class CambioContra extends javax.swing.JFrame {
      */
     public CambioContra() {
         initComponents();
+        setSize(800, 629);
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**

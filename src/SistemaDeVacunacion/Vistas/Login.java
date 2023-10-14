@@ -20,7 +20,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setSize(800, 629);
         setLocationRelativeTo(null);
+        setResizable(false);
 
         if (p.get("user", null) != null) {
             txt_user.setText(p.get("user", null));
