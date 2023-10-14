@@ -33,67 +33,47 @@ public class Recovery extends javax.swing.JFrame {
         boton_enviar_correo_recu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setText("Recuperar Contraseña");
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel1.setText("Recuperar contraseña");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 230, -1));
 
+        boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_enviar_correo_recu.setText("Enviar correo de recuperación");
         boton_enviar_correo_recu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_enviar_correo_recuActionPerformed(evt);
             }
         });
+        getContentPane().add(boton_enviar_correo_recu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
 
-        jLabel2.setText("Correo:");
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel2.setText("Introduzca su correo electrónico:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 270, 20));
 
-        jButton2.setText("< Volver");
+        jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton2.setText("<-   Volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 130, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 100, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txt_recovery_correo)
-                                        .addComponent(boton_enviar_correo_recu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(92, 92, 92))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(116, 116, 116))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addGap(85, 85, 85)
-                .addComponent(jLabel1)
-                .addGap(53, 53, 53)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_recovery_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(boton_enviar_correo_recu)
-                .addContainerGap(185, Short.MAX_VALUE))
-        );
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel4.setText("Introduzca nuevamente su correo:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 230, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Campaña px.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -167,6 +147,9 @@ public class Recovery extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txt_recovery_correo;
     // End of variables declaration//GEN-END:variables
 }

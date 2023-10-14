@@ -32,69 +32,47 @@ public class CambioContra extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         boton_cambiar_contraseña = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setText("Cambio de contraseña");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
         txt_nueva_contra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_nueva_contraActionPerformed(evt);
             }
         });
+        getContentPane().add(txt_nueva_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 199, -1));
+        getContentPane().add(txt_rep_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 199, -1));
 
-        jLabel2.setText("Contraseña nueva");
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel2.setText("Contraseña nueva:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
-        jLabel3.setText("Reingresar la contraseña");
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel3.setText("Reingresar la contraseña:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
-        boton_cambiar_contraseña.setText("Cambiar contraseña");
+        boton_cambiar_contraseña.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_cambiar_contraseña.setText("Actualizar contraseña");
         boton_cambiar_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_cambiar_contraseñaActionPerformed(evt);
             }
         });
+        getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_rep_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txt_nueva_contra, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(101, 101, 101))
-                    .addComponent(jLabel2)))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(boton_cambiar_contraseña))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel1)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_nueva_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_rep_contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
-                .addComponent(boton_cambiar_contraseña)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
+        jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton1.setText("<-  Volver");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 120, 40));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Campaña px.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,9 +133,11 @@ public class CambioContra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_cambiar_contraseña;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txt_nueva_contra;
     private javax.swing.JTextField txt_rep_contra;
     // End of variables declaration//GEN-END:variables
