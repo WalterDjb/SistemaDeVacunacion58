@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
@@ -119,4 +121,24 @@ public class LaboratorioData {
             JOptionPane.showMessageDialog(null, "No se pudo conectar con el laboratorio.");
         }
    }
+   
+   public Laboratorio buscarLaboratorioXCuit(long cuit){
+    String sql= "SELECT * FROM laboratorio WHERE cuit =?";
+    Laboratorio laboratorio = null;
+    try {
+            PreparedStatement ps= con.prepareStatement(sql);
+            ps.setLong(1, cuit);
+            ResultSet rs=ps.executeQuery();
+            if (rs.next()){
+                laboratorio = new Laboratorio();
+                laboratorio.setCuit(rs.getLong("cuit"));
+                laboratorio.setPais(rs.getString("pais"));
+                laboratorio.setDomicilio(rs.getString("direccion"));
+                laboratorio.setNombre(rs.getString("nombre"));
+            }
+        } catch (SQLException ex) {
+            System.err.println("error al conectar con la base de datos de laboratorio");
+        }
+        return laboratorio;
+       }
 }

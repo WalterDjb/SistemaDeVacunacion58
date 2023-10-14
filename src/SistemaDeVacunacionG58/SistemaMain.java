@@ -11,17 +11,19 @@ public class SistemaMain {
     public static void main(String[] args){
     
         //Laboratorio aa= new Laboratorio("DawsonLab", "Peronia", "IngenieroBenitez666", "30123456789",2);
-        //LaboratorioData ld= new LaboratorioData ();
+        LaboratorioData ld= new LaboratorioData ();
         //ld.guardarLaboratorio(aa);
         //ld.modificarStockLaboratorio(aa);
         //ld.eliminarLaboratorio(aa);
         //LocalDate loc = LocalDate.of(2023, 11, 1);
-        //Vacuna bb = new Vacuna(aa, 000001, "vacunola lince", "caca de perro mensajero", true, loc, 2);
-        //VacunaData vd = new VacunaData ();
+        //Vacuna bb = new Vacuna(aa, "vacunola lince", "caca de perro mensajero", true, loc, 2);
+        VacunaData vd = new VacunaData ();
        //try{ 
-       //vd.guardarVacuna(new Vacuna (aa, 000001, "vacunola lince", "caca de perro mensajero", true, loc, 2));
+       //vd.guardarVacuna(bb);
        //}catch(Exception e){
        //}
        //ld.modificarLaboratorio(aa);
+       //ld.buscarLaboratorioXCuit(30123);
+       Vacuna vacu = vd.buscarVacunaXNombre("vacu");
     }
 }
