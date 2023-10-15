@@ -4,18 +4,19 @@ import java.time.LocalDateTime;
 
 public class Ciudadano {
     private String nombre, email, domicilio, trabajo, patologia;
-    private int dni, celular, dosis;
+    private int dni, celular, dosis, numTramite;
     private LocalDateTime ultimaDosis;
     
     public Ciudadano(){}
     
-    public Ciudadano(String nombre, String email, String domicilio, String trabajo, String patologia, int dni, int celular, int dosis, LocalDateTime ultimaDosis){
+    public Ciudadano(String nombre, String email, String domicilio, String trabajo, String patologia, int dni, int numTramite, int celular, int dosis, LocalDateTime ultimaDosis){
         this.nombre = nombre;
         this.email = email;
         this.domicilio = domicilio;
         this.trabajo = trabajo;
         this.patologia = patologia;
         this.dni = dni;
+        this.numTramite =  numTramite;
         this.celular = celular;
         this.dosis = dosis;
         this.ultimaDosis = ultimaDosis;
@@ -91,5 +92,13 @@ public class Ciudadano {
 
     public void setUltimaDosis(LocalDateTime ultimaDosis) {
         this.ultimaDosis = ultimaDosis;
+    }
+
+    public int getNumTramite() {
+        return numTramite;
+    }
+
+    public void setNumTramite(int numTramite) {
+        this.numTramite = numTramite;
     }
 }
