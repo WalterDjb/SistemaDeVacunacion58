@@ -46,8 +46,8 @@ public class ObtenerCertificado extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 250, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 250, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 250, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 250, -1));
 
         jButton3.setForeground(new java.awt.Color(0, 51, 255));
         jButton3.setText("¿Cómo obtengo mi número de trámite?");
@@ -57,15 +57,15 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         jButton3.setFocusPainted(false);
         jButton3.setFocusable(false);
         jButton3.setRequestFocusEnabled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
 
         jButton2.setText("Ver certificado");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, -1, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 40));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Obtener Certificado de vacunación");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton1.setText("<");
@@ -78,11 +78,11 @@ public class ObtenerCertificado extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Número de trámite:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Número de documento:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
