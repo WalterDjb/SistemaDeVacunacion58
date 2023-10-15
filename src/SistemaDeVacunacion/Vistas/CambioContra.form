@@ -30,11 +30,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Serif" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cambio de contrase&#xf1;a"/>
+        <Property name="text" type="java.lang.String" value="CAMBIO DE CONTRASE&#xd1;A"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="260" y="160" width="-1" height="-1"/>
+          <AbsoluteConstraints x="200" y="120" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -109,7 +109,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="50" width="120" height="40"/>
+          <AbsoluteConstraints x="50" y="30" width="120" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
