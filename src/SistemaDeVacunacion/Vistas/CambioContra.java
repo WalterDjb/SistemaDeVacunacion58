@@ -34,7 +34,6 @@ public class CambioContra extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         boton_cambiar_contraseña = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,10 +74,6 @@ public class CambioContra extends javax.swing.JFrame {
         });
         getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton1.setText("<-  Volver");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
-
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -95,8 +90,8 @@ public class CambioContra extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error de contraseña", 0);
         } else {
             AccesoData.modificarContraseñaProvisoria(txt_nueva_contra.getText().trim());
-            dispose();
             new Login().setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_boton_cambiar_contraseñaActionPerformed
 
@@ -145,7 +140,6 @@ public class CambioContra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_cambiar_contraseña;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

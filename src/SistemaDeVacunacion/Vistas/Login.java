@@ -150,23 +150,23 @@ public class Login extends javax.swing.JFrame {
                     if (tipoContra.equals("A")) {
                         switch (nivel) {
                             case 1:
-                                dispose();
                                 new Rango_1().setVisible(true);
+                                dispose();
                                 break;
                             case 2:
-                                dispose();
                                 new Rango_2().setVisible(true);
+                                dispose();
                                 break;
                             case 3:
-                                dispose();
                                 new Rango_3().setVisible(true);
+                                dispose();
                                 break;
                             default:
                                 break;
                         }
                     } else {
-                        dispose();
                         new CambioContra().setVisible(true);
+                        dispose();
                     }
                     
                 } else {
@@ -196,14 +196,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_check_recordar_userActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
         new Recovery().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Main().setVisible(true);
         dispose();
-        Main main = new Main();
-        main.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed

@@ -45,7 +45,7 @@ public class Recovery extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setText("RECUPERAR CONTRASEÑA");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 120, -1, -1));
-        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, 20));
+        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, -1));
 
         boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_enviar_correo_recu.setText("Enviar correo de recuperación");
@@ -81,8 +81,8 @@ public class Recovery extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
         new Login().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void boton_enviar_correo_recuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_enviar_correo_recuActionPerformed
@@ -97,8 +97,8 @@ public class Recovery extends javax.swing.JFrame {
                 
                 if(rs.next()){
                     Correo.enviarPassword();
-                    dispose();
                     new Login().setVisible(true);
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Correo incorrecto", "Error de correo", 0);
                 }
