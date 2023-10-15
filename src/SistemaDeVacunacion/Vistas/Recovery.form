@@ -30,18 +30,18 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Serif" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Recuperar contrase&#xf1;a"/>
+        <Property name="text" type="java.lang.String" value="RECUPERAR CONTRASE&#xd1;A"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="250" y="130" width="-1" height="-1"/>
+          <AbsoluteConstraints x="190" y="130" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_recovery_correo">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="230" width="230" height="30"/>
+          <AbsoluteConstraints x="420" y="230" width="230" height="20"/>
         </Constraint>
       </Constraints>
     </Component>

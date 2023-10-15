@@ -43,9 +43,9 @@ public class Recovery extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
-        jLabel1.setText("Recuperar contraseña");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
-        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, 30));
+        jLabel1.setText("RECUPERAR CONTRASEÑA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, 20));
 
         boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_enviar_correo_recu.setText("Enviar correo de recuperación");
