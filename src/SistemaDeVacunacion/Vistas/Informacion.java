@@ -144,7 +144,7 @@ public class Informacion extends javax.swing.JFrame {
         jLabel17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 700, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/informacion_3.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/informacion_3.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
         pack();
