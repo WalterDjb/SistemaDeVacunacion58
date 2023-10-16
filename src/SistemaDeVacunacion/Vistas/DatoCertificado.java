@@ -120,6 +120,11 @@ public class DatoCertificado extends javax.swing.JFrame {
         getContentPane().add(label_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 360, 260, -1));
 
         boton_descargar_certificado.setText("Descargar certificado");
+        boton_descargar_certificado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_descargar_certificadoActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_descargar_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, -1, -1));
 
         label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
@@ -132,6 +137,10 @@ public class DatoCertificado extends javax.swing.JFrame {
         new ObtenerCertificado().setVisible(true);
         dispose();
     }//GEN-LAST:event_boton_volverActionPerformed
+
+    private void boton_descargar_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_descargar_certificadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton_descargar_certificadoActionPerformed
 
     /**
      * @param args the command line arguments
