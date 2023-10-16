@@ -31,39 +31,36 @@
     <Component class="javax.swing.JLabel" name="label_titulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="18" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+          <Font name="Serif" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Datos encontrados"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="330" y="160" width="-1" height="-1"/>
+          <AbsoluteConstraints x="270" y="140" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="boton_volver">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="24" style="0"/>
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;- Volver"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_volverActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="20" y="270" width="-1" height="-1"/>
+          <AbsoluteConstraints x="50" y="40" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_nombre">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nombre completo:"/>
       </Properties>
@@ -75,9 +72,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_nombre">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -89,8 +83,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_dni">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xfa;mero de documento:"/>
       </Properties>
@@ -102,9 +96,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_dni">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -116,8 +107,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_dosis">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cantidad de dosis:"/>
       </Properties>
@@ -129,9 +120,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_dosis">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -143,8 +131,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_ultima">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#xda;ltima aplicaci&#xf3;n:"/>
       </Properties>
@@ -156,9 +144,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_ultima">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -170,8 +155,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_vacuna">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Vacuna:"/>
       </Properties>
@@ -183,9 +168,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_vacuna">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -197,8 +179,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_titulo_centro">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Centro de salud:"/>
       </Properties>
@@ -210,9 +192,6 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_centro">
       <Properties>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -224,6 +203,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="boton_descargar_certificado">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Descargar certificado"/>
       </Properties>
       <Events>
@@ -231,7 +213,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="330" y="420" width="-1" height="-1"/>
+          <AbsoluteConstraints x="310" y="420" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

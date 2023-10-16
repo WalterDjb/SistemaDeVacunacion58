@@ -47,14 +47,16 @@ public class Laboratorios extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
-        jLabel1.setText("LABORATORIOS FARMACOLÓGICOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 120, 570, -1));
+        jLabel1.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel1.setText("LABORATORIOS ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 260, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("CUIT:");
@@ -135,8 +137,13 @@ public class Laboratorios extends javax.swing.JFrame {
         jButton4.setText("<-  Volver");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
+        jLabel9.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel9.setText("FARMACOLÓGICOS");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 310, 30));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +220,7 @@ public class Laboratorios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

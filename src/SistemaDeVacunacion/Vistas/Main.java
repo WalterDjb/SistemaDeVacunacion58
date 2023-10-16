@@ -47,7 +47,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 120, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, 40));
 
         boton_quiero_vacunarme.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_quiero_vacunarme.setText("Quiero vacunarme");

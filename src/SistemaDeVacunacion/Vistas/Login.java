@@ -50,15 +50,16 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(15, 75, 94));
         jLabel1.setText("BIENVENIDO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, -1, -1));
 
         txt_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_userActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 199, -1));
+        getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 199, -1));
 
         jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton1.setText("INGRESAR");
@@ -67,11 +68,11 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 150, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 150, 50));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Usuario:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Contraseña:");
@@ -86,7 +87,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(check_recordar_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Verdana", 2, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 102, 102));
         jButton2.setText("Olvidé mi contraseña");
         jButton2.setBorderPainted(false);

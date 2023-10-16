@@ -52,6 +52,7 @@ public class Ciudadano extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(15, 75, 94));
         jLabel7.setText("CIUDADANO");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));

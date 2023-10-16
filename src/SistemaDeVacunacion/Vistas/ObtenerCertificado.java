@@ -40,32 +40,33 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         boton_obtener_tramite = new javax.swing.JButton();
         boton_ver_certificado = new javax.swing.JButton();
         boton_volver = new javax.swing.JButton();
-        label_fondo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        label_titulo.setForeground(new java.awt.Color(0, 0, 0));
-        label_titulo.setText("Obtener Certificado de vacunación");
-        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
+        label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(15, 75, 94));
+        label_titulo.setText("Obtener certificado ");
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, 30));
 
-        label_doc.setForeground(new java.awt.Color(0, 0, 0));
+        label_doc.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_doc.setText("Número de documento:");
-        getContentPane().add(label_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
-        getContentPane().add(txt_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 250, -1));
+        getContentPane().add(label_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
+        getContentPane().add(txt_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 250, -1));
 
-        label_tramite.setForeground(new java.awt.Color(0, 0, 0));
+        label_tramite.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_tramite.setText("Número de trámite:");
-        getContentPane().add(label_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
+        getContentPane().add(label_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         txt_tramite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tramiteActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 250, -1));
+        getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 250, -1));
 
         boton_obtener_tramite.setForeground(new java.awt.Color(0, 51, 255));
         boton_obtener_tramite.setText("¿Cómo obtengo mi número de trámite?");
@@ -75,27 +76,33 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         boton_obtener_tramite.setFocusPainted(false);
         boton_obtener_tramite.setFocusable(false);
         boton_obtener_tramite.setRequestFocusEnabled(false);
-        getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
+        boton_ver_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_ver_certificado.setText("Ver certificado");
         boton_ver_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_ver_certificadoActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_ver_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 40));
+        getContentPane().add(boton_ver_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, 40));
 
-        boton_volver.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        boton_volver.setText("<");
+        boton_volver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_volver.setText("<- Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_volverActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+        getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel1.setText("de vacunación");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,8 +193,9 @@ public class ObtenerCertificado extends javax.swing.JFrame {
     private javax.swing.JButton boton_obtener_tramite;
     private javax.swing.JButton boton_ver_certificado;
     private javax.swing.JButton boton_volver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel label_doc;
-    private javax.swing.JLabel label_fondo;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel label_tramite;
     private javax.swing.JTextField txt_doc;
