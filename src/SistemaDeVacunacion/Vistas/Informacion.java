@@ -57,6 +57,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 230, 40));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(15, 75, 94));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("<html><body style='width: 140px; text-align: justify;'>No llevarse las manos a los ojos, nariz ni boca</body></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -64,6 +65,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 190, 50));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(15, 75, 94));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("<html><body style='width: 140px; text-align: justify;'>Estornudar en el pliegue del codo</body></html>");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -71,6 +73,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 190, 50));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(15, 75, 94));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("<html><body style='width: 140px; text-align: justify;'>Ventilar los ambientes</body></html>");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -78,6 +81,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 190, 50));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(15, 75, 94));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("<html><body style='width: 140px; text-align: justify;'>Limpiar los objetos que se usan con frecuencia</body></html>");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -85,13 +89,15 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 190, 50));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(15, 75, 94));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("<html><body style='width: 130px; text-align: justify;'>No compartir platos, vasos u otros artìculos de uso personal</body></html>");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel9.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 190, 50));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 165, 190, 50));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(15, 75, 94));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("<html><body style='width: 135px; text-align: justify;'>Lavarse las manos con jabòn regularmente</body></html>");
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -107,6 +113,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 580, 30));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(15, 75, 94));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel14.setText("<html><body style='width: 5px; text-align: justify;'>Fiebre y tos</body></html>");
         jLabel14.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -114,6 +121,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 355, 150, 80));
 
         jLabel15.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(15, 75, 94));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel15.setText("<html><body style='width: 50px; text-align: justify;'>Fiebre y dolor de garganta</body></html>");
         jLabel15.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -121,6 +129,7 @@ public class Informacion extends javax.swing.JFrame {
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 355, 150, 110));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(15, 75, 94));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel16.setText("<html><body style='width: 65px; text-align: justify;'>Fiebre y dificultad para respirar</body></html>");
         jLabel16.setVerticalAlignment(javax.swing.SwingConstants.TOP);

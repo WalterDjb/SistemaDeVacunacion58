@@ -65,6 +65,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 140px; text-align: justify;&apos;&gt;No llevarse las manos a los ojos, nariz ni boca&lt;/body&gt;&lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -80,6 +83,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 140px; text-align: justify;&apos;&gt;Estornudar en el pliegue del codo&lt;/body&gt;&lt;/html&gt;"/>
@@ -97,6 +103,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 140px; text-align: justify;&apos;&gt;Ventilar los ambientes&lt;/body&gt;&lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -112,6 +121,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 140px; text-align: justify;&apos;&gt;Limpiar los objetos que se usan con frecuencia&lt;/body&gt;&lt;/html&gt;"/>
@@ -129,6 +141,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 130px; text-align: justify;&apos;&gt;No compartir platos, vasos u otros art&#xec;culos de uso personal&lt;/body&gt;&lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -136,7 +151,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="610" y="160" width="190" height="50"/>
+          <AbsoluteConstraints x="610" y="165" width="190" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -144,6 +159,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="13" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 135px; text-align: justify;&apos;&gt;Lavarse las manos con jab&#xf2;n regularmente&lt;/body&gt;&lt;/html&gt;"/>
@@ -180,6 +198,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="16" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 5px; text-align: justify;&apos;&gt;Fiebre y tos&lt;/body&gt;&lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -196,6 +217,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="16" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 50px; text-align: justify;&apos;&gt;Fiebre y dolor de garganta&lt;/body&gt;&lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
@@ -211,6 +235,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="16" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 65px; text-align: justify;&apos;&gt;Fiebre y dificultad para respirar&lt;/body&gt;&lt;/html&gt;"/>
