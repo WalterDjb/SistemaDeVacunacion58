@@ -53,6 +53,7 @@ public class Citas extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(15, 75, 94));
         jLabel1.setText("CITAS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
@@ -107,18 +108,22 @@ public class Citas extends javax.swing.JFrame {
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 170, -1));
 
         jButton4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(15, 75, 94));
         jButton4.setText("<-  Volver");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
         jButton5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(15, 75, 94));
         jButton5.setText("Eliminar");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
 
         jButton6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(15, 75, 94));
         jButton6.setText("Guardar");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
         jButton7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(15, 75, 94));
         jButton7.setText("Modificar");
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
