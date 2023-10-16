@@ -1,6 +1,9 @@
 package SistemaDeVacunacion.Vistas;
+
+import SistemaDeVacunacion.Conexiones.CiudadanoData;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -8,7 +11,9 @@ import java.awt.Toolkit;
  */
 public class ObtenerCertificado extends javax.swing.JFrame {
 
-    /** Creates new form Main */
+    /**
+     * Creates new form Main
+     */
     public ObtenerCertificado() {
         initComponents();
         setSize(800, 629);
@@ -18,86 +23,123 @@ public class ObtenerCertificado extends javax.swing.JFrame {
     }
 
     @Override
-    public Image getIconImage(){
-    Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/icono.png"));
-    return retValue;
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/icono.png"));
+        return retValue;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        fondo = new javax.swing.JLabel();
+        label_titulo = new javax.swing.JLabel();
+        label_doc = new javax.swing.JLabel();
+        txt_doc = new javax.swing.JTextField();
+        label_tramite = new javax.swing.JLabel();
+        txt_tramite = new javax.swing.JTextField();
+        boton_obtener_tramite = new javax.swing.JButton();
+        boton_ver_certificado = new javax.swing.JButton();
+        boton_volver = new javax.swing.JButton();
+        label_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        label_titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo.setText("Obtener Certificado de vacunación");
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
+
+        label_doc.setForeground(new java.awt.Color(0, 0, 0));
+        label_doc.setText("Número de documento:");
+        getContentPane().add(label_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+        getContentPane().add(txt_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 250, -1));
+
+        label_tramite.setForeground(new java.awt.Color(0, 0, 0));
+        label_tramite.setText("Número de trámite:");
+        getContentPane().add(label_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
+
+        txt_tramite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txt_tramiteActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 250, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 250, -1));
+        getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 250, -1));
 
-        jButton3.setForeground(new java.awt.Color(0, 51, 255));
-        jButton3.setText("¿Cómo obtengo mi número de trámite?");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setDefaultCapable(false);
-        jButton3.setFocusPainted(false);
-        jButton3.setFocusable(false);
-        jButton3.setRequestFocusEnabled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+        boton_obtener_tramite.setForeground(new java.awt.Color(0, 51, 255));
+        boton_obtener_tramite.setText("¿Cómo obtengo mi número de trámite?");
+        boton_obtener_tramite.setBorderPainted(false);
+        boton_obtener_tramite.setContentAreaFilled(false);
+        boton_obtener_tramite.setDefaultCapable(false);
+        boton_obtener_tramite.setFocusPainted(false);
+        boton_obtener_tramite.setFocusable(false);
+        boton_obtener_tramite.setRequestFocusEnabled(false);
+        getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
 
-        jButton2.setText("Ver certificado");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 40));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Obtener Certificado de vacunación");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
-
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jButton1.setText("<");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        boton_ver_certificado.setText("Ver certificado");
+        boton_ver_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                boton_ver_certificadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+        getContentPane().add(boton_ver_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, 40));
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Número de trámite:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
+        boton_volver.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        boton_volver.setText("<");
+        boton_volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_volverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Número de documento:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
+        label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void boton_volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_volverActionPerformed
         new Main().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_boton_volverActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txt_tramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tramiteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txt_tramiteActionPerformed
+
+    private void boton_ver_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ver_certificadoActionPerformed
+        if (txt_doc.getText().trim().equals("") || txt_tramite.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debes completar todos los campos", "Falta de datos", 0);
+        } else if ((txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) && txt_tramite.getText().trim().length() != 14) {
+            JOptionPane.showMessageDialog(null, "Número de documento y de trámite inválidos", "Datos incorrectos", 0);
+        } else if (txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) {
+            JOptionPane.showMessageDialog(null, "Número de documento inválido", "Documento incorrecto", 0);
+        } else if (txt_tramite.getText().trim().length() != 11) {
+            JOptionPane.showMessageDialog(null, "Número de trámite inválido", "Trámite incorrecto", 0);
+        } else {
+            int dni = 0;
+            long tramite = 0;
+
+            try {
+                dni = Integer.parseInt(txt_doc.getText().trim());
+                tramite = Long.valueOf(txt_tramite.getText().trim());
+                
+                if(CiudadanoData.dniTramiteEncontrados(dni, tramite)){
+                    new DatoCertificado().setVisible(true);
+                    dispose();
+                }
+            } catch (NumberFormatException e) {
+
+                if (dni == 0) {
+                    JOptionPane.showMessageDialog(null, "El número de documento contiene carácteres inválidos", "Error de formato", 0);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El número de trámite contiene carácteres inválidos", "Error de formato", 0);
+                }
+            }
+        }
+    }//GEN-LAST:event_boton_ver_certificadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,15 +171,15 @@ public class ObtenerCertificado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton boton_obtener_tramite;
+    private javax.swing.JButton boton_ver_certificado;
+    private javax.swing.JButton boton_volver;
+    private javax.swing.JLabel label_doc;
+    private javax.swing.JLabel label_fondo;
+    private javax.swing.JLabel label_titulo;
+    private javax.swing.JLabel label_tramite;
+    private javax.swing.JTextField txt_doc;
+    private javax.swing.JTextField txt_tramite;
     // End of variables declaration//GEN-END:variables
 
 }
