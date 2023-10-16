@@ -1,5 +1,6 @@
 package SistemaDeVacunacion.Conexiones;
 
+import SistemaDeVacunacion.Entidades.Ciudadano;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,5 +27,21 @@ public class CiudadanoData {
             JOptionPane.showMessageDialog(null, "No se pudo encontrar registro con los datos proporcionados", "Registro inexistente", 1);
         }
         return false;
+    }
+    
+    // PENDIENTE
+    public static Ciudadano buscarPorDni(int dni){
+        Ciudadano ciudadano = new Ciudadano();
+        try {
+            cn = Conexion.getConexion();
+            PreparedStatement pst = cn.prepareStatement("select * from ciudadano where dni = " + dni);
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                ciudadano.setNombre(rs.getString("apellido") + ", " + rs.getString("nombre"));
+            }
+        } catch (Exception e) {
+        }
+        return ciudadano;
     }
 }
