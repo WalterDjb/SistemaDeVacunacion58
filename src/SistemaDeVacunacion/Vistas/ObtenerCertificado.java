@@ -114,10 +114,15 @@ public class ObtenerCertificado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos", "Falta de datos", 0);
         } else if ((txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) && txt_tramite.getText().trim().length() != 14) {
             JOptionPane.showMessageDialog(null, "Número de documento y de trámite inválidos", "Datos incorrectos", 0);
+            txt_doc.setText("");
+            txt_tramite.setText("");
         } else if (txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) {
             JOptionPane.showMessageDialog(null, "Número de documento inválido", "Documento incorrecto", 0);
+            txt_doc.setText("");
+            txt_tramite.setText("");
         } else if (txt_tramite.getText().trim().length() != 11) {
             JOptionPane.showMessageDialog(null, "Número de trámite inválido", "Trámite incorrecto", 0);
+            txt_tramite.setText("");
         } else {
             int dni = 0;
             long tramite = 0;
@@ -129,13 +134,20 @@ public class ObtenerCertificado extends javax.swing.JFrame {
                 if(CiudadanoData.dniTramiteEncontrados(dni, tramite)){
                     new DatoCertificado().setVisible(true);
                     dispose();
+                } else {
+                    txt_doc.setText("");
+                    txt_tramite.setText("");
                 }
+                
             } catch (NumberFormatException e) {
 
                 if (dni == 0) {
                     JOptionPane.showMessageDialog(null, "El número de documento contiene carácteres inválidos", "Error de formato", 0);
+                    txt_doc.setText("");
+                    txt_tramite.setText("");
                 } else {
                     JOptionPane.showMessageDialog(null, "El número de trámite contiene carácteres inválidos", "Error de formato", 0);
+                    txt_tramite.setText("");
                 }
             }
         }

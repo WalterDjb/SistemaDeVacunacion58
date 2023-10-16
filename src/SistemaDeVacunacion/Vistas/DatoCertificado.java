@@ -34,6 +34,19 @@ public class DatoCertificado extends javax.swing.JFrame {
 
         label_titulo = new javax.swing.JLabel();
         boton_volver = new javax.swing.JButton();
+        label_titulo_nombre = new javax.swing.JLabel();
+        label_nombre = new javax.swing.JLabel();
+        label_titulo_dni = new javax.swing.JLabel();
+        label_dni = new javax.swing.JLabel();
+        label_titulo_dosis = new javax.swing.JLabel();
+        label_dosis = new javax.swing.JLabel();
+        label_titulo_ultima = new javax.swing.JLabel();
+        label_ultima = new javax.swing.JLabel();
+        label_titulo_vacuna = new javax.swing.JLabel();
+        label_vacuna = new javax.swing.JLabel();
+        label_titulo_centro = new javax.swing.JLabel();
+        label_centro = new javax.swing.JLabel();
+        boton_descargar_certificado = new javax.swing.JButton();
         label_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,6 +66,63 @@ public class DatoCertificado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
+
+        label_titulo_nombre.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_nombre.setText("Nombre completo:");
+        getContentPane().add(label_titulo_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
+
+        label_nombre.setForeground(new java.awt.Color(0, 0, 0));
+        label_nombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_nombre.setText("Benítez, Walter Eduardo");
+        getContentPane().add(label_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 210, 250, -1));
+
+        label_titulo_dni.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_dni.setText("Número de documento:");
+        getContentPane().add(label_titulo_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+
+        label_dni.setForeground(new java.awt.Color(0, 0, 0));
+        label_dni.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_dni.setText("35681886");
+        getContentPane().add(label_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 240, 220, -1));
+
+        label_titulo_dosis.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_dosis.setText("Cantidad de dosis:");
+        getContentPane().add(label_titulo_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+
+        label_dosis.setForeground(new java.awt.Color(0, 0, 0));
+        label_dosis.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_dosis.setText("1");
+        getContentPane().add(label_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 270, 250, -1));
+
+        label_titulo_ultima.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_ultima.setText("Última aplicación:");
+        getContentPane().add(label_titulo_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+
+        label_ultima.setForeground(new java.awt.Color(0, 0, 0));
+        label_ultima.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_ultima.setText("10/03/2022");
+        getContentPane().add(label_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 300, 250, -1));
+
+        label_titulo_vacuna.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_vacuna.setText("Vacuna:");
+        getContentPane().add(label_titulo_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
+
+        label_vacuna.setForeground(new java.awt.Color(0, 0, 0));
+        label_vacuna.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_vacuna.setText("Aztraseneca");
+        getContentPane().add(label_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 330, 300, -1));
+
+        label_titulo_centro.setForeground(new java.awt.Color(0, 0, 0));
+        label_titulo_centro.setText("Centro de salud:");
+        getContentPane().add(label_titulo_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+
+        label_centro.setForeground(new java.awt.Color(0, 0, 0));
+        label_centro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        label_centro.setText("Centro de Salud La Primavera 103");
+        getContentPane().add(label_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 360, 260, -1));
+
+        boton_descargar_certificado.setText("Descargar certificado");
+        getContentPane().add(boton_descargar_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, -1, -1));
 
         label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
@@ -95,9 +165,22 @@ public class DatoCertificado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_descargar_certificado;
     private javax.swing.JButton boton_volver;
+    private javax.swing.JLabel label_centro;
+    private javax.swing.JLabel label_dni;
+    private javax.swing.JLabel label_dosis;
     private javax.swing.JLabel label_fondo;
+    private javax.swing.JLabel label_nombre;
     private javax.swing.JLabel label_titulo;
+    private javax.swing.JLabel label_titulo_centro;
+    private javax.swing.JLabel label_titulo_dni;
+    private javax.swing.JLabel label_titulo_dosis;
+    private javax.swing.JLabel label_titulo_nombre;
+    private javax.swing.JLabel label_titulo_ultima;
+    private javax.swing.JLabel label_titulo_vacuna;
+    private javax.swing.JLabel label_ultima;
+    private javax.swing.JLabel label_vacuna;
     // End of variables declaration//GEN-END:variables
 
 }
