@@ -156,6 +156,11 @@ public class Laboratorios extends javax.swing.JFrame {
 
         JRb01.setBackground(new java.awt.Color(255, 255, 255));
         SelectorBuscador.add(JRb01);
+        JRb01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JRb01ActionPerformed(evt);
+            }
+        });
         getContentPane().add(JRb01, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, -1, -1));
 
         JRb02.setBackground(new java.awt.Color(255, 255, 255));
@@ -277,6 +282,10 @@ public class Laboratorios extends javax.swing.JFrame {
         JTdireccion.setText("");
         JTstock.setText("");
     }//GEN-LAST:event_JBrenovarActionPerformed
+
+    private void JRb01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRb01ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JRb01ActionPerformed
 
 
     public static void main(String args[]) {

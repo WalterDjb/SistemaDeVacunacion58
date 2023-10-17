@@ -34,7 +34,6 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -75,10 +74,6 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jLabel5.setText("Centro de salud:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, -1));
-
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton2.setText("Buscar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 150, -1));
 
         jTextField3.setText(" ");
@@ -87,7 +82,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton3.setText("Realizar consulta");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 200, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -131,7 +126,6 @@ public class ConsultarTurno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
