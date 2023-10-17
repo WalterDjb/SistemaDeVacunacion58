@@ -28,15 +28,15 @@ public class ListadoCitas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jbConsultar = new javax.swing.JButton();
+        jbGuardar = new javax.swing.JButton();
+        jbModificar = new javax.swing.JButton();
+        jbEliminar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,8 +47,8 @@ public class ListadoCitas extends javax.swing.JFrame {
         jLabel1.setText("LISTADO DE CITAS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 122, -1, -1));
 
-        jButton1.setText("<-  Volver");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 50, 129, 38));
+        jbVolver.setText("<-  Volver");
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 50, 129, 38));
 
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -81,21 +81,21 @@ public class ListadoCitas extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 152, -1));
 
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton2.setText("Consultar");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 30));
+        jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsultar.setText("Consultar");
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 30));
 
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton3.setText("Guardar");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, -1, -1));
+        jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbGuardar.setText("Guardar");
+        getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton4.setText("Modificar");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
+        jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setText("Modificar");
+        getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton5.setText("Eliminar");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
+        jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setText("Eliminar");
+        getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -139,16 +139,16 @@ public class ListadoCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbConsultar;
+    private javax.swing.JButton jbEliminar;
+    private javax.swing.JButton jbGuardar;
+    private javax.swing.JButton jbModificar;
+    private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }

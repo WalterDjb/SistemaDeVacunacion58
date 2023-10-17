@@ -150,8 +150,9 @@ public class Laboratorios extends javax.swing.JFrame {
         jLabel9.setText("FARMACOLÓGICOS");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 310, 30));
 
+        jLabel10.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel10.setText("Stock:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, -1, -1));
         getContentPane().add(JTstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 170, -1));
 
         JRb01.setBackground(new java.awt.Color(255, 255, 255));
@@ -176,7 +177,7 @@ public class Laboratorios extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 80, 50));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 600));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -68,6 +68,7 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         });
         getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 250, -1));
 
+        boton_obtener_tramite.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_obtener_tramite.setForeground(new java.awt.Color(0, 51, 255));
         boton_obtener_tramite.setText("¿Cómo obtengo mi número de trámite?");
         boton_obtener_tramite.setBorderPainted(false);
@@ -94,7 +95,7 @@ public class ObtenerCertificado extends javax.swing.JFrame {
                 boton_volverActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        getContentPane().add(boton_volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 140, 40));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));

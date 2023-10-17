@@ -34,7 +34,7 @@ public class CambioContra extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         boton_cambiar_contraseña = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,7 +68,6 @@ public class CambioContra extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, -1));
 
         boton_cambiar_contraseña.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        boton_cambiar_contraseña.setForeground(new java.awt.Color(15, 75, 94));
         boton_cambiar_contraseña.setText("Actualizar contraseña");
         boton_cambiar_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,14 +76,14 @@ public class CambioContra extends javax.swing.JFrame {
         });
         getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton3.setText("<-  Volver");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setText("<-  Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 120, 40));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 120, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -115,10 +114,10 @@ public class CambioContra extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_rep_contraActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         new Main().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jbVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,11 +156,11 @@ public class CambioContra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_cambiar_contraseña;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbVolver;
     private javax.swing.JTextField txt_nueva_contra;
     private javax.swing.JTextField txt_rep_contra;
     // End of variables declaration//GEN-END:variables

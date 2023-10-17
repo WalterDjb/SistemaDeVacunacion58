@@ -119,7 +119,7 @@ public class DatoCertificado extends javax.swing.JFrame {
                 boton_descargar_certificadoActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_descargar_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, -1, -1));
+        getContentPane().add(boton_descargar_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 230, 40));
 
         label_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));

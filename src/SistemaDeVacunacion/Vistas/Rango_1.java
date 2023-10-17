@@ -34,7 +34,7 @@ public class Rango_1 extends javax.swing.JFrame {
         JBlabs = new javax.swing.JButton();
         JBvax = new javax.swing.JButton();
         JBusers = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,14 +70,14 @@ public class Rango_1 extends javax.swing.JFrame {
         });
         getContentPane().add(JBusers, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton3.setText("<-  Volver");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setText("<-  Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 40));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -100,10 +100,10 @@ public class Rango_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBusersActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         new Main().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jbVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +145,7 @@ public class Rango_1 extends javax.swing.JFrame {
     private javax.swing.JButton JBlabs;
     private javax.swing.JButton JBusers;
     private javax.swing.JButton JBvax;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }

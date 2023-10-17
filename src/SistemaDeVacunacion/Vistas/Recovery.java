@@ -34,9 +34,9 @@ public class Recovery extends javax.swing.JFrame {
         txt_recovery_correo = new javax.swing.JTextField();
         boton_enviar_correo_recu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jbVolver = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtIntrodAgain = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,25 +55,25 @@ public class Recovery extends javax.swing.JFrame {
                 boton_enviar_correo_recuActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_enviar_correo_recu, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        getContentPane().add(boton_enviar_correo_recu, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, 40));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Introduzca su correo electrónico:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 270, 20));
 
-        jButton2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jButton2.setText("<-  Volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setText("<-  Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Introduzca nuevamente su correo:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 230, -1));
+        getContentPane().add(jtIntrodAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 230, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -81,10 +81,10 @@ public class Recovery extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         new Login().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbVolverActionPerformed
 
     private void boton_enviar_correo_recuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_enviar_correo_recuActionPerformed
         if(!txt_recovery_correo.getText().equals("")){
@@ -147,12 +147,12 @@ public class Recovery extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_enviar_correo_recu;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbVolver;
+    private javax.swing.JTextField jtIntrodAgain;
     private javax.swing.JTextField txt_recovery_correo;
     // End of variables declaration//GEN-END:variables
 }
