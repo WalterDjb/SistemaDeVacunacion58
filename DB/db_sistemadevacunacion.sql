@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2023 a las 23:29:03
+-- Tiempo de generación: 17-10-2023 a las 23:12:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -45,7 +45,7 @@ CREATE TABLE `acceso` (
 INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoContra`) VALUES
 (3, '', '', 'centro', 'centro', 'A'),
 (1, '', '', 'nacion', 'nacion', 'A'),
-(2, '', 'walterdjb@gmail.com', 'provincia', 'perromalo', 'A');
+(2, '', 'walterdjb@gmail.com', 'provincia', 'p7qKQFaY', 'B');
 
 -- --------------------------------------------------------
 
@@ -86,17 +86,25 @@ CREATE TABLE `cita` (
 
 CREATE TABLE `ciudadano` (
   `dni` int(8) NOT NULL,
+  `tramite` bigint(14) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
   `provincia` varchar(20) NOT NULL,
   `localidad` varchar(20) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `celular` int(10) NOT NULL,
+  `celular` bigint(10) NOT NULL,
   `patologia` varchar(50) NOT NULL,
   `ambitoTrabajo` varchar(20) NOT NULL,
   `aplicaciones` int(2) NOT NULL,
   `domicilio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ciudadano`
+--
+
+INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `localidad`, `email`, `celular`, `patologia`, `ambitoTrabajo`, `aplicaciones`, `domicilio`) VALUES
+(35681886, 395514326, 'Walter Eduardo', 'Benítez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 3794856308, 'Obesidad', 'Educación', 1, 'Ruta Provincial 2 Km 130');
 
 -- --------------------------------------------------------
 
