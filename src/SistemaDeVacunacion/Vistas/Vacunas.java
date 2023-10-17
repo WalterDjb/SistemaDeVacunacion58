@@ -120,7 +120,9 @@ public class Vacunas extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, -1));
 
+        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,11 +131,15 @@ public class Vacunas extends javax.swing.JFrame {
         });
         getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
+        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
+        jbBuscar.setBackground(new java.awt.Color(15, 75, 94));
         jbBuscar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,11 +148,15 @@ public class Vacunas extends javax.swing.JFrame {
         });
         getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 170, 100, 30));
 
+        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
         jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -81,19 +81,27 @@ public class ListadoCitas extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 152, -1));
 
+        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jbConsultar.setText("Consultar");
         getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 30));
 
+        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jbGuardar.setText("Guardar");
         getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, -1, -1));
 
+        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
 
+        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
         jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 

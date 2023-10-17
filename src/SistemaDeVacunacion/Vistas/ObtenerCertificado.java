@@ -79,7 +79,9 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         boton_obtener_tramite.setRequestFocusEnabled(false);
         getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
+        boton_ver_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_ver_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_ver_certificado.setForeground(new java.awt.Color(255, 255, 255));
         boton_ver_certificado.setText("Ver certificado");
         boton_ver_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +90,9 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         });
         getContentPane().add(boton_ver_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, 40));
 
+        boton_volver.setBackground(new java.awt.Color(15, 75, 94));
         boton_volver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_volver.setForeground(new java.awt.Color(255, 255, 255));
         boton_volver.setText("<- Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -61,7 +61,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 199, -1));
 
+        jbIngresar.setBackground(new java.awt.Color(15, 75, 94));
         jbIngresar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbIngresar.setForeground(new java.awt.Color(255, 255, 255));
         jbIngresar.setText("INGRESAR");
         jbIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +103,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
