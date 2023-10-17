@@ -122,13 +122,13 @@ public class Laboratorios extends javax.swing.JFrame {
         getContentPane().add(JBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, -1));
 
         JBrenovar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        JBrenovar.setText("Renovar");
+        JBrenovar.setText("Eliminar");
         JBrenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBrenovarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBrenovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
+        getContentPane().add(JBrenovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
 
         jLabel6.setText("-");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
