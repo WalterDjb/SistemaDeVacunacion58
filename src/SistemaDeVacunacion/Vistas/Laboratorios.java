@@ -268,6 +268,8 @@ public class Laboratorios extends javax.swing.JFrame {
         }
                 }catch (NumberFormatException nfe){
             JOptionPane.showMessageDialog(null, "Tanto CUIT como Stock deben ser valores numericos validos.");
+        }catch (NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "No se encontraron laboratorios registrados con esos datos.");
         }            
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -279,6 +281,13 @@ public class Laboratorios extends javax.swing.JFrame {
         lab.setDireccion(JTdireccion.getText());
         lab.setStock(Long.parseLong(JTstock.getText()));
         ld.guardarLaboratorio(lab);
+        JTcuit01.setText("");
+        JTcuit02.setText("");
+        JTcuit03.setText("");
+        JTnombre.setText("");
+        JTpais.setText("");
+        JTdireccion.setText("");
+        JTstock.setText("");
         }catch (NumberFormatException nfe){
             JOptionPane.showMessageDialog(null, "Tanto CUIT como Stock deben ser valores numericos validos.");
         }            

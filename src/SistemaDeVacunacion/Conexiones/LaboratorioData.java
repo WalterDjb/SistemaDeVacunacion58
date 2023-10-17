@@ -29,11 +29,9 @@ public class LaboratorioData {
             ps.setLong(5, laboratorio.getStock()); 
                     
             ResultSet rs=ps.executeQuery();
-            if(rs.next()) {
+            //if(rs.next()) {
                 JOptionPane.showMessageDialog(null, "Laboratorio creado.");
-                
-            }
-            
+            //}
             ps.close();
             
         } catch (SQLException ex) {
@@ -135,6 +133,7 @@ public class LaboratorioData {
                 laboratorio.setPais(rs.getString("pais"));
                 laboratorio.setDireccion(rs.getString("direccion"));
                 laboratorio.setNombre(rs.getString("nombre"));
+                laboratorio.setStock(rs.getLong("stock"));
             }
         } catch (SQLException ex) {
             System.err.println("error al conectar con la base de datos de laboratorio");
@@ -154,6 +153,7 @@ public class LaboratorioData {
                 laboratorio.setPais(rs.getString("pais"));
                 laboratorio.setDireccion(rs.getString("direccion"));
                 laboratorio.setNombre(rs.getString("nombre"));
+                laboratorio.setStock(rs.getLong("stock"));
             }
         } catch (SQLException ex) {
             System.err.println("error al conectar con la base de datos de laboratorio");
