@@ -84,7 +84,7 @@ public class Main extends javax.swing.JFrame {
                 boton_obtener_certificadoActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_obtener_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 200, 50));
+        getContentPane().add(boton_obtener_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 240, 60));
 
         boton_centros.setBackground(new java.awt.Color(15, 75, 94));
         boton_centros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -107,7 +107,7 @@ public class Main extends javax.swing.JFrame {
                 boton_cancelar_turnoActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_cancelar_turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 190, 50));
+        getContentPane().add(boton_cancelar_turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 240, 60));
 
         boton_informacion.setBackground(new java.awt.Color(15, 75, 94));
         boton_informacion.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
