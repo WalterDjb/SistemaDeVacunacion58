@@ -49,7 +49,9 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jLabel2.setText("CONSULTAR TURNO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +82,9 @@ public class ConsultarTurno extends javax.swing.JFrame {
         getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 150, -1));
         getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 150, -1));
 
+        jbConsulta.setBackground(new java.awt.Color(15, 75, 94));
         jbConsulta.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsulta.setForeground(new java.awt.Color(255, 255, 255));
         jbConsulta.setText("Realizar consulta");
         getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
 

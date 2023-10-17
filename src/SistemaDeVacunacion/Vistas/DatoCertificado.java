@@ -55,7 +55,9 @@ public class DatoCertificado extends javax.swing.JFrame {
         label_titulo.setText("Datos encontrados");
         getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
 
+        boton_volver.setBackground(new java.awt.Color(15, 75, 94));
         boton_volver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_volver.setForeground(new java.awt.Color(255, 255, 255));
         boton_volver.setText("<- Volver");
         boton_volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +114,9 @@ public class DatoCertificado extends javax.swing.JFrame {
         label_centro.setText(" ");
         getContentPane().add(label_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 360, 260, -1));
 
+        boton_descargar_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_descargar_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_descargar_certificado.setForeground(new java.awt.Color(255, 255, 255));
         boton_descargar_certificado.setText("Descargar certificado");
         boton_descargar_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

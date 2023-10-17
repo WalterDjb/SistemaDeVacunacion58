@@ -47,7 +47,9 @@ public class ControlDeCentros extends javax.swing.JFrame {
         jLabel1.setText("LISTADO DE CENTROS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 46, 121, 39));
 
@@ -63,7 +65,9 @@ public class ControlDeCentros extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, -1, -1));
 
+        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jbConsultar.setText("Consultar");
         getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 216, -1, -1));
 
@@ -83,15 +87,21 @@ public class ControlDeCentros extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 610, 110));
 
+        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jbGuardar.setText("Guardar");
         getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
 
+        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
 
+        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
         jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
 

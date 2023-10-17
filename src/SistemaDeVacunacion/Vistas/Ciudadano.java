@@ -113,7 +113,9 @@ public class Ciudadano extends javax.swing.JFrame {
         getContentPane().add(jtAmbito, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 131, -1));
         getContentPane().add(jtCaracCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 60, -1));
 
+        jbInscribir.setBackground(new java.awt.Color(15, 75, 94));
         jbInscribir.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbInscribir.setForeground(new java.awt.Color(255, 255, 255));
         jbInscribir.setText("Inscribirse");
         jbInscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +124,9 @@ public class Ciudadano extends javax.swing.JFrame {
         });
         getContentPane().add(jbInscribir, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
+        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         jbModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +135,9 @@ public class Ciudadano extends javax.swing.JFrame {
         });
         getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
+        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
         jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jbEliminar.setText("Eliminar");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +146,9 @@ public class Ciudadano extends javax.swing.JFrame {
         });
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 

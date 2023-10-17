@@ -103,7 +103,9 @@ public class Laboratorios extends javax.swing.JFrame {
         });
         getContentPane().add(JTcuit01, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 33, -1));
 
+        JBguardar.setBackground(new java.awt.Color(15, 75, 94));
         JBguardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBguardar.setForeground(new java.awt.Color(255, 255, 255));
         JBguardar.setText("Guardar");
         JBguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +114,9 @@ public class Laboratorios extends javax.swing.JFrame {
         });
         getContentPane().add(JBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
 
+        JBmodificar.setBackground(new java.awt.Color(15, 75, 94));
         JBmodificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBmodificar.setForeground(new java.awt.Color(255, 255, 255));
         JBmodificar.setText("Modificar");
         JBmodificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +125,9 @@ public class Laboratorios extends javax.swing.JFrame {
         });
         getContentPane().add(JBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, -1, -1));
 
+        JBrenovar.setBackground(new java.awt.Color(15, 75, 94));
         JBrenovar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBrenovar.setForeground(new java.awt.Color(255, 255, 255));
         JBrenovar.setText("Eliminar");
         JBrenovar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +142,9 @@ public class Laboratorios extends javax.swing.JFrame {
         jLabel7.setText("-");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, -1, -1));
 
+        JBvolver.setBackground(new java.awt.Color(15, 75, 94));
         JBvolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBvolver.setForeground(new java.awt.Color(255, 255, 255));
         JBvolver.setText("<-  Volver");
         JBvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +176,8 @@ public class Laboratorios extends javax.swing.JFrame {
         SelectorBuscador.add(JRb02);
         getContentPane().add(JRb02, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, -1, -1));
 
+        jButton5.setBackground(new java.awt.Color(15, 75, 94));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buscar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
