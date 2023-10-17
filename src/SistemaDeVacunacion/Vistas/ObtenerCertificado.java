@@ -49,8 +49,8 @@ public class ObtenerCertificado extends javax.swing.JFrame {
 
         label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(15, 75, 94));
-        label_titulo.setText("Obtener certificado ");
-        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, 30));
+        label_titulo.setText("OBTENER CERTIFICADO");
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, 30));
 
         label_doc.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_doc.setText("Número de documento:");
@@ -98,8 +98,8 @@ public class ObtenerCertificado extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel1.setText("de vacunación");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
+        jLabel1.setText("DE VACUNACION");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 145, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
