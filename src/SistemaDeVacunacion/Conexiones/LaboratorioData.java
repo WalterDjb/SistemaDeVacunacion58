@@ -25,7 +25,7 @@ public class LaboratorioData {
             ps.setLong(1, laboratorio.getCuit());
             ps.setString(2, laboratorio.getNombre());
             ps.setString(3, laboratorio.getPais());
-            ps.setString(4, laboratorio.getDomicilio());
+            ps.setString(4, laboratorio.getDireccion());
             ps.setLong(5, laboratorio.getStock()); 
                     
             ResultSet rs=ps.executeQuery();
@@ -69,7 +69,7 @@ public class LaboratorioData {
             ps.setLong(5, laboratorio.getCuit());
             ps.setString(1, laboratorio.getNombre());
             ps.setString(2, laboratorio.getPais());
-            ps.setString(3, laboratorio.getDomicilio());
+            ps.setString(3, laboratorio.getDireccion());
             ps.setLong(4, laboratorio.getStock());
             int funca = ps.executeUpdate();
             if (funca==1){
@@ -89,7 +89,7 @@ public class LaboratorioData {
             ps.setString(5, laboratorio.getNombre());
             ps.setLong(1, laboratorio.getCuit());
             ps.setString(2, laboratorio.getPais());
-            ps.setString(3, laboratorio.getDomicilio());
+            ps.setString(3, laboratorio.getDireccion());
             ps.setLong(4, laboratorio.getStock());
             int funca = ps.executeUpdate();
             if (funca==1){
@@ -133,7 +133,26 @@ public class LaboratorioData {
                 laboratorio = new Laboratorio();
                 laboratorio.setCuit(rs.getLong("cuit"));
                 laboratorio.setPais(rs.getString("pais"));
-                laboratorio.setDomicilio(rs.getString("direccion"));
+                laboratorio.setDireccion(rs.getString("direccion"));
+                laboratorio.setNombre(rs.getString("nombre"));
+            }
+        } catch (SQLException ex) {
+            System.err.println("error al conectar con la base de datos de laboratorio");
+        }
+        return laboratorio;
+       }
+   
+   public Laboratorio buscarLaboratorioXNombre(String nombre){
+    String sql= "SELECT * FROM laboratorio WHERE nombre LIKE '"+nombre+"%'";
+    Laboratorio laboratorio = null;
+    try {
+            PreparedStatement ps= con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            if (rs.next()){
+                laboratorio = new Laboratorio();
+                laboratorio.setCuit(rs.getLong("cuit"));
+                laboratorio.setPais(rs.getString("pais"));
+                laboratorio.setDireccion(rs.getString("direccion"));
                 laboratorio.setNombre(rs.getString("nombre"));
             }
         } catch (SQLException ex) {
