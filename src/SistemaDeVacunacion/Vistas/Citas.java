@@ -115,17 +115,17 @@ public class Citas extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(15, 75, 94));
         jButton5.setText("Eliminar");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
 
         jButton6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton6.setForeground(new java.awt.Color(15, 75, 94));
         jButton6.setText("Guardar");
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, -1, -1));
 
         jButton7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton7.setForeground(new java.awt.Color(15, 75, 94));
         jButton7.setText("Modificar");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
