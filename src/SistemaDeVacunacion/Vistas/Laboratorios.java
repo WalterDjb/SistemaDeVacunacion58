@@ -198,6 +198,7 @@ public class Laboratorios extends javax.swing.JFrame {
     }//GEN-LAST:event_JTdireccionActionPerformed
 
     private void JBmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBmodificarActionPerformed
+        try{
         if (JRb01.isSelected()){
             lab= ld.buscarLaboratorioXCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
             lab.setCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
@@ -217,7 +218,10 @@ public class Laboratorios extends javax.swing.JFrame {
             lab.setStock(Long.parseLong(JTstock.getText()));
             ld.modificarLaboratorioXNombre(lab);
             //JOptionPane.showMessageDialog(null, "Datos modificados.");
-        }
+                }
+        }catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "Tanto CUIT como Stock deben ser valores numericos validos.");
+        }            
     }//GEN-LAST:event_JBmodificarActionPerformed
 
     private void JBvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBvolverActionPerformed
@@ -226,6 +230,7 @@ public class Laboratorios extends javax.swing.JFrame {
     }//GEN-LAST:event_JBvolverActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try{
         if (JRb01.isSelected()){
             lab= ld.buscarLaboratorioXCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
             JTnombre.setText(lab.getNombre());
@@ -245,15 +250,22 @@ public class Laboratorios extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Debe seleccionar un parámetro de busqueda.");
         }
+                }catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "Tanto CUIT como Stock deben ser valores numericos validos.");
+        }            
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void JBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBguardarActionPerformed
+        try{
         lab.setCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
         lab.setNombre(JTnombre.getText());
         lab.setPais(JTpais.getText());
         lab.setDireccion(JTdireccion.getText());
         lab.setStock(Long.parseLong(JTstock.getText()));
         ld.guardarLaboratorio(lab);
+        }catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "Tanto CUIT como Stock deben ser valores numericos validos.");
+        }            
     }//GEN-LAST:event_JBguardarActionPerformed
 
     private void JBrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBrenovarActionPerformed
