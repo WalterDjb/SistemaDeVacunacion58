@@ -54,24 +54,26 @@ public class Main extends javax.swing.JFrame {
         boton_quiero_vacunarme.setBackground(new java.awt.Color(15, 75, 94));
         boton_quiero_vacunarme.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_quiero_vacunarme.setForeground(new java.awt.Color(255, 255, 255));
+        boton_quiero_vacunarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Vacuna.png"))); // NOI18N
         boton_quiero_vacunarme.setText("Quiero vacunarme");
         boton_quiero_vacunarme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_quiero_vacunarmeActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_quiero_vacunarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 50));
+        getContentPane().add(boton_quiero_vacunarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 240, 60));
 
         boton_consultar.setBackground(new java.awt.Color(15, 75, 94));
         boton_consultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_consultar.setForeground(new java.awt.Color(255, 255, 255));
+        boton_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/calendario.png"))); // NOI18N
         boton_consultar.setText("Consultar turno");
         boton_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_consultarActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 50));
+        getContentPane().add(boton_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 240, 60));
 
         boton_obtener_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_obtener_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -87,13 +89,14 @@ public class Main extends javax.swing.JFrame {
         boton_centros.setBackground(new java.awt.Color(15, 75, 94));
         boton_centros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_centros.setForeground(new java.awt.Color(255, 255, 255));
+        boton_centros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hospi.png"))); // NOI18N
         boton_centros.setText("Centros de salud");
         boton_centros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_centrosActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_centros, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 190, 50));
+        getContentPane().add(boton_centros, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 240, 60));
 
         boton_cancelar_turno.setBackground(new java.awt.Color(15, 75, 94));
         boton_cancelar_turno.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
