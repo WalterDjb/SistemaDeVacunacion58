@@ -48,7 +48,9 @@ public class Recovery extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 120, -1, -1));
         getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, -1));
 
+        boton_enviar_correo_recu.setBackground(new java.awt.Color(15, 75, 94));
         boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_enviar_correo_recu.setForeground(new java.awt.Color(255, 255, 255));
         boton_enviar_correo_recu.setText("Enviar correo de recuperación");
         boton_enviar_correo_recu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +63,9 @@ public class Recovery extends javax.swing.JFrame {
         jLabel2.setText("Introduzca su correo electrónico:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 270, 20));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
