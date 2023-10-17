@@ -47,11 +47,15 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         jLabel1.setText("Seleccione el centro de salud deseado");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
+        jbAcceder.setBackground(new java.awt.Color(15, 75, 94));
         jbAcceder.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbAcceder.setForeground(new java.awt.Color(255, 255, 255));
         jbAcceder.setText("Acceder");
         getContentPane().add(jbAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 109, 42));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

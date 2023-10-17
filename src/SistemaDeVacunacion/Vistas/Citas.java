@@ -107,19 +107,27 @@ public class Citas extends javax.swing.JFrame {
         });
         getContentPane().add(jtDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 170, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
+        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
         jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
 
+        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
         jbGuardar.setText("Guardar");
         getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, -1, -1));
 
+        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar.setText("Modificar");
         getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 

@@ -67,7 +67,9 @@ public class CambioContra extends javax.swing.JFrame {
         jLabel3.setText("Reingresar la contraseña:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, -1, -1));
 
+        boton_cambiar_contraseña.setBackground(new java.awt.Color(15, 75, 94));
         boton_cambiar_contraseña.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_cambiar_contraseña.setForeground(new java.awt.Color(255, 255, 255));
         boton_cambiar_contraseña.setText("Actualizar contraseña");
         boton_cambiar_contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +78,9 @@ public class CambioContra extends javax.swing.JFrame {
         });
         getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         jbVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

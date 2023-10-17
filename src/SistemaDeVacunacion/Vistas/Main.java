@@ -40,7 +40,9 @@ public class Main extends javax.swing.JFrame {
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(15, 75, 94));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Acceder");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +51,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, 40));
 
+        boton_quiero_vacunarme.setBackground(new java.awt.Color(15, 75, 94));
         boton_quiero_vacunarme.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_quiero_vacunarme.setForeground(new java.awt.Color(255, 255, 255));
         boton_quiero_vacunarme.setText("Quiero vacunarme");
         boton_quiero_vacunarme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +62,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(boton_quiero_vacunarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 200, 50));
 
+        boton_consultar.setBackground(new java.awt.Color(15, 75, 94));
         boton_consultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_consultar.setForeground(new java.awt.Color(255, 255, 255));
         boton_consultar.setText("Consultar turno");
         boton_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +73,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(boton_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 50));
 
+        boton_obtener_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_obtener_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_obtener_certificado.setForeground(new java.awt.Color(255, 255, 255));
         boton_obtener_certificado.setText("Obtener certificado");
         boton_obtener_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +84,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(boton_obtener_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 200, 50));
 
+        boton_centros.setBackground(new java.awt.Color(15, 75, 94));
         boton_centros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_centros.setForeground(new java.awt.Color(255, 255, 255));
         boton_centros.setText("Centros de salud");
         boton_centros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +95,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(boton_centros, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 190, 50));
 
+        boton_cancelar_turno.setBackground(new java.awt.Color(15, 75, 94));
         boton_cancelar_turno.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_cancelar_turno.setForeground(new java.awt.Color(255, 255, 255));
         boton_cancelar_turno.setText("Cancelar turno");
         boton_cancelar_turno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +106,9 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(boton_cancelar_turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 190, 50));
 
+        boton_informacion.setBackground(new java.awt.Color(15, 75, 94));
         boton_informacion.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_informacion.setForeground(new java.awt.Color(255, 255, 255));
         boton_informacion.setText("Más información");
         boton_informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
