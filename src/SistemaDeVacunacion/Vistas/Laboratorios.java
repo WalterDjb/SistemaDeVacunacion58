@@ -105,6 +105,11 @@ public class Laboratorios extends javax.swing.JFrame {
 
         JBguardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JBguardar.setText("Guardar");
+        JBguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBguardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(JBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
 
         JBmodificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -118,6 +123,11 @@ public class Laboratorios extends javax.swing.JFrame {
 
         JBrenovar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JBrenovar.setText("Renovar");
+        JBrenovar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBrenovarActionPerformed(evt);
+            }
+        });
         getContentPane().add(JBrenovar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
 
         jLabel6.setText("-");
@@ -142,7 +152,7 @@ public class Laboratorios extends javax.swing.JFrame {
 
         jLabel10.setText("Stock:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
-        getContentPane().add(JTstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 170, -1));
+        getContentPane().add(JTstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 170, -1));
 
         JRb01.setBackground(new java.awt.Color(255, 255, 255));
         SelectorBuscador.add(JRb01);
@@ -188,7 +198,26 @@ public class Laboratorios extends javax.swing.JFrame {
     }//GEN-LAST:event_JTdireccionActionPerformed
 
     private void JBmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBmodificarActionPerformed
-        // TODO add your handling code here:
+        if (JRb01.isSelected()){
+            lab= ld.buscarLaboratorioXCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
+            lab.setCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
+            lab.setNombre(JTnombre.getText());
+            lab.setPais(JTpais.getText());
+            lab.setDireccion(JTdireccion.getText());
+            lab.setStock(Long.parseLong(JTstock.getText()));
+            ld.modificarLaboratorioXNombre(lab);
+            //JOptionPane.showMessageDialog(null, "Datos modificados.");
+        }
+        else if (JRb02.isSelected()){
+            lab= ld.buscarLaboratorioXNombre(JTnombre.getText());
+            lab.setCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
+            lab.setNombre(JTnombre.getText());
+            lab.setPais(JTpais.getText());
+            lab.setDireccion(JTdireccion.getText());
+            lab.setStock(Long.parseLong(JTstock.getText()));
+            ld.modificarLaboratorioXNombre(lab);
+            //JOptionPane.showMessageDialog(null, "Datos modificados.");
+        }
     }//GEN-LAST:event_JBmodificarActionPerformed
 
     private void JBvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBvolverActionPerformed
@@ -217,6 +246,25 @@ public class Laboratorios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un parámetro de busqueda.");
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void JBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBguardarActionPerformed
+        lab.setCuit(Long.parseLong(JTcuit01.getText()+JTcuit02.getText()+JTcuit03.getText()));
+        lab.setNombre(JTnombre.getText());
+        lab.setPais(JTpais.getText());
+        lab.setDireccion(JTdireccion.getText());
+        lab.setStock(Long.parseLong(JTstock.getText()));
+        ld.guardarLaboratorio(lab);
+    }//GEN-LAST:event_JBguardarActionPerformed
+
+    private void JBrenovarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBrenovarActionPerformed
+        JTcuit01.setText("");
+        JTcuit02.setText("");
+        JTcuit03.setText("");
+        JTnombre.setText("");
+        JTpais.setText("");
+        JTdireccion.setText("");
+        JTstock.setText("");
+    }//GEN-LAST:event_JBrenovarActionPerformed
 
 
     public static void main(String args[]) {
