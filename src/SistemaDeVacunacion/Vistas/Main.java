@@ -43,19 +43,24 @@ public class Main extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(15, 75, 94));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/acceder.png"))); // NOI18N
         jButton1.setText("Acceder");
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 120, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 130, 40));
 
         boton_quiero_vacunarme.setBackground(new java.awt.Color(15, 75, 94));
         boton_quiero_vacunarme.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_quiero_vacunarme.setForeground(new java.awt.Color(255, 255, 255));
         boton_quiero_vacunarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Vacuna.png"))); // NOI18N
         boton_quiero_vacunarme.setText("Quiero vacunarme");
+        boton_quiero_vacunarme.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boton_quiero_vacunarme.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         boton_quiero_vacunarme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_quiero_vacunarmeActionPerformed(evt);
@@ -66,8 +71,11 @@ public class Main extends javax.swing.JFrame {
         boton_consultar.setBackground(new java.awt.Color(15, 75, 94));
         boton_consultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_consultar.setForeground(new java.awt.Color(255, 255, 255));
-        boton_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/calendario.png"))); // NOI18N
+        boton_consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/calendario.png"))); // NOI18N
         boton_consultar.setText("Consultar turno");
+        boton_consultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boton_consultar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        boton_consultar.setIconTextGap(5);
         boton_consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_consultarActionPerformed(evt);
@@ -78,7 +86,11 @@ public class Main extends javax.swing.JFrame {
         boton_obtener_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_obtener_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_obtener_certificado.setForeground(new java.awt.Color(255, 255, 255));
+        boton_obtener_certificado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Certificado.png"))); // NOI18N
         boton_obtener_certificado.setText("Obtener certificado");
+        boton_obtener_certificado.setMaximumSize(new java.awt.Dimension(205, 61));
+        boton_obtener_certificado.setMinimumSize(new java.awt.Dimension(205, 61));
+        boton_obtener_certificado.setPreferredSize(new java.awt.Dimension(205, 61));
         boton_obtener_certificado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_obtener_certificadoActionPerformed(evt);
@@ -91,6 +103,8 @@ public class Main extends javax.swing.JFrame {
         boton_centros.setForeground(new java.awt.Color(255, 255, 255));
         boton_centros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hospi.png"))); // NOI18N
         boton_centros.setText("Centros de salud");
+        boton_centros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boton_centros.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         boton_centros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_centrosActionPerformed(evt);
@@ -112,13 +126,16 @@ public class Main extends javax.swing.JFrame {
         boton_informacion.setBackground(new java.awt.Color(15, 75, 94));
         boton_informacion.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         boton_informacion.setForeground(new java.awt.Color(255, 255, 255));
+        boton_informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Informacion.png"))); // NOI18N
         boton_informacion.setText("Más información");
+        boton_informacion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boton_informacion.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         boton_informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_informacionActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 190, 50));
+        getContentPane().add(boton_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 240, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
