@@ -38,6 +38,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jtHora = new javax.swing.JTextField();
         jtCentro = new javax.swing.JTextField();
         jbConsulta = new javax.swing.JButton();
+        jbCancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,6 +89,17 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jbConsulta.setText("Realizar consulta");
         getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
 
+        jbCancelar.setBackground(new java.awt.Color(234, 58, 46));
+        jbCancelar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jbCancelar.setText("Cancelar Turno");
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 200, 50));
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -98,6 +110,10 @@ public class ConsultarTurno extends javax.swing.JFrame {
         new Main().setVisible(true);
         dispose();
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +151,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton jbCancelar;
     private javax.swing.JButton jbConsulta;
     private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCentro;
