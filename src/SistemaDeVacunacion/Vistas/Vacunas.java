@@ -1,12 +1,17 @@
 package SistemaDeVacunacion.Vistas;
 
+import SistemaDeVacunacion.Conexiones.LaboratorioData;
 import SistemaDeVacunacion.Conexiones.VacunaData;
 import SistemaDeVacunacion.Entidades.Vacuna;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 public class Vacunas extends javax.swing.JFrame {
 
     VacunaData vd = new VacunaData();
     Vacuna vac = new Vacuna();
+    LaboratorioData ld = new LaboratorioData();
 
     public Vacunas() {
         initComponents();
@@ -34,6 +39,8 @@ public class Vacunas extends javax.swing.JFrame {
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jtLaboratorio = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,6 +123,10 @@ public class Vacunas extends javax.swing.JFrame {
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
+        jLabel1.setText("Laboratorio:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, -1));
+        getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 400, 270, -1));
+
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -131,11 +142,23 @@ public class Vacunas extends javax.swing.JFrame {
     }//GEN-LAST:event_jtDosisActionPerformed
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new Rango_1().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-        
+        DateTimeFormatter formatearFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try{
+        vac.setAntigeno(jtAntigeno.getText());
+        vac.setLaboratorio(ld.buscarLaboratorioXNombre(jtLaboratorio.getText()));
+        vac.setCaducidad(LocalDate.parse((jtFechaCad.getText()), formatearFecha));
+        vac.setCapacidadDosis(Double.parseDouble(jtDosis.getText()));
+        vac.setMarca(jtMarca.getText());
+        vd.guardarVacuna(vac);
+        JOptionPane.showMessageDialog(null, "Vacuna creada con éxito.");
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "algo falló acá. -g-");
+        }
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     /**
@@ -174,6 +197,7 @@ public class Vacunas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -189,6 +213,7 @@ public class Vacunas extends javax.swing.JFrame {
     private javax.swing.JTextField jtCentro;
     private javax.swing.JTextField jtDosis;
     private javax.swing.JTextField jtFechaCad;
+    private javax.swing.JTextField jtLaboratorio;
     private javax.swing.JTextField jtMarca;
     // End of variables declaration//GEN-END:variables
 }

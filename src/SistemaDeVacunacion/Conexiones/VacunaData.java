@@ -26,12 +26,13 @@ public class VacunaData {
            ps.setString(3, vacuna.getMarca());
            ps.setString(4, vacuna.getAntigeno());
            ps.setDate(5, Date.valueOf(vacuna.getCaducidad()));
-           if (vacuna.estado){
+           ps.setInt(6, 1);
+           /*if (vacuna.estado){
                 ps.setInt(6, 1);
                 }else{
                 ps.setInt(6, 0);
                 }
-           
+           */
            ps.executeUpdate();
            
            ps.close();
@@ -56,7 +57,7 @@ public class VacunaData {
                 vacuna.setCapacidadDosis(rs.getDouble("capacidadDosis"));
                 vacuna.setMarca(rs.getString("marca"));
                 vacuna.setCaducidad(rs.getDate("caducidad").toLocalDate());
-          JOptionPane.showMessageDialog(null, "Laboratorio: "+vacuna.getLaboratorio().getNombre()+"\n Marca: "+vacuna.getMarca()+"\n Antigeno: "+vacuna.getAntigeno());
+          //JOptionPane.showMessageDialog(null, "Laboratorio: "+vacuna.getLaboratorio().getNombre()+"\n Marca: "+vacuna.getMarca()+"\n Antigeno: "+vacuna.getAntigeno());
           //no se asusten, no me volví loco. El pane de arriba es para ver si recoge bien los datos solamente
             } else{
                 JOptionPane.showMessageDialog(null, "No existe un resultado para su busqueda");

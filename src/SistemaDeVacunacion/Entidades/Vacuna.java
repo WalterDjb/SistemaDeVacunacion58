@@ -7,19 +7,19 @@ public class Vacuna {
     public Laboratorio laboratorio;
     //public int serie;
     public String marca, antigeno;
-    public boolean estado;
+    //public boolean estado;
     public LocalDate caducidad;
     public double capacidadDosis;
 
     public Vacuna() {
     }
 
-    public Vacuna(Laboratorio laboratorio,/* int serie,*/ String marca, String antigeno, boolean estado, LocalDate caducidad, double capacidadDosis) {
+    public Vacuna(Laboratorio laboratorio,/* int serie,*/ String marca, String antigeno /*, boolean estado*/, LocalDate caducidad, double capacidadDosis) {
         this.laboratorio = laboratorio;
         //this.serie = serie;
         this.marca = marca;
         this.antigeno = antigeno;
-        this.estado = estado;
+        //this.estado = estado;
         this.caducidad = caducidad;
         this.capacidadDosis = capacidadDosis;
     }
@@ -56,14 +56,14 @@ public class Vacuna {
         this.antigeno = antigeno;
     }
 
-    public boolean isEstado() {
+    /*public boolean isEstado() {
         return estado;
     }
 
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
+*/
     public LocalDate getCaducidad() {
         return caducidad;
     }
