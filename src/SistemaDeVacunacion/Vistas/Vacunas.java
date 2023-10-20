@@ -55,15 +55,15 @@ public class Vacunas extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Dosis:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Marca comercial:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel5.setText("Stock:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel6.setText("Antígeno:");
@@ -71,24 +71,24 @@ public class Vacunas extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel7.setText("Fecha de caducidad:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
 
         jtDosis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtDosisActionPerformed(evt);
             }
         });
-        getContentPane().add(jtDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 248, -1));
-        getContentPane().add(jtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 248, -1));
-        getContentPane().add(jtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 248, -1));
+        getContentPane().add(jtDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 248, 20));
+        getContentPane().add(jtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 248, 20));
+        getContentPane().add(jtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 248, 20));
 
         jtAntigeno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtAntigenoActionPerformed(evt);
             }
         });
-        getContentPane().add(jtAntigeno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 248, -1));
-        getContentPane().add(jtFechaCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 248, -1));
+        getContentPane().add(jtAntigeno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 248, 20));
+        getContentPane().add(jtFechaCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 248, 20));
 
         jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -137,7 +137,7 @@ public class Vacunas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel1.setText("Laboratorio:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
-        getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 250, -1));
+        getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 248, 20));
 
         jbBuscar.setBackground(new java.awt.Color(15, 75, 94));
         jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +147,7 @@ public class Vacunas extends javax.swing.JFrame {
                 jbBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, -1));
+        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
