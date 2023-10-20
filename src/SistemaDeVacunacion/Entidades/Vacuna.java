@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Vacuna {
     
     public Laboratorio laboratorio;
-    //public int serie;
+    public int stock;
     public String marca, antigeno;
     //public boolean estado;
     public LocalDate caducidad;
@@ -14,9 +14,9 @@ public class Vacuna {
     public Vacuna() {
     }
 
-    public Vacuna(Laboratorio laboratorio,/* int serie,*/ String marca, String antigeno /*, boolean estado*/, LocalDate caducidad, double capacidadDosis) {
+    public Vacuna(Laboratorio laboratorio, int stock,String marca, String antigeno /*, boolean estado*/, LocalDate caducidad, double capacidadDosis) {
         this.laboratorio = laboratorio;
-        //this.serie = serie;
+        this.stock = stock;
         this.marca = marca;
         this.antigeno = antigeno;
         //this.estado = estado;
@@ -32,14 +32,14 @@ public class Vacuna {
         this.laboratorio = laboratorio;
     }
 
-    /*public int getSerie() {
-        return serie;
+    public int getStock() {
+        return stock;
     }
 
-    public void setSerie(int serie) {
-        this.serie = serie;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
-*/
+
     public String getMarca() {
         return marca;
     }
