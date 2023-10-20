@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2023 a las 10:46:25
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.1
+-- Tiempo de generación: 17-10-2023 a las 23:12:19
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,11 +31,11 @@ USE `db_sistemadevacunacion`;
 
 CREATE TABLE `acceso` (
   `nivel` int(2) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `usuario` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `contra` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `tipoContra` varchar(1) COLLATE utf8_unicode_ci NOT NULL
+  `nombre` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `contra` varchar(20) NOT NULL,
+  `tipoContra` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -44,9 +44,8 @@ CREATE TABLE `acceso` (
 
 INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoContra`) VALUES
 (3, '', '', 'centro', 'centro', 'A'),
-(3, 'Gas', 'fernandeztomadin1985@gmail.com', 'ggg', '12345678', 'A'),
 (1, '', '', 'nacion', 'nacion', 'A'),
-(2, '', 'walterdjb@gmail.com', 'provincia', 'perromalo', 'A');
+(2, '', 'walterdjb@gmail.com', 'provincia', 'p7qKQFaY', 'B');
 
 -- --------------------------------------------------------
 
@@ -56,10 +55,10 @@ INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoCont
 
 CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
-  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `stock` int(5) NOT NULL,
-  `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `provincia` varchar(20) NOT NULL,
+  `localidad` varchar(20) NOT NULL,
   `capacidad` int(4) NOT NULL,
   `registrados` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -76,9 +75,7 @@ CREATE TABLE `cita` (
   `fHCita` datetime NOT NULL,
   `codRefuerzo` int(15) NOT NULL,
   `fHAplicacion` datetime NOT NULL,
-  `centro` int(3) NOT NULL,
-  `estadoCita` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
-  `numeroSerie` int(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
+  `centro` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -89,17 +86,25 @@ CREATE TABLE `cita` (
 
 CREATE TABLE `ciudadano` (
   `dni` int(8) NOT NULL,
-  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `apellido` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `celular` int(10) NOT NULL,
-  `patologia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ambitoTrabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `tramite` bigint(14) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `provincia` varchar(20) NOT NULL,
+  `localidad` varchar(20) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `celular` bigint(10) NOT NULL,
+  `patologia` varchar(50) NOT NULL,
+  `ambitoTrabajo` varchar(20) NOT NULL,
   `aplicaciones` int(2) NOT NULL,
-  `domicilio` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `domicilio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ciudadano`
+--
+
+INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `localidad`, `email`, `celular`, `patologia`, `ambitoTrabajo`, `aplicaciones`, `domicilio`) VALUES
+(35681886, 395514326, 'Walter Eduardo', 'Benítez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 3794856308, 'Obesidad', 'Educación', 1, 'Ruta Provincial 2 Km 130');
 
 -- --------------------------------------------------------
 
@@ -109,32 +114,10 @@ CREATE TABLE `ciudadano` (
 
 CREATE TABLE `laboratorio` (
   `cuit` bigint(11) NOT NULL,
-  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `pais` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `pais` varchar(20) NOT NULL,
+  `direccion` varchar(50) NOT NULL,
   `stock` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `laboratorio`
---
-
-INSERT INTO `laboratorio` (`cuit`, `nombre`, `pais`, `direccion`, `stock`) VALUES
-(233243242, 'papaluza', 'Boke', 'allaleestanponiendo22', 500),
-(30123456789, 'DawsonLab', 'Peronia', 'IngenieroBenitez666', 2),
-(30987654321, 'Peña & Peña Co.', 'Venezuela', 'Dr Fernandez', 5000),
-(33111444779, 'Benitax', 'Guyana', 'Calle perro', 50);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `stock`
---
-
-CREATE TABLE `stock` (
-  `idCentro` int(11) NOT NULL,
-  `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -145,21 +128,13 @@ CREATE TABLE `stock` (
 
 CREATE TABLE `vacuna` (
   `cuitLaboratorio` bigint(11) NOT NULL,
+  `serie` int(15) NOT NULL,
   `capacidadDosis` double NOT NULL,
-  `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `antigeno` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `marca` varchar(20) NOT NULL,
+  `antigeno` varchar(15) NOT NULL,
   `caducidad` date NOT NULL,
-  `stock` int(5) NOT NULL COMMENT 'stock de vacunas en nacion'
+  `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `vacuna`
---
-
-INSERT INTO `vacuna` (`cuitLaboratorio`, `capacidadDosis`, `marca`, `antigeno`, `caducidad`, `stock`) VALUES
-(30123456789, 2.5, 'vacunitah', 'falopa', '2030-05-25', 1),
-(30123456789, 2, 'vacunola lince', 'caca de perro m', '2023-11-01', 1),
-(30987654321, 2, 'vaxina', 'basura', '2028-09-10', 5000);
 
 --
 -- Índices para tablas volcadas
@@ -206,17 +181,12 @@ ALTER TABLE `laboratorio`
   ADD UNIQUE KEY `cuit` (`cuit`);
 
 --
--- Indices de la tabla `stock`
---
-ALTER TABLE `stock`
-  ADD UNIQUE KEY `idCentro` (`idCentro`),
-  ADD UNIQUE KEY `marca` (`marca`);
-
---
 -- Indices de la tabla `vacuna`
 --
 ALTER TABLE `vacuna`
-  ADD UNIQUE KEY `marca` (`marca`);
+  ADD PRIMARY KEY (`serie`),
+  ADD UNIQUE KEY `serie` (`serie`),
+  ADD UNIQUE KEY `cuitLaboratorio` (`cuitLaboratorio`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -233,12 +203,6 @@ ALTER TABLE `centro`
 --
 
 --
--- Filtros para la tabla `centro`
---
-ALTER TABLE `centro`
-  ADD CONSTRAINT `centro_ibfk_1` FOREIGN KEY (`id`) REFERENCES `stock` (`idCentro`);
-
---
 -- Filtros para la tabla `cita`
 --
 ALTER TABLE `cita`
@@ -246,10 +210,11 @@ ALTER TABLE `cita`
   ADD CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`centro`) REFERENCES `centro` (`id`);
 
 --
--- Filtros para la tabla `stock`
+-- Filtros para la tabla `vacuna`
 --
-ALTER TABLE `stock`
-  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`marca`) REFERENCES `vacuna` (`marca`);
+ALTER TABLE `vacuna`
+  ADD CONSTRAINT `vacuna_ibfk_1` FOREIGN KEY (`cuitLaboratorio`) REFERENCES `laboratorio` (`cuit`),
+  ADD CONSTRAINT `vacuna_ibfk_2` FOREIGN KEY (`serie`) REFERENCES `cita` (`codRefuerzo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
