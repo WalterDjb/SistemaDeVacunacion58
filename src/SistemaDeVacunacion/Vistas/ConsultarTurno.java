@@ -77,10 +77,15 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jLabel5.setText("Centro de salud:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
         getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, -1));
+
+        jtFecha.setEditable(false);
         getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 150, -1));
 
+        jtHora.setEditable(false);
         jtHora.setText(" ");
         getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 150, -1));
+
+        jtCentro.setEditable(false);
         getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 150, -1));
 
         jbConsulta.setBackground(new java.awt.Color(15, 75, 94));
@@ -112,7 +117,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        // TODO add your handling code here:
+       new CancelarTurno().setVisible(true);
+       dispose();
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     /**

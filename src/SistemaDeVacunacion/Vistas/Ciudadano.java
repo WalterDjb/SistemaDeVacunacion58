@@ -53,9 +53,9 @@ public class Ciudadano extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel7.setText("CIUDADANO");
+        jLabel7.setText("CIUDADANO (no sabemos para que esta esta pantalla)");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 770, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel8.setText("Nombre completo:");

@@ -32,7 +32,6 @@ public class Main extends javax.swing.JFrame {
         boton_consultar = new javax.swing.JButton();
         boton_obtener_certificado = new javax.swing.JButton();
         boton_centros = new javax.swing.JButton();
-        boton_cancelar_turno = new javax.swing.JButton();
         boton_informacion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -81,7 +80,7 @@ public class Main extends javax.swing.JFrame {
                 boton_consultarActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 240, 60));
+        getContentPane().add(boton_consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 240, 60));
 
         boton_obtener_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_obtener_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -96,7 +95,7 @@ public class Main extends javax.swing.JFrame {
                 boton_obtener_certificadoActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_obtener_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 240, 60));
+        getContentPane().add(boton_obtener_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 240, 60));
 
         boton_centros.setBackground(new java.awt.Color(15, 75, 94));
         boton_centros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -110,18 +109,7 @@ public class Main extends javax.swing.JFrame {
                 boton_centrosActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_centros, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 240, 60));
-
-        boton_cancelar_turno.setBackground(new java.awt.Color(15, 75, 94));
-        boton_cancelar_turno.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        boton_cancelar_turno.setForeground(new java.awt.Color(255, 255, 255));
-        boton_cancelar_turno.setText("Cancelar turno");
-        boton_cancelar_turno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_cancelar_turnoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(boton_cancelar_turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 240, 60));
+        getContentPane().add(boton_centros, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 240, 60));
 
         boton_informacion.setBackground(new java.awt.Color(15, 75, 94));
         boton_informacion.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -135,7 +123,7 @@ public class Main extends javax.swing.JFrame {
                 boton_informacionActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 240, 60));
+        getContentPane().add(boton_informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 240, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
@@ -162,11 +150,6 @@ public class Main extends javax.swing.JFrame {
         new ConsultarTurno().setVisible(true);
         dispose();
     }//GEN-LAST:event_boton_consultarActionPerformed
-
-    private void boton_cancelar_turnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cancelar_turnoActionPerformed
-        new CancelarTurno().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_boton_cancelar_turnoActionPerformed
 
     private void boton_obtener_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_obtener_certificadoActionPerformed
         //dispose();
@@ -218,7 +201,6 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton boton_cancelar_turno;
     private javax.swing.JButton boton_centros;
     private javax.swing.JButton boton_consultar;
     private javax.swing.JButton boton_informacion;

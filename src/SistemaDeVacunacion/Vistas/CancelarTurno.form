@@ -80,6 +80,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jtNumero">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="410" y="190" width="150" height="-1"/>
@@ -87,6 +90,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jtFecha">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="410" y="250" width="150" height="-1"/>
@@ -133,6 +139,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jtCentro">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="410" y="370" width="150" height="-1"/>
@@ -141,6 +150,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jtHora">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
       <Constraints>
@@ -160,7 +170,8 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cancelar Turno"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;body style=&apos;width: 50px; text-align:center;&apos;&gt;Confirmar Cancelaci&#xf2;n&lt;/body&gt;&lt;/html&gt;"/>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCancelarActionPerformed"/>

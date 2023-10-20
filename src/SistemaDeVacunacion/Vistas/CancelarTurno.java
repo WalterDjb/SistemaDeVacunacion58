@@ -63,7 +63,11 @@ public class CancelarTurno extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Número de DNI:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, -1, -1));
+
+        jtNumero.setEditable(false);
         getContentPane().add(jtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 150, -1));
+
+        jtFecha.setEditable(false);
         getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -77,15 +81,19 @@ public class CancelarTurno extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel6.setText("Centro de salud:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
+
+        jtCentro.setEditable(false);
         getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 150, -1));
 
+        jtHora.setEditable(false);
         jtHora.setText(" ");
         getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 150, -1));
 
         jbCancelar.setBackground(new java.awt.Color(234, 58, 46));
         jbCancelar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        jbCancelar.setText("Cancelar Turno");
+        jbCancelar.setText("<html><body style='width: 50px; text-align:center;'>Confirmar Cancelaciòn</body></html>");
+        jbCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCancelarActionPerformed(evt);
