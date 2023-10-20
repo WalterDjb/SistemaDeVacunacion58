@@ -35,7 +35,7 @@ public class Rango_1 extends javax.swing.JFrame {
         JBvax = new javax.swing.JButton();
         JBusers = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,8 +87,8 @@ public class Rango_1 extends javax.swing.JFrame {
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 120, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,7 +153,7 @@ public class Rango_1 extends javax.swing.JFrame {
     private javax.swing.JButton JBlabs;
     private javax.swing.JButton JBusers;
     private javax.swing.JButton JBvax;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondo;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }
