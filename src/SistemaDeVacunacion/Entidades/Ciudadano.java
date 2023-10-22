@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 
 public class Ciudadano {
     private String nombre, email, domicilio, trabajo, patologia, provincia, localidad;
-    private int dni, celular, dosis;
-    private long numTramite;
+    private int dni, dosis;
+    private long numTramite, celular;
     private LocalDateTime ultimaDosis;
     
     public Ciudadano(){}
     
-    public Ciudadano(String nombre, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, int celular, int dosis, LocalDateTime ultimaDosis){
+    public Ciudadano(String nombre, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, long celular, int dosis, LocalDateTime ultimaDosis){
         this.nombre = nombre;
         this.dni = dni;
         this.provincia = provincia;
@@ -73,11 +73,11 @@ public class Ciudadano {
         this.dni = dni;
     }
 
-    public int getCelular() {
+    public long getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(long celular) {
         this.celular = celular;
     }
 

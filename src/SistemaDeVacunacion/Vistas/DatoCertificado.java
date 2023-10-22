@@ -1,7 +1,10 @@
 package SistemaDeVacunacion.Vistas;
 
+
+import SistemaDeVacunacion.Conexiones.CiudadanoData;
 import java.awt.Image;
 import java.awt.Toolkit;
+import SistemaDeVacunacion.Entidades.Ciudadano;
 
 /**
  *
@@ -18,6 +21,11 @@ public class DatoCertificado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Resultado de búsqueda");
+        
+        Ciudadano ciudadano = CiudadanoData.buscarPorDni(35681886);
+        label_dni.setText(String.valueOf(ciudadano.getDni()));
+        label_nombre.setText(ciudadano.getNombre());
+        label_dosis.setText(String.valueOf(ciudadano.getDosis()));
     }
 
     @Override

@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
  * @author Walter Benítez
  */
 public class ObtenerCertificado extends javax.swing.JFrame {
+    
+    public static int dni;
 
     /**
      * Creates new form Main
@@ -136,7 +138,7 @@ public class ObtenerCertificado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Número de trámite inválido", "Trámite incorrecto", 0);
             txt_tramite.setText("");
         } else {
-            int dni = 0;
+            dni = 0;
             long tramite = 0;
 
             try {

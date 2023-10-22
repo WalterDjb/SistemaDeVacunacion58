@@ -39,13 +39,19 @@ public class CiudadanoData {
             
             if(rs.next()){
                 ciudadano.setDni(rs.getInt("dni"));
+                ciudadano.setNumTramite(rs.getLong("tramite"));
                 ciudadano.setNombre(rs.getString("apellido") + ", " + rs.getString("nombre"));
                 ciudadano.setProvincia(rs.getString("provincia"));
                 ciudadano.setLocalidad(rs.getString("localidad"));
                 ciudadano.setDomicilio(rs.getString("domicilio"));
                 ciudadano.setEmail(rs.getString("email"));
+                ciudadano.setCelular(rs.getLong("celular"));
+                ciudadano.setTrabajo(rs.getString("ambitoTrabajo"));
+                ciudadano.setPatologia(rs.getString("patologia"));
+                ciudadano.setDosis(rs.getInt("aplicaciones"));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("ERROR");
         }
         return ciudadano;
     }
