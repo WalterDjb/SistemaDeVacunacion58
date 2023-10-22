@@ -20,7 +20,7 @@ public class CiudadanoData {
             
             if(rs.next() && rs.getInt("aplicaciones") > 0){
                 return true;
-            } else if(rs.getInt("apliaciones") <= 0) {
+            } else if(rs.getInt("aplicaciones") <= 0) {
                 JOptionPane.showMessageDialog(null, "Por el momento no tiene ningún certificado disponible", "No encontrado", 1);
             }
         } catch (SQLException e) {
