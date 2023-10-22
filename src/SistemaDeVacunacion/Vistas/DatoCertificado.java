@@ -22,7 +22,7 @@ public class DatoCertificado extends javax.swing.JFrame {
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Resultado de búsqueda");
         
-        Ciudadano ciudadano = CiudadanoData.buscarPorDni(35681886);
+        Ciudadano ciudadano = CiudadanoData.buscarPorDni(ObtenerCertificado.dni);
         label_dni.setText(String.valueOf(ciudadano.getDni()));
         label_nombre.setText(ciudadano.getNombre());
         label_dosis.setText(String.valueOf(ciudadano.getDosis()));
