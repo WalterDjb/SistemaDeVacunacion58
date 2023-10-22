@@ -53,7 +53,7 @@ public class DatoCertificado extends javax.swing.JFrame {
 
         label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         label_titulo.setText("Datos encontrados");
-        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
 
         boton_volver.setBackground(new java.awt.Color(15, 75, 94));
         boton_volver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -68,15 +68,15 @@ public class DatoCertificado extends javax.swing.JFrame {
 
         label_titulo_nombre.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_nombre.setText("Nombre completo:");
-        getContentPane().add(label_titulo_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, -1, -1));
+        getContentPane().add(label_titulo_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
 
         label_nombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_nombre.setText(" ");
-        getContentPane().add(label_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 210, 250, -1));
+        getContentPane().add(label_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 210, 260, -1));
 
         label_titulo_dni.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_dni.setText("Número de documento:");
-        getContentPane().add(label_titulo_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+        getContentPane().add(label_titulo_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
 
         label_dni.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_dni.setText(" ");
@@ -84,7 +84,7 @@ public class DatoCertificado extends javax.swing.JFrame {
 
         label_titulo_dosis.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_dosis.setText("Cantidad de dosis:");
-        getContentPane().add(label_titulo_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+        getContentPane().add(label_titulo_dosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, -1, -1));
 
         label_dosis.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_dosis.setText(" ");
@@ -92,27 +92,27 @@ public class DatoCertificado extends javax.swing.JFrame {
 
         label_titulo_ultima.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_ultima.setText("Última aplicación:");
-        getContentPane().add(label_titulo_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+        getContentPane().add(label_titulo_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         label_ultima.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_ultima.setText(" ");
-        getContentPane().add(label_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 300, 250, -1));
+        getContentPane().add(label_ultima, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 300, 260, -1));
 
         label_titulo_vacuna.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_vacuna.setText("Vacuna:");
-        getContentPane().add(label_titulo_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
+        getContentPane().add(label_titulo_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
 
         label_vacuna.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_vacuna.setText(" ");
-        getContentPane().add(label_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 330, 300, -1));
+        getContentPane().add(label_vacuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 330, 310, -1));
 
         label_titulo_centro.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_titulo_centro.setText("Centro de salud:");
-        getContentPane().add(label_titulo_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+        getContentPane().add(label_titulo_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
 
         label_centro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         label_centro.setText(" ");
-        getContentPane().add(label_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 360, 260, -1));
+        getContentPane().add(label_centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 360, 270, -1));
 
         boton_descargar_certificado.setBackground(new java.awt.Color(15, 75, 94));
         boton_descargar_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N

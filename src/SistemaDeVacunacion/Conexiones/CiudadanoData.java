@@ -38,7 +38,12 @@ public class CiudadanoData {
             ResultSet rs = pst.executeQuery();
             
             if(rs.next()){
+                ciudadano.setDni(rs.getInt("dni"));
                 ciudadano.setNombre(rs.getString("apellido") + ", " + rs.getString("nombre"));
+                ciudadano.setProvincia(rs.getString("provincia"));
+                ciudadano.setLocalidad(rs.getString("localidad"));
+                ciudadano.setDomicilio(rs.getString("domicilio"));
+                ciudadano.setEmail(rs.getString("email"));
             }
         } catch (Exception e) {
         }

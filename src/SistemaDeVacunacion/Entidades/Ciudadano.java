@@ -3,19 +3,22 @@ package SistemaDeVacunacion.Entidades;
 import java.time.LocalDateTime;
 
 public class Ciudadano {
-    private String nombre, email, domicilio, trabajo, patologia;
-    private int dni, celular, dosis, numTramite;
+    private String nombre, email, domicilio, trabajo, patologia, provincia, localidad;
+    private int dni, celular, dosis;
+    private long numTramite;
     private LocalDateTime ultimaDosis;
     
     public Ciudadano(){}
     
-    public Ciudadano(String nombre, String email, String domicilio, String trabajo, String patologia, int dni, int numTramite, int celular, int dosis, LocalDateTime ultimaDosis){
+    public Ciudadano(String nombre, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, int celular, int dosis, LocalDateTime ultimaDosis){
         this.nombre = nombre;
+        this.dni = dni;
+        this.provincia = provincia;
+        this.localidad = localidad;
         this.email = email;
         this.domicilio = domicilio;
         this.trabajo = trabajo;
         this.patologia = patologia;
-        this.dni = dni;
         this.numTramite =  numTramite;
         this.celular = celular;
         this.dosis = dosis;
@@ -94,11 +97,29 @@ public class Ciudadano {
         this.ultimaDosis = ultimaDosis;
     }
 
-    public int getNumTramite() {
+    public long getNumTramite() {
         return numTramite;
     }
 
-    public void setNumTramite(int numTramite) {
+    public void setNumTramite(long numTramite) {
         this.numTramite = numTramite;
     }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+    
+    
 }
