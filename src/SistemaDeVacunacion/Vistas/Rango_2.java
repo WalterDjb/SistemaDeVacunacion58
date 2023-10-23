@@ -35,23 +35,44 @@ public class Rango_2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jbCentros.setBackground(new java.awt.Color(15, 75, 94));
+        jbCentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbCentros.setForeground(new java.awt.Color(255, 255, 255));
         jbCentros.setText("Centros de vacunacion");
-        getContentPane().add(jbCentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, -1, -1));
+        jbCentros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCentrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbCentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 230, 50));
 
+        jbCitas.setBackground(new java.awt.Color(15, 75, 94));
+        jbCitas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbCitas.setForeground(new java.awt.Color(255, 255, 255));
         jbCitas.setText("Citas de vacunacion");
-        getContentPane().add(jbCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+        getContentPane().add(jbCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 230, 50));
 
+        jbEstadisticas.setBackground(new java.awt.Color(15, 75, 94));
+        jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
         jbEstadisticas.setText("Estadisticas");
-        getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, -1, -1));
+        getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 230, 50));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
+        jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<- Volver");
-        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 0, -1, -1));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbCentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCentrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbCentrosActionPerformed
 
     /**
      * @param args the command line arguments
