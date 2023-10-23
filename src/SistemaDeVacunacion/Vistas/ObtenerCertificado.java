@@ -57,6 +57,17 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         label_doc.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_doc.setText("Número de documento:");
         getContentPane().add(label_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
+
+        txt_doc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_docActionPerformed(evt);
+            }
+        });
+        txt_doc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_docKeyTyped(evt);
+            }
+        });
         getContentPane().add(txt_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 250, -1));
 
         label_tramite.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -66,6 +77,11 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         txt_tramite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_tramiteActionPerformed(evt);
+            }
+        });
+        txt_tramite.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_tramiteKeyTyped(evt);
             }
         });
         getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 250, -1));
@@ -120,6 +136,7 @@ public class ObtenerCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_volverActionPerformed
 
     private void txt_tramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tramiteActionPerformed
+       
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tramiteActionPerformed
 
@@ -166,6 +183,27 @@ public class ObtenerCertificado extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_boton_ver_certificadoActionPerformed
+
+    private void txt_docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_docActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_docActionPerformed
+
+    private void txt_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_docKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_docKeyTyped
+
+    private void txt_tramiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tramiteKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_tramiteKeyTyped
 
     /**
      * @param args the command line arguments

@@ -65,6 +65,11 @@ public class CancelarTurno extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, -1, -1));
 
         jtNumero.setEditable(false);
+        jtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtNumeroKeyTyped(evt);
+            }
+        });
         getContentPane().add(jtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 150, -1));
 
         jtFecha.setEditable(false);
@@ -115,6 +120,14 @@ public class CancelarTurno extends javax.swing.JFrame {
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jtNumeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNumeroKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNumeroKeyTyped
 
     /**
      * @param args the command line arguments

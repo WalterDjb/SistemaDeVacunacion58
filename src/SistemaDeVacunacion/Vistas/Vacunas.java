@@ -78,17 +78,28 @@ public class Vacunas extends javax.swing.JFrame {
                 jtDosisActionPerformed(evt);
             }
         });
-        getContentPane().add(jtDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 248, 20));
-        getContentPane().add(jtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 248, 20));
-        getContentPane().add(jtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 248, 20));
+        getContentPane().add(jtDosis, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 248, 30));
+        getContentPane().add(jtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 248, 30));
+
+        jtStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtStockActionPerformed(evt);
+            }
+        });
+        jtStock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtStockKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 248, 30));
 
         jtAntigeno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtAntigenoActionPerformed(evt);
             }
         });
-        getContentPane().add(jtAntigeno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 248, 20));
-        getContentPane().add(jtFechaCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 248, 20));
+        getContentPane().add(jtAntigeno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 248, 30));
+        getContentPane().add(jtFechaCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 248, 30));
 
         jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
         jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -137,7 +148,7 @@ public class Vacunas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel1.setText("Laboratorio:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
-        getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 248, 20));
+        getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 248, 30));
 
         jbBuscar.setBackground(new java.awt.Color(15, 75, 94));
         jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,6 +226,19 @@ public class Vacunas extends javax.swing.JFrame {
         jtMarca.setText("");
         jtStock.setText("");
     }//GEN-LAST:event_jbLimpiarActionPerformed
+
+    private void jtStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtStockActionPerformed
+
+    private void jtStockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtStockKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_jtStockKeyTyped
 
     /**
      * @param args the command line arguments

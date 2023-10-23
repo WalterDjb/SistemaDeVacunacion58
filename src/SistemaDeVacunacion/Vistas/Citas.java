@@ -86,6 +86,11 @@ public class Citas extends javax.swing.JFrame {
                 tfDniActionPerformed(evt);
             }
         });
+        tfDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfDniKeyTyped(evt);
+            }
+        });
         getContentPane().add(tfDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 170, -1));
         getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 170, -1));
 
@@ -148,6 +153,14 @@ public class Citas extends javax.swing.JFrame {
     private void jtDosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDosisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtDosisActionPerformed
+
+    private void tfDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDniKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_tfDniKeyTyped
 
     /**
      * @param args the command line arguments

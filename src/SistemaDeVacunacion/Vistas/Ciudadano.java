@@ -96,6 +96,11 @@ public class Ciudadano extends javax.swing.JFrame {
                 jtCelularActionPerformed(evt);
             }
         });
+        jtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtCelularKeyTyped(evt);
+            }
+        });
         getContentPane().add(jtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 131, -1));
 
         jtPatologia.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +116,17 @@ public class Ciudadano extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jtAmbito, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 131, -1));
+
+        jtCaracCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtCaracCelularActionPerformed(evt);
+            }
+        });
+        jtCaracCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtCaracCelularKeyTyped(evt);
+            }
+        });
         getContentPane().add(jtCaracCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 60, -1));
 
         jbInscribir.setBackground(new java.awt.Color(15, 75, 94));
@@ -189,6 +205,32 @@ public class Ciudadano extends javax.swing.JFrame {
     private void jtAmbitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtAmbitoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtAmbitoActionPerformed
+
+    private void jtCaracCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCaracCelularKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }   
+        
+       // if(jtCaracCelular.getNumber.length()>=4){
+          //  evt.consume();
+      //  }
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jtCaracCelularKeyTyped
+
+    private void jtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCelularKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jtCelularKeyTyped
+
+    private void jtCaracCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCaracCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtCaracCelularActionPerformed
 
     /**
      * @param args the command line arguments

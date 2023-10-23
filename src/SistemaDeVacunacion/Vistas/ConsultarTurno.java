@@ -76,6 +76,17 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel5.setText("Centro de salud:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+
+        jtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtDniActionPerformed(evt);
+            }
+        });
+        jtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtDniKeyTyped(evt);
+            }
+        });
         getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, -1));
 
         jtFecha.setEditable(false);
@@ -120,6 +131,18 @@ public class ConsultarTurno extends javax.swing.JFrame {
        new CancelarTurno().setVisible(true);
        dispose();
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void jtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDniActionPerformed
+
+    private void jtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDniKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDniKeyTyped
 
     /**
      * @param args the command line arguments
