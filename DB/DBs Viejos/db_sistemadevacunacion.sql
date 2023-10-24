@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2023 a las 05:18:43
+-- Tiempo de generación: 20-10-2023 a las 10:46:25
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -74,11 +74,11 @@ CREATE TABLE `cita` (
   `id` int(8) NOT NULL,
   `dni` int(8) NOT NULL,
   `fHCita` datetime NOT NULL,
-  `Vacuna` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `codRefuerzo` int(15) NOT NULL,
   `fHAplicacion` datetime NOT NULL,
   `centro` int(3) NOT NULL,
   `estadoCita` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
-  `numeroSerie` bigint(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
+  `numeroSerie` int(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -187,7 +187,7 @@ ALTER TABLE `cita`
   ADD UNIQUE KEY `id` (`id`),
   ADD UNIQUE KEY `dni` (`dni`),
   ADD UNIQUE KEY `centro` (`centro`),
-  ADD UNIQUE KEY `codRefuerzo` (`Vacuna`),
+  ADD UNIQUE KEY `codRefuerzo` (`codRefuerzo`),
   ADD KEY `dni_2` (`dni`),
   ADD KEY `dni_3` (`dni`);
 
@@ -243,20 +243,13 @@ ALTER TABLE `centro`
 --
 ALTER TABLE `cita`
   ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`dni`) REFERENCES `ciudadano` (`dni`),
-  ADD CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`centro`) REFERENCES `centro` (`id`),
-  ADD CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`Vacuna`) REFERENCES `vacuna` (`marca`);
+  ADD CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`centro`) REFERENCES `centro` (`id`);
 
 --
 -- Filtros para la tabla `stock`
 --
 ALTER TABLE `stock`
   ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`marca`) REFERENCES `vacuna` (`marca`);
-
---
--- Filtros para la tabla `vacuna`
---
-ALTER TABLE `vacuna`
-  ADD CONSTRAINT `vacuna_ibfk_1` FOREIGN KEY (`cuitLaboratorio`) REFERENCES `laboratorio` (`cuit`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

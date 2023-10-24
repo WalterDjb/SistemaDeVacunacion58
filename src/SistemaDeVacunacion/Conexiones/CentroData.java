@@ -3,6 +3,7 @@ package SistemaDeVacunacion.Conexiones;
 import SistemaDeVacunacion.Entidades.Centro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -53,5 +54,27 @@ public class CentroData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error inesperado al tratar de eliminar Centro");
         }
+    }
+    
+     public Centro buscarCentroXId(int id){
+        Centro cen = new Centro();
+        try {
+            con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement("select * from centro where id = " + id);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                cen.setId(rs.getInt("id"));
+                cen.setDomicilio(rs.getString("direccion"));
+                cen.setStock(rs.getInt("stock"));
+                cen.setProvincia(rs.getString("provincia"));
+                cen.setLocalidad(rs.getString("localidad"));
+                cen.setCapacidad(rs.getInt("capacidad"));
+                cen.setRegistrados(rs.getInt("registrados"));
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR");
+        }
+        return cen;
     }
 }

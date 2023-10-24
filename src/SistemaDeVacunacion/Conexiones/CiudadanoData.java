@@ -8,14 +8,14 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class CiudadanoData {
-    private static Connection cn;
+    public static Connection con;
     
-    private CiudadanoData(){}
+    public CiudadanoData(){}
     
     public static boolean dniTramiteEncontrados(int dni, long tramite){
         try {
-            cn = Conexion.getConexion();
-            PreparedStatement pst = cn.prepareStatement("select aplicaciones from ciudadano where dni = " + dni + " and tramite = " + tramite);
+            con = Conexion.getConexion();
+            PreparedStatement pst = con.prepareStatement("select aplicaciones from ciudadano where dni = " + dni + " and tramite = " + tramite);
             ResultSet rs = pst.executeQuery();
             
             if(rs.next() && rs.getInt("aplicaciones") > 0){
@@ -33,9 +33,9 @@ public class CiudadanoData {
     public static Ciudadano buscarPorDni(int dni){
         Ciudadano ciudadano = new Ciudadano();
         try {
-            cn = Conexion.getConexion();
-            PreparedStatement pst = cn.prepareStatement("select * from ciudadano where dni = " + dni);
-            ResultSet rs = pst.executeQuery();
+            con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement("select * from ciudadano where dni = " + dni);
+            ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
                 ciudadano.setDni(rs.getInt("dni"));
