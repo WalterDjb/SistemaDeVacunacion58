@@ -1,15 +1,19 @@
 package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Centro;
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class CentroData {
 
     Connection con;
+    Centro centro = new Centro();
+    ArrayList<Centro> centros = new ArrayList<>();
 
     public CentroData() {
         con = Conexion.getConexion();
@@ -57,24 +61,74 @@ public class CentroData {
     }
     
      public Centro buscarCentroXId(int id){
-        Centro cen = new Centro();
+        //Centro cen = new Centro();
         try {
             con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement("select * from centro where id = " + id);
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
-                cen.setId(rs.getInt("id"));
-                cen.setDomicilio(rs.getString("direccion"));
-                cen.setStock(rs.getInt("stock"));
-                cen.setProvincia(rs.getString("provincia"));
-                cen.setLocalidad(rs.getString("localidad"));
-                cen.setCapacidad(rs.getInt("capacidad"));
-                cen.setRegistrados(rs.getInt("registrados"));
+                centro.setId(rs.getInt("id"));
+                centro.setDomicilio(rs.getString("direccion"));
+                centro.setStock(rs.getInt("stock"));
+                centro.setProvincia(rs.getString("provincia"));
+                centro.setLocalidad(rs.getString("localidad"));
+                centro.setCapacidad(rs.getInt("capacidad"));
+                centro.setRegistrados(rs.getInt("registrados"));
             }
         } catch (SQLException e) {
-            System.out.println("ERROR");
+            System.out.println("ERROR al buscar el centro por ID");
         }
-        return cen;
+        return centro;
     }
+     
+     public Centro buscarCentroXLocalidad(String localidad){
+        try {
+            con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement("select * from centro where localidad = " + localidad);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                centro.setId(rs.getInt("id"));
+                centro.setDomicilio(rs.getString("direccion"));
+                centro.setStock(rs.getInt("stock"));
+                centro.setProvincia(rs.getString("provincia"));
+                centro.setLocalidad(rs.getString("localidad"));
+                centro.setCapacidad(rs.getInt("capacidad"));
+                centro.setRegistrados(rs.getInt("registrados"));
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR buscando el centro por localidad");
+        }
+        return centro;
+    }
+
+    /*
+     public List<> listarCentrosXProvincia(){
+    con = Conexion.getConexion();
+    //List<Centro> centros = new ArrayList<>();  // Declaración de la lista de centros
+
+    PreparedStatement ps = con.prepareStatement("select * from centro where id = ?");
+    ps.setInt(1, provincia); // Establece el valor de provincia como un parámetro
+
+    try {
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            Centro centro = new Centro();
+            centro.setId(rs.getInt("id"));
+            centro.setDomicilio(rs.getString("direccion"));
+            centro.setStock(rs.getInt("stock"));
+            centro.setProvincia(rs.getString("provincia"));
+            centro.setLocalidad(rs.getString("localidad"));
+            centro.setCapacidad(rs.getInt("capacidad"));
+            centro.setRegistrados(rs.getInt("registrados"));
+            centros.add(centro); // Agrega el centro a la lista
+        }
+    } catch (SQLException e) {
+        System.out.println("ERROR");
+    }
+    return centros;
+}
+*/
+
 }
