@@ -72,6 +72,11 @@ public class Laboratorios extends javax.swing.JFrame {
                 JTcuit02ActionPerformed(evt);
             }
         });
+        JTcuit02.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTcuit02KeyTyped(evt);
+            }
+        });
         getContentPane().add(JTcuit02, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 156, -1));
         getContentPane().add(JTnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 160, -1));
 
@@ -94,11 +99,21 @@ public class Laboratorios extends javax.swing.JFrame {
                 JTcuit03ActionPerformed(evt);
             }
         });
+        JTcuit03.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTcuit03KeyTyped(evt);
+            }
+        });
         getContentPane().add(JTcuit03, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 33, -1));
 
         JTcuit01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTcuit01ActionPerformed(evt);
+            }
+        });
+        JTcuit01.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTcuit01KeyTyped(evt);
             }
         });
         getContentPane().add(JTcuit01, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 33, -1));
@@ -161,7 +176,13 @@ public class Laboratorios extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel10.setText("Stock:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, -1, -1));
-        getContentPane().add(JTstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 170, -1));
+
+        JTstock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                JTstockKeyTyped(evt);
+            }
+        });
+        getContentPane().add(JTstock, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 160, -1));
 
         JRb01.setBackground(new java.awt.Color(255, 255, 255));
         SelectorBuscador.add(JRb01);
@@ -306,6 +327,38 @@ public class Laboratorios extends javax.swing.JFrame {
     private void JRb01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JRb01ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JRb01ActionPerformed
+
+    private void JTcuit01KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTcuit01KeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_JTcuit01KeyTyped
+
+    private void JTcuit02KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTcuit02KeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_JTcuit02KeyTyped
+
+    private void JTcuit03KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTcuit03KeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_JTcuit03KeyTyped
+
+    private void JTstockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTstockKeyTyped
+        int key = evt.getKeyChar();
+        boolean numeros = key>=48 && key<=57;
+        if(!numeros){
+            evt.consume();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_JTstockKeyTyped
 
 
     public static void main(String args[]) {
