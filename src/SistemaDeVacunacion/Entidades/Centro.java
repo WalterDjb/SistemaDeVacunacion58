@@ -3,9 +3,9 @@ package SistemaDeVacunacion.Entidades;
 import java.util.ArrayList;
 
 public class Centro {
-    private int id, stock, capacidad, registrados;
-    private String domicilio, provincia, localidad;
-    private ArrayList <Vacuna> vacunas;
+    public int id, stock, capacidad, registrados;
+    public String domicilio, provincia, localidad;
+    public ArrayList <Vacuna> vacunas;
 
     public Centro() {
     }

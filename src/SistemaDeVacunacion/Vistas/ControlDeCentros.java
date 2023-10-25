@@ -29,6 +29,7 @@ public class ControlDeCentros extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jbVolver = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jbConsultar = new javax.swing.JButton();
@@ -37,21 +38,26 @@ public class ControlDeCentros extends javax.swing.JFrame {
         jbGuardar = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel1.setText("LISTADO DE CENTROS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
+        jLabel1.setText("LISTADO DE CENTROS (de vacunados por centro)");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 46, 121, 39));
+
+        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 65)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setText("¡¡¡TERMINAR SI O SI!!!");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 750, 240));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione el centro: ");
@@ -105,8 +111,8 @@ public class ControlDeCentros extends javax.swing.JFrame {
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -151,10 +157,11 @@ public class ControlDeCentros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondo;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbConsultar;

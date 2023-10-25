@@ -71,7 +71,8 @@ public class Rango_2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCentrosActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new CrearCentro().setVisible(true);
     }//GEN-LAST:event_jbCentrosActionPerformed
 
     /**
