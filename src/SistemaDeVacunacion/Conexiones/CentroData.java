@@ -61,7 +61,6 @@ public class CentroData {
     }
     
      public Centro buscarCentroXId(int id){
-        //Centro cen = new Centro();
         try {
             con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement("select * from centro where id = " + id);
@@ -78,6 +77,8 @@ public class CentroData {
             }
         } catch (SQLException e) {
             System.out.println("ERROR al buscar el centro por ID");
+        }catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "El ID debe ser un valor numérico.");
         }
         return centro;
     }
@@ -106,11 +107,6 @@ public class CentroData {
     public List<Centro> listarCentrosXProvincia(String provincia) {
     con = Conexion.getConexion();
     List<Centro> centros = new ArrayList<>();
-    
-    //String sql = "select * from centro where provincia = ?";
-    //PreparedStatement ps = con.prepareStatement(sql);
-    //ps.setString(1, provincia); // Establece el valor de provincia como un parámetro
-
     try {
         con = Conexion.getConexion();
         String sql = "select * from centro where provincia = ?";
@@ -126,40 +122,13 @@ public class CentroData {
             centro.setLocalidad(rs.getString("localidad"));
             centro.setCapacidad(rs.getInt("capacidad"));
             centro.setRegistrados(rs.getInt("registrados"));
-            centros.add(centro); // Agrega el centro a la lista
+            centros.add(centro);
         }
     } catch (SQLException e) {
         System.out.println("ERROR: " + e.getMessage());
+    } catch (NullPointerException npe){
+        System.err.println("Error; "+npe.getMessage());
     }
     return centros;
-}
-     
-    /*
-     public List<> listarCentrosXProvincia(){
-    con = Conexion.getConexion();
-    //List<Centro> centros = new ArrayList<>();  // Declaración de la lista de centros
-
-    PreparedStatement ps = con.prepareStatement("select * from centro where id = ?");
-    ps.setInt(1, provincia); // Establece el valor de provincia como un parámetro
-
-    try {
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            Centro centro = new Centro();
-            centro.setId(rs.getInt("id"));
-            centro.setDomicilio(rs.getString("direccion"));
-            centro.setStock(rs.getInt("stock"));
-            centro.setProvincia(rs.getString("provincia"));
-            centro.setLocalidad(rs.getString("localidad"));
-            centro.setCapacidad(rs.getInt("capacidad"));
-            centro.setRegistrados(rs.getInt("registrados"));
-            centros.add(centro); // Agrega el centro a la lista
-        }
-    } catch (SQLException e) {
-        System.out.println("ERROR");
     }
-    return centros;
-}
-*/
-
 }

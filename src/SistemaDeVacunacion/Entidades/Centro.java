@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Centro {
     private int id, stock, capacidad, registrados;
     private String domicilio, provincia, localidad;
-    private ArrayList <Vacuna> vacunas;  //                   <<<---OJO
+    private ArrayList <Vacuna> vacunas;
 
     public Centro() {
     }
@@ -18,7 +18,7 @@ public class Centro {
         this.localidad = localidad;
         this.capacidad = capacidad;
         this.registrados = registrados;
-        this.vacunas = new ArrayList(); //                   <<<---OJO
+        this.vacunas = new ArrayList();
     }
 
     public int getStock() {
@@ -37,9 +37,9 @@ public class Centro {
         this.domicilio = domicilio;
     }
 
-    public ArrayList<Vacuna> getVacunas() { //                       <<<---OJO
-        return vacunas;      //                                                      <<<---OJO
-    } //                                                                                      <<<---OJO
+    public ArrayList<Vacuna> getVacunas() {
+        return vacunas;
+    }
 
     public String getProvincia() {
         return provincia;
@@ -80,6 +80,10 @@ public class Centro {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return id + " - " + localidad;
+    }
+
 }

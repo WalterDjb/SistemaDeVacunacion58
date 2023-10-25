@@ -1,13 +1,16 @@
 package SistemaDeVacunacion.Vistas;
+import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Entidades.Centro;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.List;
 
 /**
  *
  * @author Walter Benítez
  */
 public class CentrosHabilitados extends javax.swing.JFrame {
-
+    CentroData cd = new CentroData();
     /** Creates new form Main */
     public CentrosHabilitados() {
         initComponents();
@@ -15,6 +18,7 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Quiero vacunarme");
+        cargarJCcentros();
     }
 
     @Override
@@ -28,20 +32,21 @@ public class CentrosHabilitados extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        JCcentros = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jbAcceder = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        JCprovincia = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CSI Formosa Capital", "CSI Ingeniero Juarez", "CSI Las lomitas", "CSI Pirané" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 205, 40));
+        JCcentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 205, 40));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel1.setText("Seleccione el centro de salud deseado");
@@ -68,6 +73,12 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(15, 75, 94));
         jLabel3.setText("CENTROS HABILITADOS");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
+
+        jLabel4.setText("Seleccione una Provincia");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
+
+        JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -110,13 +121,21 @@ public class CentrosHabilitados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<Centro> JCcentros;
+    private javax.swing.JComboBox<String> JCprovincia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbAcceder;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
+        private void cargarJCcentros (){
+        List <Centro> centros = cd.listarCentrosXProvincia(String.valueOf(JCprovincia.getSelectedItem()));
+        for (int i=0; i<centros.lastIndexOf(centros); i++){
+            JCcentros.addItem(centros.get(i));
+        }
+    }
 }
