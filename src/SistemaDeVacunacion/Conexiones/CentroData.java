@@ -1,7 +1,7 @@
 package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Centro;
-import java.awt.List;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -103,6 +103,37 @@ public class CentroData {
         return centro;
     }
 
+    public List<Centro> listarCentrosXProvincia(String provincia) {
+    con = Conexion.getConexion();
+    List<Centro> centros = new ArrayList<>();
+    
+    //String sql = "select * from centro where provincia = ?";
+    //PreparedStatement ps = con.prepareStatement(sql);
+    //ps.setString(1, provincia); // Establece el valor de provincia como un parámetro
+
+    try {
+        con = Conexion.getConexion();
+        String sql = "select * from centro where provincia = ?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        
+        while (rs.next()) {
+            Centro centro = new Centro();
+            centro.setId(rs.getInt("id"));
+            centro.setDomicilio(rs.getString("direccion"));
+            centro.setStock(rs.getInt("stock"));
+            centro.setProvincia(rs.getString("provincia"));
+            centro.setLocalidad(rs.getString("localidad"));
+            centro.setCapacidad(rs.getInt("capacidad"));
+            centro.setRegistrados(rs.getInt("registrados"));
+            centros.add(centro); // Agrega el centro a la lista
+        }
+    } catch (SQLException e) {
+        System.out.println("ERROR: " + e.getMessage());
+    }
+    return centros;
+}
+     
     /*
      public List<> listarCentrosXProvincia(){
     con = Conexion.getConexion();
