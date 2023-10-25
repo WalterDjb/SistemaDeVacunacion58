@@ -40,12 +40,12 @@ public class Ciudadano extends javax.swing.JFrame {
         jtEmail = new javax.swing.JTextField();
         jtCelular = new javax.swing.JTextField();
         jtPatologia = new javax.swing.JTextField();
-        jtAmbito = new javax.swing.JTextField();
         jtCaracCelular = new javax.swing.JTextField();
         jbInscribir = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,14 +82,14 @@ public class Ciudadano extends javax.swing.JFrame {
                 jtNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 131, -1));
+        getContentPane().add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 140, -1));
 
         jtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 131, -1));
+        getContentPane().add(jtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 140, -1));
 
         jtCelular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,21 +101,14 @@ public class Ciudadano extends javax.swing.JFrame {
                 jtCelularKeyTyped(evt);
             }
         });
-        getContentPane().add(jtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 131, -1));
+        getContentPane().add(jtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 140, -1));
 
         jtPatologia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtPatologiaActionPerformed(evt);
             }
         });
-        getContentPane().add(jtPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 131, 30));
-
-        jtAmbito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtAmbitoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jtAmbito, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 131, -1));
+        getContentPane().add(jtPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 140, 30));
 
         jtCaracCelular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +161,10 @@ public class Ciudadano extends javax.swing.JFrame {
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 40));
 
+        jComboBox1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Salud", "Educacion", "Comercio", "Seguridad", "Justicia", "Otros" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 140, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -201,10 +198,6 @@ public class Ciudadano extends javax.swing.JFrame {
     private void jtPatologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPatologiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtPatologiaActionPerformed
-
-    private void jtAmbitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtAmbitoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtAmbitoActionPerformed
 
     private void jtCaracCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCaracCelularKeyTyped
         int key = evt.getKeyChar();
@@ -268,6 +261,7 @@ public class Ciudadano extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -279,7 +273,6 @@ public class Ciudadano extends javax.swing.JFrame {
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbModificar;
     private javax.swing.JButton jbVolver;
-    private javax.swing.JTextField jtAmbito;
     private javax.swing.JTextField jtCaracCelular;
     private javax.swing.JTextField jtCelular;
     private javax.swing.JTextField jtEmail;
