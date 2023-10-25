@@ -56,6 +56,11 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         jbAcceder.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbAcceder.setForeground(new java.awt.Color(255, 255, 255));
         jbAcceder.setText("Acceder");
+        jbAcceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAccederActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 109, 42));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
@@ -78,7 +83,7 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
 
         JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
-        getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, -1, -1));
+        getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -90,6 +95,10 @@ public class CentrosHabilitados extends javax.swing.JFrame {
        new Main().setVisible(true);
        dispose();
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAccederActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbAccederActionPerformed
 
     /**
      * @param args the command line arguments

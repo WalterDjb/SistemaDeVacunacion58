@@ -21,18 +21,15 @@ public class CentroData {
 
     public void agregar(Centro centro) {
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO centro VALUES (?, ?, ?, ?, ?, ?, ?)");
-            ps.setString(1, "0");
-            ps.setString(2, centro.getDomicilio());
-            ps.setLong(3, centro.getStock());
-            ps.setString(4, centro.getProvincia());
-            ps.setString(5, centro.getLocalidad());
-            ps.setInt(6, centro.getCapacidad());
-            ps.setInt(7, centro.getRegistrados());
+            PreparedStatement ps = con.prepareStatement("INSERT INTO `centro`(`direccion`,`provincia`, `localidad`, `capacidad`, `registrados`) VALUES (?,?,?,?,'0')");
+            ps.setString(1, centro.getDomicilio());
+            ps.setString(2, centro.getProvincia());
+            ps.setString(3, centro.getLocalidad());
+            ps.setInt(4, centro.getCapacidad());
 
             ps.executeUpdate();
             ps.close();
-
+            JOptionPane.showMessageDialog(null, "Centro de vacunación creado.");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al agregar Centro");
         }

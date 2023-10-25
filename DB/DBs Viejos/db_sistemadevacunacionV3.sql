@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 01:29:02
+-- Tiempo de generación: 24-10-2023 a las 05:18:43
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -57,19 +57,12 @@ INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoCont
 CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
   `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `stock` int(5) DEFAULT NULL,
+  `stock` int(5) NOT NULL,
   `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `capacidad` int(4) NOT NULL,
   `registrados` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `centro`
---
-
-INSERT INTO `centro` (`id`, `direccion`, `stock`, `provincia`, `localidad`, `capacidad`, `registrados`) VALUES
-(4, 'coso15', NULL, 'Buenos Aires', 'lafe', 100, 0);
 
 -- --------------------------------------------------------
 
@@ -233,11 +226,17 @@ ALTER TABLE `vacuna`
 -- AUTO_INCREMENT de la tabla `centro`
 --
 ALTER TABLE `centro`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `centro`
+--
+ALTER TABLE `centro`
+  ADD CONSTRAINT `centro_ibfk_1` FOREIGN KEY (`id`) REFERENCES `stock` (`idCentro`);
 
 --
 -- Filtros para la tabla `cita`
@@ -245,14 +244,13 @@ ALTER TABLE `centro`
 ALTER TABLE `cita`
   ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`dni`) REFERENCES `ciudadano` (`dni`),
   ADD CONSTRAINT `cita_ibfk_2` FOREIGN KEY (`centro`) REFERENCES `centro` (`id`),
-  ADD CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`Vacuna`) REFERENCES `stock` (`marca`);
+  ADD CONSTRAINT `cita_ibfk_3` FOREIGN KEY (`Vacuna`) REFERENCES `vacuna` (`marca`);
 
 --
 -- Filtros para la tabla `stock`
 --
 ALTER TABLE `stock`
-  ADD CONSTRAINT `stock_ibfk_2` FOREIGN KEY (`idCentro`) REFERENCES `centro` (`id`),
-  ADD CONSTRAINT `stock_ibfk_3` FOREIGN KEY (`marca`) REFERENCES `vacuna` (`marca`);
+  ADD CONSTRAINT `stock_ibfk_1` FOREIGN KEY (`marca`) REFERENCES `vacuna` (`marca`);
 
 --
 -- Filtros para la tabla `vacuna`
