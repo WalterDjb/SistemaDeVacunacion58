@@ -333,7 +333,10 @@ public class Laboratorios extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }
+        if (JTcuit01.getText().length()>=2)
+            evt.consume();
+        
     }//GEN-LAST:event_JTcuit01KeyTyped
 
     private void JTcuit02KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTcuit02KeyTyped
@@ -341,7 +344,11 @@ public class Laboratorios extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }        
+        if(JTcuit02.getText().length()>=8){
+    evt.consume();
+}
+
     }//GEN-LAST:event_JTcuit02KeyTyped
 
     private void JTcuit03KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTcuit03KeyTyped
@@ -349,7 +356,11 @@ public class Laboratorios extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }        
+        if(JTcuit03.getText().length()>=1){
+            evt.consume();
+        }
+
     }//GEN-LAST:event_JTcuit03KeyTyped
 
     private void JTstockKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTstockKeyTyped

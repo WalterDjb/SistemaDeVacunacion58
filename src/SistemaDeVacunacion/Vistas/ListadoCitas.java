@@ -47,6 +47,8 @@ public class ListadoCitas extends javax.swing.JFrame {
         jLabel1.setText("LISTADO DE CITAS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 122, -1, -1));
 
+        jbVolver.setBackground(new java.awt.Color(15, 75, 94));
+        jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 50, 129, 38));
 

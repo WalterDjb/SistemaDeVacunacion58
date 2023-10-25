@@ -193,13 +193,19 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }
+        if (txt_doc.getText().length()>=8){
+            evt.consume();
+        }       // TODO add your handling code here:
     }//GEN-LAST:event_txt_docKeyTyped
 
     private void txt_tramiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tramiteKeyTyped
         int key = evt.getKeyChar();
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
+            evt.consume();
+        }
+        if (txt_tramite.getText().length()>=11){
             evt.consume();
         }
         // TODO add your handling code here:

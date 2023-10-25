@@ -74,6 +74,11 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         label_doc.setText("Número de documento:");
         getContentPane().add(label_doc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
+        txt_doc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_docActionPerformed(evt);
+            }
+        });
         txt_doc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_docKeyTyped(evt);
@@ -300,6 +305,9 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         if(!numeros){
             evt.consume();
         }
+        if (jtCaracCelular.getText().length()>=4){
+            evt.consume();
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jtCaracCelularKeyTyped
 
@@ -308,7 +316,11 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }   
+        if (jtCelular.getText().length()>=10){
+            evt.consume();
+        }
+      
     }//GEN-LAST:event_jtCelularKeyTyped
 
     private void txt_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_docKeyTyped
@@ -317,7 +329,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         if(!numeros){
             evt.consume();
         }
-        // TODO add your handling code here:
+        if (txt_doc.getText().length()>=8){
+            evt.consume();
+        }
+        
     }//GEN-LAST:event_txt_docKeyTyped
 
     private void txt_tramiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tramiteKeyTyped
@@ -325,7 +340,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }    
+        if (txt_tramite.getText().length()>=11){
+            evt.consume();
+        }
     }//GEN-LAST:event_txt_tramiteKeyTyped
 
     private void jtNombre1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombre1KeyTyped
@@ -369,6 +387,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
             evt.consume();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jtPatologiaKeyTyped
+
+    private void txt_docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_docActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_docActionPerformed
 
     /**
      * @param args the command line arguments

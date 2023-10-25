@@ -159,7 +159,11 @@ public class Citas extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        } 
+        if(tfDni.getText().length()>=8){
+            evt.consume();
+        }
+       
     }//GEN-LAST:event_tfDniKeyTyped
 
     /**
