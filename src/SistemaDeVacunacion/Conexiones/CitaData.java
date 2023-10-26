@@ -58,8 +58,8 @@ public class CitaData {
             cit.setVacuna(vd.buscarVacunaXNombre(rs.getString("vacuna")));
             cit.setDosis(String.valueOf(rs.getLong("numeroSerie")).charAt(9));
             cit.setEstadoCita(rs.getString("estadoCita"));
-            //cit.setFechaHoraCita(rs.getDate("fHCita").toInstant().atZone(GMT-3:00).toLocalDateTime());   <<<---Arreglar
-            //cit.setFechaHoraColocacion(rs.getDate("fHAplicacion").toInstant());                                            <<<---Arreglar
+            cit.setFechaHoraCita(rs.getDate("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());   
+            cit.setFechaHoraColocacion(rs.getDate("fHAplicacion").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());                                         
             }
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
@@ -76,6 +76,7 @@ public class CitaData {
             Cita cit = new Cita();
             cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
             cit.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+            cit.setId(rs.getInt("id"));
             return cit;
         }
     } catch (SQLException ex) {
