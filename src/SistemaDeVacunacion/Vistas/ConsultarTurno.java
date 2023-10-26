@@ -195,8 +195,9 @@ try {
     Cita cita = ad.buscarTurnoXDni(dni);
 
     if (cita != null) {
-        LocalDateTime fechaHoraActual = LocalDateTime.now(); 
-        
+        LocalDateTime fechaHoraActual = LocalDateTime.now(); // Obtiene la fecha y hora actual
+
+        // Compara la fecha y hora de la cita con la fecha y hora actual
         if (cita.getFechaHoraCita().isAfter(fechaHoraActual)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String fechaHoraCitaStr = cita.getFechaHoraCita().format(formatter);
@@ -205,6 +206,12 @@ try {
             jtFecha.setText(fechaHoraCitaStr);
             jtHora.setText(fechaHoraCitaHora);
             jtCentro.setText(cita.getCentro().toString());
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "La fecha de la cita programada ya paso.");
+            jtFecha.setText(""); // Borra los campos de fecha y hora
+            jtHora.setText("");
+            jtCentro.setText("");
         }
     } else {
         
