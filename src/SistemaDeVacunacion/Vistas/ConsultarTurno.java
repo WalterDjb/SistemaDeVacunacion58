@@ -251,11 +251,23 @@ try {
     }//GEN-LAST:event_jbConsultaActionPerformed
 
     private void jbCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar1ActionPerformed
+    CitaData ad = new CitaData();
+    Cita cita = ad.buscarTurnoXDni(Integer.parseInt(jtId.getText()));
+    
+    if (cita != null) { 
+        ad.cancelarTurnoPorId(cita.getId());
+        Limpiar();
+    } else {
+        JOptionPane.showMessageDialog(null, "No se encontró una cita para el ID especificado.");
         
+    }
     }//GEN-LAST:event_jbCancelar1ActionPerformed
 
     private void jbCancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar2ActionPerformed
         jbCancelar1.setVisible(true);
+        jbCancelar.setVisible(false);
+        jbCancelar2.setVisible(false);
+        
     }//GEN-LAST:event_jbCancelar2ActionPerformed
 
     private void jtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdActionPerformed
@@ -316,6 +328,7 @@ try {
     jtFecha.setText("");
     jtHora.setText("");
     jtCentro.setText("");
+    jtId.setText("");
     
 }
 }
