@@ -67,17 +67,20 @@ public class CitaData {
     }
     
     public Cita buscarTurnoXDni(int dni){
-        try{
-            PreparedStatement ps = con.prepareStatement("select * from cita where dni = " + dni);
-            ResultSet rs = ps.executeQuery();
-            
-            if (rs.next()){
+        try {
+        PreparedStatement ps = con.prepareStatement("select * from cita where dni = ?");
+        ps.setInt(1, dni); 
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            Cita cit = new Cita();
             cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
             cit.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
-                                                    
-            }
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
-        }return cit;
+            return cit;
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
     }
+    return null; 
+}
 }

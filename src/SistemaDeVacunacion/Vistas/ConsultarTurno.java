@@ -22,6 +22,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Quiero vacunarme");
+        jbCancelar1.setVisible(false);
     }
 
     @Override
@@ -46,6 +47,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jtCentro = new javax.swing.JTextField();
         jbConsulta = new javax.swing.JButton();
         jbCancelar = new javax.swing.JButton();
+        jbCancelar1 = new javax.swing.JButton();
+        jbCancelar2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,16 +120,39 @@ public class ConsultarTurno extends javax.swing.JFrame {
         });
         getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
 
-        jbCancelar.setBackground(new java.awt.Color(234, 58, 46));
+        jbCancelar.setBackground(new java.awt.Color(0, 0, 0));
         jbCancelar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        jbCancelar.setText("Cancelar Turno");
+        jbCancelar.setForeground(new java.awt.Color(204, 204, 204));
+        jbCancelar.setText("Nueva Consulta");
         jbCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 200, 50));
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 200, 50));
+
+        jbCancelar1.setBackground(new java.awt.Color(234, 58, 46));
+        jbCancelar1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbCancelar1.setForeground(new java.awt.Color(255, 255, 255));
+        jbCancelar1.setText("<html><body style='width: 50px; text-align:center;'>Confirmar Cancelaciòn</body></html>");
+        jbCancelar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 200, 50));
+
+        jbCancelar2.setBackground(new java.awt.Color(234, 58, 46));
+        jbCancelar2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbCancelar2.setForeground(new java.awt.Color(255, 255, 255));
+        jbCancelar2.setText("Cancelar Turno");
+        jbCancelar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelar2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbCancelar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 200, 50));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -140,8 +166,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-       new CancelarTurno().setVisible(true);
-       dispose();
+        Limpiar();
+       
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDniActionPerformed
@@ -190,6 +216,14 @@ public class ConsultarTurno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbConsultaActionPerformed
 
+    private void jbCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar1ActionPerformed
+        
+    }//GEN-LAST:event_jbCancelar1ActionPerformed
+
+    private void jbCancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbCancelar2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +261,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jbCancelar;
+    private javax.swing.JButton jbCancelar1;
+    private javax.swing.JButton jbCancelar2;
     private javax.swing.JButton jbConsulta;
     private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCentro;
@@ -235,4 +271,11 @@ public class ConsultarTurno extends javax.swing.JFrame {
     private javax.swing.JTextField jtHora;
     // End of variables declaration//GEN-END:variables
 
+    private void Limpiar(){
+    jtDni.setText("");
+    jtFecha.setText("");
+    jtHora.setText("");
+    jtCentro.setText("");
+    
+}
 }
