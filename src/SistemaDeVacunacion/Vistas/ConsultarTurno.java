@@ -1,6 +1,13 @@
 package SistemaDeVacunacion.Vistas;
 import java.awt.Image;
 import java.awt.Toolkit;
+import SistemaDeVacunacion.Conexiones.CitaData;
+import SistemaDeVacunacion.Entidades.Cita;
+import java.sql.Date;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -103,6 +110,11 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jbConsulta.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbConsulta.setForeground(new java.awt.Color(255, 255, 255));
         jbConsulta.setText("Realizar consulta");
+        jbConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
 
         jbCancelar.setBackground(new java.awt.Color(234, 58, 46));
@@ -147,6 +159,36 @@ public class ConsultarTurno extends javax.swing.JFrame {
         }
 // TODO add your handling code here:
     }//GEN-LAST:event_jtDniKeyTyped
+
+    private void jbConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultaActionPerformed
+                                             
+    CitaData ad = new CitaData();
+    try {
+        int dni = Integer.parseInt(jtDni.getText());
+        Cita cita = ad.buscarTurnoXDni(dni);
+        
+        if (cita != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            String fechaHoraCitaStr = cita.getFechaHoraCita().format(formatter);
+            DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
+            String fechaHoraCitaHora = cita.getFechaHoraCita().format(formatterHora);
+            jtFecha.setText(fechaHoraCitaStr);
+            jtHora.setText(fechaHoraCitaHora);
+            jtCentro.setText(cita.getCentro().toString()); 
+        } else {
+            // Si no se encuentra un turno, muestra un mensaje indicando que no tiene turno asignado.
+            JOptionPane.showMessageDialog(null, "El DNI no tiene turno asignado.");
+            jtFecha.setText(""); // Borra los campos de fecha y hora
+            jtHora.setText("");
+            jtCentro.setText("");
+        }
+    } catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
+        jtDni.setText("");
+    }
+
+
+    }//GEN-LAST:event_jbConsultaActionPerformed
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.ZoneId;
 import javax.swing.JOptionPane;
 
 public class CitaData {
@@ -59,6 +60,21 @@ public class CitaData {
             cit.setEstadoCita(rs.getString("estadoCita"));
             //cit.setFechaHoraCita(rs.getDate("fHCita").toInstant().atZone(GMT-3:00).toLocalDateTime());   <<<---Arreglar
             //cit.setFechaHoraColocacion(rs.getDate("fHAplicacion").toInstant());                                            <<<---Arreglar
+            }
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+        }return cit;
+    }
+    
+    public Cita buscarTurnoXDni(int dni){
+        try{
+            PreparedStatement ps = con.prepareStatement("select * from cita where dni = " + dni);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()){
+            cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+            cit.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+                                                    
             }
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
