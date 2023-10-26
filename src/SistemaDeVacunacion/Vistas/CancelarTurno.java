@@ -57,7 +57,7 @@ public class CancelarTurno extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel2.setText("CANCELAR TURNO");
+        jLabel2.setText("CANCELAR TURNO (para eliminar)");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N

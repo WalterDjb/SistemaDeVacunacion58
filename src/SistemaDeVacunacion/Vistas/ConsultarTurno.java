@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Entidades.Cita;
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
@@ -189,29 +190,33 @@ public class ConsultarTurno extends javax.swing.JFrame {
     private void jbConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultaActionPerformed
                                              
     CitaData ad = new CitaData();
-    try {
-        int dni = Integer.parseInt(jtDni.getText());
-        Cita cita = ad.buscarTurnoXDni(dni);
+try {
+    int dni = Integer.parseInt(jtDni.getText());
+    Cita cita = ad.buscarTurnoXDni(dni);
+
+    if (cita != null) {
+        LocalDateTime fechaHoraActual = LocalDateTime.now(); 
         
-        if (cita != null) {
+        if (cita.getFechaHoraCita().isAfter(fechaHoraActual)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String fechaHoraCitaStr = cita.getFechaHoraCita().format(formatter);
             DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm");
             String fechaHoraCitaHora = cita.getFechaHoraCita().format(formatterHora);
             jtFecha.setText(fechaHoraCitaStr);
             jtHora.setText(fechaHoraCitaHora);
-            jtCentro.setText(cita.getCentro().toString()); 
-        } else {
-            // Si no se encuentra un turno, muestra un mensaje indicando que no tiene turno asignado.
-            JOptionPane.showMessageDialog(null, "El DNI no tiene turno asignado.");
-            jtFecha.setText(""); // Borra los campos de fecha y hora
-            jtHora.setText("");
-            jtCentro.setText("");
+            jtCentro.setText(cita.getCentro().toString());
         }
-    } catch (NumberFormatException nfe) {
-        JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
-        jtDni.setText("");
+    } else {
+        
+        JOptionPane.showMessageDialog(null, "El DNI no tiene turno asignado.");
+        jtFecha.setText(""); 
+        jtHora.setText("");
+        jtCentro.setText("");
     }
+} catch (NumberFormatException nfe) {
+    JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
+    jtDni.setText("");
+}
 
 
     }//GEN-LAST:event_jbConsultaActionPerformed
