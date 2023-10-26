@@ -46,7 +46,7 @@ public class Recovery extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));
         jLabel1.setText("RECUPERAR CONTRASEÑA");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 120, -1, -1));
-        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 230, -1));
+        getContentPane().add(txt_recovery_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 230, -1));
 
         boton_enviar_correo_recu.setBackground(new java.awt.Color(15, 75, 94));
         boton_enviar_correo_recu.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -61,7 +61,7 @@ public class Recovery extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Introduzca su correo electrónico:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 270, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 320, 20));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -76,8 +76,8 @@ public class Recovery extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Introduzca nuevamente su correo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
-        getContentPane().add(jtIntrodAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 230, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, 20));
+        getContentPane().add(jtIntrodAgain, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 230, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));

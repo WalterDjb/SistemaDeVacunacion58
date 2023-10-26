@@ -44,7 +44,7 @@
     <Component class="javax.swing.JTextField" name="txt_recovery_correo">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="230" width="230" height="-1"/>
+          <AbsoluteConstraints x="460" y="230" width="230" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -79,7 +79,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="230" width="270" height="20"/>
+          <AbsoluteConstraints x="100" y="230" width="320" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -114,14 +114,14 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="320" width="-1" height="-1"/>
+          <AbsoluteConstraints x="100" y="320" width="-1" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jtIntrodAgain">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="320" width="230" height="-1"/>
+          <AbsoluteConstraints x="460" y="320" width="230" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

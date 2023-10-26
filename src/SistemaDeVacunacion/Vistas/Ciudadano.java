@@ -82,6 +82,11 @@ public class Ciudadano extends javax.swing.JFrame {
                 jtNombreActionPerformed(evt);
             }
         });
+        jtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtNombreKeyTyped(evt);
+            }
+        });
         getContentPane().add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 140, -1));
 
         jtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +111,11 @@ public class Ciudadano extends javax.swing.JFrame {
         jtPatologia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtPatologiaActionPerformed(evt);
+            }
+        });
+        jtPatologia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPatologiaKeyTyped(evt);
             }
         });
         getContentPane().add(jtPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 140, 30));
@@ -205,10 +215,10 @@ public class Ciudadano extends javax.swing.JFrame {
         if(!numeros){
             evt.consume();
         }   
-        
-       // if(jtCaracCelular.getNumber.length()>=4){
-          //  evt.consume();
-      //  }
+        if(jtCaracCelular.getText().length()>=4){
+            evt.consume();
+        }
+           
         
 // TODO add your handling code here:
     }//GEN-LAST:event_jtCaracCelularKeyTyped
@@ -218,12 +228,36 @@ public class Ciudadano extends javax.swing.JFrame {
         boolean numeros = key>=48 && key<=57;
         if(!numeros){
             evt.consume();
-        }        // TODO add your handling code here:
+        }        
+        if(jtCelular.getText().length()>= 10){
+            evt.consume();
+        }
     }//GEN-LAST:event_jtCelularKeyTyped
 
     private void jtCaracCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCaracCelularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtCaracCelularActionPerformed
+
+    private void jtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreKeyTyped
+        int key = evt.getKeyChar();
+        boolean mayusculas = key>=65 && key<=90;
+        boolean minusculas = key>=97 && key <=122;
+        
+        if(!(minusculas || mayusculas )){
+            evt.consume();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNombreKeyTyped
+
+    private void jtPatologiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPatologiaKeyTyped
+        int key = evt.getKeyChar();
+        boolean mayusculas = key>=65 && key<=90;
+        boolean minusculas = key>=97 && key<=122;
+        if(!minusculas || mayusculas){
+            evt.consume();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPatologiaKeyTyped
 
     /**
      * @param args the command line arguments
