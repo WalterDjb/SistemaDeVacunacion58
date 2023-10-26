@@ -24,6 +24,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Quiero vacunarme");
         jbCancelar1.setVisible(false);
+        jbCancelar.setVisible(false);
+        jbCancelar2.setVisible(false);
     }
 
     @Override
@@ -78,15 +80,15 @@ public class ConsultarTurno extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Fecha:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Hora:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel5.setText("Centro de salud:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
         jtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,14 +103,14 @@ public class ConsultarTurno extends javax.swing.JFrame {
         getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, -1));
 
         jtFecha.setEditable(false);
-        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 150, -1));
+        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 150, -1));
 
         jtHora.setEditable(false);
         jtHora.setText(" ");
-        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 150, -1));
+        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 150, -1));
 
         jtCentro.setEditable(false);
-        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 150, -1));
+        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 150, -1));
 
         jbConsulta.setBackground(new java.awt.Color(15, 75, 94));
         jbConsulta.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -119,7 +121,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbConsultaActionPerformed(evt);
             }
         });
-        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, 30));
+        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, 30));
 
         jbCancelar.setBackground(new java.awt.Color(0, 0, 0));
         jbCancelar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -130,7 +132,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 200, 50));
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 200, 50));
 
         jbCancelar1.setBackground(new java.awt.Color(234, 58, 46));
         jbCancelar1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -142,7 +144,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 200, 50));
+        getContentPane().add(jbCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 200, 50));
 
         jbCancelar2.setBackground(new java.awt.Color(234, 58, 46));
         jbCancelar2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -153,7 +155,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 200, 50));
+        getContentPane().add(jbCancelar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 200, 50));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -206,6 +208,9 @@ try {
             jtFecha.setText(fechaHoraCitaStr);
             jtHora.setText(fechaHoraCitaHora);
             jtCentro.setText(cita.getCentro().toString());
+            
+            jbCancelar.setVisible(true);
+            jbCancelar2.setVisible(true);
         } else {
             
             JOptionPane.showMessageDialog(null, "La fecha de la cita programada ya paso.");
@@ -233,7 +238,7 @@ try {
     }//GEN-LAST:event_jbCancelar1ActionPerformed
 
     private void jbCancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar2ActionPerformed
-        // TODO add your handling code here:
+        jbCancelar1.setVisible(true);
     }//GEN-LAST:event_jbCancelar2ActionPerformed
 
     /**
