@@ -83,4 +83,23 @@ public class CitaData {
     }
     return null; 
 }
+    
+    
+    public void cancelarTurnoPorId(int id) {
+        try {
+            String sql = "UPDATE cita SET estadoCita = 'CAN' WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            int filasActualizadas = ps.executeUpdate();
+            ps.close();
+         if (filasActualizadas > 0) {
+            JOptionPane.showMessageDialog(null, "La cita con ID " + id + " ha sido cancelada.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró una cita con el ID " + id);
+        }
+        } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de cancelar la cita.");
+}
+
+}
 }

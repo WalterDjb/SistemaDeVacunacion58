@@ -52,6 +52,8 @@ public class ConsultarTurno extends javax.swing.JFrame {
         jbCancelar = new javax.swing.JButton();
         jbCancelar1 = new javax.swing.JButton();
         jbCancelar2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jtId = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,15 +82,15 @@ public class ConsultarTurno extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Fecha:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 235, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Hora:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jLabel5.setText("Centro de salud:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
+        jLabel5.setText("ID");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, -1, -1));
 
         jtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,14 +105,14 @@ public class ConsultarTurno extends javax.swing.JFrame {
         getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 150, -1));
 
         jtFecha.setEditable(false);
-        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 150, -1));
+        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 235, 150, -1));
 
         jtHora.setEditable(false);
         jtHora.setText(" ");
-        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 150, -1));
+        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 150, -1));
 
         jtCentro.setEditable(false);
-        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 150, -1));
+        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 305, 150, -1));
 
         jbConsulta.setBackground(new java.awt.Color(15, 75, 94));
         jbConsulta.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -121,7 +123,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbConsultaActionPerformed(evt);
             }
         });
-        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 40, 40));
+        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 195, 30, 30));
 
         jbCancelar.setBackground(new java.awt.Color(0, 0, 0));
         jbCancelar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -132,7 +134,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 200, 50));
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 200, 50));
 
         jbCancelar1.setBackground(new java.awt.Color(234, 58, 46));
         jbCancelar1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -144,7 +146,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 200, 50));
+        getContentPane().add(jbCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 200, 50));
 
         jbCancelar2.setBackground(new java.awt.Color(234, 58, 46));
         jbCancelar2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -155,7 +157,19 @@ public class ConsultarTurno extends javax.swing.JFrame {
                 jbCancelar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 200, 50));
+        getContentPane().add(jbCancelar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 200, 50));
+
+        jLabel7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel7.setText("Centro de salud:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 305, -1, -1));
+
+        jtId.setEditable(false);
+        jtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 150, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -197,9 +211,9 @@ try {
     Cita cita = ad.buscarTurnoXDni(dni);
 
     if (cita != null) {
-        LocalDateTime fechaHoraActual = LocalDateTime.now(); // Obtiene la fecha y hora actual
+        LocalDateTime fechaHoraActual = LocalDateTime.now(); 
 
-        // Compara la fecha y hora de la cita con la fecha y hora actual
+        
         if (cita.getFechaHoraCita().isAfter(fechaHoraActual)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String fechaHoraCitaStr = cita.getFechaHoraCita().format(formatter);
@@ -208,15 +222,17 @@ try {
             jtFecha.setText(fechaHoraCitaStr);
             jtHora.setText(fechaHoraCitaHora);
             jtCentro.setText(cita.getCentro().toString());
+            jtId.setText(Integer.toString(cita.getId()));
             
             jbCancelar.setVisible(true);
             jbCancelar2.setVisible(true);
         } else {
             
             JOptionPane.showMessageDialog(null, "La fecha de la cita programada ya paso.");
-            jtFecha.setText(""); // Borra los campos de fecha y hora
+            jtFecha.setText(""); 
             jtHora.setText("");
             jtCentro.setText("");
+            jtId.setText("");
         }
     } else {
         
@@ -224,6 +240,7 @@ try {
         jtFecha.setText(""); 
         jtHora.setText("");
         jtCentro.setText("");
+        jtId.setText("");
     }
 } catch (NumberFormatException nfe) {
     JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
@@ -240,6 +257,10 @@ try {
     private void jbCancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar2ActionPerformed
         jbCancelar1.setVisible(true);
     }//GEN-LAST:event_jbCancelar2ActionPerformed
+
+    private void jtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +298,7 @@ try {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton jbCancelar;
     private javax.swing.JButton jbCancelar1;
     private javax.swing.JButton jbCancelar2;
@@ -286,6 +308,7 @@ try {
     private javax.swing.JTextField jtDni;
     private javax.swing.JTextField jtFecha;
     private javax.swing.JTextField jtHora;
+    private javax.swing.JTextField jtId;
     // End of variables declaration//GEN-END:variables
 
     private void Limpiar(){
