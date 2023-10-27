@@ -76,7 +76,7 @@ public class CambioContra extends javax.swing.JFrame {
                 boton_cambiar_contraseñaActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
+        getContentPane().add(boton_cambiar_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 240, 50));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N

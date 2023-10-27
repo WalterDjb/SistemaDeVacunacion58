@@ -10,7 +10,7 @@ import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Cita;
 
 
-public class ListadoCitas extends javax.swing.JFrame {
+public class ListCitasMensual extends javax.swing.JFrame {
 
 private List<Centro> listaCE;
 private List<Cita> listaCI;
@@ -19,10 +19,10 @@ private CitaData ciData;
 
 private DefaultTableModel modelo;
 
-public ListadoCitas() {
+public ListCitasMensual() {
         initComponents();
         
-        armarCabecera();
+        //armarCabecera();
     }
 
     /**
@@ -58,8 +58,14 @@ public ListadoCitas() {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 122, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
+        jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<-  Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 50, 129, 38));
 
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -146,6 +152,11 @@ public ListadoCitas() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCMesActionPerformed
 
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+        this.dispose();
+        new EstadisticasListado().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jbVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -163,20 +174,21 @@ public ListadoCitas() {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListadoCitas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListCitasMensual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListadoCitas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListCitasMensual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListadoCitas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListCitasMensual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListadoCitas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListCitasMensual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListadoCitas().setVisible(true);
+                new ListCitasMensual().setVisible(true);
             }
         });
     }
@@ -198,17 +210,17 @@ public ListadoCitas() {
     private javax.swing.JComboBox<String> jcbProvincia;
     // End of variables declaration//GEN-END:variables
 
-    private void armarCabecera() {
-        ArrayList<Object> filaCabecera = new ArrayList<>();
-            filaCabecera.add("Centro");
-            filaCabecera.add("Cumplidas");
-            filaCabecera.add("Vencidas");
-            filaCabecera.add("Canceladas");
-            for(Object it: filaCabecera) {
-                modelo.addColumn(it);
-            }
-            jTable1.setModel(modelo);
-
-        }
+//    private void armarCabecera() {
+//        ArrayList<Object> filaCabecera = new ArrayList<>();
+//            filaCabecera.add("Centro");
+//            filaCabecera.add("Cumplidas");
+//            filaCabecera.add("Vencidas");
+//            filaCabecera.add("Canceladas");
+//            for(Object it: filaCabecera) {
+//                modelo.addColumn(it);
+//            }
+//            jTable1.setModel(modelo);
+//
+//        }
 }
    

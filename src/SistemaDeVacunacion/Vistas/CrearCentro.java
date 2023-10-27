@@ -49,6 +49,7 @@ public class CrearCentro extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
         getContentPane().add(JTlocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 149, -1));
 
+        JCprovincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
         getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 149, -1));
 
@@ -56,7 +57,9 @@ public class CrearCentro extends javax.swing.JFrame {
         jLabel6.setText("CREAR CENTRO DE VACUNACIÓN");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 
+        JBcrear.setBackground(new java.awt.Color(15, 75, 94));
         JBcrear.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBcrear.setForeground(new java.awt.Color(255, 255, 255));
         JBcrear.setText("Crear");
         JBcrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +68,9 @@ public class CrearCentro extends javax.swing.JFrame {
         });
         getContentPane().add(JBcrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 120, 47));
 
+        JBvolver.setBackground(new java.awt.Color(15, 75, 94));
+        JBvolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBvolver.setForeground(new java.awt.Color(255, 255, 255));
         JBvolver.setText("<- Volver");
         JBvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

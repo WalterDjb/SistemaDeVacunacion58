@@ -151,6 +151,7 @@ public class Vacunas extends javax.swing.JFrame {
         getContentPane().add(jtLaboratorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 248, 30));
 
         jbBuscar.setBackground(new java.awt.Color(15, 75, 94));
+        jbBuscar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbBuscar.setForeground(new java.awt.Color(255, 255, 255));
         jbBuscar.setText("Buscar");
         jbBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +159,7 @@ public class Vacunas extends javax.swing.JFrame {
                 jbBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, -1));
+        getContentPane().add(jbBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 100, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));

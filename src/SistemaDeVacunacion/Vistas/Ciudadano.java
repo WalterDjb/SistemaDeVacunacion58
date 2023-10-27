@@ -39,14 +39,13 @@ public class Ciudadano extends javax.swing.JFrame {
         jtNombre = new javax.swing.JTextField();
         jtEmail = new javax.swing.JTextField();
         jtCelular = new javax.swing.JTextField();
-        jtPatologia = new javax.swing.JTextField();
         jtCaracCelular = new javax.swing.JTextField();
         jbInscribir = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,18 +107,6 @@ public class Ciudadano extends javax.swing.JFrame {
         });
         getContentPane().add(jtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 140, -1));
 
-        jtPatologia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtPatologiaActionPerformed(evt);
-            }
-        });
-        jtPatologia.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtPatologiaKeyTyped(evt);
-            }
-        });
-        getContentPane().add(jtPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 140, 30));
-
         jtCaracCelular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtCaracCelularActionPerformed(evt);
@@ -175,8 +162,9 @@ public class Ciudadano extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Salud", "Educacion", "Comercio", "Seguridad", "Justicia", "Otros" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 140, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        jComboBox2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Cáncer.", "Diabetes.", "Enf. autoinmunitarias.", "Enf. cardíacas.", "Enf. crónicas del sistema digestivo.", "Enf.s hepáticas.", "Enf. hematológicas.", "Enf. metabólicas hereditarias.", "Enf. neurológicas.", "Enf. pulmonares crónicas.", "Enf. renales crónicas.", "Enf. autoinmunitarias.", "Inmunodeficiencias primarias.", "Obesidad." }));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 140, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,10 +192,6 @@ public class Ciudadano extends javax.swing.JFrame {
     private void jtCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCelularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtCelularActionPerformed
-
-    private void jtPatologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPatologiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtPatologiaActionPerformed
 
     private void jtCaracCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCaracCelularKeyTyped
         int key = evt.getKeyChar();
@@ -249,16 +233,6 @@ public class Ciudadano extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtNombreKeyTyped
 
-    private void jtPatologiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPatologiaKeyTyped
-        int key = evt.getKeyChar();
-        boolean mayusculas = key>=65 && key<=90;
-        boolean minusculas = key>=97 && key<=122;
-        if(!minusculas || mayusculas){
-            evt.consume();
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtPatologiaKeyTyped
-
     /**
      * @param args the command line arguments
      */
@@ -296,7 +270,7 @@ public class Ciudadano extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -311,6 +285,5 @@ public class Ciudadano extends javax.swing.JFrame {
     private javax.swing.JTextField jtCelular;
     private javax.swing.JTextField jtEmail;
     private javax.swing.JTextField jtNombre;
-    private javax.swing.JTextField jtPatologia;
     // End of variables declaration//GEN-END:variables
 }

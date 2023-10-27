@@ -34,6 +34,7 @@ public class Main extends javax.swing.JFrame {
         boton_centros = new javax.swing.JButton();
         boton_informacion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        boton_informacion1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -128,6 +129,20 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
 
+        boton_informacion1.setBackground(new java.awt.Color(15, 75, 94));
+        boton_informacion1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_informacion1.setForeground(new java.awt.Color(255, 255, 255));
+        boton_informacion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Informacion.png"))); // NOI18N
+        boton_informacion1.setText("Más información");
+        boton_informacion1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boton_informacion1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        boton_informacion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_informacion1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boton_informacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 240, 60));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,6 +176,10 @@ public class Main extends javax.swing.JFrame {
         new Informacion().setVisible(true);
         dispose();
     }//GEN-LAST:event_boton_informacionActionPerformed
+
+    private void boton_informacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_informacion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton_informacion1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +223,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton boton_centros;
     private javax.swing.JButton boton_consultar;
     private javax.swing.JButton boton_informacion;
+    private javax.swing.JButton boton_informacion1;
     private javax.swing.JButton boton_obtener_certificado;
     private javax.swing.JButton boton_quiero_vacunarme;
     private javax.swing.JButton jButton1;

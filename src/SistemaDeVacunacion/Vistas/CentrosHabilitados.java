@@ -44,7 +44,7 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JCcentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 205, 40));
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 270, 190, 40));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel1.setText("Seleccione el centro de salud deseado");
@@ -80,6 +80,7 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         jLabel4.setText("Seleccione una Provincia");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
 
+        JCprovincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
         JCprovincia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

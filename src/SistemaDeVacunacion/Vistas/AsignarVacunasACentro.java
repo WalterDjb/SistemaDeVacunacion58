@@ -56,8 +56,9 @@ private final DefaultTableModel model = new DefaultTableModel(){
                 jbVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 40));
 
+        JCcentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JCcentros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCcentrosActionPerformed(evt);
@@ -69,6 +70,7 @@ private final DefaultTableModel model = new DefaultTableModel(){
         jLabel1.setText("ASIGNAR VACUNAS A CENTRO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 
+        jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},

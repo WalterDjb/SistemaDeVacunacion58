@@ -198,6 +198,7 @@ public class Laboratorios extends javax.swing.JFrame {
         getContentPane().add(JRb02, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(15, 75, 94));
+        jButton5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buscar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +206,7 @@ public class Laboratorios extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 80, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 90, 50));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));

@@ -61,6 +61,11 @@ public class Rango_2 extends javax.swing.JFrame {
         jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
         jbEstadisticas.setText("Estadisticas");
+        jbEstadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstadisticasActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 230, 50));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
@@ -72,7 +77,7 @@ public class Rango_2 extends javax.swing.JFrame {
                 jbVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
+        getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -94,6 +99,11 @@ public class Rango_2 extends javax.swing.JFrame {
         this.dispose();
         new AsignarVacunasACentro().setVisible(true);
     }//GEN-LAST:event_jbAsignarVacunasActionPerformed
+
+    private void jbEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstadisticasActionPerformed
+        this.dispose();
+        new EstadisticasListado().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jbEstadisticasActionPerformed
 
     /**
      * @param args the command line arguments

@@ -87,7 +87,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
                 jtDocKeyTyped(evt);
             }
         });
-        getContentPane().add(jtDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 170, -1));
+        getContentPane().add(jtDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 170, -1));
 
         jtTramite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,7 +99,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
                 jtTramiteKeyTyped(evt);
             }
         });
-        getContentPane().add(jtTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 170, -1));
+        getContentPane().add(jtTramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 170, -1));
 
         label_tramite.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_tramite.setText("Número de trámite:");
@@ -236,12 +236,12 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         getContentPane().add(jcbProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, -1));
 
         jcbPatologia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jcbPatologia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Cáncer.", "Diabetes.", "Enf. autoinmunitarias.", "Enf. cardíacas.", "Enf. crónicas del sistema digestivo.", "Enf.s hepáticas.", "Enf. hematológicas.", "Enf. metabólicas hereditarias.", "Enf. neurológicas.", "Enf. pulmonares crónicas.", "Enf. renales crónicas.", "Enf. autoinmunitarias.", "Inmunodeficiencias primarias.", "Obesidad.", " " }));
-        getContentPane().add(jcbPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 180, -1));
+        jcbPatologia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Cáncer.", "Diabetes.", "Enf. autoinmunitarias.", "Enf. cardíacas.", "Enf. crónicas del sistema digestivo.", "Enf.s hepáticas.", "Enf. hematológicas.", "Enf. metabólicas hereditarias.", "Enf. neurológicas.", "Enf. pulmonares crónicas.", "Enf. renales crónicas.", "Enf. autoinmunitarias.", "Inmunodeficiencias primarias.", "Obesidad." }));
+        getContentPane().add(jcbPatologia, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 180, -1));
 
         jcbAMbito1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jcbAMbito1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros", "Salud", "Educacion", "Comercio", "Seguridad", "Justicia", " " }));
-        getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 160, -1));
+        getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 160, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));

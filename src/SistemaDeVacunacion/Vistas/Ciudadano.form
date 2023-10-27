@@ -141,17 +141,6 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtPatologia">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtPatologiaActionPerformed"/>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtPatologiaKeyTyped"/>
-      </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="450" y="330" width="140" height="30"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JTextField" name="jtCaracCelular">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtCaracCelularActionPerformed"/>
@@ -273,15 +262,37 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/SistemaDeVacunacion/Vistas/Fondo app.png"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="15">
+            <StringItem index="0" value="Ninguna"/>
+            <StringItem index="1" value="C&#xe1;ncer."/>
+            <StringItem index="2" value="Diabetes."/>
+            <StringItem index="3" value="Enf. autoinmunitarias."/>
+            <StringItem index="4" value="Enf. card&#xed;acas."/>
+            <StringItem index="5" value="Enf. cr&#xf3;nicas del sistema digestivo."/>
+            <StringItem index="6" value="Enf.s hep&#xe1;ticas."/>
+            <StringItem index="7" value="Enf. hematol&#xf3;gicas."/>
+            <StringItem index="8" value="Enf. metab&#xf3;licas hereditarias."/>
+            <StringItem index="9" value="Enf. neurol&#xf3;gicas."/>
+            <StringItem index="10" value="Enf. pulmonares cr&#xf3;nicas."/>
+            <StringItem index="11" value="Enf. renales cr&#xf3;nicas."/>
+            <StringItem index="12" value="Enf. autoinmunitarias."/>
+            <StringItem index="13" value="Inmunodeficiencias primarias."/>
+            <StringItem index="14" value="Obesidad."/>
+          </StringArray>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="800" height="600"/>
+          <AbsoluteConstraints x="450" y="330" width="140" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
