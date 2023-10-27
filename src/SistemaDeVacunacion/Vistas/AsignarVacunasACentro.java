@@ -83,8 +83,11 @@ private final DefaultTableModel model = new DefaultTableModel(){
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, 190));
 
+        JBguardar.setBackground(new java.awt.Color(15, 75, 94));
+        JBguardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JBguardar.setForeground(new java.awt.Color(255, 255, 255));
         JBguardar.setText("Guardar");
-        getContentPane().add(JBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, -1, -1));
+        getContentPane().add(JBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 110, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
