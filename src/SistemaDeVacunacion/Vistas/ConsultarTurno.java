@@ -89,7 +89,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jLabel5.setText("ID");
+        jLabel5.setText("Turno Nro:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, -1, -1));
 
         jtDni.addActionListener(new java.awt.event.ActionListener() {
@@ -212,7 +212,7 @@ try {
 
     if (cita != null && cita.getEstadoCita() == null) {
         LocalDateTime fechaHoraActual = LocalDateTime.now(); 
-        System.out.println(cita.getEstadoCita());
+        
         
         if (cita.getFechaHoraCita().isAfter(fechaHoraActual)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

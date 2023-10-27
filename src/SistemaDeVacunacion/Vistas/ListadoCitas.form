@@ -148,27 +148,24 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="190" y="250" width="-1" height="-1"/>
+          <AbsoluteConstraints x="10" y="250" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JComboBox" name="jCMes">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="13">
-            <StringItem index="0" value="Enero"/>
-            <StringItem index="1" value="Febrero"/>
-            <StringItem index="2" value="Marzo"/>
-            <StringItem index="3" value="Abril"/>
-            <StringItem index="4" value="Mayo"/>
-            <StringItem index="5" value="Junio"/>
-            <StringItem index="6" value="Julio"/>
-            <StringItem index="7" value="Agosto"/>
-            <StringItem index="8" value="Septiembre"/>
-            <StringItem index="9" value="Octubre"/>
-            <StringItem index="10" value="Noviembre"/>
-            <StringItem index="11" value="Diciembre"/>
-            <StringItem index="12" value=" "/>
+          <StringArray count="10">
+            <StringItem index="0" value=" "/>
+            <StringItem index="1" value="2020"/>
+            <StringItem index="2" value="2021"/>
+            <StringItem index="3" value="2022"/>
+            <StringItem index="4" value="2023"/>
+            <StringItem index="5" value="2024"/>
+            <StringItem index="6" value="2025"/>
+            <StringItem index="7" value="2026"/>
+            <StringItem index="8" value="2027"/>
+            <StringItem index="9" value=" "/>
           </StringArray>
         </Property>
       </Properties>
@@ -180,7 +177,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="350" y="210" width="160" height="30"/>
+          <AbsoluteConstraints x="170" y="210" width="160" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -190,31 +187,32 @@
           <Font name="Verdana" size="16" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="24">
-            <StringItem index="0" value="Buenos Aires"/>
-            <StringItem index="1" value="Ciudad Aut&#xf3;noma Buenos Aires"/>
-            <StringItem index="2" value="Catamarca"/>
-            <StringItem index="3" value="Chaco"/>
-            <StringItem index="4" value="Chubut"/>
-            <StringItem index="5" value="C&#xf3;rdoba"/>
-            <StringItem index="6" value="Corrientes"/>
-            <StringItem index="7" value="Entre R&#xed;os"/>
-            <StringItem index="8" value="Formosa"/>
-            <StringItem index="9" value="Jujuy"/>
-            <StringItem index="10" value="La Pampa"/>
-            <StringItem index="11" value="La Rioja"/>
-            <StringItem index="12" value="Mendoza"/>
-            <StringItem index="13" value="Misiones"/>
-            <StringItem index="14" value="Neuqu&#xe9;n"/>
-            <StringItem index="15" value="R&#xed;o Negro"/>
-            <StringItem index="16" value="Salta"/>
-            <StringItem index="17" value="San Juan"/>
-            <StringItem index="18" value="San Luis"/>
-            <StringItem index="19" value="Santa Cruz"/>
-            <StringItem index="20" value="Santa Fe"/>
-            <StringItem index="21" value="Santiago del Estero"/>
-            <StringItem index="22" value="Tierra del Fuego"/>
-            <StringItem index="23" value="Tucum&#xe1;n"/>
+          <StringArray count="25">
+            <StringItem index="0" value=" "/>
+            <StringItem index="1" value="Buenos Aires"/>
+            <StringItem index="2" value="Ciudad Aut&#xf3;noma Buenos Aires"/>
+            <StringItem index="3" value="Catamarca"/>
+            <StringItem index="4" value="Chaco"/>
+            <StringItem index="5" value="Chubut"/>
+            <StringItem index="6" value="C&#xf3;rdoba"/>
+            <StringItem index="7" value="Corrientes"/>
+            <StringItem index="8" value="Entre R&#xed;os"/>
+            <StringItem index="9" value="Formosa"/>
+            <StringItem index="10" value="Jujuy"/>
+            <StringItem index="11" value="La Pampa"/>
+            <StringItem index="12" value="La Rioja"/>
+            <StringItem index="13" value="Mendoza"/>
+            <StringItem index="14" value="Misiones"/>
+            <StringItem index="15" value="Neuqu&#xe9;n"/>
+            <StringItem index="16" value="R&#xed;o Negro"/>
+            <StringItem index="17" value="Salta"/>
+            <StringItem index="18" value="San Juan"/>
+            <StringItem index="19" value="San Luis"/>
+            <StringItem index="20" value="Santa Cruz"/>
+            <StringItem index="21" value="Santa Fe"/>
+            <StringItem index="22" value="Santiago del Estero"/>
+            <StringItem index="23" value="Tierra del Fuego"/>
+            <StringItem index="24" value="Tucum&#xe1;n"/>
           </StringArray>
         </Property>
       </Properties>
@@ -232,31 +230,32 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="16" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Seleccione el A&#xf1;o: "/>
+        <Property name="text" type="java.lang.String" value="Hasta"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="190" y="210" width="-1" height="-1"/>
+          <AbsoluteConstraints x="370" y="250" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JComboBox" name="jCMes1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="13">
-            <StringItem index="0" value="Enero"/>
-            <StringItem index="1" value="Febrero"/>
-            <StringItem index="2" value="Marzo"/>
-            <StringItem index="3" value="Abril"/>
-            <StringItem index="4" value="Mayo"/>
-            <StringItem index="5" value="Junio"/>
-            <StringItem index="6" value="Julio"/>
-            <StringItem index="7" value="Agosto"/>
-            <StringItem index="8" value="Septiembre"/>
-            <StringItem index="9" value="Octubre"/>
-            <StringItem index="10" value="Noviembre"/>
-            <StringItem index="11" value="Diciembre"/>
-            <StringItem index="12" value=" "/>
+          <StringArray count="14">
+            <StringItem index="0" value=" "/>
+            <StringItem index="1" value="Enero"/>
+            <StringItem index="2" value="Febrero"/>
+            <StringItem index="3" value="Marzo"/>
+            <StringItem index="4" value="Abril"/>
+            <StringItem index="5" value="Mayo"/>
+            <StringItem index="6" value="Junio"/>
+            <StringItem index="7" value="Julio"/>
+            <StringItem index="8" value="Agosto"/>
+            <StringItem index="9" value="Septiembre"/>
+            <StringItem index="10" value="Octubre"/>
+            <StringItem index="11" value="Noviembre"/>
+            <StringItem index="12" value="Diciembre"/>
+            <StringItem index="13" value=" "/>
           </StringArray>
         </Property>
       </Properties>
@@ -268,7 +267,33 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="350" y="250" width="160" height="30"/>
+          <AbsoluteConstraints x="170" y="250" width="160" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Seleccione el A&#xf1;o: "/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="10" y="210" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Desde"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="370" y="210" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
