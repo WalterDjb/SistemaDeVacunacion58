@@ -27,7 +27,7 @@ public class Rango_2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jbCentros = new javax.swing.JButton();
-        jbCitas = new javax.swing.JButton();
+        jbAsignarVacunas = new javax.swing.JButton();
         jbEstadisticas = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
@@ -46,11 +46,16 @@ public class Rango_2 extends javax.swing.JFrame {
         });
         getContentPane().add(jbCentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 230, 50));
 
-        jbCitas.setBackground(new java.awt.Color(15, 75, 94));
-        jbCitas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbCitas.setForeground(new java.awt.Color(255, 255, 255));
-        jbCitas.setText("Citas de vacunacion");
-        getContentPane().add(jbCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 230, 50));
+        jbAsignarVacunas.setBackground(new java.awt.Color(15, 75, 94));
+        jbAsignarVacunas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbAsignarVacunas.setForeground(new java.awt.Color(255, 255, 255));
+        jbAsignarVacunas.setText("Asignar Vacunas");
+        jbAsignarVacunas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAsignarVacunasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbAsignarVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 230, 50));
 
         jbEstadisticas.setBackground(new java.awt.Color(15, 75, 94));
         jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -84,6 +89,11 @@ public class Rango_2 extends javax.swing.JFrame {
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbAsignarVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAsignarVacunasActionPerformed
+        this.dispose();
+        new AsignarVacunasACentro().setVisible(true);
+    }//GEN-LAST:event_jbAsignarVacunasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,8 +133,8 @@ public class Rango_2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
+    private javax.swing.JButton jbAsignarVacunas;
     private javax.swing.JButton jbCentros;
-    private javax.swing.JButton jbCitas;
     private javax.swing.JButton jbEstadisticas;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables

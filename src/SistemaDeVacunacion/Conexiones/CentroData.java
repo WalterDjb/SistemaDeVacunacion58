@@ -39,12 +39,12 @@ public class CentroData {
             //no tocar este desastre, capaz algún día lo arreglo -g- -.-'
             //desde acá va un for each vacuna en vacunas
             //for (int i = 0; i <= centro.vacunas.size(); i++){
-                PreparedStatement ps2 = con.prepareStatement("INSERT INTO stock (idCentro"/*,'vacunas','stock'*/+") VALUES (?)");
-                ps2.setInt(1, id);
+                //PreparedStatement ps2 = con.prepareStatement("INSERT INTO stock (idCentro"/*,'vacunas','stock'*/+") VALUES (?)");
+                //ps2.setInt(1, id);
                 //ps2.setString(2, centro.vacunas.get(i).getMarca());
                 //ps2.setInt(3, centro.vacunas.get(i).getStock());
                // }
-        ps2.executeUpdate();
+        //ps2.executeUpdate();
 
         PreparedStatement ps3 = con.prepareStatement("INSERT INTO acceso (nivel, nombre, email, usuario, contra, tipoContra) VALUES (?,?,?,?,?,?)");
         ps3.setInt(1, 3);
@@ -56,7 +56,7 @@ public class CentroData {
         ps3.executeUpdate();
         
         ps.close();
-        ps2.close();
+        //ps2.close();
         ps3.close();
         
         JOptionPane.showMessageDialog(null, "Creado el Centro de vacunación "+id+"-"+centro.getLocalidad());
@@ -68,7 +68,7 @@ public class CentroData {
 
     public void modificarStock(int id, int stock) {
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE centro SET stock=? WHERE id = " + id);
+            PreparedStatement ps = con.prepareStatement("UPDATE stock SET stock=? WHERE id = " + id);
             ps.setLong(1, stock);
 
             ps.executeUpdate();

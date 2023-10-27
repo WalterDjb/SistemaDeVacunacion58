@@ -6,13 +6,12 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 public class VacunaData {
     private Connection con=null;
     LaboratorioData ld=new LaboratorioData();
-    
+    CentroData cd = new CentroData();
     public VacunaData(){
         con=Conexion.getConexion();
     }
@@ -34,6 +33,7 @@ public class VacunaData {
                 ps.setInt(6, 0);
                 }
            */
+           
            ResultSet rs = ps.executeQuery();
            JOptionPane.showMessageDialog(null, "Vacuna creada.");
            ps.close();
