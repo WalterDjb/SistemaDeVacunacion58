@@ -15,12 +15,12 @@ public class CrearCentro extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        JTlocalidad = new javax.swing.JTextField();
+        JTcapacidad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         JTdireccion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        JTcapacidad = new javax.swing.JTextField();
+        JTlocalidad = new javax.swing.JTextField();
         JCprovincia = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         JBcrear = new javax.swing.JButton();
@@ -33,7 +33,7 @@ public class CrearCentro extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel1.setText("Localidad:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
-        getContentPane().add(JTlocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 149, -1));
+        getContentPane().add(JTcapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 149, -1));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Dirección:");
@@ -47,7 +47,7 @@ public class CrearCentro extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Capacidad:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
-        getContentPane().add(JTcapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 149, -1));
+        getContentPane().add(JTlocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 149, -1));
 
         JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
         getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 149, -1));

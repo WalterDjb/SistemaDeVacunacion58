@@ -1,6 +1,7 @@
 package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Vacuna;
 import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,30 +9,46 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import org.mariadb.jdbc.Statement;
 
 public class CentroData {
 
     Connection con;
     Centro centro = new Centro();
     ArrayList<Centro> centros = new ArrayList<>();
-
+    Vacuna vac = new Vacuna();
     public CentroData() {
         con = Conexion.getConexion();
     }
 
     public void agregar(Centro centro) {
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO `centro`(`direccion`,`provincia`, `localidad`, `capacidad`, `registrados`) VALUES (?,?,?,?,'0')");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO `centro`(`direccion`,`provincia`, `localidad`, `capacidad`, `registrados`) VALUES (?,?,?,?,'0')",Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, centro.getDomicilio());
             ps.setString(2, centro.getProvincia());
             ps.setString(3, centro.getLocalidad());
             ps.setInt(4, centro.getCapacidad());
 
             ps.executeUpdate();
-            ps.close();
-            JOptionPane.showMessageDialog(null, "Centro de vacunación creado.");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al agregar Centro");
+            
+            ResultSet rs =ps.getGeneratedKeys();
+            int id = 0;
+            if (rs.next()){
+                id = rs.getInt(1);
+            }
+            //no tocar este desastre, capaz algún día lo arreglo -g- -.-'
+            //desde acá va un for each vacuna en vacunas
+            //for (int i = 0; i <= centro.vacunas.size(); i++){
+                PreparedStatement ps2 = con.prepareStatement("INSERT INTO stock (idCentro"/*,'vacunas','stock'*/+") VALUES (?)");
+                ps2.setInt(1, id);
+                //ps2.setString(2, centro.vacunas.get(i).getMarca());
+                //ps2.setInt(3, centro.vacunas.get(i).getStock());
+               // }
+        ps2.executeUpdate();
+        ps.close();
+        ps2.close();
+        }catch(SQLException ex){
+            System.err.println("Error "+ex.getMessage());
         }
     }
 
