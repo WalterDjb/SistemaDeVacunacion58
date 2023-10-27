@@ -137,8 +137,9 @@ public class CentroData {
     List<Centro> centros = new ArrayList<>();
     try {
         con = Conexion.getConexion();
-        String sql = "select * from centro where provincia = ?";
+        String sql = "select * from centro where provincia = (?)";
         PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1, provincia);
         ResultSet rs = ps.executeQuery();
         
         while (rs.next()) {

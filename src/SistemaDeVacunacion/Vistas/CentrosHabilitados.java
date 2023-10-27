@@ -3,7 +3,9 @@ import SistemaDeVacunacion.Conexiones.CentroData;
 import SistemaDeVacunacion.Entidades.Centro;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class CentrosHabilitados extends javax.swing.JFrame {
     CentroData cd = new CentroData();
@@ -79,6 +81,11 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
 
         JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        JCprovincia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCprovinciaActionPerformed(evt);
+            }
+        });
         getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
@@ -93,8 +100,16 @@ public class CentrosHabilitados extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jbAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAccederActionPerformed
-        // TODO add your handling code here:
+        String Scen = String.valueOf(JCcentros.getSelectedItem()).substring(0,2);
+        int id = Integer.parseInt(Scen);
+        Centro cen = cd.buscarCentroXId(id);
+        JOptionPane.showMessageDialog(null, "DATOS DEL CENTRO\nProvincia: "+cen.getProvincia()+".\nLocalidad: "+cen.getLocalidad()+".\nDireccion: "+cen.getDomicilio()+".\nCapacidad: "+cen.getCapacidad()+" personas por turno.");
     }//GEN-LAST:event_jbAccederActionPerformed
+
+    private void JCprovinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCprovinciaActionPerformed
+        JCcentros.removeAllItems();
+        cargarJCcentros();
+    }//GEN-LAST:event_JCprovinciaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,9 +153,11 @@ public class CentrosHabilitados extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
         private void cargarJCcentros (){
-        List <Centro> centros = cd.listarCentrosXProvincia(String.valueOf(JCprovincia.getSelectedItem()));
-        for (int i=0; i<centros.lastIndexOf(centros); i++){
-            JCcentros.addItem(centros.get(i));
+            JCcentros.removeAllItems();
+            List <Centro> centros = new ArrayList<>();
+        centros = cd.listarCentrosXProvincia(String.valueOf(JCprovincia.getSelectedItem()));
+        for (Centro centro: centros){
+            JCcentros.addItem(centro);
         }
     }
 }
