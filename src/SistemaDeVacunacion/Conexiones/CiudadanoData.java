@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 public class CiudadanoData {
@@ -13,7 +14,7 @@ public class CiudadanoData {
     
     public CiudadanoData(){}
     
-    public static boolean dniTramiteEncontrados(int dni, long tramite){
+    public static boolean dniTramiteEncontrados(int dni, String tramite){
         try {
             con = Conexion.getConexion();
             PreparedStatement pst = con.prepareStatement("select aplicaciones from ciudadano where dni = " + dni + " and tramite = " + tramite);
@@ -30,7 +31,7 @@ public class CiudadanoData {
         return false;
     }
     
-    // PENDIENTE
+    
     public static Ciudadano buscarPorDni(int dni){
         Ciudadano ciudadano = null; // Inicializamos como null
 
@@ -54,6 +55,7 @@ public class CiudadanoData {
             ciudadano.setTrabajo(rs.getString("ambitoTrabajo"));
             ciudadano.setPatologia(rs.getString("patologia"));
             ciudadano.setDosis(rs.getInt("aplicaciones"));
+            ciudadano.setUltimaDosis(rs.getTimestamp("ultimaDosis").toLocalDateTime());
         }
     } catch (SQLException e) {
         System.out.println("ERROR: " + e.getMessage());

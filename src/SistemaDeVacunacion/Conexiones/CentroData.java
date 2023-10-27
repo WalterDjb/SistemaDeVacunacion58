@@ -15,10 +15,10 @@ import org.mariadb.jdbc.Statement;
 
 public class CentroData {
 
-    Connection con;
-    Centro cen = new Centro();
-    ArrayList<Centro> centros = new ArrayList<>();
-    Vacuna vac = new Vacuna();
+    private static Connection con;
+    private static Centro cen = new Centro();
+    private ArrayList<Centro> centros = new ArrayList<>();
+    private Vacuna vac = new Vacuna();
     public CentroData() {
         con = Conexion.getConexion();
     }
@@ -90,7 +90,7 @@ public class CentroData {
         }
     }
     
-     public Centro buscarCentroXId(int id){
+     public static Centro buscarCentroXId(int id){
         try {
             con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement("select * from centro where id = " + id);
