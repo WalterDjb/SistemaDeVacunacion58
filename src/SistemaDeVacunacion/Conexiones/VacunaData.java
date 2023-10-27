@@ -9,11 +9,12 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class VacunaData {
-    private Connection con=null;
-    LaboratorioData ld=new LaboratorioData();
-    CentroData cd = new CentroData();
+    private static Connection con = Conexion.getConexion();
+    private static LaboratorioData ld=new LaboratorioData();
+    private CentroData cd = new CentroData();
+    
+    
     public VacunaData(){
-        con=Conexion.getConexion();
     }
 
     public void guardarVacuna(Vacuna vacuna){
@@ -43,7 +44,7 @@ public class VacunaData {
        }
     }
     
-    public Vacuna buscarVacunaXNombre (String marca){
+    public static Vacuna buscarVacunaXNombre (String marca){
         String sql = "SELECT * FROM `vacuna` WHERE marca LIKE '"+marca+"%'";
         Vacuna vacuna = null;
         try {

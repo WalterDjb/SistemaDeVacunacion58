@@ -2,31 +2,31 @@ package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Cita;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import javax.swing.JOptionPane;
 
 public class CitaData {
-    Connection con;
-    Cita cit = new Cita();
-    CentroData ced = new CentroData();
-    CiudadanoData cd = new CiudadanoData();
-    VacunaData vd = new VacunaData();
-    
-    public CitaData(){
-        con = Conexion.getConexion();
+
+    private static Connection con = Conexion.getConexion();
+    private Cita cit = new Cita();
+    private CentroData ced = new CentroData();
+    private CiudadanoData cd = new CiudadanoData();
+    private VacunaData vd = new VacunaData();
+
+    public CitaData() {
     }
-    
+
     public void agregar(Cita cita, int dni) {
         try {
             PreparedStatement ps = con.prepareStatement("INSERT INTO cita VALUES (?, ?, ?, ?, ?, ?)");
             ps.setString(1, "0");
             ps.setInt(2, dni);
             ps.setString(3, cita.getFechaHoraCita().toString());
-            ps.setInt(4, cita.getNSerie());
+            ps.setString(4, cita.getNSerie());
             ps.setString(5, cita.getFechaHoraColocacion().toString());
             ps.setInt(6, cita.getCentro().getId());
 
@@ -37,6 +37,7 @@ public class CitaData {
             JOptionPane.showMessageDialog(null, "Error al crear la cita");
         }
     }
+
     public void eliminarPorId(int id) {
         try {
             PreparedStatement ps = con.prepareStatement("DELETE FROM laboratorio WHERE id = " + id);
@@ -46,62 +47,64 @@ public class CitaData {
             JOptionPane.showMessageDialog(null, "Error inesperado al tratar de eliminar Centro");
         }
     }
-    public Cita buscarCita(int id){
-        try{
+
+    public Cita buscarCita(int id) {
+        try {
             PreparedStatement ps = con.prepareStatement("select * from cita where id = " + id);
             ResultSet rs = ps.executeQuery();
-            
-            if (rs.next()){
-            cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
-            cit.setCiudadano(cd.buscarPorDni(rs.getInt("dni")));
-            cit.setNSerie(rs.getInt("numeroSerie"));
-            cit.setVacuna(vd.buscarVacunaXNombre(rs.getString("vacuna")));
-            cit.setDosis(String.valueOf(rs.getLong("numeroSerie")).charAt(9));
-            cit.setEstadoCita(rs.getString("estadoCita"));
-            cit.setFechaHoraCita(rs.getDate("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());   
-            cit.setFechaHoraColocacion(rs.getDate("fHAplicacion").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());                                         
+
+            if (rs.next()) {
+                cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+                cit.setCiudadano(cd.buscarPorDni(rs.getInt("dni")));
+                cit.setNSerie(rs.getString("numeroSerie"));
+                cit.setVacuna(vd.buscarVacunaXNombre(rs.getString("vacuna")));
+                cit.setDosis(String.valueOf(rs.getLong("numeroSerie")).charAt(9));
+                cit.setEstadoCita(rs.getString("estadoCita"));
+                cit.setFechaHoraCita(rs.getDate("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+                cit.setFechaHoraColocacion(rs.getDate("fHAplicacion").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
-        }return cit;
+        }
+        return cit;
     }
-    
-    public Cita buscarTurnoXDni(int dni){
+
+    public Cita buscarTurnoXDni(int dni) {
         try {
-        PreparedStatement ps = con.prepareStatement("select * from cita where dni = ?");
-        ps.setInt(1, dni); 
-        ResultSet rs = ps.executeQuery();
+            PreparedStatement ps = con.prepareStatement("select * from cita where dni = ?");
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            Cita cita = new Cita();
-            cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
-            cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
-            cita.setId(rs.getInt("id"));
-            cita.setEstadoCita(rs.getString("estadoCita"));
-            return cita;
+            if (rs.next()) {
+                Cita cita = new Cita();
+                cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+                cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+                cita.setId(rs.getInt("id"));
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                return cita;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
         }
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+        return null;
     }
-    return null; 
-}
-    
+
     public Cita buscarTurnoPorId(int id) {
-    try {
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM cita WHERE id = ?");
-        ps.setInt(1, id);
-        ResultSet rs = ps.executeQuery();
+        try {
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM cita WHERE id = ?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            Cita cita = new Cita();
-            cita.setEstadoCita(rs.getString("estadoCita"));
-            return cita;
+            if (rs.next()) {
+                Cita cita = new Cita();
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                return cita;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
         }
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+        return null;
     }
-    return null;
-}
 
     public void cancelarTurnoPorId(int id) {
         try {
@@ -110,14 +113,43 @@ public class CitaData {
             ps.setInt(1, id);
             int filasActualizadas = ps.executeUpdate();
             ps.close();
-         if (filasActualizadas > 0) {
-            JOptionPane.showMessageDialog(null, "La cita con ID " + id + " ha sido cancelada.");
-        } else {
-            JOptionPane.showMessageDialog(null, "No se encontró una cita con el ID " + id);
-        }
+            if (filasActualizadas > 0) {
+                JOptionPane.showMessageDialog(null, "La cita con ID " + id + " ha sido cancelada.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró una cita con el ID " + id);
+            }
         } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de cancelar la cita.");
-}
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de cancelar la cita.");
+        }
 
-}
+    }
+    
+    public static Cita obtenerUltimaAplicacion(int dni, LocalDateTime ultima){
+        Cita cita = null;
+        
+        try {
+            PreparedStatement pst = con.prepareStatement("select * from cita where dni = " + dni + " and fHAplicacion = '" + ultima + "'");
+            
+            ResultSet rs = pst.executeQuery();
+            
+            if(rs.next()){
+                cita = new Cita();
+                
+                cita.setId(rs.getInt("id"));
+                cita.setCiudadano(CiudadanoData.buscarPorDni(dni));
+                cita.setCentro(CentroData.buscarCentroXId(rs.getInt("centro")));
+                cita.setFechaHoraCita(rs.getTimestamp("fHCita").toLocalDateTime());
+                cita.setFechaHoraColocacion(rs.getTimestamp("fHAplicacion").toLocalDateTime());
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                cita.setNSerie(rs.getString("numeroSerie"));
+                cita.setVacuna(VacunaData.buscarVacunaXNombre(rs.getString("Vacuna")));
+            }
+            
+        } catch (SQLException e) {
+            System.err.println("ERROR en el método obtenerUltimaAplicación" + e);
+        }
+        
+        return cita;
+    
+    }
 }

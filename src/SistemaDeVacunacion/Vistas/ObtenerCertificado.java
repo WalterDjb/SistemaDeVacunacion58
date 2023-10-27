@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class ObtenerCertificado extends javax.swing.JFrame {
     
     public static int dni;
+    public static InfoNumTramite tram = null;
 
     /**
      * Creates new form Main
@@ -95,6 +96,11 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         boton_obtener_tramite.setFocusPainted(false);
         boton_obtener_tramite.setFocusable(false);
         boton_obtener_tramite.setRequestFocusEnabled(false);
+        boton_obtener_tramite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_obtener_tramiteActionPerformed(evt);
+            }
+        });
         getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
         boton_ver_certificado.setBackground(new java.awt.Color(15, 75, 94));
@@ -156,11 +162,12 @@ public class ObtenerCertificado extends javax.swing.JFrame {
             txt_tramite.setText("");
         } else {
             dni = 0;
-            long tramite = 0;
+            String tramite;
 
             try {
                 dni = Integer.parseInt(txt_doc.getText().trim());
-                tramite = Long.valueOf(txt_tramite.getText().trim());
+                Long.valueOf(txt_tramite.getText().trim()); // Esto no lo guardo en una variable porque solo me va a servir para saber si realmente fueron numeros los datos ingresados en txt_tramite, para el tramite necesito un String.
+                tramite = txt_tramite.getText().trim();         // y acá si guardo el tramite como String, necesario porque los numeros de tramite arrancan en 0 y si fueron un numero entero ese cero se perdería.
                 
                 if(CiudadanoData.dniTramiteEncontrados(dni, tramite)){
                     new DatoCertificado().setVisible(true);
@@ -210,6 +217,13 @@ public class ObtenerCertificado extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tramiteKeyTyped
+
+    private void boton_obtener_tramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_obtener_tramiteActionPerformed
+        if(tram == null){
+            tram = new InfoNumTramite();
+            tram.setVisible(true);
+        }
+    }//GEN-LAST:event_boton_obtener_tramiteActionPerformed
 
     /**
      * @param args the command line arguments

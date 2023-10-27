@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2023 a las 17:56:07
+-- Tiempo de generación: 27-10-2023 a las 23:13:44
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -130,9 +130,16 @@ CREATE TABLE `cita` (
   `Vacuna` varchar(20) NOT NULL,
   `fHAplicacion` datetime NOT NULL,
   `centro` int(3) NOT NULL,
-  `estadoCita` varchar(3) DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
-  `numeroSerie` bigint(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
+  `estadoCita` varchar(10) DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
+  `numeroSerie` varchar(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `cita`
+--
+
+INSERT INTO `cita` (`id`, `dni`, `fHCita`, `Vacuna`, `fHAplicacion`, `centro`, `estadoCita`, `numeroSerie`) VALUES
+(1, 35681886, '2023-10-27 00:00:00', 'vaxina', '2023-10-10 00:00:00', 39, 'CUM', '712304713');
 
 -- --------------------------------------------------------
 
@@ -152,8 +159,16 @@ CREATE TABLE `ciudadano` (
   `patologia` varchar(50) NOT NULL,
   `ambitoTrabajo` varchar(20) NOT NULL,
   `aplicaciones` int(2) NOT NULL,
+  `ultimaDosis` datetime NOT NULL,
   `domicilio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `ciudadano`
+--
+
+INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `localidad`, `email`, `celular`, `patologia`, `ambitoTrabajo`, `aplicaciones`, `ultimaDosis`, `domicilio`) VALUES
+(35681886, '00395514326', 'Walter Eduardo', 'Benitez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 3794856308, 'Obesidad', 'Educación', 2, '2023-10-10 00:00:00', 'Ruta Número 2 km 130');
 
 -- --------------------------------------------------------
 
@@ -304,6 +319,12 @@ ALTER TABLE `vacuna`
 --
 ALTER TABLE `centro`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT de la tabla `cita`
+--
+ALTER TABLE `cita`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `stock`
