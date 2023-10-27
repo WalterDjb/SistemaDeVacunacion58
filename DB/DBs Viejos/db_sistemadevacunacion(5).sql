@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2023 a las 11:10:38
+-- Tiempo de generación: 26-10-2023 a las 01:29:02
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -43,44 +43,10 @@ CREATE TABLE `acceso` (
 --
 
 INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoContra`) VALUES
-(3, 'Centro 36', '-', '36-Goya', '36-Goya', 'A'),
-(3, 'Centro 37', '-', '37-Capital', '37-Capital', 'A'),
-(3, 'Centro 38', '-', '38-Lavalle', '38-Lavalle', 'A'),
-(3, 'Centro 39', '-', '39-Curuzu Cuatia', '39-Curuzu Cuatia', 'A'),
-(3, 'Centro 40', '-', '40-Ituzaingo', '40-Ituzaingo', 'A'),
-(3, 'Centro 41', '-', '41-La Cruz', '41-La Cruz', 'A'),
-(3, 'Centro 42', '-', '42-Capital2', '42-Capital2', 'A'),
-(3, 'Centro 43', '-', '43-Mercedes', '43-Mercedes', 'A'),
-(3, 'Centro 44', '-', '44-Saladas', '44-Saladas', 'A'),
-(3, 'Centro 45', '-', '45-La Plata', '45-La Plata', 'A'),
-(3, 'Centro 46', '-', '46-Las Lomitas', '46-Las Lomitas', 'A'),
-(3, 'Centro 47', '-', '47-San Telmo', '47-San Telmo', 'A'),
-(3, 'Centro 48', '-', '48-Barracas', '48-Barracas', 'A'),
-(2, 'Guille', 'guilleglp@gmail.com', 'Buenos Aires', 'BuenosAires', 'A'),
-(2, '-', '-', 'CABA', 'CABA', 'A'),
-(2, '-', '-', 'Catamarca', 'Catamarca', 'A'),
-(2, '-', '-', 'Chaco', 'Chaco', 'A'),
-(2, '-', '-', 'Chubut', 'Chubut', 'A'),
-(2, '-', '-', 'Cordoba', 'Cordoba', 'A'),
-(2, 'Gas', 'fernandeztomadin1985@gmail.com', 'Corrientes', 'Corrientes', 'A'),
-(2, '-', '-', 'Entre Rios', 'EntreRios', 'A'),
-(2, 'Walt', 'walterdjb@gmail.com', 'Formosa', 'Formosa', 'A'),
-(2, '-', '-', 'Jujuy', 'Jujuy', 'A'),
-(2, '-', '-', 'La Pampa', 'LaPampa', 'A'),
-(2, '-', '-', 'La Rioja', 'LaRioja', 'A'),
-(2, '-', '-', 'Mendoza', 'Mendoza', 'A'),
-(2, '-', '-', 'Misiones', 'Misiones', 'A'),
-(1, 'Ro', '', 'Nacion', 'Nacion', 'A'),
-(2, '-', '-', 'Neuquen', 'Neuquen', 'A'),
-(2, '-', '-', 'Rio Negro', 'RioNegro', 'A'),
-(2, '-', '-', 'Salta', 'Salta', 'A'),
-(2, '-', '-', 'San Juan', 'SanJuan', 'A'),
-(2, '-', '-', 'San Luis', 'SanLuis', 'A'),
-(2, '-', '-', 'Santa Cruz', 'SantaCruz', 'A'),
-(2, '-', '-', 'Santa Fe', 'SantaFe', 'A'),
-(2, '-', '-', 'Santiago del Estero', 'SantiagoDelEstero', 'A'),
-(2, '-', '-', 'Tierra del Fuego', 'TierraDelFuego', 'A'),
-(2, '-', '-', 'Tucuman', 'Tucuman', 'A');
+(3, '', '', 'centro', 'centro', 'A'),
+(3, 'Gas', 'fernandeztomadin1985@gmail.com', 'ggg', '12345678', 'A'),
+(1, '', '', 'nacion', 'nacion', 'A'),
+(2, '', 'walterdjb@gmail.com', 'provincia', 'perromalo', 'A');
 
 -- --------------------------------------------------------
 
@@ -92,7 +58,7 @@ CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
   `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `stock` int(5) DEFAULT NULL,
-  `provincia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `provincia` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `capacidad` int(4) NOT NULL,
   `registrados` int(4) NOT NULL
@@ -103,19 +69,7 @@ CREATE TABLE `centro` (
 --
 
 INSERT INTO `centro` (`id`, `direccion`, `stock`, `provincia`, `localidad`, `capacidad`, `registrados`) VALUES
-(36, 'mazzanti 344', NULL, 'Corrientes', 'Goya', 100, 0),
-(37, 'CostaneraNorte30', NULL, 'Corrientes', 'Capital', 100, 0),
-(38, 'San Martin 1680', NULL, 'Corrientes', 'Lavalle', 20, 0),
-(39, 'Beron de Astrada 20', NULL, 'Corrientes', 'Curuzu Cuatia', 50, 0),
-(40, 'Paraguay 1653', NULL, 'Corrientes', 'Ituzaingo', 100, 0),
-(41, 'Menem1989', NULL, 'Corrientes', 'La Cruz', 60, 0),
-(42, '3 de abril 1968', NULL, 'Corrientes', 'Capital2', 150, 0),
-(43, 'Caa Guazu 1800', NULL, 'Corrientes', 'Mercedes', 75, 0),
-(44, 'Independencia 660', NULL, 'Corrientes', 'Saladas', 30, 0),
-(45, 'San Martin 5960', NULL, 'Buenos Aires', 'La Plata', 250, 0),
-(46, 'Peron 1280', NULL, 'Buenos Aires', 'Las Lomitas', 100, 0),
-(47, 'San Juan 1490', NULL, 'Ciudad Autónoma de Buenos Aires', 'San Telmo', 250, 0),
-(48, 'Defensa 2550', NULL, 'Ciudad Autónoma de Buenos Aires', 'Barracas', 200, 0);
+(4, 'coso15', NULL, 'Buenos Aires', 'lafe', 100, 0);
 
 -- --------------------------------------------------------
 
@@ -187,28 +141,8 @@ INSERT INTO `laboratorio` (`cuit`, `nombre`, `pais`, `direccion`, `stock`) VALUE
 CREATE TABLE `stock` (
   `idCentro` int(11) NOT NULL,
   `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `stock` int(11) NOT NULL DEFAULT 0,
-  `indice` int(50) NOT NULL COMMENT 'Identificador necesario para el servidor, no le den bola'
+  `stock` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `stock`
---
-
-INSERT INTO `stock` (`idCentro`, `marca`, `stock`, `indice`) VALUES
-(36, 'vaxina', 0, 1),
-(37, 'vaxina', 0, 2),
-(38, 'vaxina', 0, 3),
-(39, 'vaxina', 0, 4),
-(40, 'vaxina', 0, 5),
-(41, 'vaxina', 0, 6),
-(42, 'vaxina', 0, 7),
-(43, 'vaxina', 0, 8),
-(44, 'vaxina', 0, 9),
-(45, 'vaxina', 0, 10),
-(46, 'vaxina', 0, 11),
-(47, 'vaxina', 0, 12),
-(48, 'vaxina', 0, 13);
 
 -- --------------------------------------------------------
 
@@ -282,17 +216,14 @@ ALTER TABLE `laboratorio`
 -- Indices de la tabla `stock`
 --
 ALTER TABLE `stock`
-  ADD PRIMARY KEY (`indice`),
-  ADD KEY `idCentro` (`idCentro`),
-  ADD KEY `marca` (`marca`);
+  ADD UNIQUE KEY `idCentro` (`idCentro`),
+  ADD UNIQUE KEY `marca` (`marca`);
 
 --
 -- Indices de la tabla `vacuna`
 --
 ALTER TABLE `vacuna`
-  ADD PRIMARY KEY (`marca`),
-  ADD KEY `marca` (`marca`),
-  ADD KEY `cuitLaboratorio` (`cuitLaboratorio`);
+  ADD UNIQUE KEY `marca` (`marca`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -302,13 +233,7 @@ ALTER TABLE `vacuna`
 -- AUTO_INCREMENT de la tabla `centro`
 --
 ALTER TABLE `centro`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
-
---
--- AUTO_INCREMENT de la tabla `stock`
---
-ALTER TABLE `stock`
-  MODIFY `indice` int(50) NOT NULL AUTO_INCREMENT COMMENT 'Identificador necesario para el servidor, no le den bola', AUTO_INCREMENT=14;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
