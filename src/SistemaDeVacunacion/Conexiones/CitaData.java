@@ -77,6 +77,7 @@ public class CitaData {
             cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
             cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
             cita.setId(rs.getInt("id"));
+            cita.setEstadoCita(rs.getString("estadoCita"));
             return cita;
         }
     } catch (SQLException ex) {

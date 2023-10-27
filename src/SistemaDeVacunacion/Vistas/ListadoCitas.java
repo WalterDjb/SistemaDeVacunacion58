@@ -1,21 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacion.Vistas;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.ButtonGroup;
+import javax.swing.table.DefaultTableModel;
+import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Conexiones.CitaData;
+import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Cita;
 
-/**
- *
- * @author totip
- */
+
+
+
+
+
 public class ListadoCitas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListadoCitas
-     */
-    public ListadoCitas() {
+private List<Centro> listaCE;
+private List<Cita> listaCI;
+private CentroData ceData;
+private CitaData ciData; 
+
+private DefaultTableModel modelo;
+
+public ListadoCitas() {
         initComponents();
+        
+        //armarCabecera();
     }
 
     /**
@@ -32,13 +43,12 @@ public class ListadoCitas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jCCentro = new javax.swing.JComboBox<>();
         jbConsultar = new javax.swing.JButton();
-        jbGuardar = new javax.swing.JButton();
-        jbModificar = new javax.swing.JButton();
-        jbEliminar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jCMes = new javax.swing.JComboBox<>();
+        jcbProvincia = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jCMes1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,50 +86,45 @@ public class ListadoCitas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 288, 701, 101));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 701, 140));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jLabel2.setText("Seleccione Centro:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
-
-        jCCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
-        jCCentro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCCentroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 152, -1));
+        jLabel2.setText("Seleccione Provincia:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jbConsultar.setText("Consultar");
-        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, 30));
-
-        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
-        jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        jbGuardar.setText("Guardar");
-        getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, -1, -1));
-
-        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
-        jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
-        jbModificar.setText("Modificar");
-        getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
-
-        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
-        jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jbEliminar.setText("Eliminar");
-        getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Seleccione el mes: ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
 
         jCMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
-        getContentPane().add(jCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 152, -1));
+        jCMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCMesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 160, 30));
+
+        jcbProvincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jcbProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        getContentPane().add(jcbProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 160, -1));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel6.setText("Seleccione el Año: ");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
+
+        jCMes1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
+        jCMes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCMes1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCMes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, 160, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -127,9 +132,13 @@ public class ListadoCitas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCCentroActionPerformed
+    private void jCMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCMesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCCentroActionPerformed
+    }//GEN-LAST:event_jCMesActionPerformed
+
+    private void jCMes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCMes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCMes1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,18 +176,28 @@ public class ListadoCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jCCentro;
     private javax.swing.JComboBox<String> jCMes;
+    private javax.swing.JComboBox<String> jCMes1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbEliminar;
-    private javax.swing.JButton jbGuardar;
-    private javax.swing.JButton jbModificar;
     private javax.swing.JButton jbVolver;
+    private javax.swing.JComboBox<String> jcbProvincia;
     // End of variables declaration//GEN-END:variables
 }
+//private void armarCabecera(){
+//        ArrayList<Object> filaCabecera = new ArrayList<>();
+//        filaCabecera.add("ID");
+//        filaCabecera.add("Nombre");
+//        filaCabecera.add("Año");
+//        for(Object it: filaCabecera) {
+//            modelo.addColumn(it);
+//        }
+//        jTabla.setModel(modelo);
+//        
+//    }
