@@ -67,11 +67,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Asignar vacunas a centro"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Serif" size="30" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ASIGNAR VACUNAS A CENTRO"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="310" y="140" width="-1" height="-1"/>
+          <AbsoluteConstraints x="170" y="130" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

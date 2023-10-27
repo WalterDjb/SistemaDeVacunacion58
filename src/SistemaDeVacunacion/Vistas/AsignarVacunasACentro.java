@@ -65,8 +65,9 @@ private final DefaultTableModel model = new DefaultTableModel(){
         });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 200, 40));
 
-        jLabel1.setText("Asignar vacunas a centro");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
+        jLabel1.setText("ASIGNAR VACUNAS A CENTRO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
