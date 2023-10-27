@@ -319,7 +319,7 @@ try {
 
 
 } catch (NumberFormatException nfe) {
-    JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico.");
+    //JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico.");
 } catch (NullPointerException npe) {
     JOptionPane.showMessageDialog(null, "Error al guardar o modificar el ciudadano.");
 }
