@@ -66,22 +66,23 @@ public class CiudadanoData {
     
     public void guardarCiudadano(Ciudadano ciudadano){
         
-        String sql ="INSERT INTO ciudadano (dni,nombre,apellido, provincia, localidad, email, celular, patologia, ambitoTrabajo, domicilio)"
-                + "VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String sql ="INSERT INTO ciudadano (dni,tramite,nombre,apellido, provincia, localidad, email, celular, patologia, ambitoTrabajo, domicilio)"
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         
        try {
            PreparedStatement ps=con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
            ps.setInt(1, ciudadano.getDni());
-           ps.setString(2, ciudadano.getNombre());
-           ps.setString(3, ciudadano.getApellido());
-           ps.setString(4, ciudadano.getProvincia());
-           ps.setString(5, ciudadano.getLocalidad());
-           ps.setString(6, ciudadano.getEmail());
-           ps.setLong(7, ciudadano.getCelular());
-           ps.setString(8, ciudadano.getPatologia());
-           ps.setString(9, ciudadano.getAmbito());
-           ps.setString(10, ciudadano.getDomicilio());
-           
+           ps.setString(2, String.valueOf(ciudadano.getNumTramite()));
+           ps.setString(3, ciudadano.getNombre());
+           ps.setString(4, ciudadano.getApellido());
+           ps.setString(5, ciudadano.getProvincia());
+           ps.setString(6, ciudadano.getLocalidad());
+           ps.setString(7, ciudadano.getEmail());
+           ps.setLong(8, ciudadano.getCelular());
+           ps.setString(9, ciudadano.getPatologia());
+           ps.setString(10, ciudadano.getAmbito());
+           ps.setString(11, ciudadano.getDomicilio());
+           //System.out.println(sql);
            ps.executeUpdate();
            
            ResultSet rs=ps.getGeneratedKeys();
@@ -94,6 +95,7 @@ public class CiudadanoData {
            
        } catch (SQLException ex){
            JOptionPane.showMessageDialog(null,"Error al acceder a la tabla ciudadano");
+           System.err.println("Error; "+ex.getMessage());
        }
     }
 }
