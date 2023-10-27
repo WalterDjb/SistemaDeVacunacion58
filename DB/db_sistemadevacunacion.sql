@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2023 a las 23:13:44
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 28-10-2023 a las 00:46:19
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,11 +31,11 @@ USE `db_sistemadevacunacion`;
 
 CREATE TABLE `acceso` (
   `nivel` int(2) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
-  `contra` varchar(20) NOT NULL,
-  `tipoContra` varchar(1) NOT NULL
+  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `usuario` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `contra` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `tipoContra` varchar(1) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -90,10 +90,10 @@ INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoCont
 
 CREATE TABLE `centro` (
   `id` int(3) NOT NULL,
-  `direccion` varchar(50) NOT NULL,
+  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `stock` int(5) DEFAULT NULL,
-  `provincia` varchar(50) NOT NULL,
-  `localidad` varchar(20) NOT NULL,
+  `provincia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `capacidad` int(4) NOT NULL,
   `registrados` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -127,11 +127,11 @@ CREATE TABLE `cita` (
   `id` int(8) NOT NULL,
   `dni` int(8) NOT NULL,
   `fHCita` datetime NOT NULL,
-  `Vacuna` varchar(20) NOT NULL,
+  `Vacuna` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `fHAplicacion` datetime NOT NULL,
   `centro` int(3) NOT NULL,
-  `estadoCita` varchar(10) DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
-  `numeroSerie` varchar(20) DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
+  `estadoCita` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
+  `numeroSerie` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -149,18 +149,18 @@ INSERT INTO `cita` (`id`, `dni`, `fHCita`, `Vacuna`, `fHAplicacion`, `centro`, `
 
 CREATE TABLE `ciudadano` (
   `dni` int(8) NOT NULL,
-  `tramite` varchar(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `apellido` varchar(20) NOT NULL,
-  `provincia` varchar(20) NOT NULL,
-  `localidad` varchar(20) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `celular` bigint(10) NOT NULL,
-  `patologia` varchar(50) NOT NULL,
-  `ambitoTrabajo` varchar(20) NOT NULL,
-  `aplicaciones` int(2) NOT NULL,
-  `ultimaDosis` datetime NOT NULL,
-  `domicilio` varchar(50) NOT NULL
+  `tramite` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `provincia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `celular` int(10) NOT NULL,
+  `patologia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `ambitoTrabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `aplicaciones` int(2) NOT NULL DEFAULT 0,
+  `ultimaDosis` datetime DEFAULT NULL,
+  `domicilio` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `ciudadano` (
 --
 
 INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `localidad`, `email`, `celular`, `patologia`, `ambitoTrabajo`, `aplicaciones`, `ultimaDosis`, `domicilio`) VALUES
-(35681886, '00395514326', 'Walter Eduardo', 'Benitez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 3794856308, 'Obesidad', 'Educación', 2, '2023-10-10 00:00:00', 'Ruta Número 2 km 130');
+(35681886, '00395514326', 'Walter Eduardo', 'Benitez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 2147483647, 'Obesidad', 'Educación', 2, '2023-10-10 00:00:00', 'Ruta Número 2 km 130');
 
 -- --------------------------------------------------------
 
@@ -178,9 +178,9 @@ INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `l
 
 CREATE TABLE `laboratorio` (
   `cuit` bigint(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `pais` varchar(20) NOT NULL,
-  `direccion` varchar(50) NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `pais` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `stock` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -189,10 +189,7 @@ CREATE TABLE `laboratorio` (
 --
 
 INSERT INTO `laboratorio` (`cuit`, `nombre`, `pais`, `direccion`, `stock`) VALUES
-(233243242, 'papaluza', 'Boke', 'allaleestanponiendo22', 500),
-(30123456789, 'DawsonLab', 'Peronia', 'IngenieroBenitez666', 2),
-(30987654321, 'Peña & Peña Co.', 'Venezuela', 'Dr Fernandez', 5000),
-(33111444779, 'Benitax', 'Guyana', 'Calle perro', 50);
+(30987654321, 'Peña & Peña Co.', 'Venezuela', 'Dr Fernandez', 5000);
 
 -- --------------------------------------------------------
 
@@ -202,7 +199,7 @@ INSERT INTO `laboratorio` (`cuit`, `nombre`, `pais`, `direccion`, `stock`) VALUE
 
 CREATE TABLE `stock` (
   `idCentro` int(11) NOT NULL,
-  `marca` varchar(20) NOT NULL,
+  `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `stock` int(11) NOT NULL DEFAULT 0,
   `indice` int(50) NOT NULL COMMENT 'Identificador necesario para el servidor, no le den bola'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -235,8 +232,8 @@ INSERT INTO `stock` (`idCentro`, `marca`, `stock`, `indice`) VALUES
 CREATE TABLE `vacuna` (
   `cuitLaboratorio` bigint(11) NOT NULL,
   `capacidadDosis` double NOT NULL,
-  `marca` varchar(20) NOT NULL,
-  `antigeno` varchar(20) NOT NULL,
+  `marca` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `antigeno` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `caducidad` date NOT NULL,
   `stock` int(5) NOT NULL COMMENT 'stock de vacunas en nacion'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -246,8 +243,6 @@ CREATE TABLE `vacuna` (
 --
 
 INSERT INTO `vacuna` (`cuitLaboratorio`, `capacidadDosis`, `marca`, `antigeno`, `caducidad`, `stock`) VALUES
-(30123456789, 2.5, 'vacunitah', 'falopa', '2030-05-25', 1),
-(30123456789, 2, 'vacunola lince', 'caca de perro m', '2023-11-01', 1),
 (30987654321, 2, 'vaxina', 'basura', '2028-09-10', 5000);
 
 --

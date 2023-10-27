@@ -310,10 +310,11 @@ try {
     ciudadano.setProvincia(jcbProvincia.getSelectedItem().toString());
     ciudadano.setLocalidad(jtLocalidad.getText());
     ciudadano.setEmail(jtMail.getText());
-    ciudadano.setCelular(Integer.parseInt(jtCaracCelular.getText() + jtCelular.getText()));
+    ciudadano.setCelular(Long.parseLong(jtCaracCelular.getText() + jtCelular.getText()));
     ciudadano.setPatologia(jcbPatologia.getSelectedItem().toString());
     ciudadano.setAmbito(jcbAMbito1.getSelectedItem().toString());
     ciudadano.setDomicilio(jtDomicilio.getText());
+    ciudadano.setNumTramite(Long.parseLong(jtTramite.getText()));
     ad.guardarCiudadano(ciudadano);
             }
 
@@ -324,7 +325,7 @@ try {
     JOptionPane.showMessageDialog(null, "Error al guardar o modificar el ciudadano.");
 }
 
-JOptionPane.showMessageDialog(null, "Inscripto Correctamente, en unos dias nos comunicaremos para informarle fecha y lugar de vacunacion");
+//JOptionPane.showMessageDialog(null, "Inscripto Correctamente, en unos dias nos comunicaremos para informarle fecha y lugar de vacunacion");
 Limpiar();  
           
         
