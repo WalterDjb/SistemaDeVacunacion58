@@ -32,11 +32,13 @@ public class ListadoCitas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCCentro = new javax.swing.JComboBox<>();
         jbConsultar = new javax.swing.JButton();
         jbGuardar = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jCMes = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,11 +79,16 @@ public class ListadoCitas extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 288, 701, 101));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jLabel2.setText("Seleccione el mes: ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        jLabel2.setText("Seleccione Centro:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 152, -1));
+        jCCentro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
+        jCCentro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCCentroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 152, -1));
 
         jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -107,11 +114,22 @@ public class ListadoCitas extends javax.swing.JFrame {
         jbEliminar.setText("Eliminar");
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel4.setText("Seleccione el mes: ");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+
+        jCMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
+        getContentPane().add(jCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 152, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCCentroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCCentroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,10 +167,12 @@ public class ListadoCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jCCentro;
+    private javax.swing.JComboBox<String> jCMes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbConsultar;

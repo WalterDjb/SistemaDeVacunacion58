@@ -3,15 +3,16 @@ package SistemaDeVacunacion.Entidades;
 import java.time.LocalDateTime;
 
 public class Ciudadano {
-    private String nombre, email, domicilio, trabajo, patologia, provincia, localidad;
+    private String nombre, apellido, email, domicilio, trabajo, patologia, provincia, localidad, ambito;
     private int dni, dosis;
     private long numTramite, celular;
     private LocalDateTime ultimaDosis;
     
     public Ciudadano(){}
     
-    public Ciudadano(String nombre, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, long celular, int dosis, LocalDateTime ultimaDosis){
+    public Ciudadano(String nombre, String apellido, String ambito, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, long celular, int dosis, LocalDateTime ultimaDosis){
         this.nombre = nombre;
+        this.apellido = apellido;
         this.dni = dni;
         this.provincia = provincia;
         this.localidad = localidad;
@@ -23,6 +24,7 @@ public class Ciudadano {
         this.celular = celular;
         this.dosis = dosis;
         this.ultimaDosis = ultimaDosis;
+        this.ambito = ambito;
     }
 
     public String getNombre() {
@@ -119,6 +121,22 @@ public class Ciudadano {
 
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getAmbito() {
+        return ambito;
+    }
+
+    public void setAmbito(String ambito) {
+        this.ambito = ambito;
     }
     
     
