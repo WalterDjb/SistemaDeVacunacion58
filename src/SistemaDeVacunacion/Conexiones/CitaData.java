@@ -73,11 +73,11 @@ public class CitaData {
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            Cita cit = new Cita();
-            cit.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
-            cit.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
-            cit.setId(rs.getInt("id"));
-            return cit;
+            Cita cita = new Cita();
+            cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+            cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+            cita.setId(rs.getInt("id"));
+            return cita;
         }
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
@@ -85,7 +85,23 @@ public class CitaData {
     return null; 
 }
     
-    
+    public Cita buscarTurnoPorId(int id) {
+    try {
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM cita WHERE id = ?");
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            Cita cita = new Cita();
+            cita.setEstadoCita(rs.getString("estadoCita"));
+            return cita;
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+    }
+    return null;
+}
+
     public void cancelarTurnoPorId(int id) {
         try {
             String sql = "UPDATE cita SET estadoCita = 'CAN' WHERE id = ?";

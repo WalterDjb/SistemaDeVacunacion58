@@ -252,10 +252,10 @@ try {
 
     private void jbCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar1ActionPerformed
     CitaData ad = new CitaData();
-    Cita cita = ad.buscarTurnoXDni(Integer.parseInt(jtId.getText()));
-    
+    Cita cita = ad.buscarTurnoPorId(Integer.parseInt(jtId.getText()));
+        
     if (cita != null) { 
-        ad.cancelarTurnoPorId(cita.getId());
+        ad.cancelarTurnoPorId(Integer.parseInt(jtId.getText()));
         Limpiar();
     } else {
         JOptionPane.showMessageDialog(null, "No se encontró una cita para el ID especificado.");
