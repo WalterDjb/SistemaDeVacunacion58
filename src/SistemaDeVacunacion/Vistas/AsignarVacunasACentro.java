@@ -2,13 +2,18 @@ package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.CentroData;
 import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Vacuna;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class AsignarVacunasACentro extends javax.swing.JFrame {
-CentroData cd = new CentroData();
+
+    CentroData cd = new CentroData();
 Centro centro = new Centro();
+List <Vacuna> vacunas = new ArrayList();
+Vacuna vac = new Vacuna();
 
 private final DefaultTableModel model = new DefaultTableModel(){
     @Override
@@ -16,7 +21,6 @@ private final DefaultTableModel model = new DefaultTableModel(){
             return column == 2;
         }
 };
-
 
     public AsignarVacunasACentro() {
         initComponents();
@@ -54,6 +58,11 @@ private final DefaultTableModel model = new DefaultTableModel(){
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
 
+        JCcentros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCcentrosActionPerformed(evt);
+            }
+        });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 200, 40));
 
         jLabel1.setText("Asignar vacunas a centro");
@@ -87,6 +96,14 @@ private final DefaultTableModel model = new DefaultTableModel(){
         this.dispose();
         new Rango_2().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void JCcentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCcentrosActionPerformed
+
+        for (Vacuna vacuna: vacunas) {
+                model.addRow(new Object[]{vacuna.getMarca(), vacuna.getStock()});
+        }
+        JTable jTable1 = new JTable(model);
+    }//GEN-LAST:event_JCcentrosActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
@@ -159,5 +161,23 @@ public class CentroData {
         System.err.println("Error; "+npe.getMessage());
     }
     return centros;
+    }
+    
+    public List<Vacuna> StockDeVacunas(int id){
+        String sql = "SELECT vacuna, stock FROM stock WHERE idCentro = "+id;
+        List<Vacuna> vacunas = new ArrayList<>();
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                vac.setMarca(rs.getString("vacuna"));
+                vac.setStock(rs.getInt("stock"));
+                vacunas.add(vac);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CentroData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return vacunas;
     }
 }
