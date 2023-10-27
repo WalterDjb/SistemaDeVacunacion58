@@ -14,7 +14,7 @@ import org.mariadb.jdbc.Statement;
 public class CentroData {
 
     Connection con;
-    Centro centro = new Centro();
+    Centro cen = new Centro();
     ArrayList<Centro> centros = new ArrayList<>();
     Vacuna vac = new Vacuna();
     public CentroData() {
@@ -45,8 +45,22 @@ public class CentroData {
                 //ps2.setInt(3, centro.vacunas.get(i).getStock());
                // }
         ps2.executeUpdate();
+
+        PreparedStatement ps3 = con.prepareStatement("INSERT INTO acceso (nivel, nombre, email, usuario, contra, tipoContra) VALUES (?,?,?,?,?,?)");
+        ps3.setInt(1, 3);
+        ps3.setString(2, "Centro "+id);
+        ps3.setString(3, "-");
+        ps3.setString(4, id+"-"+centro.getLocalidad());
+        ps3.setString(5, id+"-"+centro.getLocalidad());
+        ps3.setString(6, "A");
+        ps3.executeUpdate();
+        
         ps.close();
         ps2.close();
+        ps3.close();
+        
+        JOptionPane.showMessageDialog(null, "Creado el Centro de vacunación "+id+"-"+centro.getLocalidad());
+        
         }catch(SQLException ex){
             System.err.println("Error "+ex.getMessage());
         }
@@ -81,20 +95,20 @@ public class CentroData {
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
-                centro.setId(rs.getInt("id"));
-                centro.setDomicilio(rs.getString("direccion"));
-                centro.setStock(rs.getInt("stock"));
-                centro.setProvincia(rs.getString("provincia"));
-                centro.setLocalidad(rs.getString("localidad"));
-                centro.setCapacidad(rs.getInt("capacidad"));
-                centro.setRegistrados(rs.getInt("registrados"));
+                cen.setId(rs.getInt("id"));
+                cen.setDomicilio(rs.getString("direccion"));
+                cen.setStock(rs.getInt("stock"));
+                cen.setProvincia(rs.getString("provincia"));
+                cen.setLocalidad(rs.getString("localidad"));
+                cen.setCapacidad(rs.getInt("capacidad"));
+                cen.setRegistrados(rs.getInt("registrados"));
             }
         } catch (SQLException e) {
             System.out.println("ERROR al buscar el centro por ID");
         }catch (NumberFormatException nfe){
             JOptionPane.showMessageDialog(null, "El ID debe ser un valor numérico.");
         }
-        return centro;
+        return cen;
     }
      
      public Centro buscarCentroXLocalidad(String localidad){
@@ -104,18 +118,18 @@ public class CentroData {
             ResultSet rs = ps.executeQuery();
             
             if(rs.next()){
-                centro.setId(rs.getInt("id"));
-                centro.setDomicilio(rs.getString("direccion"));
-                centro.setStock(rs.getInt("stock"));
-                centro.setProvincia(rs.getString("provincia"));
-                centro.setLocalidad(rs.getString("localidad"));
-                centro.setCapacidad(rs.getInt("capacidad"));
-                centro.setRegistrados(rs.getInt("registrados"));
+                cen.setId(rs.getInt("id"));
+                cen.setDomicilio(rs.getString("direccion"));
+                cen.setStock(rs.getInt("stock"));
+                cen.setProvincia(rs.getString("provincia"));
+                cen.setLocalidad(rs.getString("localidad"));
+                cen.setCapacidad(rs.getInt("capacidad"));
+                cen.setRegistrados(rs.getInt("registrados"));
             }
         } catch (SQLException e) {
             System.out.println("ERROR buscando el centro por localidad");
         }
-        return centro;
+        return cen;
     }
 
     public List<Centro> listarCentrosXProvincia(String provincia) {

@@ -5,10 +5,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.List;
 
-/**
- *
- * @author Walter Benítez
- */
 public class CentrosHabilitados extends javax.swing.JFrame {
     CentroData cd = new CentroData();
     /** Creates new form Main */

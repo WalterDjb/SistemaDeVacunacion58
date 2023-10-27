@@ -62,6 +62,11 @@ public class Rango_2 extends javax.swing.JFrame {
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbVolver.setForeground(new java.awt.Color(255, 255, 255));
         jbVolver.setText("<- Volver");
+        jbVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
@@ -74,6 +79,11 @@ public class Rango_2 extends javax.swing.JFrame {
         this.dispose();
         new CrearCentro().setVisible(true);
     }//GEN-LAST:event_jbCentrosActionPerformed
+
+    private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jbVolverActionPerformed
 
     /**
      * @param args the command line arguments
