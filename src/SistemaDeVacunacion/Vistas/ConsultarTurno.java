@@ -210,9 +210,9 @@ try {
     int dni = Integer.parseInt(jtDni.getText());
     Cita cita = ad.buscarTurnoXDni(dni);
 
-    if (cita != null) {
+    if (cita != null && cita.getEstadoCita() == null) {
         LocalDateTime fechaHoraActual = LocalDateTime.now(); 
-
+        System.out.println(cita.getEstadoCita());
         
         if (cita.getFechaHoraCita().isAfter(fechaHoraActual)) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
