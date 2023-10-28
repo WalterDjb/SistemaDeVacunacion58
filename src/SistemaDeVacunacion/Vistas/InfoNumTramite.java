@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacion.Vistas;
 
 import java.awt.Color;
@@ -23,6 +18,7 @@ public class InfoNumTramite extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        getContentPane().setBackground(Color.WHITE);
         label_info.setText(
                 "<html><ul>\n"
                 + "    <li style=\"text-align: left; color: rgb(41, 105, 176); font-size: 11px; font-family: Helvetica;\">El n&uacute;mero de tr&aacute;mite se encuentra al frente del documento, en la secci&oacute;n inferior al centro.</li>\n"
