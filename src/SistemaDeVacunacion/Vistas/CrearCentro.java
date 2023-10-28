@@ -92,7 +92,7 @@ public class CrearCentro extends javax.swing.JFrame {
         centro.setCapacidad(Integer.parseInt(JTcapacidad.getText()));
         centro.setDomicilio(JTdireccion.getText());
         centro.setLocalidad(JTlocalidad.getText());
-        if (provincia == "CABA"){
+        if ("CABA".equals(provincia)){
             centro.setProvincia("Ciudad Autónoma de Buenos Aires");
         }else{
         centro.setProvincia(provincia);
