@@ -156,14 +156,16 @@ public class CitaData {
     
     }
     
-    public List<Cita> obtenerCitasPorProvincia(String provincia) {
+    public List<Cita> obtenerCitasPorProvincia(String provincia, int ano, int mes) {
     List<Cita> citas = new ArrayList<>();
     
     if (con != null) {
-        String consulta = "SELECT  c.fHCita, c.estadoCita, ce.id, ce.localidad FROM cita AS c JOIN centro AS ce ON c.centro = ce.id WHERE ce.provincia = ?";
+        String consulta = "SELECT  c.fHCita, c.estadoCita, ce.id, ce.localidad FROM cita AS c JOIN centro AS ce ON c.centro = ce.id WHERE ce.provincia = ? AND YEAR(c.fHCita) = ? AND MONTH(c.fHCita) = ?";
         
         try (PreparedStatement ps = con.prepareStatement(consulta)) {
             ps.setString(1, provincia);
+            ps.setInt(2, ano);
+            ps.setInt(3, mes);
             ResultSet rs = ps.executeQuery();
             
              while (rs.next()) {

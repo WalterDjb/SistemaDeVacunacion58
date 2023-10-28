@@ -8,6 +8,11 @@ import SistemaDeVacunacion.Conexiones.CentroData;
 import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Cita;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 
 public class ListCitasMensual extends javax.swing.JFrame {
@@ -24,7 +29,7 @@ public ListCitasMensual() {
         ciData = new CitaData();
         CentroData cd = new CentroData();
         Centro centro = new Centro();
-        armarCabecera();
+//        armarCabecera();
         
     }
 
@@ -39,7 +44,7 @@ public ListCitasMensual() {
         jTable1 = new javax.swing.JTable();
         jbConsultar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jCMes = new javax.swing.JComboBox<>();
+        jCAno = new javax.swing.JComboBox<>();
         jCMes1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -91,23 +96,28 @@ public ListCitasMensual() {
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
         jbConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        jbConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 30, 30));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Mes: ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
 
-        jCMes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", " " }));
-        jCMes.addActionListener(new java.awt.event.ActionListener() {
+        jCAno.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jCAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", " " }));
+        jCAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCMesActionPerformed(evt);
+                jCAnoActionPerformed(evt);
             }
         });
-        getContentPane().add(jCMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 70, 30));
+        getContentPane().add(jCAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 70, 30));
 
         jCMes1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCMes1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
+        jCMes1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         jCMes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCMes1ActionPerformed(evt);
@@ -129,14 +139,19 @@ public ListCitasMensual() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCMes1ActionPerformed
 
-    private void jCMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCMesActionPerformed
+    private void jCAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCAnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCMesActionPerformed
+    }//GEN-LAST:event_jCAnoActionPerformed
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         this.dispose();
         new EstadisticasListado().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarActionPerformed
+        borrarFilaTabla();
+        cargaCentrosVacunas();
+    }//GEN-LAST:event_jbConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +190,7 @@ public ListCitasMensual() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jCMes;
+    private javax.swing.JComboBox<String> jCAno;
     private javax.swing.JComboBox<String> jCMes1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -187,27 +202,37 @@ public ListCitasMensual() {
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
-    private void armarCabecera() {
-        ArrayList<Object> filaCabecera = new ArrayList<>();
-            filaCabecera.add("Centro");
-            filaCabecera.add("Cumplidas");
-            filaCabecera.add("Vencidas");
-            filaCabecera.add("Canceladas");
-            for(Object it: filaCabecera) {
-                modelo.addColumn(it);
-            }
-            jTable1.setModel(modelo);
-
-        }
+//    private void armarCabecera() {
+//        ArrayList<Object> filaCabecera = new ArrayList<>();
+//            filaCabecera.add("Centro");
+//            filaCabecera.add("Cumplidas");
+//            filaCabecera.add("Vencidas");
+//            filaCabecera.add("Canceladas");
+//            for(Object it: filaCabecera) {
+//                modelo.addColumn(it);
+//            }
+//            jTable1.setModel(modelo);
+//
+//        }
     private void cargaCentrosVacunas() {
-   
-    List<Cita> citas = ciData.obtenerCitasPorProvincia(Login.user);
+     int anoSeleccionado = Integer.parseInt(jCAno.getSelectedItem().toString());
+     int mesSeleccionado = Integer.parseInt(jCMes1.getSelectedItem().toString());
+        
+        
+     List<Cita> citas = ciData.obtenerCitasPorProvincia(Login.user, anoSeleccionado, mesSeleccionado);
+    
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Centro", "Cumplidas", "Vencidas", "Canceladas"}, 0);
         int cumplidas = 0;
         int vencidas = 0;
         int canceladas = 0;
 
+      
+        
     for (Cita cita : citas) {
-        String estado = cita.getEstadoCita();
+    String estado = cita.getEstadoCita();
+        
+
+    
     if ("CUM".equals(estado)) {
         cumplidas++;
     } else if ("VEN".equals(estado)) {
@@ -219,32 +244,23 @@ public ListCitasMensual() {
     String centro = cita.getId() + " " + cita.getLocalidad();
     Object[] rowData = {centro, cumplidas, vencidas, canceladas};
 
-    DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+    
     modelo.addRow(rowData);
  
     }
+    jTable1.setModel(modelo);
 }
 
-
+private void borrarFilaTabla(){
+        int indice = modelo.getRowCount() -1;
+        
+        for(int i = indice;i>=0;i--){
+            modelo.removeRow(i); 
+        }
+    }
 
    
      
 }
-//    private void cargarJCcentros (){
-//            JCcentros.removeAllItems();
-//            List <Centro> centros = new ArrayList<>();
-//
-//      if (  "CABA".equals(Login.user)){
-//          centros = cd.listarCentrosXProvincia("Ciudad Autónoma de Buenos Aires");
-//        for (Centro centro: centros){
-//            JCcentros.addItem(centro);
-//        }
-//      }else{
-//        centros = cd.listarCentrosXProvincia(Login.user);
-//        for (Centro centro: centros){
-//            JCcentros.addItem(centro);
-//              } 
-//       }
-//    }
 
    
