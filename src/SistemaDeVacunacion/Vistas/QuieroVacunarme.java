@@ -5,10 +5,6 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Walter Benítez
- */
 public class QuieroVacunarme extends javax.swing.JFrame {
 
     /** Creates new form Main */
