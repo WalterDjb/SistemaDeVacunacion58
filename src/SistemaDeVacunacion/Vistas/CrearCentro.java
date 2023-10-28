@@ -8,6 +8,10 @@ public class CrearCentro extends javax.swing.JFrame {
     String provincia = Login.user;
     public CrearCentro() {
         initComponents();
+        setSize(800, 629);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("SISTEMA DE VACUNACIÓN - Crear un Centro de Vacunación");
         JTprovincia.setText(provincia);
     }
 
