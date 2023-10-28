@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2023 a las 00:46:19
+-- Tiempo de generación: 29-10-2023 a las 00:29:45
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -56,6 +56,7 @@ INSERT INTO `acceso` (`nivel`, `nombre`, `email`, `usuario`, `contra`, `tipoCont
 (3, 'Centro 46', '-', '46-Las Lomitas', '46-Las Lomitas', 'A'),
 (3, 'Centro 47', '-', '47-San Telmo', '47-San Telmo', 'A'),
 (3, 'Centro 48', '-', '48-Barracas', '48-Barracas', 'A'),
+(3, 'Centro 49', '-', '49-Santa Lucía', '49-Santa Lucía', 'A'),
 (2, 'Guille', 'guilleglp@gmail.com', 'Buenos Aires', 'BuenosAires', 'A'),
 (2, '-', '-', 'CABA', 'CABA', 'A'),
 (2, '-', '-', 'Catamarca', 'Catamarca', 'A'),
@@ -115,7 +116,8 @@ INSERT INTO `centro` (`id`, `direccion`, `stock`, `provincia`, `localidad`, `cap
 (45, 'San Martin 5960', NULL, 'Buenos Aires', 'La Plata', 250, 0),
 (46, 'Peron 1280', NULL, 'Buenos Aires', 'Las Lomitas', 100, 0),
 (47, 'San Juan 1490', NULL, 'Ciudad Autónoma de Buenos Aires', 'San Telmo', 250, 0),
-(48, 'Defensa 2550', NULL, 'Ciudad Autónoma de Buenos Aires', 'Barracas', 200, 0);
+(48, 'Defensa 2550', NULL, 'Ciudad Autónoma de Buenos Aires', 'Barracas', 200, 0),
+(49, 'Belgrano 1280', NULL, 'Corrientes', 'Santa Lucía', 50, 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,7 @@ CREATE TABLE `cita` (
 --
 
 INSERT INTO `cita` (`id`, `dni`, `fHCita`, `Vacuna`, `fHAplicacion`, `centro`, `estadoCita`, `numeroSerie`) VALUES
-(1, 35681886, '2023-10-27 00:00:00', 'vaxina', '2023-10-10 00:00:00', 39, 'CUM', '712304713');
+(1, 35681886, '2023-10-27 00:00:00', 'vaxina', '2023-10-10 00:00:00', 39, 'VEN', '712304713');
 
 -- --------------------------------------------------------
 
@@ -155,7 +157,7 @@ CREATE TABLE `ciudadano` (
   `provincia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
-  `celular` int(10) NOT NULL,
+  `celular` bigint(10) NOT NULL,
   `patologia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `ambitoTrabajo` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `aplicaciones` int(2) NOT NULL DEFAULT 0,
@@ -168,7 +170,29 @@ CREATE TABLE `ciudadano` (
 --
 
 INSERT INTO `ciudadano` (`dni`, `tramite`, `nombre`, `apellido`, `provincia`, `localidad`, `email`, `celular`, `patologia`, `ambitoTrabajo`, `aplicaciones`, `ultimaDosis`, `domicilio`) VALUES
-(35681886, '00395514326', 'Walter Eduardo', 'Benitez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 2147483647, 'Obesidad', 'Educación', 2, '2023-10-10 00:00:00', 'Ruta Número 2 km 130');
+(31863250, '12345678910', 'Gaston', 'Fernandez', 'Corrientes', 'Santa Lucía', 'fernandeztomadin1985@gmail.com', 3777622457, 'Ninguna', 'Ninguna', 0, NULL, 'Barrio35V-C15'),
+(35681886, '00395514326', 'Walter Eduardo', 'Benitez', 'Formosa', 'La Primavera', 'walterdjb@gmail.com', 2147483647, 'Obesidad', 'Educación', 2, '2023-10-10 00:00:00', 'Ruta Número 2 km 130'),
+(96885624, '78545212588', 'Rafael', 'Vilca', 'Corrientes', 'Capital', 'Rafael@example.com', 3794334455, 'Enf.s hepáticas.', 'Otros', 0, NULL, 'Maruchita5000'),
+(111122223, '8901234567', 'Elena', 'García', 'Corrientes', 'Ciudad R', 'elena@example.com', 1818181818, 'Diabetes', 'Educación', 0, NULL, 'Avenida 151, No. 161'),
+(123456489, '1234567890', 'Juan', 'Pérez', 'Buenos Aires', 'Ciudad A', 'juan@example.com', 1111111111, 'Ninguna', 'Oficina', 0, NULL, 'Calle 123, No. 456'),
+(123456789, '6789012345', 'María', 'Martínez', 'Tierra del Fuego', 'Ciudad P', 'maria@example.com', 1616161616, 'Ninguna', 'Salud', 0, NULL, 'Avenida 131, No. 141'),
+(202020202, '0123456789', 'Mariana', 'Díaz', 'Santiago del Estero', 'Ciudad T', 'mariana@example.com', 2020202020, 'Alergia', 'Oficina', 0, NULL, 'Avenida 171, No. 181'),
+(222211110, '7890123456', 'Diego', 'Torres', 'Jujuy', 'Ciudad G', 'diego@example.com', 2147483647, 'Ninguna', 'Salud', 0, NULL, 'Calle 444, No. 555'),
+(227211110, '2345612345', 'Lorena', 'Gutiérrez', 'Catamarca', 'Ciudad L', 'lorena@example.com', 1212121212, 'Hipertensión', 'Salud', 0, NULL, 'Avenida 999, No. 101'),
+(444433322, '1234509876', 'Carlos', 'Gómez', 'Chaco', 'Ciudad K', 'carlos@example.com', 1111111112, 'Diabetes', 'Oficina', 0, NULL, 'Calle 888, No. 999'),
+(444434322, '5678901234', 'Pedro', 'Sánchez', 'Tucumán', 'Ciudad E', 'pedro@example.com', 2147483647, 'Ninguna', 'Restaurante', 0, NULL, 'Calle 222, No. 333'),
+(555511122, '5678900123', 'Fernando', 'Fernández', 'Neuquén', 'Ciudad O', 'fernando@example.com', 1515151515, 'Artritis', 'Oficina', 0, NULL, 'Calle 121, No. 131'),
+(555555555, '3456789012', 'Carlos', 'Rodríguez', 'Mendoza', 'Ciudad C', 'carlos@example.com', 2147483647, 'Diabetes', 'Educación', 0, NULL, 'Calle 789, No. 123'),
+(555581122, '0123456789', 'Valentina', 'Santos', 'San Luis', 'Ciudad J', 'valentina@example.com', 1010101010, 'Asma', 'Educación', 0, NULL, 'Avenida 777, No. 888'),
+(606699988, '9012345678', 'Luis', 'Gómez', 'Formosa', 'Ciudad S', 'luis@example.com', 1919191919, 'Ninguna', 'Restaurante', 0, NULL, 'Calle 161, No. 171'),
+(666699988, '8901234567', 'Sofía', 'Martínez', 'San Juan', 'Ciudad H', 'sofia@example.com', 2147483647, 'Artritis', 'Tienda', 0, NULL, 'Avenida 555, No. 666'),
+(777700001, '4567891230', 'Laura', 'Rojas', 'Río Negro', 'Ciudad N', 'laura@example.com', 1414141414, 'Ninguna', 'Restaurante', 0, NULL, 'Avenida 111, No. 121'),
+(777780001, '9012345678', 'Roberto', 'López', 'La Pampa', 'Ciudad I', 'roberto@example.com', 2147483647, 'Ninguna', 'Restaurante', 0, NULL, 'Calle 666, No. 777'),
+(887877766, '3456780123', 'Lucas', 'Hernández', 'Santa Cruz', 'Ciudad M', 'lucas@example.com', 1313131313, 'Alergia', 'Tienda', 0, NULL, 'Calle 101, No. 111'),
+(888877766, '6789012345', 'Ana', 'López', 'Santa Fe', 'Ciudad F', 'ana@example.com', 2147483647, 'Alergia', 'Oficina', 0, NULL, 'Avenida 333, No. 444'),
+(911122223, '4567890123', 'Laura', 'Fernández', 'Salta', 'Ciudad D', 'laura@example.com', 2147483647, 'Hipertensión', 'Tienda', 0, NULL, 'Avenida 111, No. 222'),
+(987614321, '2345678901', 'María', 'González', 'Córdoba', 'Ciudad B', 'maria@example.com', 2147483647, 'Asma', 'Salud', 0, NULL, 'Avenida 456, No. 789'),
+(987654321, '7890123456', 'Juan', 'Sánchez', 'Entre Ríos', 'Ciudad Q', 'juan@example.com', 1717171717, 'Asma', 'Tienda', 0, NULL, 'Calle 141, No. 151');
 
 -- --------------------------------------------------------
 
@@ -313,7 +337,7 @@ ALTER TABLE `vacuna`
 -- AUTO_INCREMENT de la tabla `centro`
 --
 ALTER TABLE `centro`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `cita`
