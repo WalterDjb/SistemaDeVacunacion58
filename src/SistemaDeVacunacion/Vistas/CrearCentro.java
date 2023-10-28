@@ -5,9 +5,10 @@ import SistemaDeVacunacion.Entidades.Centro;
 import javax.swing.JOptionPane;
 
 public class CrearCentro extends javax.swing.JFrame {
-
+    String provincia = Login.user;
     public CrearCentro() {
         initComponents();
+        JTprovincia.setText(provincia);
     }
 
     @SuppressWarnings("unchecked")
@@ -21,11 +22,11 @@ public class CrearCentro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         JTlocalidad = new javax.swing.JTextField();
-        JCprovincia = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         JBcrear = new javax.swing.JButton();
         JBvolver = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        JTprovincia = new javax.swing.JTextField();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,10 +49,6 @@ public class CrearCentro extends javax.swing.JFrame {
         jLabel4.setText("Capacidad:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
         getContentPane().add(JTlocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 149, -1));
-
-        JCprovincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        JCprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
-        getContentPane().add(JCprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 149, -1));
 
         jLabel6.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
         jLabel6.setText("CREAR CENTRO DE VACUNACIÓN");
@@ -79,8 +76,11 @@ public class CrearCentro extends javax.swing.JFrame {
         });
         getContentPane().add(JBvolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 42, 117, 41));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        JTprovincia.setEditable(false);
+        getContentPane().add(JTprovincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 150, 30));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,7 +92,11 @@ public class CrearCentro extends javax.swing.JFrame {
         centro.setCapacidad(Integer.parseInt(JTcapacidad.getText()));
         centro.setDomicilio(JTdireccion.getText());
         centro.setLocalidad(JTlocalidad.getText());
-        centro.setProvincia(String.valueOf(JCprovincia.getSelectedItem()));
+        if (provincia == "CABA"){
+            centro.setProvincia("Ciudad Autónoma de Buenos Aires");
+        }else{
+        centro.setProvincia(provincia);
+        }
         cd.agregar(centro);
         }catch(NumberFormatException nfe){
             JOptionPane.showMessageDialog(null, "El valor de Capacidad debe ser un valor numérico valido.");
@@ -139,15 +143,15 @@ public class CrearCentro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBcrear;
     private javax.swing.JButton JBvolver;
-    private javax.swing.JComboBox<String> JCprovincia;
     private javax.swing.JTextField JTcapacidad;
     private javax.swing.JTextField JTdireccion;
     private javax.swing.JTextField JTlocalidad;
+    private javax.swing.JTextField JTprovincia;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

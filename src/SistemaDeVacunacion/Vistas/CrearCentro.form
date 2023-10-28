@@ -98,49 +98,6 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="JCprovincia">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Verdana" size="16" style="0"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="24">
-            <StringItem index="0" value="Buenos Aires"/>
-            <StringItem index="1" value="Ciudad Aut&#xf3;noma de Buenos Aires"/>
-            <StringItem index="2" value="Catamarca"/>
-            <StringItem index="3" value="Chaco"/>
-            <StringItem index="4" value="Chubut"/>
-            <StringItem index="5" value="C&#xf3;rdoba"/>
-            <StringItem index="6" value="Corrientes"/>
-            <StringItem index="7" value="Entre R&#xed;os"/>
-            <StringItem index="8" value="Formosa"/>
-            <StringItem index="9" value="Jujuy"/>
-            <StringItem index="10" value="La Pampa"/>
-            <StringItem index="11" value="La Rioja"/>
-            <StringItem index="12" value="Mendoza"/>
-            <StringItem index="13" value="Misiones"/>
-            <StringItem index="14" value="Neuqu&#xe9;n"/>
-            <StringItem index="15" value="R&#xed;o Negro"/>
-            <StringItem index="16" value="Salta"/>
-            <StringItem index="17" value="San Juan"/>
-            <StringItem index="18" value="San Luis"/>
-            <StringItem index="19" value="Santa Cruz"/>
-            <StringItem index="20" value="Santa Fe"/>
-            <StringItem index="21" value="Santiago del Estero"/>
-            <StringItem index="22" value="Tierra del Fuego"/>
-            <StringItem index="23" value="Tucum&#xe1;n"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="400" y="210" width="149" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -198,7 +155,17 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JTextField" name="JTprovincia">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="400" y="200" width="150" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/SistemaDeVacunacion/Vistas/Fondo app.png"/>

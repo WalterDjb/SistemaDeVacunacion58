@@ -104,7 +104,7 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         String Scen = String.valueOf(JCcentros.getSelectedItem()).substring(0,2);
         int id = Integer.parseInt(Scen);
         Centro cen = cd.buscarCentroXId(id);
-        JOptionPane.showMessageDialog(null, "DATOS DEL CENTRO\nProvincia: "+cen.getProvincia()+".\nLocalidad: "+cen.getLocalidad()+".\nDireccion: "+cen.getDomicilio()+".\nCapacidad: "+cen.getCapacidad()+" personas por turno.");
+        JOptionPane.showMessageDialog(null, "DATOS DEL CENTRO\nProvincia: "+cen.getProvincia()+".\nLocalidad: "+cen.getLocalidad()+".\nDireccion: "+cen.getDomicilio()+".\nCapacidad: "+cen.getCapacidad()+" personas por día.");
     }//GEN-LAST:event_jbAccederActionPerformed
 
     private void JCprovinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCprovinciaActionPerformed
