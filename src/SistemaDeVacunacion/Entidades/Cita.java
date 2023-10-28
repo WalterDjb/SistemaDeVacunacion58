@@ -8,12 +8,12 @@ public class Cita {
     private Ciudadano ciudadano;
     private LocalDateTime fechaHoraCita, fechaHoraColocacion;
     private Vacuna vacuna;
-    private String estadoCita, nSerie;
+    private String estadoCita, nSerie, localidad;
 
     public Cita() {
     }
 
-    public Cita(LocalDateTime fechaHoraCita, int dosis, String nSerie, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro, String estadoCita, int id) {
+    public Cita(LocalDateTime fechaHoraCita, int dosis, String nSerie, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro, String estadoCita, int id, String localidad) {
         this.centro = centro;
         this.fechaHoraCita = fechaHoraCita;
         this.dosis = dosis;
@@ -23,6 +23,7 @@ public class Cita {
         this.vacuna = vacuna;
         this.estadoCita = estadoCita;
         this.id = id;
+        this.localidad = localidad;
     }
 
     public Centro getCentro() {
@@ -95,6 +96,22 @@ public class Cita {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getnSerie() {
+        return nSerie;
+    }
+
+    public void setnSerie(String nSerie) {
+        this.nSerie = nSerie;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
     }
     
 }

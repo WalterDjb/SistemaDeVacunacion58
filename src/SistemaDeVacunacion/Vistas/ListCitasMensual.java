@@ -18,11 +18,14 @@ private CentroData ceData;
 private CitaData ciData; 
 
 private DefaultTableModel modelo;
-
 public ListCitasMensual() {
         initComponents();
+        modelo = new DefaultTableModel();
+        ciData = new CitaData();
+        CentroData cd = new CentroData();
+        Centro centro = new Centro();
+        armarCabecera();
         
-        //armarCabecera();
     }
 
     
@@ -184,17 +187,64 @@ public ListCitasMensual() {
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
-//    private void armarCabecera() {
-//        ArrayList<Object> filaCabecera = new ArrayList<>();
-//            filaCabecera.add("Centro");
-//            filaCabecera.add("Cumplidas");
-//            filaCabecera.add("Vencidas");
-//            filaCabecera.add("Canceladas");
-//            for(Object it: filaCabecera) {
-//                modelo.addColumn(it);
-//            }
-//            jTable1.setModel(modelo);
-//
-//        }
+    private void armarCabecera() {
+        ArrayList<Object> filaCabecera = new ArrayList<>();
+            filaCabecera.add("Centro");
+            filaCabecera.add("Cumplidas");
+            filaCabecera.add("Vencidas");
+            filaCabecera.add("Canceladas");
+            for(Object it: filaCabecera) {
+                modelo.addColumn(it);
+            }
+            jTable1.setModel(modelo);
+
+        }
+    private void cargaCentrosVacunas() {
+   
+    List<Cita> citas = ciData.obtenerCitasPorProvincia(Login.user);
+        int cumplidas = 0;
+        int vencidas = 0;
+        int canceladas = 0;
+
+    for (Cita cita : citas) {
+        String estado = cita.getEstadoCita();
+    if ("CUM".equals(estado)) {
+        cumplidas++;
+    } else if ("VEN".equals(estado)) {
+        vencidas++;
+    } else if ("CAN".equals(estado)) {
+        canceladas++;
+    }
+
+    String centro = cita.getId() + " " + cita.getLocalidad();
+    Object[] rowData = {centro, cumplidas, vencidas, canceladas};
+
+    DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+    modelo.addRow(rowData);
+ 
+    }
 }
+
+
+
+   
+     
+}
+//    private void cargarJCcentros (){
+//            JCcentros.removeAllItems();
+//            List <Centro> centros = new ArrayList<>();
+//
+//      if (  "CABA".equals(Login.user)){
+//          centros = cd.listarCentrosXProvincia("Ciudad Autónoma de Buenos Aires");
+//        for (Centro centro: centros){
+//            JCcentros.addItem(centro);
+//        }
+//      }else{
+//        centros = cd.listarCentrosXProvincia(Login.user);
+//        for (Centro centro: centros){
+//            JCcentros.addItem(centro);
+//              } 
+//       }
+//    }
+
    

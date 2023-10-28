@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class CitaData {
@@ -152,4 +155,30 @@ public class CitaData {
         return cita;
     
     }
+    
+    public List<Cita> obtenerCitasPorProvincia(String provincia) {
+    List<Cita> citas = new ArrayList<>();
+    
+    if (con != null) {
+        String consulta = "SELECT  c.fHCita, c.estadoCita, ce.id, ce.localidad FROM cita AS c JOIN centro AS ce ON c.centro = ce.id WHERE ce.provincia = ?";
+        
+        try (PreparedStatement ps = con.prepareStatement(consulta)) {
+            ps.setString(1, provincia);
+            ResultSet rs = ps.executeQuery();
+            
+             while (rs.next()) {
+            Cita cita = new Cita();
+            cita.setFechaHoraCita(rs.getTimestamp("fHCita").toLocalDateTime());
+            cita.setEstadoCita(rs.getString("estadoCita"));
+            cita.setId(rs.getInt("id"));
+            cita.setLocalidad(rs.getString("localidad")); 
+            citas.add(cita);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } 
+}
+
+    return citas;
+}
 }
