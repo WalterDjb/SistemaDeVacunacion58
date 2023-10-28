@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package SistemaDeVacunacion.Vistas;
 
+package SistemaDeVacunacion.Vistas;
+import SistemaDeVacunacion.Conexiones.CitaData;
 /**
  *
  * @author totip
  */
 public class EstadisticasListado extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EstadisticasListado
-     */
+   private CitaData ciData; 
+   
+   
     public EstadisticasListado() {
         initComponents();
+        ciData = new CitaData();
+
     }
 
     /**
@@ -94,10 +92,9 @@ public class EstadisticasListado extends javax.swing.JFrame {
 
     private void jbLista_MensualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLista_MensualActionPerformed
         this.dispose();
-        new ListCitasMensual().setVisible(true);        
+        new ListCitasMensual().setVisible(true);
+        ciData.actualizarCitasVencidas();        
 
-
-// TODO add your handling code here:
     }//GEN-LAST:event_jbLista_MensualActionPerformed
 
     private void jbLista_DiariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLista_DiariaActionPerformed

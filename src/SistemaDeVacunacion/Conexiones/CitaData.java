@@ -183,4 +183,14 @@ public class CitaData {
 
     return citas;
 }
+    
+    public void actualizarCitasVencidas() {
+        try {
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET estadoCita =     CASE WHEN fHCita <= DATE_ADD(NOW(), INTERVAL 1 DAY) THEN 'VEN' ELSE estadoCita END;");
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
+        }
+    }
 }

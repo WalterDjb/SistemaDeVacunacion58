@@ -202,18 +202,7 @@ public ListCitasMensual() {
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
-//    private void armarCabecera() {
-//        ArrayList<Object> filaCabecera = new ArrayList<>();
-//            filaCabecera.add("Centro");
-//            filaCabecera.add("Cumplidas");
-//            filaCabecera.add("Vencidas");
-//            filaCabecera.add("Canceladas");
-//            for(Object it: filaCabecera) {
-//                modelo.addColumn(it);
-//            }
-//            jTable1.setModel(modelo);
-//
-//        }
+
     private void cargaCentrosVacunas() {
      int anoSeleccionado = Integer.parseInt(jCAno.getSelectedItem().toString());
      int mesSeleccionado = Integer.parseInt(jCMes1.getSelectedItem().toString());
