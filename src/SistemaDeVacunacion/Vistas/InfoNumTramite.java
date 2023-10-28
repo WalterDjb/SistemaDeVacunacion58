@@ -1,7 +1,11 @@
 package SistemaDeVacunacion.Vistas;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -16,20 +20,28 @@ public class InfoNumTramite extends javax.swing.JFrame {
      */
     public InfoNumTramite() {
         initComponents();
+        setBackground(new Color(0, 0, 0, 0));
+        repaint();
         setLocationRelativeTo(null);
         setResizable(false);
-        getContentPane().setBackground(Color.WHITE);
+        
         label_info.setText(
-                "<html><ul>\n"
-                + "    <li style=\"text-align: left; color: rgb(41, 105, 176); font-size: 11px; font-family: Helvetica;\">El n&uacute;mero de tr&aacute;mite se encuentra al frente del documento, en la secci&oacute;n inferior al centro.</li>\n"
-                + "    <li style=\"text-align: left; color: rgb(41, 105, 176); font-size: 11px; font-family: Helvetica;\">Es una serie de n&uacute;meros de 11 d&iacute;gitos.</li>\n"
-                + "</ul>\n"
-                + "<p><br></p>\n"
-                + "<p><span style=\"font-family: Helvetica; font-size: 11px; color: rgb(41, 105, 176);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A continuaci&oacute;n le indicamos de manera gr&aacute;fica su ubicaci&oacute;n:</span></p></html>");
+                
+                "<html><ul>\n<li style=\"text-align: left; color: rgb(41, 105, 176); font-size: 11px; font-family: Helvetica;\">El n&uacute;mero de tr&aacute;mite se encuentra al frente del documento, en la secci&oacute;n inferior al centro.</li>\n"
+                + "<li style=\"text-align: left; color: rgb(41, 105, 176); font-size: 11px; font-family: Helvetica;\">Es una serie de n&uacute;meros de 11 d&iacute;gitos.</li>\n"
+                + "</ul>\n<p><br></p>\n<p><span style=\"font-family: Helvetica; font-size: 11px; color: rgb(41, 105, 176);\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A continuaci&oacute;n le indicamos de manera gr&aacute;fica su ubicaci&oacute;n:</span></p></html>"
+        );
 
         ImageIcon imagen_dni = new ImageIcon("src/Imagenes/dni_id.png");
         Icon icono_dni = new ImageIcon(imagen_dni.getImage().getScaledInstance(label_imagen_dni.getWidth(), label_imagen_dni.getHeight(), Image.SCALE_DEFAULT));
         label_imagen_dni.setIcon(icono_dni);
+        
+        ImageIcon imagen_label_fondo = new ImageIcon("src/Imagenes/img_fondo_tramite.png");
+        Icon icono_label_fondo = new ImageIcon(imagen_label_fondo.getImage().getScaledInstance(label_fondo.getWidth(), label_fondo.getHeight(), Image.SCALE_DEFAULT));
+        label_fondo.setIcon(icono_label_fondo);
+        
+        repaint();
+        
     }
 
     /**
@@ -44,9 +56,14 @@ public class InfoNumTramite extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         label_info = new javax.swing.JLabel();
         label_imagen_dni = new javax.swing.JLabel();
+        label_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setFocusCycleRoot(false);
+        setFocusable(false);
+        setFocusableWindowState(false);
         setMinimumSize(new java.awt.Dimension(530, 530));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(530, 530));
@@ -65,6 +82,15 @@ public class InfoNumTramite extends javax.swing.JFrame {
         label_info.setText("      ");
         getContentPane().add(label_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 490, -1));
         getContentPane().add(label_imagen_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 369, 234));
+
+        /*
+        label_fondo.setBackground(new java.awt.Color(0, 0, 0));
+        label_fondo.setForeground(new java.awt.Color(0, 0, 0));
+        label_fondo.setFocusable(false);
+        label_fondo.setOpaque(true);
+        label_fondo.setRequestFocusEnabled(false);
+        */
+        getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,6 +137,7 @@ public class InfoNumTramite extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel label_fondo;
     private javax.swing.JLabel label_imagen_dni;
     private javax.swing.JLabel label_info;
     // End of variables declaration//GEN-END:variables
