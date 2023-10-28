@@ -349,7 +349,7 @@ Limpiar();
         if(!numeros){
             evt.consume();
         }   
-        if (jtCelular.getText().length()>=10){
+        if (jtCelular.getText().length()>=8){
             evt.consume();
         }
       
