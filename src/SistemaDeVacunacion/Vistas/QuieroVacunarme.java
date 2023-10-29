@@ -1,12 +1,21 @@
 package SistemaDeVacunacion.Vistas;
+import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Conexiones.CiudadanoData;
+import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Ciudadano;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class QuieroVacunarme extends javax.swing.JFrame {
-
+    CentroData ced = new CentroData();
+    CiudadanoData cid = new CiudadanoData();
+    CitaData citad = new CitaData();
+    
     /** Creates new form Main */
     public QuieroVacunarme() {
         initComponents();
@@ -52,7 +61,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jcbProvincia = new javax.swing.JComboBox<>();
         jcbPatologia = new javax.swing.JComboBox<>();
         jcbAMbito1 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JCcentros = new javax.swing.JComboBox<>();
+        jbInfo = new javax.swing.JButton();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -228,7 +240,12 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
         jcbProvincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jcbProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        jcbProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        jcbProvincia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbProvinciaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jcbProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, -1));
 
         jcbPatologia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -239,8 +256,22 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jcbAMbito1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros", "Salud", "Educacion", "Comercio", "Seguridad", "Justicia", " " }));
         getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, 160, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        jLabel3.setText("Centros:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, -1, -1));
+
+        JCcentros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione un Centro>" }));
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 200, 30));
+
+        jbInfo.setText("i");
+        jbInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbInfoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 40, 30));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -283,11 +314,11 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     }//GEN-LAST:event_jtLocalidadActionPerformed
 
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
-  CiudadanoData ad = new CiudadanoData();
+  CiudadanoData cid = new CiudadanoData();
   Ciudadano ciudadano = new Ciudadano();
 try {
     int dni = Integer.parseInt(jtDoc.getText());
-    ciudadano = ad.buscarPorDni(dni);
+    ciudadano = cid.buscarPorDni(dni);
     
     
     if (jtApellido.getText().isEmpty() || jtNombre1.getText().isEmpty() || jtDomicilio.getText().isEmpty()|| jtLocalidad.getText().isEmpty()|| jtDoc.getText().isEmpty()|| jtTramite.getText().isEmpty()) {
@@ -295,10 +326,8 @@ try {
         return;
     } else if 
         (ciudadano != null){
-        JOptionPane.showMessageDialog(this, "Ciudadano ya registrado");
+        citad.crearCitaPorDniYId (dni, (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0,2))));
     } else {
-            
-            
     ciudadano = new Ciudadano();
     ciudadano.setDni(dni);
     ciudadano.setNombre(jtNombre1.getText());
@@ -311,18 +340,19 @@ try {
     ciudadano.setAmbito(jcbAMbito1.getSelectedItem().toString());
     ciudadano.setDomicilio(jtDomicilio.getText());
     ciudadano.setNumTramite(Long.parseLong(jtTramite.getText()));
-    ad.guardarCiudadano(ciudadano);
-            }
-
+    cid.guardarCiudadano(ciudadano);
+    citad.cargarCitasPorCentroYDni(dni, (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0,2))));
+    }
 
 } catch (NumberFormatException nfe) {
     //JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico.");
 } catch (NullPointerException npe) {
     JOptionPane.showMessageDialog(null, "Error al guardar o modificar el ciudadano.");
+    System.err.println("ERROR: "+npe.getMessage());
 }
 
 //JOptionPane.showMessageDialog(null, "Inscripto Correctamente, en unos dias nos comunicaremos para informarle fecha y lugar de vacunacion");
-Limpiar();  
+//Limpiar();  
           
         
     }//GEN-LAST:event_jbInscribirActionPerformed
@@ -402,6 +432,18 @@ Limpiar();
         // TODO add your handling code here:
     }//GEN-LAST:event_jtDocActionPerformed
 
+    private void jbInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInfoActionPerformed
+        String Scen = String.valueOf(JCcentros.getSelectedItem()).substring(0,2);
+        int id = Integer.parseInt(Scen);
+        Centro cen = ced.buscarCentroXId(id);
+        JOptionPane.showMessageDialog(null, "DATOS DEL CENTRO\nProvincia: "+cen.getProvincia()+".\nLocalidad: "+cen.getLocalidad()+".\nDireccion: "+cen.getDomicilio()+".\nCapacidad: "+cen.getCapacidad()+" personas por día.");
+    }//GEN-LAST:event_jbInfoActionPerformed
+
+    private void jcbProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbProvinciaActionPerformed
+        JCcentros.removeAllItems();
+        cargarJCcentros();
+    }//GEN-LAST:event_jcbProvinciaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -432,7 +474,8 @@ Limpiar();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> JCcentros;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -441,7 +484,9 @@ Limpiar();
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jbInfo;
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbVolver;
     private javax.swing.JComboBox<String> jcbAMbito1;
@@ -474,4 +519,13 @@ Limpiar();
     jtTramite.setText("");
     
 }
+    
+    private void cargarJCcentros (){
+        JCcentros.removeAllItems();
+            List <Centro> centros = new ArrayList<>();
+            centros = ced.listarCentrosXProvincia(String.valueOf(jcbProvincia.getSelectedItem()));
+            for (Centro centro: centros){
+            JCcentros.addItem(centro.toString());
+        }
+    }
 }

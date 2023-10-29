@@ -3,12 +3,12 @@ package SistemaDeVacunacion.Entidades;
 import java.time.LocalDateTime;
 
 public class Cita {
-    private Centro centro;
-    private int dosis, id, dni;
-    private Ciudadano ciudadano;
-    private LocalDateTime fechaHoraCita, fechaHoraColocacion;
-    private Vacuna vacuna;
-    private String estadoCita, nSerie, localidad;
+    public Centro centro;
+    public int dosis, id, dni;
+    public Ciudadano ciudadano;
+    public LocalDateTime fechaHoraCita, fechaHoraColocacion;
+    public Vacuna vacuna;
+    public String estadoCita, nSerie, localidad;
 
     public Cita() {
     }

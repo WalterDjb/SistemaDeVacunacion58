@@ -13,6 +13,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class CitaData {
@@ -265,9 +267,34 @@ public class CitaData {
         }
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
-    } 
+        } 
+    }
+       return citas;
 }
+    
+    public void crearCitaPorDniYId (int dni, int id){
+        try {
+        Cita cita = new Cita();
+        cita.setCiudadano(cd.buscarPorDni(dni));
+        cita.setCentro(ced.buscarCentroXId(id));
+        cita.setDosis(cd.buscarPorDni(dni).getDosis()+1);
+        cita.setFechaHoraColocacion(cd.buscarPorDni(dni).getUltimaDosis());
+        String sql = "INSERT INTO citas VALUES (?,?,?,?,?)";
 
-    return citas;
-}
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, cita.ciudadano.getDni());
+            ps.setString(2, cita.fechaHoraCita.toString());
+            ps.setString(3, cita.getVacuna().getMarca());
+            ps.setString(4, cita.fechaHoraColocacion.toString());
+            ps.setInt(5, cita.centro.getId());
+            //ps.setString(6, "NULL");
+            //ps.setString(7, "NULL");
+            
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            System.err.println("ERROR crítico mortal y muchas cosas malas en crearCitaPorDniYId: "+ex.getMessage());
+        }
+        
+    }
 }
