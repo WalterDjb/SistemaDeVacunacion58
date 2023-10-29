@@ -71,7 +71,7 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione el centro: ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 215, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -95,7 +95,7 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
                 JCcentrosActionPerformed(evt);
             }
         });
-        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 200, 40));
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 200, 30));
 
         jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
