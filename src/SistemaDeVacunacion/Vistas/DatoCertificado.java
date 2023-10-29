@@ -1,14 +1,25 @@
 package SistemaDeVacunacion.Vistas;
 
-
 import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Conexiones.CiudadanoData;
 import SistemaDeVacunacion.Entidades.Cita;
 import java.awt.Image;
 import java.awt.Toolkit;
 import SistemaDeVacunacion.Entidades.Ciudadano;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Rectangle;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,6 +27,8 @@ import java.time.format.DateTimeFormatter;
  */
 public class DatoCertificado extends javax.swing.JFrame {
 
+    private Ciudadano ciudadano;
+    private Cita cita;
     /**
      * Creates new form Main
      */
@@ -25,9 +38,9 @@ public class DatoCertificado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Resultado de búsqueda");
-        
-        Ciudadano ciudadano = CiudadanoData.buscarPorDni(ObtenerCertificado.dni);
-        Cita cita = CitaData.obtenerUltimaAplicacion(ObtenerCertificado.dni, ciudadano.getUltimaDosis());
+
+        ciudadano = CiudadanoData.buscarPorDni(ObtenerCertificado.dni);
+        cita = CitaData.obtenerUltimaAplicacion(ObtenerCertificado.dni, ciudadano.getUltimaDosis());
         label_dni.setText(String.valueOf(ciudadano.getDni()));
         label_nombre.setText(ciudadano.getApellido() + ", " + ciudadano.getNombre());
         label_dosis.setText(String.valueOf(ciudadano.getDosis()));
@@ -159,7 +172,34 @@ public class DatoCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_volverActionPerformed
 
     private void boton_descargar_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_descargar_certificadoActionPerformed
-        // TODO add your handling code here:
+        Document doc = new Document();
+        doc.setPageSize(new Rectangle(1664, 1169));
+
+        try {
+            String dir = System.getProperty("user.home");
+            PdfWriter.getInstance(doc, new FileOutputStream(dir + "/Desktop/Certificado_" + label_nombre.getText().replaceAll(" ", "-").replace(",", "") + ".pdf"));
+            com.itextpdf.text.Image fondo = com.itextpdf.text.Image.getInstance("src/Imagenes/img_fondo_certificado.png");
+            fondo.setAbsolutePosition(0, 0);
+            
+            Paragraph txt = new Paragraph();
+            txt.setAlignment(Paragraph.ALIGN_RIGHT);
+            txt.setFont(FontFactory.getFont(FontFactory.COURIER, 40, Font.BOLD, BaseColor.BLACK));
+            txt.add("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            txt.add(ciudadano.getApellido() + ", " + ciudadano.getNombre());
+            txt.add("\n\n\n\n\n\n\n" + ciudadano.getDni());
+            txt.add("\n\n\n\n\n\n\n" + ciudadano.getDosis());
+            txt.add("\n\n\n\n\n\n" + ciudadano.getUltimaDosis().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            txt.add("\n\n\n\n\n\n" + cita.getCentro().getId() + "-" + cita.getCentro().getLocalidad() + "-" + cita.getCentro().getDomicilio());
+            txt.add("\n\n\n\n\n\n\n" + cita.getnSerie() + " ");
+            
+            doc.open();
+            doc.add(fondo);
+            doc.add(txt);
+            doc.close();
+        } catch (DocumentException | FileNotFoundException e) {
+        } catch (IOException ex) {
+            Logger.getLogger(DatoCertificado.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_boton_descargar_certificadoActionPerformed
 
     /**
@@ -173,13 +213,7 @@ public class DatoCertificado extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DatoCertificado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DatoCertificado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DatoCertificado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DatoCertificado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 

@@ -1,11 +1,7 @@
 package SistemaDeVacunacion.Vistas;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -53,7 +49,7 @@ public class InfoNumTramite extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        boton_aceptar = new javax.swing.JButton();
         label_info = new javax.swing.JLabel();
         label_imagen_dni = new javax.swing.JLabel();
         label_fondo = new javax.swing.JLabel();
@@ -70,35 +66,27 @@ public class InfoNumTramite extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("ACEPTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        boton_aceptar.setText("ACEPTAR");
+        boton_aceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                boton_aceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 478, -1, -1));
+        getContentPane().add(boton_aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 478, -1, -1));
 
         label_info.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         label_info.setText("      ");
         getContentPane().add(label_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 490, -1));
         getContentPane().add(label_imagen_dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 369, 234));
-
-        /*
-        label_fondo.setBackground(new java.awt.Color(0, 0, 0));
-        label_fondo.setForeground(new java.awt.Color(0, 0, 0));
-        label_fondo.setFocusable(false);
-        label_fondo.setOpaque(true);
-        label_fondo.setRequestFocusEnabled(false);
-        */
         getContentPane().add(label_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void boton_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_aceptarActionPerformed
         ObtenerCertificado.tram = null;
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_boton_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,7 +124,7 @@ public class InfoNumTramite extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton boton_aceptar;
     private javax.swing.JLabel label_fondo;
     private javax.swing.JLabel label_imagen_dni;
     private javax.swing.JLabel label_info;
