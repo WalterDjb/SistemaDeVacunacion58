@@ -1,6 +1,7 @@
 package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.Conexion;
+import SistemaDeVacunacion.Entidades.Icono;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -175,7 +176,7 @@ public class Login extends javax.swing.JFrame {
                     }
                     
                 } else {
-                    JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos", "Error de credenciales", 0);
+                    JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos", "Error de credenciales", 0, Icono.ERROR);
 
                     if (p.get("user", null) != null) {
                         txt_password.setText("");
@@ -190,7 +191,7 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al iniciar sesión contacte al administrador", "Error de inicio", 2);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Debe copletar todos los campos", "Error", 0);
+            JOptionPane.showMessageDialog(null, "Debe copletar todos los campos", "Error", 0, Icono.ERROR);
         }
     }//GEN-LAST:event_jbIngresarActionPerformed
 

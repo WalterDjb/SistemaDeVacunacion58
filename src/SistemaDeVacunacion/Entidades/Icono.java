@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SistemaDeVacunacion.Entidades;
 
 import java.awt.Image;
@@ -14,7 +9,8 @@ import javax.swing.ImageIcon;
  * @author Walter Benítez
  */
 public class Icono {
-    public static Icon CORRECTO = establecerIcono("correcto.png", 64, 64);
+    public static final Icon CORRECTO = establecerIcono("icon_correcto.png", 64, 64);
+    public static final Icon ERROR = establecerIcono("icon_error.png", 64, 64);
     
     private Icono(){}
     
