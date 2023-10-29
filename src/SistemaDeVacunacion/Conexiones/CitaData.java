@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -245,14 +246,14 @@ public class CitaData {
     return citas;
 }
     
-    public List<Cita> obtenerVacunasAplicadasDiaria(int fechaAplicacion) {
+    public List<Cita> obtenerVacunasAplicadasDiaria(Date fechaAplicacion) {
     List<Cita> citas = new ArrayList<>();
     
     if (con != null) {
         String consulta = "SELECT * FROM cita WHERE fHAplicacion = ? AND estadoCita = 'CUM'";
         
         try (PreparedStatement ps = con.prepareStatement(consulta)) {
-            ps.setInt(1, fechaAplicacion);
+            ps.setDate(1, (java.sql.Date) fechaAplicacion);
             ResultSet rs = ps.executeQuery();
             
              if (rs.next()) {
