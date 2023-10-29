@@ -186,7 +186,7 @@ public class CitaData {
     
     public void actualizarCitasVencidas() {
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE cita SET estadoCita =     CASE WHEN fHCita <= DATE_ADD(NOW(), INTERVAL 1 DAY) THEN 'VEN' ELSE estadoCita END;");
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET estadoCita = 'VEN'WHERE estadoCita IS NULL AND fHCita <= DATE_ADD(NOW(), INTERVAL 1 DAY);");
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {

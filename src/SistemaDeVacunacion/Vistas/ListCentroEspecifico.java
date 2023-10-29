@@ -45,8 +45,8 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel1.setText("LISTADO DE CENTROS (de vacunados por centro)");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+        jLabel1.setText("VACUNADOS POR CENTRO");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -59,10 +59,10 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 46, 121, 39));
 
-        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 65)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("¡¡¡TERMINAR SI O SI!!!");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 750, 240));
+        jLabel4.setText("⦁\tPara un centro específico, listar las vacunas aplicadas, con número de serie y DNI del ciudadano receptor.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 750, 20));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione el centro: ");

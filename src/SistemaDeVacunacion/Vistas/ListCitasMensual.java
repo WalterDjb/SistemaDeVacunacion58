@@ -13,6 +13,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ListCitasMensual extends javax.swing.JFrame {
@@ -204,41 +206,45 @@ public ListCitasMensual() {
 
 
     private void cargaCentrosVacunas() {
-     int anoSeleccionado = Integer.parseInt(jCAno.getSelectedItem().toString());
-     int mesSeleccionado = Integer.parseInt(jCMes1.getSelectedItem().toString());
-        
-        
-     List<Cita> citas = ciData.obtenerCitasPorProvincia(Login.user, anoSeleccionado, mesSeleccionado);
-    
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Centro", "Cumplidas", "Vencidas", "Canceladas"}, 0);
-        int cumplidas = 0;
-        int vencidas = 0;
-        int canceladas = 0;
+    int anoSeleccionado = Integer.parseInt(jCAno.getSelectedItem().toString());
+    int mesSeleccionado = Integer.parseInt(jCMes1.getSelectedItem().toString());
 
-      
-        
+    List<Cita> citas = ciData.obtenerCitasPorProvincia(Login.user, anoSeleccionado, mesSeleccionado);
+
+    
+    Map<String, Map<String, Integer>> conteoPorCentro = new HashMap<>();
+    
     for (Cita cita : citas) {
-    String estado = cita.getEstadoCita();
+        String estado = cita.getEstadoCita();
+        String centro = cita.getId() + " " + cita.getLocalidad();
         
+        if (!conteoPorCentro.containsKey(centro)) {
+           conteoPorCentro.put(centro, new HashMap<>());
+        }
 
-    
-    if ("CUM".equals(estado)) {
-        cumplidas++;
-    } else if ("VEN".equals(estado)) {
-        vencidas++;
-    } else if ("CAN".equals(estado)) {
-        canceladas++;
+        Map<String, Integer> conteo = conteoPorCentro.get(centro);
+
+        conteo.put(estado, conteo.getOrDefault(estado, 0) + 1);
     }
 
-    String centro = cita.getId() + " " + cita.getLocalidad();
-    Object[] rowData = {centro, cumplidas, vencidas, canceladas};
+    DefaultTableModel modelo = new DefaultTableModel(new Object[]{"Centro", "Cumplidas", "Vencidas", "Canceladas"}, 0);
 
     
-    modelo.addRow(rowData);
- 
+        for (Map.Entry<String, Map<String, Integer>> entry : conteoPorCentro.entrySet()) {
+        String centro = entry.getKey();
+        int cumplidas = entry.getValue().getOrDefault("CUM", 0);
+        int vencidas = entry.getValue().getOrDefault("VEN", 0);
+        int canceladas = entry.getValue().getOrDefault("CAN", 0);
+
+        Object[] rowData = {centro, cumplidas, vencidas, canceladas};
+        modelo.addRow(rowData);
     }
+
     jTable1.setModel(modelo);
 }
+
+
+
 
 private void borrarFilaTabla(){
         int indice = modelo.getRowCount() -1;
