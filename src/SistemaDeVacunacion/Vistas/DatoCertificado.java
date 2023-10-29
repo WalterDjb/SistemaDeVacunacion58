@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,9 +30,7 @@ public class DatoCertificado extends javax.swing.JFrame {
 
     private Ciudadano ciudadano;
     private Cita cita;
-    /**
-     * Creates new form Main
-     */
+
     public DatoCertificado() {
         initComponents();
         setSize(800, 629);
@@ -184,27 +183,43 @@ public class DatoCertificado extends javax.swing.JFrame {
             Paragraph txt = new Paragraph();
             txt.setAlignment(Paragraph.ALIGN_RIGHT);
             txt.setFont(FontFactory.getFont(FontFactory.COURIER, 40, Font.BOLD, BaseColor.BLACK));
-            txt.add("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            txt.add(ciudadano.getApellido() + ", " + ciudadano.getNombre());
-            txt.add("\n\n\n\n\n\n\n" + ciudadano.getDni());
-            txt.add("\n\n\n\n\n\n\n" + ciudadano.getDosis());
+            txt.add("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + ciudadano.getApellido() + ", " + ciudadano.getNombre());
+            txt.add("\n\n\n\n\n\n" + ciudadano.getDni());
+            txt.add("\n\n\n\n\n\n\n" + cita.getVacuna().getMarca());
+            txt.add("\n\n\n\n\n\n\n" + textoDosis(ciudadano.getDosis()));
             txt.add("\n\n\n\n\n\n" + ciudadano.getUltimaDosis().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             txt.add("\n\n\n\n\n\n" + cita.getCentro().getId() + "-" + cita.getCentro().getLocalidad() + "-" + cita.getCentro().getDomicilio());
-            txt.add("\n\n\n\n\n\n\n" + cita.getnSerie() + " ");
+            txt.add("\n\n\n\n\n\n" + cita.getnSerie() + " ");
             
             doc.open();
             doc.add(fondo);
             doc.add(txt);
             doc.close();
+            
+            
+            
+            JOptionPane.showMessageDialog(null, "Su certificado se ha guardado en el escritorio", "Certificado guardado", 1);
         } catch (DocumentException | FileNotFoundException e) {
         } catch (IOException ex) {
             Logger.getLogger(DatoCertificado.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_boton_descargar_certificadoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public String textoDosis(int dosis){
+        String texto;
+        
+        switch(dosis){
+            case 1:
+                return "Primera";
+            case 2:
+                return "Segunda";
+            case 3:
+                return "Tercera";
+            default:
+                return "Refuerzo " + dosis;
+        }
+    }
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -217,7 +232,6 @@ public class DatoCertificado extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(DatoCertificado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DatoCertificado().setVisible(true);
