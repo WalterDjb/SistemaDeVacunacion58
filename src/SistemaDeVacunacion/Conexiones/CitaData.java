@@ -2,6 +2,7 @@ package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Vacuna;
+import SistemaDeVacunacion.Entidades.Centro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -211,7 +212,7 @@ public class CitaData {
             }
             ps.close();
         }catch(SQLException ex){
-            System.err.println("Error: "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
         }
      return citas;
     }
@@ -237,7 +238,32 @@ public class CitaData {
                 citas.add(cita);
         }
     } catch (SQLException e) {
-        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados por centro");
+    } 
+}
+
+    return citas;
+}
+    
+    public List<Cita> obtenerVacunasAplicadasDiaria(int fechaAplicacion) {
+    List<Cita> citas = new ArrayList<>();
+    
+    if (con != null) {
+        String consulta = "SELECT * FROM cita WHERE fHAplicacion = ? AND estadoCita = 'CUM'";
+        
+        try (PreparedStatement ps = con.prepareStatement(consulta)) {
+            ps.setInt(1, fechaAplicacion);
+            ResultSet rs = ps.executeQuery();
+            
+             if (rs.next()) {
+                Cita cita = new Cita();
+                Centro centro = new Centro();
+                centro.setDomicilio(rs.getString("direccion"));
+                                
+                citas.add(cita);
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
     } 
 }
 

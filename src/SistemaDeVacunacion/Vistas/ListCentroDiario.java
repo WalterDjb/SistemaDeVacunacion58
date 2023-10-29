@@ -34,22 +34,24 @@ public class ListCentroDiario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jbVolver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jbConsultar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
         jbGuardar = new javax.swing.JButton();
         jbModificar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
+        jbConsultar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel1.setText("LISTADO DE CENTROS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jLabel1.setText("VACUNAS ⦁\tListar diariamente, todos los centros de vacunación, y la cantidad de dosis aplicadas en cada uno.");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -65,11 +67,6 @@ public class ListCentroDiario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione la fecha:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
-
-        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
-        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        jbConsultar.setText("Consultar");
-        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, -1, -1));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,8 +100,29 @@ public class ListCentroDiario extends javax.swing.JFrame {
         getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
         getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
+        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
+        jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        jbConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        jbConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 30, 30));
+
+        jLabel4.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel4.setText("VACUNAS APLICADAS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+
+        jLabel5.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel5.setText("VACUNAS APLICADAS");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,6 +131,12 @@ public class ListCentroDiario extends javax.swing.JFrame {
         this.dispose();
         new EstadisticasListado().setVisible(true);          // TODO add your handling code here:
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarActionPerformed
+//        borrarFilaTabla();
+//        cargaDatosVacunados();
+        
+    }//GEN-LAST:event_jbConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +179,8 @@ public class ListCentroDiario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     private javax.swing.JButton jbConsultar;

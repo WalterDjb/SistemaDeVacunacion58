@@ -128,7 +128,7 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
     private void jbConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarActionPerformed
         borrarFilaTabla();
         cargaDatosVacunados();
-       // personasConVacunas();
+       
     }//GEN-LAST:event_jbConsultarActionPerformed
 
     /**
