@@ -6,6 +6,7 @@ import SistemaDeVacunacion.Entidades.Cita;
 import java.awt.Image;
 import java.awt.Toolkit;
 import SistemaDeVacunacion.Entidades.Ciudadano;
+import SistemaDeVacunacion.Entidades.Icono;
 import java.time.format.DateTimeFormatter;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -175,12 +176,14 @@ public class DatoCertificado extends javax.swing.JFrame {
         doc.setPageSize(new Rectangle(1664, 1169));
 
         try {
+
             String dir = System.getProperty("user.home");
             PdfWriter.getInstance(doc, new FileOutputStream(dir + "/Desktop/Certificado_" + label_nombre.getText().replaceAll(" ", "-").replace(",", "") + ".pdf"));
             com.itextpdf.text.Image fondo = com.itextpdf.text.Image.getInstance("src/Imagenes/img_fondo_certificado.png");
             fondo.setAbsolutePosition(0, 0);
-            
+
             Paragraph txt = new Paragraph();
+
             txt.setAlignment(Paragraph.ALIGN_RIGHT);
             txt.setFont(FontFactory.getFont(FontFactory.COURIER, 40, Font.BOLD, BaseColor.BLACK));
             txt.add("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + ciudadano.getApellido() + ", " + ciudadano.getNombre());
@@ -190,25 +193,24 @@ public class DatoCertificado extends javax.swing.JFrame {
             txt.add("\n\n\n\n\n\n" + ciudadano.getUltimaDosis().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             txt.add("\n\n\n\n\n\n" + cita.getCentro().getId() + "-" + cita.getCentro().getLocalidad() + "-" + cita.getCentro().getDomicilio());
             txt.add("\n\n\n\n\n\n" + cita.getnSerie() + " ");
-            
+
             doc.open();
             doc.add(fondo);
             doc.add(txt);
             doc.close();
-            
-            
-            
-            JOptionPane.showMessageDialog(null, "Su certificado se ha guardado en el escritorio", "Certificado guardado", 1);
+
+            JOptionPane.showMessageDialog(null, "Su certificado se ha guardado en el escritorio", "Certificado guardado", 1, Icono.CORRECTO);
+
         } catch (DocumentException | FileNotFoundException e) {
         } catch (IOException ex) {
             Logger.getLogger(DatoCertificado.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_boton_descargar_certificadoActionPerformed
 
-    public String textoDosis(int dosis){
+    public String textoDosis(int dosis) {
         String texto;
-        
-        switch(dosis){
+
+        switch (dosis) {
             case 1:
                 return "Primera";
             case 2:
