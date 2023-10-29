@@ -32,9 +32,6 @@ public class ListCentroDiario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
-        jbGuardar = new javax.swing.JButton();
-        jbModificar = new javax.swing.JButton();
-        jbEliminar = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jbConsultar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -62,7 +59,7 @@ public class ListCentroDiario extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione la fecha:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,26 +72,12 @@ public class ListCentroDiario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 619, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 340, 280));
 
-        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
-        jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        jbGuardar.setText("Guardar");
-        getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 470, -1, -1));
-
-        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
-        jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
-        jbModificar.setText("Modificar");
-        getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 470, -1, -1));
-
-        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
-        jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jbEliminar.setText("Eliminar");
-        getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, -1, -1));
-        getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        jCalendar1.setDecorationBackgroundVisible(false);
+        jCalendar1.setMinSelectableDate(new java.util.Date(1672545666000L));
+        jCalendar1.setWeekOfYearVisible(false);
+        getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -105,7 +88,7 @@ public class ListCentroDiario extends javax.swing.JFrame {
                 jbConsultarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 30, 30));
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 40, 50));
 
         jLabel4.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(15, 75, 94));
@@ -180,9 +163,6 @@ public class ListCentroDiario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbEliminar;
-    private javax.swing.JButton jbGuardar;
-    private javax.swing.JButton jbModificar;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 
