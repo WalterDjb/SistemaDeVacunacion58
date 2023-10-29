@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2023 a las 00:29:45
+-- Tiempo de generación: 29-10-2023 a las 16:31:31
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -129,8 +129,8 @@ CREATE TABLE `cita` (
   `id` int(8) NOT NULL,
   `dni` int(8) NOT NULL,
   `fHCita` datetime NOT NULL,
-  `Vacuna` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `fHAplicacion` datetime NOT NULL,
+  `Vacuna` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fHAplicacion` datetime DEFAULT NULL,
   `centro` int(3) NOT NULL,
   `estadoCita` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'VEN(cida)CUM(plida) ó CAN(celada)',
   `numeroSerie` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Numero de serie de la vacuna(pide el tp) fecha de aplicacion+dni+ndosis'
@@ -141,7 +141,7 @@ CREATE TABLE `cita` (
 --
 
 INSERT INTO `cita` (`id`, `dni`, `fHCita`, `Vacuna`, `fHAplicacion`, `centro`, `estadoCita`, `numeroSerie`) VALUES
-(1, 35681886, '2023-10-27 00:00:00', 'vaxina', '2023-10-10 00:00:00', 39, 'VEN', '712304713');
+(1, 35681886, '2023-10-29 00:00:00', 'vaxina', NULL, 39, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -292,12 +292,7 @@ ALTER TABLE `centro`
 --
 ALTER TABLE `cita`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `dni` (`dni`),
-  ADD UNIQUE KEY `centro` (`centro`),
-  ADD UNIQUE KEY `codRefuerzo` (`Vacuna`),
-  ADD KEY `dni_2` (`dni`),
-  ADD KEY `dni_3` (`dni`);
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indices de la tabla `ciudadano`
