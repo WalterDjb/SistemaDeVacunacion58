@@ -35,9 +35,6 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         jbConsultar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jbGuardar = new javax.swing.JButton();
-        jbModificar = new javax.swing.JButton();
-        jbEliminar = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,8 +76,8 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
         jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        jbConsultar.setText("Consultar");
-        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 216, -1, -1));
+        jbConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 215, 30, 30));
 
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -96,25 +93,7 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 610, 110));
-
-        jbGuardar.setBackground(new java.awt.Color(15, 75, 94));
-        jbGuardar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        jbGuardar.setText("Guardar");
-        getContentPane().add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, -1));
-
-        jbModificar.setBackground(new java.awt.Color(15, 75, 94));
-        jbModificar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbModificar.setForeground(new java.awt.Color(255, 255, 255));
-        jbModificar.setText("Modificar");
-        getContentPane().add(jbModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
-
-        jbEliminar.setBackground(new java.awt.Color(15, 75, 94));
-        jbEliminar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jbEliminar.setText("Eliminar");
-        getContentPane().add(jbEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 610, 240));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -176,9 +155,6 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbConsultar;
-    private javax.swing.JButton jbEliminar;
-    private javax.swing.JButton jbGuardar;
-    private javax.swing.JButton jbModificar;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }
