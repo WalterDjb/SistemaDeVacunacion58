@@ -1,6 +1,7 @@
 package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Cita;
+import SistemaDeVacunacion.Entidades.Vacuna;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -131,7 +132,7 @@ public class CitaData {
         Cita cita = null;
         
         try {
-            PreparedStatement pst = con.prepareStatement("select * from cita where dni = " + dni + " and fHAplicacion = '" + ultima + "'");
+            PreparedStatement pst = con.prepareStatement("SELECT * from cita where dni = " + dni + " and fHAplicacion = '" + ultima + "'");
             
             ResultSet rs = pst.executeQuery();
             
@@ -214,4 +215,32 @@ public class CitaData {
         }
      return citas;
     }
+    
+    public List<Cita> obtenerVacunadosXCentro(int centro) {
+    List<Cita> citas = new ArrayList<>();
+    
+    if (con != null) {
+        String consulta = "SELECT * FROM cita WHERE centro = ? AND estadoCita = 'CUM'";
+        
+        try (PreparedStatement ps = con.prepareStatement(consulta)) {
+            ps.setInt(1, centro);
+            ResultSet rs = ps.executeQuery();
+            
+             if (rs.next()) {
+                Cita cita = new Cita();
+                Vacuna vacuna = new Vacuna();
+                vacuna.setMarca(rs.getString("Vacuna"));
+                cita.setVacuna(vacuna);
+                cita.setDni(rs.getInt("dni"));
+                cita.setNSerie(rs.getString("numeroSerie"));
+                
+                citas.add(cita);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } 
+}
+
+    return citas;
+}
 }

@@ -1,9 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package SistemaDeVacunacion.Vistas;
+
+import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Vacuna;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import SistemaDeVacunacion.Conexiones.CitaData;
+import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Cita;
+
 
 /**
  *
@@ -11,11 +20,15 @@ package SistemaDeVacunacion.Vistas;
  */
 public class ListCentroEspecifico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ControlDeCentros
-     */
+    CentroData cd = new CentroData();
+    Centro centro = new Centro();
+    private DefaultTableModel modelo;
+    private List<Cita> personasVacunadas;
+    
     public ListCentroEspecifico() {
         initComponents();
+        cargarJCcentros();
+        modelo = new DefaultTableModel();
     }
 
     /**
@@ -31,10 +44,10 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         jbVolver = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jbConsultar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        JCcentros = new javax.swing.JComboBox<>();
+        jbConsultar = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,20 +78,6 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
         jLabel2.setText("Seleccione el centro: ");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CSI Formosa Capital", "CSI Ingeniero Juarez", "CSI Las lomitas", "CSI Pirané" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, -1, -1));
-
-        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
-        jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
-        jbConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
-        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 215, 30, 30));
-
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,20 +94,47 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 610, 240));
 
+        JCcentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JCcentros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCcentrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 200, 40));
+
+        jbConsultar.setBackground(new java.awt.Color(15, 75, 94));
+        jbConsultar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbConsultar.setForeground(new java.awt.Color(255, 255, 255));
+        jbConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lupa.png"))); // NOI18N
+        jbConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConsultarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 30, 30));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         this.dispose();
         new EstadisticasListado().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void JCcentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCcentrosActionPerformed
+
+    
+  
+    }//GEN-LAST:event_JCcentrosActionPerformed
+
+    private void jbConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultarActionPerformed
+        borrarFilaTabla();
+        
+       // personasConVacunas();
+    }//GEN-LAST:event_jbConsultarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,8 +173,8 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Centro> JCcentros;
     private javax.swing.JLabel fondo;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -157,4 +183,31 @@ public class ListCentroEspecifico extends javax.swing.JFrame {
     private javax.swing.JButton jbConsultar;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
+
+      private void cargarJCcentros (){
+            JCcentros.removeAllItems();
+            List <Centro> centros = new ArrayList<>();
+
+      if (  "CABA".equals(Login.user)){
+          centros = cd.listarCentrosXProvincia("Ciudad Autónoma de Buenos Aires");
+        for (Centro centro: centros){
+            JCcentros.addItem(centro);
+        }
+      }else{
+        centros = cd.listarCentrosXProvincia(Login.user);
+        for (Centro centro: centros){
+            JCcentros.addItem(centro);
+              } 
+       }
+    }
+    
+        private void borrarFilaTabla(){
+        int indice = modelo.getRowCount() -1;
+        
+        for(int i = indice;i>=0;i--){
+            modelo.removeRow(i); 
+        }
+    }  
+        
+        
 }

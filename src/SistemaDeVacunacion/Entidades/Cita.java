@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Cita {
     private Centro centro;
-    private int dosis, id;
+    private int dosis, id, dni;
     private Ciudadano ciudadano;
     private LocalDateTime fechaHoraCita, fechaHoraColocacion;
     private Vacuna vacuna;
@@ -13,7 +13,7 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(LocalDateTime fechaHoraCita, int dosis, String nSerie, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro, String estadoCita, int id, String localidad) {
+    public Cita(LocalDateTime fechaHoraCita, int dosis, int dni, String nSerie, Ciudadano ciudadano, LocalDateTime fechaHoraColocacion, Vacuna vacuna, Centro centro, String estadoCita, int id, String localidad) {
         this.centro = centro;
         this.fechaHoraCita = fechaHoraCita;
         this.dosis = dosis;
@@ -24,6 +24,7 @@ public class Cita {
         this.estadoCita = estadoCita;
         this.id = id;
         this.localidad = localidad;
+        this.dni = dni;
     }
 
     public Centro getCentro() {
@@ -112,6 +113,14 @@ public class Cita {
 
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
     }
     
 }
