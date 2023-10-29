@@ -48,7 +48,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="445" y="270" width="190" height="40"/>
+          <AbsoluteConstraints x="445" y="270" width="290" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -57,11 +57,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Verdana" size="16" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Seleccione el centro de salud deseado"/>
+        <Property name="text" type="java.lang.String" value="Seleccione el centro de salud"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="100" y="280" width="-1" height="-1"/>
+          <AbsoluteConstraints x="170" y="280" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -117,21 +117,24 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="5e" green="4b" red="f" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CENTROS HABILITADOS"/>
+        <Property name="text" type="java.lang.String" value="Consulte las direcciones de los"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="150" width="-1" height="-1"/>
+          <AbsoluteConstraints x="210" y="110" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Verdana" size="16" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Seleccione una Provincia"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="210" width="-1" height="-1"/>
+          <AbsoluteConstraints x="210" y="210" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -177,7 +180,23 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="200" width="-1" height="40"/>
+          <AbsoluteConstraints x="446" y="200" width="290" height="40"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Serif" size="30" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5e" green="4b" red="f" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CENTROS HABILITADOS"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="220" y="150" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
