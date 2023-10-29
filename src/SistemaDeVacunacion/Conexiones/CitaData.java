@@ -248,28 +248,32 @@ public class CitaData {
     return citas;
 }
     
-    public List<Cita> obtenerVacunasAplicadasDiaria(Date fechaAplicacion) {
+   public List<Cita> obtenerVacunasAplicadasDiaria(Date fechaAplicacion) {
     List<Cita> citas = new ArrayList<>();
-    
+
     if (con != null) {
-        String consulta = "SELECT * FROM cita WHERE fHAplicacion = ? AND estadoCita = 'CUM'";
-        
+        String consulta = "SELECT  c.fHAplicacion, c.estadoCita, ce.id, ce.localidad FROM cita AS c JOIN centro AS ce ON c.centro = ce.id WHERE c.fHAplicacion = ? AND estadoCita = 'CUM'";
+
         try (PreparedStatement ps = con.prepareStatement(consulta)) {
-            ps.setDate(1, (java.sql.Date) fechaAplicacion);
+            ps.setDate(1, new java.sql.Date(fechaAplicacion.getTime()));
             ResultSet rs = ps.executeQuery();
-            
-             if (rs.next()) {
+
+            while (rs.next()) {
                 Cita cita = new Cita();
-                Centro centro = new Centro();
-                centro.setDomicilio(rs.getString("direccion"));
-                                
+                cita.setFechaHoraCita(rs.getTimestamp("fHAplicacion").toLocalDateTime());
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                cita.setId(rs.getInt("id"));
+                cita.setLocalidad(rs.getString("localidad"));
+//                cita.setCentro(centro);
+                
                 citas.add(cita);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
         }
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
-        } 
     }
-       return citas;
+
+    return citas;
 }
     
     public void crearCitaPorDniYId (int dni, int id){
