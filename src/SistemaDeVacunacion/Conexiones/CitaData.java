@@ -193,4 +193,25 @@ public class CitaData {
             JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
         }
     }
+    
+    public List <Cita> cargarCitasPorCentroYDni (int id, int dni){
+        List <Cita> citas = new ArrayList<>();
+        Cita cita = new Cita();
+        String sql = "SELECT * FROM cita WHERE centro = '"+id+"' AND dni = '"+dni+"' AND estadoCita IS NULL";
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                cita.setCiudadano(cd.buscarPorDni(dni));
+                cita.setCentro(ced.buscarCentroXId(id));
+                cita.setDosis(cd.buscarPorDni(dni).getDosis());
+                cita.setFechaHoraColocacion(cd.buscarPorDni(dni).getUltimaDosis());
+                citas.add(cita);
+            }
+            ps.close();
+        }catch(SQLException ex){
+            System.err.println("Error: "+ex.getMessage());
+        }
+     return citas;
+    }
 }
