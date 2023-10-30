@@ -152,7 +152,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void boton_quiero_vacunarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_quiero_vacunarmeActionPerformed
-        new QuieroVacunarme().setVisible(true);
+        new VerificarExistencia().setVisible(true);
         dispose();
     }//GEN-LAST:event_boton_quiero_vacunarmeActionPerformed
 

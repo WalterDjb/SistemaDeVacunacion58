@@ -154,11 +154,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
                 jtMailActionPerformed(evt);
             }
         });
-        jtMail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtMailKeyTyped(evt);
-            }
-        });
         getContentPane().add(jtMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 240, -1));
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -461,16 +456,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     private void jcbLocalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbLocalidadActionPerformed
         
     }//GEN-LAST:event_jcbLocalidadActionPerformed
-
-    private void jtMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtMailKeyTyped
-        int key = evt.getKeyChar();
-        boolean mayusculas = key >= 65 && key <= 90;
-        boolean minusculas = key >= 97 && key <= 122;
-
-        if (!(minusculas || mayusculas)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_jtMailKeyTyped
 
     private void JCcentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCcentrosActionPerformed
         
