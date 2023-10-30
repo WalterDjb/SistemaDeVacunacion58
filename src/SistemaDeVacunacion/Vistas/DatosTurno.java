@@ -10,19 +10,19 @@ import javax.swing.JOptionPane;
  *
  * @author Walter Benítez
  */
-public class VerificarExistencia extends javax.swing.JFrame {
+public class DatosTurno extends javax.swing.JFrame {
     
     public static int dni;
 
     /**
      * Creates new form Main
      */
-    public VerificarExistencia() {
+    public DatosTurno() {
         initComponents();
         setSize(800, 629);
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("SISTEMA DE VACUNACIÓN - Obtener certificado");
+        setTitle("SISTEMA DE VACUNACIÓN - Solicitar turno");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class VerificarExistencia extends javax.swing.JFrame {
         label_tramite = new javax.swing.JLabel();
         txt_tramite = new javax.swing.JTextField();
         boton_obtener_tramite = new javax.swing.JButton();
-        boton_ver_certificado = new javax.swing.JButton();
+        boton_continuar = new javax.swing.JButton();
         boton_volver = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -51,8 +51,8 @@ public class VerificarExistencia extends javax.swing.JFrame {
 
         label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         label_titulo.setForeground(new java.awt.Color(15, 75, 94));
-        label_titulo.setText("Obtener una cita");
-        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, 30));
+        label_titulo.setText("Solicitar turno");
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, -1, 30));
 
         label_doc.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         label_doc.setText("Número de documento:");
@@ -86,7 +86,7 @@ public class VerificarExistencia extends javax.swing.JFrame {
         });
         getContentPane().add(txt_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 250, -1));
 
-        boton_obtener_tramite.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_obtener_tramite.setFont(new java.awt.Font("Verdana", 3, 16)); // NOI18N
         boton_obtener_tramite.setForeground(new java.awt.Color(0, 51, 255));
         boton_obtener_tramite.setText("¿Cómo obtengo mi número de trámite?");
         boton_obtener_tramite.setBorderPainted(false);
@@ -102,16 +102,16 @@ public class VerificarExistencia extends javax.swing.JFrame {
         });
         getContentPane().add(boton_obtener_tramite, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
-        boton_ver_certificado.setBackground(new java.awt.Color(15, 75, 94));
-        boton_ver_certificado.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        boton_ver_certificado.setForeground(new java.awt.Color(255, 255, 255));
-        boton_ver_certificado.setText("CONTINUAR");
-        boton_ver_certificado.addActionListener(new java.awt.event.ActionListener() {
+        boton_continuar.setBackground(new java.awt.Color(15, 75, 94));
+        boton_continuar.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        boton_continuar.setForeground(new java.awt.Color(255, 255, 255));
+        boton_continuar.setText("CONTINUAR");
+        boton_continuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_ver_certificadoActionPerformed(evt);
+                boton_continuarActionPerformed(evt);
             }
         });
-        getContentPane().add(boton_ver_certificado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 40));
+        getContentPane().add(boton_continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 40));
 
         boton_volver.setBackground(new java.awt.Color(15, 75, 94));
         boton_volver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -140,7 +140,7 @@ public class VerificarExistencia extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tramiteActionPerformed
 
-    private void boton_ver_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ver_certificadoActionPerformed
+    private void boton_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_continuarActionPerformed
         if (txt_doc.getText().trim().equals("") || txt_tramite.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos", "Falta de datos", 0, Icono.ERROR);
         } else if ((txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) && txt_tramite.getText().trim().length() != 14) {
@@ -163,8 +163,8 @@ public class VerificarExistencia extends javax.swing.JFrame {
                 Long.valueOf(txt_tramite.getText().trim()); // Esto no lo guardo en una variable porque solo me va a servir para saber si realmente fueron numeros los datos ingresados en txt_tramite, para el tramite necesito un String.
                 tramite = txt_tramite.getText().trim();         // y acá si guardo el tramite como String, necesario porque los numeros de tramite arrancan en 0 y si fueron un numero entero ese cero se perdería.
                 
-                if(CiudadanoData.dniTramiteEncontrados(dni, tramite)){
-                    new DatoCertificado().setVisible(true);
+                if(CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3){
+                    new RegistroCiudadano().setVisible(true);
                     dispose();
                 } else {
                     txt_doc.setText("");
@@ -183,7 +183,7 @@ public class VerificarExistencia extends javax.swing.JFrame {
                 }
             }
         }
-    }//GEN-LAST:event_boton_ver_certificadoActionPerformed
+    }//GEN-LAST:event_boton_continuarActionPerformed
 
     private void txt_docActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_docActionPerformed
         // TODO add your handling code here:
@@ -231,26 +231,26 @@ public class VerificarExistencia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VerificarExistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VerificarExistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VerificarExistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VerificarExistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DatosTurno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VerificarExistencia().setVisible(true);
+                new DatosTurno().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_continuar;
     private javax.swing.JButton boton_obtener_tramite;
-    private javax.swing.JButton boton_ver_certificado;
     private javax.swing.JButton boton_volver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel label_doc;

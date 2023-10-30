@@ -14,7 +14,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
-public class QuieroVacunarme extends javax.swing.JFrame {
+public class RegistroCiudadano extends javax.swing.JFrame {
 
     CentroData ced = new CentroData();
     
@@ -24,7 +24,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
-    public QuieroVacunarme() {
+    public RegistroCiudadano() {
         initComponents();
         setSize(800, 629);
         setLocationRelativeTo(null);
@@ -486,19 +486,19 @@ public class QuieroVacunarme extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuieroVacunarme.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuieroVacunarme.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuieroVacunarme.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuieroVacunarme.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroCiudadano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new QuieroVacunarme().setVisible(true);
+                new RegistroCiudadano().setVisible(true);
             }
         });
     }

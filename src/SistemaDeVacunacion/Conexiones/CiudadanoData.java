@@ -15,21 +15,24 @@ public class CiudadanoData {
     public CiudadanoData() {
     }
 
-    public static boolean dniTramiteEncontrados(int dni, String tramite) {
+    public static int dniTramiteEncontrados(int dni, String tramite) {
+        
         try {
             con = Conexion.getConexion();
             PreparedStatement pst = con.prepareStatement("select aplicaciones from ciudadano where dni = " + dni + " and tramite = " + tramite);
             ResultSet rs = pst.executeQuery();
 
             if (rs.next() && rs.getInt("aplicaciones") > 0) {
-                return true;
+                return 1;
             } else if (rs.getInt("aplicaciones") <= 0) {
-                JOptionPane.showMessageDialog(null, "Por el momento no tiene ningún certificado disponible", "No encontrado", 1);
+                return 2;
+                //JOptionPane.showMessageDialog(null, "Por el momento no tiene ningún certificado disponible", "No encontrado", 1);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "No se pudo encontrar registro con los datos proporcionados", "Registro inexistente", 1);
+            System.err.println("ERROR en método dniTramiteEncontrados: " + e);
         }
-        return false;
+        
+        return 3;
     }
 
     public static Ciudadano buscarPorDni(int dni) {
