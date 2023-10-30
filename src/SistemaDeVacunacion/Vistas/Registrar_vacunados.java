@@ -52,7 +52,8 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        label_titulo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         fondo = new javax.swing.JLabel();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
@@ -73,7 +74,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Número de SERIE");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 431, 160, -1));
 
         jtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +86,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
                 jtDniKeyTyped(evt);
             }
         });
-        getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 150, -1));
+        getContentPane().add(jtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 150, -1));
 
         jbConsulta.setBackground(new java.awt.Color(15, 75, 94));
         jbConsulta.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -96,29 +97,29 @@ public class Registrar_vacunados extends javax.swing.JFrame {
                 jbConsultaActionPerformed(evt);
             }
         });
-        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 30, 30));
+        getContentPane().add(jbConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 30, 30));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel4.setText("Fecha:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
 
         jtFecha.setEditable(false);
-        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 150, -1));
+        getContentPane().add(jtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Hora:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
 
         jtHora.setEditable(false);
         jtHora.setText(" ");
-        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 150, -1));
+        getContentPane().add(jtHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 150, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel7.setText("Centro de salud:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
         jtCentro.setEditable(false);
-        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 150, -1));
+        getContentPane().add(jtCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 150, -1));
 
         jtId.setEditable(false);
         jtId.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +127,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
                 jtIdActionPerformed(evt);
             }
         });
-        getContentPane().add(jtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 150, -1));
+        getContentPane().add(jtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel5.setText("Vacuna");
@@ -146,11 +147,11 @@ public class Registrar_vacunados extends javax.swing.JFrame {
                 jtSerieKeyTyped(evt);
             }
         });
-        getContentPane().add(jtSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 180, -1));
+        getContentPane().add(jtSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 200, 30));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel10.setText("Turno Nro:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setText("VACUNADO");
@@ -159,28 +160,33 @@ public class Registrar_vacunados extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 100, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, 100, 50));
 
         JCVacunas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCVacunasActionPerformed(evt);
             }
         });
-        getContentPane().add(JCVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 170, 30));
+        getContentPane().add(JCVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 200, 30));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel11.setText("Número de DNI:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 16)); // NOI18N
         jLabel12.setText("BUSCAR EL TURNO");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 560, 190));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 560, 200));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 560, 120));
+        label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(15, 75, 94));
+        label_titulo.setText("REGISTRAR VACUNADOS");
+        getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, 30));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 560, 90));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
@@ -329,8 +335,8 @@ try {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jbConsulta;
     private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCentro;
@@ -339,6 +345,7 @@ try {
     private javax.swing.JTextField jtHora;
     private javax.swing.JTextField jtId;
     private javax.swing.JTextField jtSerie;
+    private javax.swing.JLabel label_titulo;
     // End of variables declaration//GEN-END:variables
 
     private void cargarComboBox(){
