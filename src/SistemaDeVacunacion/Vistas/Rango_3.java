@@ -16,22 +16,15 @@ public class Rango_3 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        JBcita = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
+        jbVacunados = new javax.swing.JButton();
+        jbEstadisticas1 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JBcita.setText("Completar Cita");
-        JBcita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBcitaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBcita, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -44,6 +37,28 @@ public class Rango_3 extends javax.swing.JFrame {
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
 
+        jbVacunados.setBackground(new java.awt.Color(15, 75, 94));
+        jbVacunados.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbVacunados.setForeground(new java.awt.Color(255, 255, 255));
+        jbVacunados.setText("Registrar Vacunados");
+        jbVacunados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVacunadosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbVacunados, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 230, 50));
+
+        jbEstadisticas1.setBackground(new java.awt.Color(15, 75, 94));
+        jbEstadisticas1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEstadisticas1.setForeground(new java.awt.Color(255, 255, 255));
+        jbEstadisticas1.setText("Asignar Citas");
+        jbEstadisticas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstadisticas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbEstadisticas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 230, 50));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -55,10 +70,15 @@ public class Rango_3 extends javax.swing.JFrame {
         new Login().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
 
-    private void JBcitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcitaActionPerformed
+    private void jbVacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVacunadosActionPerformed
         this.dispose();
-        new Citas().setVisible(true);
-    }//GEN-LAST:event_JBcitaActionPerformed
+        new Registrar_vacunados().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jbVacunadosActionPerformed
+
+    private void jbEstadisticas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstadisticas1ActionPerformed
+        this.dispose();
+        new Asignar_Citas().setVisible(true);
+    }//GEN-LAST:event_jbEstadisticas1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,9 +117,10 @@ public class Rango_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBcita;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbEstadisticas1;
+    private javax.swing.JButton jbVacunados;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }

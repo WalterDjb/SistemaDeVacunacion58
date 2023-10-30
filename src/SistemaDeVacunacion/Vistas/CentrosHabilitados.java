@@ -45,6 +45,11 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JCcentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        JCcentros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCcentrosActionPerformed(evt);
+            }
+        });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 270, 290, 40));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -118,6 +123,10 @@ public class CentrosHabilitados extends javax.swing.JFrame {
         JCcentros.removeAllItems();
         cargarJCcentros();
     }//GEN-LAST:event_JCprovinciaActionPerformed
+
+    private void JCcentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCcentrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCcentrosActionPerformed
 
     /**
      * @param args the command line arguments

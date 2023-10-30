@@ -81,6 +81,7 @@ public class DatoCertificado extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_titulo.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        label_titulo.setForeground(new java.awt.Color(15, 75, 94));
         label_titulo.setText("Datos encontrados");
         getContentPane().add(label_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
 

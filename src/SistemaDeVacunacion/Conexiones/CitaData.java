@@ -3,6 +3,7 @@ package SistemaDeVacunacion.Conexiones;
 import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Vacuna;
 import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Ciudadano;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -76,7 +77,7 @@ public class CitaData {
 
     public Cita buscarTurnoXDni(int dni) {
         try {
-            PreparedStatement ps = con.prepareStatement("select * from cita where dni = ?");
+            PreparedStatement ps = con.prepareStatement("SELECT * from cita where dni = ?");
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
 
@@ -245,28 +246,32 @@ public class CitaData {
     return citas;
 }
     
-    public List<Cita> obtenerVacunasAplicadasDiaria(Date fechaAplicacion) {
+   public List<Cita> obtenerVacunasAplicadasDiaria(Date fechaAplicacion) {
     List<Cita> citas = new ArrayList<>();
-    
+
     if (con != null) {
-        String consulta = "SELECT * FROM cita WHERE fHAplicacion = ? AND estadoCita = 'CUM'";
-        
+        String consulta = "SELECT  c.fHAplicacion, c.estadoCita, ce.id, ce.localidad FROM cita AS c JOIN centro AS ce ON c.centro = ce.id WHERE c.fHAplicacion = ? AND estadoCita = 'CUM'";
+
         try (PreparedStatement ps = con.prepareStatement(consulta)) {
-            ps.setDate(1, (java.sql.Date) fechaAplicacion);
+            ps.setDate(1, new java.sql.Date(fechaAplicacion.getTime()));
             ResultSet rs = ps.executeQuery();
-            
-             if (rs.next()) {
+
+            while (rs.next()) {
                 Cita cita = new Cita();
-                Centro centro = new Centro();
-                centro.setDomicilio(rs.getString("direccion"));
-                                
+                cita.setFechaHoraCita(rs.getTimestamp("fHAplicacion").toLocalDateTime());
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                cita.setId(rs.getInt("id"));
+                cita.setLocalidad(rs.getString("localidad"));
+//                cita.setCentro(centro);
+                
                 citas.add(cita);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
         }
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de obtener los vacunados diariamente");
-        } 
     }
-       return citas;
+
+    return citas;
 }
     
     public void crearCitaPorDniYId (int dni, int id){
@@ -294,4 +299,89 @@ public class CitaData {
         }
         
     }
+    public Cita buscarTurnoXDni2(int dni) {
+        try {
+            PreparedStatement ps = con.prepareStatement("SELECT * from cita where dni = ? AND estadoCita IS NULL");
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Cita cita = new Cita();
+                cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+                cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+                cita.setId(rs.getInt("id"));
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                return cita;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+        }
+        return null;
+    }
+    
+    public List<Cita> buscarPersonasSinTurno() {
+    List<Cita> citas = new ArrayList<>();
+    
+    try {
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE (cita.fHCita IS NULL) AND ciudadano.patologia <> 'Ninguna' OR ciudadano.ambitoTrabajo <> 'Otros'");
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Cita cita = new Cita();
+            cita.setId(rs.getInt("id"));
+            cita.setDni(rs.getInt("dni"));
+            
+            
+            Ciudadano ciudadano = new Ciudadano();
+            ciudadano.setPatologia(rs.getString("patologia"));
+            ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
+            cita.setCiudadano(ciudadano);
+            
+            citas.add(cita);
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+    }
+    
+    return citas;
 }
+
+    public List<Cita> buscarPersonasSinTurno1() {
+    List<Cita> citas = new ArrayList<>();
+    
+    try {
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE (cita.fHCita IS NULL) AND ciudadano.patologia = 'Ninguna' AND ciudadano.ambitoTrabajo = 'Otros'");
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Cita cita = new Cita();
+            cita.setId(rs.getInt("id"));
+            cita.setDni(rs.getInt("dni"));
+            
+            
+            Ciudadano ciudadano = new Ciudadano();
+            ciudadano.setPatologia(rs.getString("patologia"));
+            ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
+            cita.setCiudadano(ciudadano);
+            
+            citas.add(cita);
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+    }
+    
+    return citas;
+}
+   public void AsignarFecha(Date fechaCita, int id) {
+        try {
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHCita = ? WHERE id = ?");
+            ps.setDate(1, new java.sql.Date(fechaCita.getTime()));
+            ps.setInt(2, id);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
+        }
+    }     
+}
+
