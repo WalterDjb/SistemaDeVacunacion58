@@ -18,6 +18,7 @@ public class Rango_3 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         JBcita = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
+        jbEstadisticas = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
@@ -44,6 +45,17 @@ public class Rango_3 extends javax.swing.JFrame {
         });
         getContentPane().add(jbVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 130, 50));
 
+        jbEstadisticas.setBackground(new java.awt.Color(15, 75, 94));
+        jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jbEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
+        jbEstadisticas.setText("Registrar Vacunas");
+        jbEstadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEstadisticasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 230, 50));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
@@ -59,6 +71,11 @@ public class Rango_3 extends javax.swing.JFrame {
         this.dispose();
         new Citas().setVisible(true);
     }//GEN-LAST:event_JBcitaActionPerformed
+
+    private void jbEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstadisticasActionPerformed
+        this.dispose();
+        new Registrar_vacunados().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jbEstadisticasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,6 +117,7 @@ public class Rango_3 extends javax.swing.JFrame {
     private javax.swing.JButton JBcita;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbEstadisticas;
     private javax.swing.JButton jbVolver;
     // End of variables declaration//GEN-END:variables
 }

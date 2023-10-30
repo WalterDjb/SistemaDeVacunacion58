@@ -38,10 +38,12 @@ private final DefaultTableModel model = new DefaultTableModel(){
 
         jbVolver = new javax.swing.JButton();
         JCcentros = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         JBguardar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,10 +68,6 @@ private final DefaultTableModel model = new DefaultTableModel(){
         });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 200, 40));
 
-        jLabel1.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
-        jLabel1.setText("ASIGNAR VACUNAS A CENTRO");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
-
         jTable1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,6 +89,20 @@ private final DefaultTableModel model = new DefaultTableModel(){
         JBguardar.setForeground(new java.awt.Color(255, 255, 255));
         JBguardar.setText("Guardar");
         getContentPane().add(JBguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 110, 40));
+
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(15, 75, 94));
+        jLabel2.setText("ASIGNAR VACUNAS A CENTRO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jLabel3.setText("Disponibles");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 120, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("5000");
+        jLabel4.setToolTipText("");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 160, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -147,7 +159,9 @@ private final DefaultTableModel model = new DefaultTableModel(){
     private javax.swing.JButton JBguardar;
     private javax.swing.JComboBox<Centro> JCcentros;
     private javax.swing.JLabel fondo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbVolver;
