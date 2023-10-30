@@ -10,13 +10,16 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public class QuieroVacunarme extends javax.swing.JFrame {
 
     CentroData ced = new CentroData();
-    CiudadanoData cid = new CiudadanoData();
-    CitaData citad = new CitaData();
+    
+    List<String> localidades;
+    List<Centro> centros;
 
     /**
      * Creates new form Main
@@ -28,31 +31,22 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Quiero vacunarme");
         
-        cargarComboActionProvincia();
+        localidades = CentroData.listarLocalidadesXProvincia(jcbProvincia1.getSelectedItem().toString().trim());
+        cargarCombo(localidades, jcbLocalidad);
         
+        try {
+            centros = CentroData.listarCentrosXLocalidad(jcbLocalidad.getSelectedItem().toString());
+            cargarCombo(centros, JCcentros);
+        } catch (Exception e) {
+            JCcentros.removeAllItems();
+        }
     }
     
-    private void cargarComboActionProvincia(){
-        List<String> localidades = CentroData.listarLocalidadesXProvincia(jcbProvincia1.getSelectedItem().toString().trim());
+    private void cargarCombo(List lista, JComboBox combo){
         
-        jcbLocalidad.removeAllItems();
-
+        DefaultComboBoxModel model = new DefaultComboBoxModel(lista.toArray());
         
-        for(int i = 0; i < localidades.size(); i++){
-            jcbLocalidad.addItem(localidades.get(i).toString());
-        }
-    
-    }
-    
-    private void cargarComboActionLocalidad(){
-        List<Centro> centros = CentroData.listarCentrosXLocalidad(jcbLocalidad.getSelectedItem().toString());
-        
-        JCcentros.removeAllItems();
-        
-        for(int i = 0; i < centros.size(); i++){
-            JCcentros.addItem(centros.get(i).toString());
-        }
-    
+        combo.setModel(model);
     }
 
 
@@ -465,7 +459,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     }//GEN-LAST:event_jbInfoActionPerformed
 
     private void jcbLocalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbLocalidadActionPerformed
-        cargarComboActionLocalidad();
+        
     }//GEN-LAST:event_jcbLocalidadActionPerformed
 
     private void jtMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtMailKeyTyped
@@ -483,7 +477,16 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     }//GEN-LAST:event_JCcentrosActionPerformed
 
     private void jcbProvincia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbProvincia1ActionPerformed
-        cargarComboActionProvincia();
+        localidades = CentroData.listarLocalidadesXProvincia(jcbProvincia1.getSelectedItem().toString().trim());
+        cargarCombo(localidades, jcbLocalidad);
+        
+        try {
+            centros = CentroData.listarCentrosXLocalidad(jcbLocalidad.getSelectedItem().toString());
+            cargarCombo(centros, JCcentros);
+        } catch (Exception e) {
+            JCcentros.removeAllItems();
+        }
+        
     }//GEN-LAST:event_jcbProvincia1ActionPerformed
 
     /**
