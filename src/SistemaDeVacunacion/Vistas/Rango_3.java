@@ -16,7 +16,6 @@ public class Rango_3 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        JBcita = new javax.swing.JButton();
         jbVolver = new javax.swing.JButton();
         jbVacunados = new javax.swing.JButton();
         jbEstadisticas1 = new javax.swing.JButton();
@@ -26,14 +25,6 @@ public class Rango_3 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JBcita.setText("Completar Cita");
-        JBcita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBcitaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(JBcita, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
@@ -78,11 +69,6 @@ public class Rango_3 extends javax.swing.JFrame {
         this.dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
-
-    private void JBcitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcitaActionPerformed
-        this.dispose();
-        new Asignar_Citas().setVisible(true);
-    }//GEN-LAST:event_JBcitaActionPerformed
 
     private void jbVacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVacunadosActionPerformed
         this.dispose();
@@ -131,7 +117,6 @@ public class Rango_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBcita;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jbEstadisticas1;
