@@ -264,8 +264,9 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jcbAMbito1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros", "Salud", "Educacion", "Comercio", "Seguridad", "Justicia", " " }));
         getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 318, 150, -1));
 
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel3.setText("Centros:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, -1, -1));
 
         JCcentros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione un Centro>" }));
         JCcentros.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +274,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
                 JCcentrosActionPerformed(evt);
             }
         });
-        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 422, 200, 30));
+        getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, 190, 30));
 
         jbInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/info.png"))); // NOI18N
         jbInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
