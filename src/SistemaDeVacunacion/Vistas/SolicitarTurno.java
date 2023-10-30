@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Walter Benítez
  */
 public class SolicitarTurno extends javax.swing.JFrame {
-    
+
     public static int dni;
 
     /**
@@ -136,7 +136,7 @@ public class SolicitarTurno extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_volverActionPerformed
 
     private void txt_tramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tramiteActionPerformed
-       
+
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tramiteActionPerformed
 
@@ -162,15 +162,15 @@ public class SolicitarTurno extends javax.swing.JFrame {
                 dni = Integer.parseInt(txt_doc.getText().trim());
                 Long.valueOf(txt_tramite.getText().trim()); // Esto no lo guardo en una variable porque solo me va a servir para saber si realmente fueron numeros los datos ingresados en txt_tramite, para el tramite necesito un String.
                 tramite = txt_tramite.getText().trim();         // y acá si guardo el tramite como String, necesario porque los numeros de tramite arrancan en 0 y si fueron un numero entero ese cero se perdería.
-                
-                if(CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3){
+
+                if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3) {
                     new RegistroCiudadano().setVisible(true);
                     dispose();
                 } else {
                     new DatosTurno().setVisible(true);
                     dispose();
                 }
-                
+
             } catch (NumberFormatException e) {
 
                 if (dni == 0) {
@@ -191,29 +191,29 @@ public class SolicitarTurno extends javax.swing.JFrame {
 
     private void txt_docKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_docKeyTyped
         int key = evt.getKeyChar();
-        boolean numeros = key>=48 && key<=57;
-        if(!numeros){
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
             evt.consume();
         }
-        if (txt_doc.getText().length()>=8){
+        if (txt_doc.getText().length() >= 8) {
             evt.consume();
         }       // TODO add your handling code here:
     }//GEN-LAST:event_txt_docKeyTyped
 
     private void txt_tramiteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_tramiteKeyTyped
         int key = evt.getKeyChar();
-        boolean numeros = key>=48 && key<=57;
-        if(!numeros){
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
             evt.consume();
         }
-        if (txt_tramite.getText().length()>=11){
+        if (txt_tramite.getText().length() >= 11) {
             evt.consume();
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tramiteKeyTyped
 
     private void boton_obtener_tramiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_obtener_tramiteActionPerformed
-        if(ObtenerCertificado.tram == null){
+        if (ObtenerCertificado.tram == null) {
             ObtenerCertificado.tram = new InfoNumTramite();
             ObtenerCertificado.tram.setVisible(true);
         }
