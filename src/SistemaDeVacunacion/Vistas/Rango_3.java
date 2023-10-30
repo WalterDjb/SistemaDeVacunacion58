@@ -81,7 +81,7 @@ public class Rango_3 extends javax.swing.JFrame {
 
     private void JBcitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcitaActionPerformed
         this.dispose();
-        new Citas().setVisible(true);
+        new Asignar_Citas().setVisible(true);
     }//GEN-LAST:event_JBcitaActionPerformed
 
     private void jbVacunadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVacunadosActionPerformed
@@ -90,7 +90,8 @@ public class Rango_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVacunadosActionPerformed
 
     private void jbEstadisticas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEstadisticas1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        new Asignar_Citas().setVisible(true);
     }//GEN-LAST:event_jbEstadisticas1ActionPerformed
 
     /**

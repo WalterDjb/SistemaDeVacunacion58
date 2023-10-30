@@ -3,6 +3,7 @@ package SistemaDeVacunacion.Conexiones;
 import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Vacuna;
 import SistemaDeVacunacion.Entidades.Centro;
+import SistemaDeVacunacion.Entidades.Ciudadano;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -317,4 +318,58 @@ public class CitaData {
         }
         return null;
     }
+    
+    public List<Cita> buscarPersonasSinTurno() {
+    List<Cita> citas = new ArrayList<>();
+    
+    try {
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE cita.fHCita IS NULL AND ciudadano.patologia <> 'Ninguna' OR ciudadano.ambitoTrabajo <> 'Otros'");
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Cita cita = new Cita();
+            cita.setDni(rs.getInt("dni"));
+            
+            
+            Ciudadano ciudadano = new Ciudadano();
+            ciudadano.setPatologia(rs.getString("patologia"));
+            ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
+            cita.setCiudadano(ciudadano);
+            
+            citas.add(cita);
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+    }
+    
+    return citas;
 }
+
+    public List<Cita> buscarPersonasSinTurno1() {
+    List<Cita> citas = new ArrayList<>();
+    
+    try {
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE cita.fHCita IS NULL AND ciudadano.patologia = 'Ninguna' AND ciudadano.ambitoTrabajo = 'Otros'");
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Cita cita = new Cita();
+            cita.setDni(rs.getInt("dni"));
+            
+            
+            Ciudadano ciudadano = new Ciudadano();
+            ciudadano.setPatologia(rs.getString("patologia"));
+            ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
+            cita.setCiudadano(ciudadano);
+            
+            citas.add(cita);
+        }
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+    }
+    
+    return citas;
+}
+        
+}
+
