@@ -149,17 +149,17 @@ public class ObtenerCertificado extends javax.swing.JFrame {
 
     private void boton_ver_certificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ver_certificadoActionPerformed
         if (txt_doc.getText().trim().equals("") || txt_tramite.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debes completar todos los campos", "Falta de datos", 0);
+            JOptionPane.showMessageDialog(null, "Debes completar todos los campos", "Falta de datos", 0, Icono.ERROR);
         } else if ((txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) && txt_tramite.getText().trim().length() != 14) {
-            JOptionPane.showMessageDialog(null, "Número de documento y de trámite inválidos", "Datos incorrectos", 0);
+            JOptionPane.showMessageDialog(null, "Número de documento y de trámite inválidos", "Datos incorrectos", 0, Icono.ERROR);
             txt_doc.setText("");
             txt_tramite.setText("");
         } else if (txt_doc.getText().trim().length() < 7 || txt_doc.getText().trim().length() > 8) {
-            JOptionPane.showMessageDialog(null, "Número de documento inválido", "Documento incorrecto", 0);
+            JOptionPane.showMessageDialog(null, "Número de documento inválido", "Documento incorrecto", 0, Icono.ERROR);
             txt_doc.setText("");
             txt_tramite.setText("");
         } else if (txt_tramite.getText().trim().length() != 11) {
-            JOptionPane.showMessageDialog(null, "Número de trámite inválido", "Trámite incorrecto", 0);
+            JOptionPane.showMessageDialog(null, "Número de trámite inválido", "Trámite incorrecto", 0, Icono.ERROR);
             txt_tramite.setText("");
         } else {
             dni = 0;
@@ -174,11 +174,13 @@ public class ObtenerCertificado extends javax.swing.JFrame {
                     new DatoCertificado().setVisible(true);
                     dispose();
                 } else if(CiudadanoData.dniTramiteEncontrados(dni, tramite) == 2){
-                    JOptionPane.showMessageDialog(null, "Por el momento no tiene ningún certificado disponible", "No encontrado", 1);
+                    JOptionPane.showMessageDialog(null, "Por el momento no tiene ningún certificado disponible", "No encontrado", 1, Icono.NO_ENCONTRADO);
                     txt_doc.setText("");
                     txt_tramite.setText("");
                 } else {
-                    JOptionPane.showMessageDialog(null, "No se pudo encontrar registro con los datos proporcionados", "Registro inexistente", 1);
+                    JOptionPane.showMessageDialog(null, "No se pudo encontrar registro con los datos proporcionados", "Registro inexistente", 1, Icono.NO_ENCONTRADO);
+                    txt_doc.setText("");
+                    txt_tramite.setText("");
                 }
                 
             } catch (NumberFormatException e) {

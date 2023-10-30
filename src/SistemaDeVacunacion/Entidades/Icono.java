@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 public class Icono {
     public static final Icon CORRECTO = establecerIcono("icon_correcto.png", 64, 64);
     public static final Icon ERROR = establecerIcono("icon_error.png", 64, 64);
+    public static final Icon NO_ENCONTRADO = establecerIcono("icon_noencontrado.png", 64, 64);
     
     private Icono(){}
     
