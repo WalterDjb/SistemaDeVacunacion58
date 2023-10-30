@@ -238,10 +238,12 @@ public class CentroData {
     }
     
     public void actualizarCitasVacunado(String serie, int id) {
+               
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHAplicacion = NOW(), estadoCita = 'CUM', numeroSerie = ? WHERE id = ?");
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHAplicacion = NOW(), estadoCita = 'CUM',Dosis = Dosis + 1, numeroSerie = ? WHERE id = ?");
             ps.setString(1, serie);
             ps.setInt(2, id);
+            
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {

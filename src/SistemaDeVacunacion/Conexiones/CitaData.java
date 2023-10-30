@@ -76,7 +76,7 @@ public class CitaData {
 
     public Cita buscarTurnoXDni(int dni) {
         try {
-            PreparedStatement ps = con.prepareStatement("select * from cita where dni = ?");
+            PreparedStatement ps = con.prepareStatement("SELECT * from cita where dni = ?");
             ps.setInt(1, dni);
             ResultSet rs = ps.executeQuery();
 
@@ -297,5 +297,24 @@ public class CitaData {
             System.err.println("ERROR crítico mortal y muchas cosas malas en crearCitaPorDniYId: "+ex.getMessage());
         }
         
+    }
+    public Cita buscarTurnoXDni2(int dni) {
+        try {
+            PreparedStatement ps = con.prepareStatement("SELECT * from cita where dni = ? AND estadoCita IS NULL");
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Cita cita = new Cita();
+                cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
+                cita.setFechaHoraCita(rs.getTimestamp("fHCita").toInstant().atZone(ZoneId.of("GMT-3")).toLocalDateTime());
+                cita.setId(rs.getInt("id"));
+                cita.setEstadoCita(rs.getString("estadoCita"));
+                return cita;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a Cita.");
+        }
+        return null;
     }
 }

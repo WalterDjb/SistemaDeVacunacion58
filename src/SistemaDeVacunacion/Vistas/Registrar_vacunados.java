@@ -221,7 +221,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
     CitaData ad = new CitaData();
 try {
     int dni = Integer.parseInt(jtDni.getText());
-    Cita cita = ad.buscarTurnoXDni(dni);
+    Cita cita = ad.buscarTurnoXDni2(dni);
 
     if (cita != null && cita.getEstadoCita() == null) {
         LocalDateTime fechaHoraActual = LocalDateTime.now(); 
@@ -361,6 +361,7 @@ try {
     private void registrarVacuna() {
         String serie = jtSerie.getText();
         int id = Integer.parseInt(jtId.getText());
+        
         ced.actualizarCitasVacunado(serie, id);
         Limpiar();
     }
