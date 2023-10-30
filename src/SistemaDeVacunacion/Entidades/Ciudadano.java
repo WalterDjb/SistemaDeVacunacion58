@@ -3,14 +3,14 @@ package SistemaDeVacunacion.Entidades;
 import java.time.LocalDateTime;
 
 public class Ciudadano {
-    private String nombre, apellido, email, domicilio, trabajo, patologia, provincia, localidad, ambito;
+    private String numTramite, nombre, apellido, email, domicilio, patologia, provincia, localidad, ambito;
     private int dni, dosis;
-    private long numTramite, celular;
+    private long celular;
     private LocalDateTime ultimaDosis;
     
     public Ciudadano(){}
     
-    public Ciudadano(String nombre, String apellido, String ambito, int dni, String provincia, String localidad, String email, String domicilio, String trabajo, String patologia, long numTramite, long celular, int dosis, LocalDateTime ultimaDosis){
+    public Ciudadano(String nombre, String apellido, String ambito, int dni, String provincia, String localidad, String email, String domicilio, String patologia, String numTramite, long celular, int dosis, LocalDateTime ultimaDosis){
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -18,7 +18,6 @@ public class Ciudadano {
         this.localidad = localidad;
         this.email = email;
         this.domicilio = domicilio;
-        this.trabajo = trabajo;
         this.patologia = patologia;
         this.numTramite =  numTramite;
         this.celular = celular;
@@ -49,14 +48,6 @@ public class Ciudadano {
 
     public void setDomicilio(String domicilio) {
         this.domicilio = domicilio;
-    }
-
-    public String getTrabajo() {
-        return trabajo;
-    }
-
-    public void setTrabajo(String trabajo) {
-        this.trabajo = trabajo;
     }
 
     public String getPatologia() {
@@ -99,11 +90,11 @@ public class Ciudadano {
         this.ultimaDosis = ultimaDosis;
     }
 
-    public long getNumTramite() {
+    public String getNumTramite() {
         return numTramite;
     }
 
-    public void setNumTramite(long numTramite) {
+    public void setNumTramite(String numTramite) {
         this.numTramite = numTramite;
     }
 

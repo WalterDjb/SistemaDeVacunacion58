@@ -9,21 +9,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class CitaData {
 
     private static Connection con = Conexion.getConexion();
-    private Cita cit = new Cita();
-    private CentroData ced = new CentroData();
-    private CiudadanoData cd = new CiudadanoData();
-    private VacunaData vd = new VacunaData();
+    private static Cita cit = new Cita();
+    private static CentroData ced = new CentroData();
+    private static CiudadanoData cd = new CiudadanoData();
+    private static VacunaData vd = new VacunaData();
 
     public CitaData() {
     }
@@ -199,7 +196,7 @@ public class CitaData {
         }
     }
     
-    public List <Cita> cargarCitasPorCentroYDni (int id, int dni){
+    public static List <Cita> cargarCitasPorCentroYDni (int id, int dni){
         List <Cita> citas = new ArrayList<>();
         Cita cita = new Cita();
         String sql = "SELECT * FROM cita WHERE centro = '"+id+"' AND dni = '"+dni+"' AND estadoCita IS NULL";
