@@ -259,14 +259,18 @@ private void cargaDatos() {
             
             List<Cita> lista = ciData.buscarPersonasSinTurno();
             for (Cita a: lista) {
+                if("Salud".equals(a.ciudadano.getAmbito()) || ("Educacion".equals(a.ciudadano.getAmbito())) && (a.id == Integer.parseInt(Login.user.substring(0, 2)))){
                 modelo.addRow(new Object[]{a.getId(),a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
+            }
             }
         }
 private void cargaDatos1() {
             
             List<Cita> lista = ciData.buscarPersonasSinTurno1();
             for (Cita a: lista) {
+                if((a.ciudadano.getAmbito() != "Salud") && (a.ciudadano.getAmbito() != "Educacion") && (a.id == Integer.parseInt(Login.user.substring(0, 2)))){
             modelo1.addRow(new Object[]{a.getId(),a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
+            }
             }
         }
 
