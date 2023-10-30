@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class CiudadanoData {
 
-    public static Connection con;
+    public static Connection con = Conexion.getConexion();
 
     public CiudadanoData() {
     }
