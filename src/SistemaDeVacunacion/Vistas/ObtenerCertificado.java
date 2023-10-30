@@ -1,6 +1,7 @@
 package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.CiudadanoData;
+import SistemaDeVacunacion.Entidades.Icono;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -183,11 +184,11 @@ public class ObtenerCertificado extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
 
                 if (dni == 0) {
-                    JOptionPane.showMessageDialog(null, "El número de documento contiene carácteres inválidos", "Error de formato", 0);
+                    JOptionPane.showMessageDialog(null, "El número de documento contiene carácteres inválidos", "Error de formato", 0, Icono.ERROR);
                     txt_doc.setText("");
                     txt_tramite.setText("");
                 } else {
-                    JOptionPane.showMessageDialog(null, "El número de trámite contiene carácteres inválidos", "Error de formato", 0);
+                    JOptionPane.showMessageDialog(null, "El número de trámite contiene carácteres inválidos", "Error de formato", 0, Icono.ERROR);
                     txt_tramite.setText("");
                 }
             }
