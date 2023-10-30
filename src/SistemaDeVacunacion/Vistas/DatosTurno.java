@@ -1,10 +1,7 @@
 package SistemaDeVacunacion.Vistas;
 
-import SistemaDeVacunacion.Conexiones.CiudadanoData;
-import SistemaDeVacunacion.Entidades.Icono;
 import java.awt.Image;
 import java.awt.Toolkit;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +19,7 @@ public class DatosTurno extends javax.swing.JFrame {
         setSize(800, 629);
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("SISTEMA DE VACUNACIÓN - Carga de datos");
+        setTitle("SISTEMA DE VACUNACIÓN - Datos del turno");
     }
 
     @Override
