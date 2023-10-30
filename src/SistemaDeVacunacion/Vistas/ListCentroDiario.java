@@ -184,7 +184,7 @@ public class ListCentroDiario extends javax.swing.JFrame {
     
     private void cargaVacunados() {
     List<Cita> citas = ciData.obtenerVacunasAplicadasDiaria(jCalendar1.getDate());
-        System.out.println(jCalendar1.getDate());
+    
     Map<String, Map<String, Integer>> conteoPorCentro = new HashMap<>();
     
     for (Cita cita : citas) {

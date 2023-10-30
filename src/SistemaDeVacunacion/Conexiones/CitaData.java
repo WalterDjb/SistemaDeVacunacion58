@@ -323,11 +323,12 @@ public class CitaData {
     List<Cita> citas = new ArrayList<>();
     
     try {
-        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE cita.fHCita IS NULL AND ciudadano.patologia <> 'Ninguna' OR ciudadano.ambitoTrabajo <> 'Otros'");
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE (cita.fHCita IS NULL) AND ciudadano.patologia <> 'Ninguna' OR ciudadano.ambitoTrabajo <> 'Otros'");
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
             Cita cita = new Cita();
+            cita.setId(rs.getInt("id"));
             cita.setDni(rs.getInt("dni"));
             
             
@@ -354,6 +355,7 @@ public class CitaData {
 
         while (rs.next()) {
             Cita cita = new Cita();
+            cita.setId(rs.getInt("id"));
             cita.setDni(rs.getInt("dni"));
             
             
@@ -370,6 +372,16 @@ public class CitaData {
     
     return citas;
 }
-        
+   public void AsignarFecha(Date fechaCita, int id) {
+        try {
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHCita = ? WHERE id = ?");
+            ps.setDate(1, new java.sql.Date(fechaCita.getTime()));
+            ps.setInt(2, id);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
+        }
+    }     
 }
 

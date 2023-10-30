@@ -54,18 +54,12 @@ public class Asignar_Citas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTPrioridad = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jbModificar1 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDPrioridad = new com.toedter.calendar.JDateChooser();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,10 +100,10 @@ public class Asignar_Citas extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(15, 75, 94));
-        jLabel3.setText("PERSONAS INSCRIPTAS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
+        jLabel3.setText("PERSONAS INSCRIPTAS SIN TURNO");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTPrioridad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -120,7 +114,7 @@ public class Asignar_Citas extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTPrioridad);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, 100));
 
@@ -138,36 +132,19 @@ public class Asignar_Citas extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable2);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 100));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
-
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, -1));
-
-        jLabel5.setText("jLabel5");
-        jLabel5.setToolTipText("CANTIDAD DE TURNOS DE ESE DIA");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
-
-        jLabel6.setText("jLabel6");
-        jLabel6.setToolTipText("TURNOS DISPONIBLES");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 80, 70));
-
-        jLabel7.setText("jLabel4");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, -1, -1));
-
-        jLabel8.setText("jLabel5");
-        jLabel8.setToolTipText("CANTIDAD DE TURNOS DE ESE DIA");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
-
-        jLabel9.setText("jLabel6");
-        jLabel9.setToolTipText("TURNOS DISPONIBLES");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 80, 70));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 160, 20));
 
         jbModificar1.setBackground(new java.awt.Color(15, 75, 94));
         jbModificar1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbModificar1.setForeground(new java.awt.Color(255, 255, 255));
         jbModificar1.setText("ASIGNAR TURNO");
-        getContentPane().add(jbModificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
-        getContentPane().add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, -1, -1));
+        jbModificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbModificar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbModificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, -1, -1));
+        getContentPane().add(jDPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 170, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         fondo.setToolTipText("CAPACIDAD DEL CENTRO");
@@ -180,6 +157,10 @@ public class Asignar_Citas extends javax.swing.JFrame {
         this.dispose();
         new Rango_3().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
+
+    private void jbModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbModificar1ActionPerformed
+        asignarFecha ();
+    }//GEN-LAST:event_jbModificar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,20 +200,14 @@ public class Asignar_Citas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
+    private com.toedter.calendar.JDateChooser jDPrioridad;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTPrioridad;
     private javax.swing.JTable jTable2;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbModificar;
@@ -242,17 +217,19 @@ public class Asignar_Citas extends javax.swing.JFrame {
 
 private void armarCabecera(){
             ArrayList<Object> filaCabecera = new ArrayList<>();
+            filaCabecera.add("ID");
             filaCabecera.add("DNI");
             filaCabecera.add("Patologia");
             filaCabecera.add("ambitoTrabajo");
             for( Object it: filaCabecera) {
                 modelo.addColumn(it);
             }
-            jTable1.setModel(modelo);
+            jTPrioridad.setModel(modelo);
         }
 
 private void armarCabecera1(){
             ArrayList<Object> filaCabecera = new ArrayList<>();
+            filaCabecera.add("ID");
             filaCabecera.add("DNI");
             filaCabecera.add("Patologia");
             filaCabecera.add("ambitoTrabajo");
@@ -266,14 +243,36 @@ private void cargaDatos() {
             
             List<Cita> lista = ciData.buscarPersonasSinTurno();
             for (Cita a: lista) {
-                modelo.addRow(new Object[]{a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
+                modelo.addRow(new Object[]{a.getId(),a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
             }
         }
 private void cargaDatos1() {
             
             List<Cita> lista = ciData.buscarPersonasSinTurno1();
             for (Cita a: lista) {
-            modelo1.addRow(new Object[]{a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
+            modelo1.addRow(new Object[]{a.getId(),a.getDni(),a.getCiudadano().getPatologia(),a.getCiudadano().getAmbito()});
             }
         }
+
+private void asignarFecha (){
+    int filaSeleccionada=jTPrioridad.getSelectedRow();
+    if (filaSeleccionada!=-1){
+    java.util.Date fechaSeleccionada = jDPrioridad.getDate();
+    int idCita=(Integer)modelo.getValueAt(filaSeleccionada, 0);
+
+    
+    ciData.AsignarFecha(fechaSeleccionada, idCita);
+    
+        }
+    
+    
+    }
+
+private void borrarFilaTabla(){
+        int indice = modelo.getRowCount() -1;
+        
+        for(int i = indice;i>=0;i--){
+            modelo.removeRow(i); 
+        }
+    }
 }
