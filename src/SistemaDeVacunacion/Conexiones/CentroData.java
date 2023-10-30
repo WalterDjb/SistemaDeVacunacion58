@@ -19,52 +19,53 @@ public class CentroData {
     private static Centro cen = new Centro();
     private ArrayList<Centro> centros = new ArrayList<>();
     private Vacuna vac = new Vacuna();
+
     public CentroData() {
         con = Conexion.getConexion();
     }
 
     public void agregar(Centro centro) {
         try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO `centro`(`direccion`,`provincia`, `localidad`, `capacidad`, `registrados`) VALUES (?,?,?,?,'0')",Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = con.prepareStatement("INSERT INTO `centro`(`direccion`,`provincia`, `localidad`, `capacidad`, `registrados`) VALUES (?,?,?,?,'0')", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, centro.getDomicilio());
             ps.setString(2, centro.getProvincia());
             ps.setString(3, centro.getLocalidad());
             ps.setInt(4, centro.getCapacidad());
 
             ps.executeUpdate();
-            
-            ResultSet rs =ps.getGeneratedKeys();
+
+            ResultSet rs = ps.getGeneratedKeys();
             int id = 0;
-            if (rs.next()){
+            if (rs.next()) {
                 id = rs.getInt(1);
             }
             //no tocar este desastre, capaz algún día lo arreglo -g- -.-'
             //desde acá va un for each vacuna en vacunas
             //for (int i = 0; i <= centro.vacunas.size(); i++){
-                //PreparedStatement ps2 = con.prepareStatement("INSERT INTO stock (idCentro"/*,'vacunas','stock'*/+") VALUES (?)");
-                //ps2.setInt(1, id);
-                //ps2.setString(2, centro.vacunas.get(i).getMarca());
-                //ps2.setInt(3, centro.vacunas.get(i).getStock());
-               // }
-        //ps2.executeUpdate();
+            //PreparedStatement ps2 = con.prepareStatement("INSERT INTO stock (idCentro"/*,'vacunas','stock'*/+") VALUES (?)");
+            //ps2.setInt(1, id);
+            //ps2.setString(2, centro.vacunas.get(i).getMarca());
+            //ps2.setInt(3, centro.vacunas.get(i).getStock());
+            // }
+            //ps2.executeUpdate();
 
-        PreparedStatement ps3 = con.prepareStatement("INSERT INTO acceso (nivel, nombre, email, usuario, contra, tipoContra) VALUES (?,?,?,?,?,?)");
-        ps3.setInt(1, 3);
-        ps3.setString(2, "Centro "+id);
-        ps3.setString(3, "-");
-        ps3.setString(4, id+"-"+centro.getLocalidad());
-        ps3.setString(5, id+"-"+centro.getLocalidad());
-        ps3.setString(6, "A");
-        ps3.executeUpdate();
-        
-        ps.close();
-        //ps2.close();
-        ps3.close();
-        
-        JOptionPane.showMessageDialog(null, "Creado el Centro de vacunación "+id+"-"+centro.getLocalidad());
-        
-        }catch(SQLException ex){
-            System.err.println("Error "+ex.getMessage());
+            PreparedStatement ps3 = con.prepareStatement("INSERT INTO acceso (nivel, nombre, email, usuario, contra, tipoContra) VALUES (?,?,?,?,?,?)");
+            ps3.setInt(1, 3);
+            ps3.setString(2, "Centro " + id);
+            ps3.setString(3, "-");
+            ps3.setString(4, id + "-" + centro.getLocalidad());
+            ps3.setString(5, id + "-" + centro.getLocalidad());
+            ps3.setString(6, "A");
+            ps3.executeUpdate();
+
+            ps.close();
+            //ps2.close();
+            ps3.close();
+
+            JOptionPane.showMessageDialog(null, "Creado el Centro de vacunación " + id + "-" + centro.getLocalidad());
+
+        } catch (SQLException ex) {
+            System.err.println("Error " + ex.getMessage());
         }
     }
 
@@ -89,14 +90,14 @@ public class CentroData {
             JOptionPane.showMessageDialog(null, "Error inesperado al tratar de eliminar Centro");
         }
     }
-    
-     public static Centro buscarCentroXId(int id){
+
+    public static Centro buscarCentroXId(int id) {
         try {
             con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement("select * from centro where id = " + id);
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 cen.setId(rs.getInt("id"));
                 cen.setDomicilio(rs.getString("direccion"));
                 cen.setStock(rs.getInt("stock"));
@@ -107,19 +108,19 @@ public class CentroData {
             }
         } catch (SQLException e) {
             System.out.println("ERROR al buscar el centro por ID");
-        }catch (NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             JOptionPane.showMessageDialog(null, "El ID debe ser un valor numérico.");
         }
         return cen;
     }
-     
-     public Centro buscarCentroXLocalidad(String localidad){
+
+    public Centro buscarCentroXLocalidad(String localidad) {
         try {
             con = Conexion.getConexion();
             PreparedStatement ps = con.prepareStatement("select * from centro where localidad = " + localidad);
             ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
+
+            if (rs.next()) {
                 cen.setId(rs.getInt("id"));
                 cen.setDomicilio(rs.getString("direccion"));
                 cen.setStock(rs.getInt("stock"));
@@ -134,43 +135,98 @@ public class CentroData {
         return cen;
     }
 
-    public List<Centro> listarCentrosXProvincia(String provincia) {
-    con = Conexion.getConexion();
-    List<Centro> centros = new ArrayList<>();
-    try {
+    public static List<Centro> listarCentrosXProvincia(String provincia) {
         con = Conexion.getConexion();
-        String sql = "select * from centro where provincia = (?)";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, provincia);
-        ResultSet rs = ps.executeQuery();
-        
-        while (rs.next()) {
-            Centro centro = new Centro();
-            centro.setId(rs.getInt("id"));
-            centro.setDomicilio(rs.getString("direccion"));
-            centro.setStock(rs.getInt("stock"));
-            centro.setProvincia(rs.getString("provincia"));
-            centro.setLocalidad(rs.getString("localidad"));
-            centro.setCapacidad(rs.getInt("capacidad"));
-            centro.setRegistrados(rs.getInt("registrados"));
-            centros.add(centro);
+        List<Centro> centros = new ArrayList<>();
+        try {
+            con = Conexion.getConexion();
+            String sql = "select * from centro where provincia = (?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, provincia);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Centro centro = new Centro();
+                centro.setId(rs.getInt("id"));
+                centro.setDomicilio(rs.getString("direccion"));
+                centro.setStock(rs.getInt("stock"));
+                centro.setProvincia(rs.getString("provincia"));
+                centro.setLocalidad(rs.getString("localidad"));
+                centro.setCapacidad(rs.getInt("capacidad"));
+                centro.setRegistrados(rs.getInt("registrados"));
+                centros.add(centro);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        } catch (NullPointerException npe) {
+            System.err.println("Error; " + npe.getMessage());
         }
-    } catch (SQLException e) {
-        System.out.println("ERROR: " + e.getMessage());
-    } catch (NullPointerException npe){
-        System.err.println("Error; "+npe.getMessage());
+        return centros;
     }
-    return centros;
+
+    public static List<String> listarLocalidadesXProvincia(String provincia) {
+        con = Conexion.getConexion();
+
+        List<String> localidades = new ArrayList<>();
+
+        try {
+            con = Conexion.getConexion();
+            String sql = "select localidad from centro where provincia = (?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, provincia);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String localidad = rs.getString("localidad");
+                localidades.add(localidad);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        } catch (NullPointerException npe) {
+            System.err.println("Error; " + npe.getMessage());
+        }
+        return localidades;
     }
-    
-    public List<Vacuna> StockDeVacunas(int id){
-        String sql = "SELECT vacuna, stock FROM stock WHERE idCentro = "+id;
+
+    public static List<Centro> listarCentrosXLocalidad(String localidad) {
+        con = Conexion.getConexion();
+        List<Centro> centros = new ArrayList<>();
+
+        try {
+            con = Conexion.getConexion();
+            String sql = "select * from centro where localidad = (?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, localidad);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Centro centro = new Centro();
+                centro.setId(rs.getInt("id"));
+                centro.setDomicilio(rs.getString("direccion"));
+                centro.setStock(rs.getInt("stock"));
+                centro.setProvincia(rs.getString("provincia"));
+                centro.setLocalidad(rs.getString("localidad"));
+                centro.setCapacidad(rs.getInt("capacidad"));
+                centro.setRegistrados(rs.getInt("registrados"));
+                centros.add(centro);
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        } catch (NullPointerException npe) {
+            System.err.println("Error; " + npe.getMessage());
+        }
+        return centros;
+    }
+
+    public List<Vacuna> StockDeVacunas(int id) {
+        String sql = "SELECT vacuna, stock FROM stock WHERE idCentro = " + id;
         List<Vacuna> vacunas = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 vac.setMarca(rs.getString("vacuna"));
                 vac.setStock(rs.getInt("stock"));
                 vacunas.add(vac);

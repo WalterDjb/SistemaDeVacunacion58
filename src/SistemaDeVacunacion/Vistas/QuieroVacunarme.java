@@ -27,7 +27,34 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("SISTEMA DE VACUNACIÓN - Quiero vacunarme");
+        
+        cargarComboActionProvincia();
+        
     }
+    
+    private void cargarComboActionProvincia(){
+        List<String> localidades = CentroData.listarLocalidadesXProvincia(jcbProvincia1.getSelectedItem().toString().trim());
+        
+        jcbLocalidad.removeAllItems();
+
+        
+        for(int i = 0; i < localidades.size(); i++){
+            jcbLocalidad.addItem(localidades.get(i).toString());
+        }
+    
+    }
+    
+    private void cargarComboActionLocalidad(){
+        List<Centro> centros = CentroData.listarCentrosXLocalidad(jcbLocalidad.getSelectedItem().toString());
+        
+        JCcentros.removeAllItems();
+        
+        for(int i = 0; i < centros.size(); i++){
+            JCcentros.addItem(centros.get(i).toString());
+        }
+    
+    }
+
 
     @Override
     public Image getIconImage() {
@@ -58,10 +85,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jtApellido = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jtLocalidad = new javax.swing.JTextField();
         jbInscribir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jcbProvincia = new javax.swing.JComboBox<>();
+        jcbLocalidad = new javax.swing.JComboBox<>();
+        jcbProvincia1 = new javax.swing.JComboBox<>();
         jcbPatologia = new javax.swing.JComboBox<>();
         jcbAMbito1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -208,18 +235,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jLabel17.setText("Ámbito de trabajo:");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, -1, -1));
 
-        jtLocalidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtLocalidadActionPerformed(evt);
-            }
-        });
-        jtLocalidad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtLocalidadKeyTyped(evt);
-            }
-        });
-        getContentPane().add(jtLocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 270, -1));
-
         jbInscribir.setBackground(new java.awt.Color(15, 75, 94));
         jbInscribir.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbInscribir.setForeground(new java.awt.Color(255, 255, 255));
@@ -235,14 +250,22 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jLabel2.setText("Apellido:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
-        jcbProvincia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
-        jcbProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
-        jcbProvincia.addActionListener(new java.awt.event.ActionListener() {
+        jcbLocalidad.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jcbLocalidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbProvinciaActionPerformed(evt);
+                jcbLocalidadActionPerformed(evt);
             }
         });
-        getContentPane().add(jcbProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, -1));
+        getContentPane().add(jcbLocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 270, -1));
+
+        jcbProvincia1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jcbProvincia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán" }));
+        jcbProvincia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbProvincia1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jcbProvincia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 270, -1));
 
         jcbPatologia.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jcbPatologia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ninguna", "Cáncer.", "Diabetes.", "Enf. autoinmunitarias.", "Enf. cardíacas.", "Enf. crónicas del sistema digestivo.", "Enf.s hepáticas.", "Enf. hematológicas.", "Enf. metabólicas hereditarias.", "Enf. neurológicas.", "Enf. pulmonares crónicas.", "Enf. renales crónicas.", "Enf. autoinmunitarias.", "Inmunodeficiencias primarias.", "Obesidad." }));
@@ -256,6 +279,11 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, -1, -1));
 
         JCcentros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione un Centro>" }));
+        JCcentros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCcentrosActionPerformed(evt);
+            }
+        });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 422, 200, 30));
 
         jbInfo.setText("i");
@@ -301,18 +329,13 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtApellidoActionPerformed
 
-    private void jtLocalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtLocalidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtLocalidadActionPerformed
-
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
         
         if (
                 
                 jtNombre1.getText().trim().equals("") || jtApellido.getText().trim().equals("")
                 || jtDoc.getText().trim().equals("") || jtCelular.getText().trim().equals("")
-                || jtDomicilio.getText().trim().equals("") || jtLocalidad.getText().trim().equals("")
-                || jtMail.getText().trim().equals("") || jtTramite.getText().trim().equals("")
+                || jtDomicilio.getText().trim().equals("") || jtMail.getText().trim().equals("") || jtTramite.getText().trim().equals("")
                 
                 
             ) {
@@ -343,10 +366,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         
             JOptionPane.showMessageDialog(null, "Apellido inválido. Intente nuevamente", "Dato inválido", 0, Icono.ERROR);
         
-        } else if(jtLocalidad.getText().trim().length() < 3){
-        
-            JOptionPane.showMessageDialog(null, "Localidad inválida. Intente nuevamente", "Dato inválido", 0, Icono.ERROR);
-        
         } else if(JCcentros.getSelectedItem().equals("<Seleccione un Centro>")){
         
             JOptionPane.showMessageDialog(null, "Debe seleccionar un centro para continuar.", "Centro no seleccionado", 0, Icono.ERROR);
@@ -362,10 +381,10 @@ public class QuieroVacunarme extends javax.swing.JFrame {
             ciudadano.setDomicilio(jtDomicilio.getText().trim());
             ciudadano.setAmbito(jcbAMbito1.getSelectedItem().toString());
             ciudadano.setEmail(jtMail.getText().trim());
-            ciudadano.setLocalidad(jtLocalidad.getText().trim());
+            ciudadano.setLocalidad(jcbLocalidad.getSelectedItem().toString());
             ciudadano.setNumTramite(jtTramite.getText().trim());
             ciudadano.setPatologia(jcbPatologia.getSelectedItem().toString());
-            ciudadano.setProvincia(jcbProvincia.getSelectedItem().toString());
+            ciudadano.setProvincia(jcbLocalidad.getSelectedItem().toString());
             
             CiudadanoData.guardarCiudadano(ciudadano);
             CitaData.cargarCitasPorCentroYDni(Integer.parseInt(jtDoc.getText()), (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0, 2))));
@@ -434,16 +453,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jtApellidoKeyTyped
 
-    private void jtLocalidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtLocalidadKeyTyped
-        int key = evt.getKeyChar();
-        boolean mayusculas = key >= 65 && key <= 90;
-        boolean minusculas = key >= 97 && key <= 122;
-
-        if (!(minusculas || mayusculas)) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_jtLocalidadKeyTyped
-
     private void jtDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDocActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtDocActionPerformed
@@ -455,10 +464,9 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "DATOS DEL CENTRO\nProvincia: " + cen.getProvincia() + ".\nLocalidad: " + cen.getLocalidad() + ".\nDireccion: " + cen.getDomicilio() + ".\nCapacidad: " + cen.getCapacidad() + " personas por día.");
     }//GEN-LAST:event_jbInfoActionPerformed
 
-    private void jcbProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbProvinciaActionPerformed
-        JCcentros.removeAllItems();
-        cargarJCcentros();
-    }//GEN-LAST:event_jcbProvinciaActionPerformed
+    private void jcbLocalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbLocalidadActionPerformed
+        cargarComboActionLocalidad();
+    }//GEN-LAST:event_jcbLocalidadActionPerformed
 
     private void jtMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtMailKeyTyped
         int key = evt.getKeyChar();
@@ -469,6 +477,14 @@ public class QuieroVacunarme extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jtMailKeyTyped
+
+    private void JCcentrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCcentrosActionPerformed
+        
+    }//GEN-LAST:event_JCcentrosActionPerformed
+
+    private void jcbProvincia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbProvincia1ActionPerformed
+        cargarComboActionProvincia();
+    }//GEN-LAST:event_jcbProvincia1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -516,13 +532,13 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbVolver;
     private javax.swing.JComboBox<String> jcbAMbito1;
+    private javax.swing.JComboBox<String> jcbLocalidad;
     private javax.swing.JComboBox<String> jcbPatologia;
-    private javax.swing.JComboBox<String> jcbProvincia;
+    private javax.swing.JComboBox<String> jcbProvincia1;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtCelular;
     private javax.swing.JTextField jtDoc;
     private javax.swing.JTextField jtDomicilio;
-    private javax.swing.JTextField jtLocalidad;
     private javax.swing.JTextField jtMail;
     private javax.swing.JTextField jtNombre1;
     private javax.swing.JTextField jtTramite;
@@ -536,7 +552,6 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         jtApellido.setText("");
         jtCelular.setText("");
         jtDomicilio.setText("");
-        jtLocalidad.setText("");
         jtMail.setText("");
         jtNombre1.setText("");
         jtTramite.setText("");
@@ -546,7 +561,7 @@ public class QuieroVacunarme extends javax.swing.JFrame {
     private void cargarJCcentros() {
         JCcentros.removeAllItems();
         List<Centro> centros = new ArrayList<>();
-        centros = ced.listarCentrosXProvincia(String.valueOf(jcbProvincia.getSelectedItem()));
+        centros = ced.listarCentrosXProvincia(String.valueOf(jcbLocalidad.getSelectedItem()));
         for (Centro centro : centros) {
             JCcentros.addItem(centro.toString());
         }
