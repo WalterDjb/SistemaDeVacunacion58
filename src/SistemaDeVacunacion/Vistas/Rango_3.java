@@ -48,7 +48,7 @@ public class Rango_3 extends javax.swing.JFrame {
         jbEstadisticas.setBackground(new java.awt.Color(15, 75, 94));
         jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
-        jbEstadisticas.setText("Registrar Vacunas");
+        jbEstadisticas.setText("Registrar Vacunados");
         jbEstadisticas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbEstadisticasActionPerformed(evt);

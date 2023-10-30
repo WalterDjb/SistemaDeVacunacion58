@@ -152,20 +152,21 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         jLabel10.setText("Turno Nro:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setText("VACUNADO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 100, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 100, 50));
 
         JCVacunas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCVacunasActionPerformed(evt);
             }
         });
-        getContentPane().add(JCVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 170, 20));
+        getContentPane().add(JCVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 170, 30));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel11.setText("Número de DNI:");

@@ -54,7 +54,8 @@ public class CrearCentro extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
         getContentPane().add(JTlocalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 149, -1));
 
-        jLabel6.setFont(new java.awt.Font("Serif", 0, 30)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Serif", 1, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(15, 75, 94));
         jLabel6.setText("CREAR CENTRO DE VACUNACIÓN");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
 

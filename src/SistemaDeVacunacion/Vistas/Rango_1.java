@@ -43,6 +43,7 @@ public class Rango_1 extends javax.swing.JFrame {
         JBlabs.setBackground(new java.awt.Color(15, 75, 94));
         JBlabs.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JBlabs.setForeground(new java.awt.Color(255, 255, 255));
+        JBlabs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lab.png"))); // NOI18N
         JBlabs.setText("Administrar Laboratorios");
         JBlabs.setPreferredSize(new java.awt.Dimension(250, 40));
         JBlabs.addActionListener(new java.awt.event.ActionListener() {
@@ -50,11 +51,12 @@ public class Rango_1 extends javax.swing.JFrame {
                 JBlabsActionPerformed(evt);
             }
         });
-        getContentPane().add(JBlabs, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
+        getContentPane().add(JBlabs, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 280, 60));
 
         JBvax.setBackground(new java.awt.Color(15, 75, 94));
         JBvax.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JBvax.setForeground(new java.awt.Color(255, 255, 255));
+        JBvax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Vacuna.png"))); // NOI18N
         JBvax.setText("Administrar Vacunas");
         JBvax.setPreferredSize(new java.awt.Dimension(250, 40));
         JBvax.addActionListener(new java.awt.event.ActionListener() {
@@ -62,11 +64,12 @@ public class Rango_1 extends javax.swing.JFrame {
                 JBvaxActionPerformed(evt);
             }
         });
-        getContentPane().add(JBvax, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
+        getContentPane().add(JBvax, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 280, 60));
 
         JBusers.setBackground(new java.awt.Color(15, 75, 94));
         JBusers.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         JBusers.setForeground(new java.awt.Color(255, 255, 255));
+        JBusers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuarios.png"))); // NOI18N
         JBusers.setText("Administrar usuarios");
         JBusers.setPreferredSize(new java.awt.Dimension(250, 40));
         JBusers.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +77,7 @@ public class Rango_1 extends javax.swing.JFrame {
                 JBusersActionPerformed(evt);
             }
         });
-        getContentPane().add(JBusers, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
+        getContentPane().add(JBusers, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 280, 60));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N

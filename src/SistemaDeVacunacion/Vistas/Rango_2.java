@@ -38,35 +38,38 @@ public class Rango_2 extends javax.swing.JFrame {
         jbCentros.setBackground(new java.awt.Color(15, 75, 94));
         jbCentros.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbCentros.setForeground(new java.awt.Color(255, 255, 255));
+        jbCentros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Hospi.png"))); // NOI18N
         jbCentros.setText("Centros de vacunacion");
         jbCentros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCentrosActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 230, 50));
+        getContentPane().add(jbCentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 280, 70));
 
         jbAsignarVacunas.setBackground(new java.awt.Color(15, 75, 94));
         jbAsignarVacunas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbAsignarVacunas.setForeground(new java.awt.Color(255, 255, 255));
+        jbAsignarVacunas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Vacuna.png"))); // NOI18N
         jbAsignarVacunas.setText("Asignar Vacunas");
         jbAsignarVacunas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbAsignarVacunasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAsignarVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 230, 50));
+        getContentPane().add(jbAsignarVacunas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 280, 70));
 
         jbEstadisticas.setBackground(new java.awt.Color(15, 75, 94));
         jbEstadisticas.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbEstadisticas.setForeground(new java.awt.Color(255, 255, 255));
+        jbEstadisticas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Estadisticas.png"))); // NOI18N
         jbEstadisticas.setText("Estadisticas");
         jbEstadisticas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbEstadisticasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 230, 50));
+        getContentPane().add(jbEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 280, 70));
 
         jbVolver.setBackground(new java.awt.Color(15, 75, 94));
         jbVolver.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
