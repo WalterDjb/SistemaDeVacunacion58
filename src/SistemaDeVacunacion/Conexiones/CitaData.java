@@ -350,7 +350,7 @@ public class CitaData {
     List<Cita> citas = new ArrayList<>();
     
     try {
-        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE cita.fHCita IS NULL AND ciudadano.patologia = 'Ninguna' AND ciudadano.ambitoTrabajo = 'Otros'");
+        PreparedStatement ps = con.prepareStatement("SELECT cita.*, ciudadano.patologia, ciudadano.ambitoTrabajo FROM cita INNER JOIN ciudadano ON cita.DNI = ciudadano.DNI WHERE (cita.fHCita IS NULL) AND ciudadano.patologia = 'Ninguna' AND ciudadano.ambitoTrabajo = 'Otros'");
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
