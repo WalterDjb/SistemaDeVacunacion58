@@ -180,4 +180,16 @@ public class CentroData {
         }
         return vacunas;
     }
+    
+    public void actualizarCitasVacunado(String serie, int id) {
+        try {
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHAplicacion = NOW(), estadoCita = 'CUM', numeroSerie = ? WHERE id = ?");
+            ps.setString(1, serie);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
+        }
+    }
 }

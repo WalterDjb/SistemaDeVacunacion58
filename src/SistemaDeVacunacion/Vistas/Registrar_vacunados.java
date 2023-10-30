@@ -45,7 +45,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         jtId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jtDni1 = new javax.swing.JTextField();
+        jtSerie = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         JCVacunas = new javax.swing.JComboBox<>();
@@ -136,26 +136,30 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         jLabel9.setText("REGISTRAR LOS DATOS DE LA VACUNA");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, -1, -1));
 
-        jtDni1.addActionListener(new java.awt.event.ActionListener() {
+        jtSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtDni1ActionPerformed(evt);
+                jtSerieActionPerformed(evt);
             }
         });
-        jtDni1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtSerie.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtDni1KeyTyped(evt);
+                jtSerieKeyTyped(evt);
             }
         });
-        getContentPane().add(jtDni1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 180, -1));
+        getContentPane().add(jtSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 180, -1));
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel10.setText("Turno Nro:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
 
         jButton1.setText("VACUNADO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 100, 40));
 
-        JCVacunas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione Vacuna>" }));
         JCVacunas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCVacunasActionPerformed(evt);
@@ -237,24 +241,28 @@ try {
     JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
     jtDni.setText("");
 }
-
+    cargarComboBox();
     }//GEN-LAST:event_jbConsultaActionPerformed
 
     private void jtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtIdActionPerformed
 
-    private void jtDni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDni1ActionPerformed
+    private void jtSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSerieActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtDni1ActionPerformed
+    }//GEN-LAST:event_jtSerieActionPerformed
 
-    private void jtDni1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDni1KeyTyped
+    private void jtSerieKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtSerieKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtDni1KeyTyped
+    }//GEN-LAST:event_jtSerieKeyTyped
 
     private void JCVacunasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCVacunasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JCVacunasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        registrarVacuna();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,11 +334,36 @@ try {
     private javax.swing.JButton jbVolver;
     private javax.swing.JTextField jtCentro;
     private javax.swing.JTextField jtDni;
-    private javax.swing.JTextField jtDni1;
     private javax.swing.JTextField jtFecha;
     private javax.swing.JTextField jtHora;
     private javax.swing.JTextField jtId;
+    private javax.swing.JTextField jtSerie;
     // End of variables declaration//GEN-END:variables
 
-
+    private void cargarComboBox(){
+        CentroData ad = new CentroData();
+        Centro cen = new Centro();
+        List <Vacuna> vacunas = new ArrayList <>();
+        vacunas = ad.StockDeVacunas(cen.getId());
+        for (Vacuna vacuna: vacunas){
+        JCVacunas.addItem(vacuna.getMarca());
+        }
+    }
+    
+    private void registrarVacuna() {
+        String serie = jtSerie.getText();
+        int id = Integer.parseInt(jtId.getText());
+        ced.actualizarCitasVacunado(serie, id);
+        Limpiar();
+    }
+    
+    private void Limpiar(){
+    jtDni.setText("");
+    jtFecha.setText("");
+    jtHora.setText("");
+    jtCentro.setText("");
+    jtId.setText("");
+    jtSerie.setText("");
+    JOptionPane.showMessageDialog(null,"Registrado Correctamente");
+    }
 }
