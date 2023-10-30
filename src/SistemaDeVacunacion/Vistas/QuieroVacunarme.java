@@ -275,13 +275,14 @@ public class QuieroVacunarme extends javax.swing.JFrame {
         });
         getContentPane().add(JCcentros, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 422, 200, 30));
 
-        jbInfo.setText("i");
+        jbInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/info.png"))); // NOI18N
+        jbInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbInfoActionPerformed(evt);
             }
         });
-        getContentPane().add(jbInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 422, 40, 30));
+        getContentPane().add(jbInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 415, 40, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaDeVacunacion/Vistas/Fondo app.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
