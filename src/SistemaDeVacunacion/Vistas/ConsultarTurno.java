@@ -208,7 +208,7 @@ public class ConsultarTurno extends javax.swing.JFrame {
     CitaData ad = new CitaData();
 try {
     int dni = Integer.parseInt(jtDni.getText());
-    Cita cita = ad.buscarTurnoXDni(dni);
+    Cita cita = ad.buscarTurnoXDni2(dni);
 
     if (cita != null && cita.getEstadoCita() == null) {
         LocalDateTime fechaHoraActual = LocalDateTime.now(); 
