@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Centro {
-    public int id, stock, capacidad, registrados;
+    public int id, capacidad, registrados;
     public String domicilio, provincia, localidad;
     public List <Vacuna> vacunas;
-
+    public double stock;
     public Centro() {
     }
 
@@ -22,11 +22,11 @@ public class Centro {
         this.vacunas = new ArrayList();
     }
 
-    public int getStock() {
+    public double getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(double stock) {
         this.stock = stock;
     }
 

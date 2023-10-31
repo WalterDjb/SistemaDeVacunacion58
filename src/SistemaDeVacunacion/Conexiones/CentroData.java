@@ -69,11 +69,11 @@ public class CentroData {
         }
     }
 
-    public void modificarStock(int id, int stock) {
+    public void modificarStock(int id, double dosis, String marca) {
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE stock SET stock=? WHERE id = " + id);
-            ps.setLong(1, stock);
-
+            PreparedStatement ps = con.prepareStatement("UPDATE stock SET stock= stock - ? WHERE idCentro = " + id + " AND marca = ?");
+            ps.setDouble(1, dosis);
+            ps.setString(2, marca);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {
@@ -105,7 +105,7 @@ public class CentroData {
                 cen.setLocalidad(rs.getString("localidad"));
                 cen.setCapacidad(rs.getInt("capacidad"));
                 cen.setRegistrados(rs.getInt("registrados"));
-                ArrayList<Vacuna> vacunas = new ArrayList();
+                    ArrayList<Vacuna> vacunas = new ArrayList();
                     vacunas.addAll(StockDeVacunas(id));
                 cen.setVacunas(vacunas);
             }

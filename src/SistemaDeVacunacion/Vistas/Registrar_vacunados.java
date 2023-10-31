@@ -3,6 +3,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Conexiones.VacunaData;
 import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Vacuna;
@@ -16,6 +17,9 @@ import javax.swing.JOptionPane;
 
 public class Registrar_vacunados extends javax.swing.JFrame {
     CentroData ced = new CentroData();
+    VacunaData vad = new VacunaData();
+    Centro centro = ced.buscarCentroXId(Integer.parseInt(Login.user.substring(0, 2)));
+    Vacuna vacuna = new Vacuna();
     
     public Registrar_vacunados() {
         initComponents();
@@ -196,11 +200,11 @@ public class Registrar_vacunados extends javax.swing.JFrame {
 
     private void jbVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVolverActionPerformed
         this.dispose();
-        new Login().setVisible(true);
+        new Rango_3().setVisible(true);
     }//GEN-LAST:event_jbVolverActionPerformed
 
     private void jtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDniActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jtDniActionPerformed
 
     private void jtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDniKeyTyped
@@ -212,7 +216,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         if(jtDni.getText().length()>=8){
             evt.consume();
         }
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jtDniKeyTyped
 
     private void jbConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConsultaActionPerformed
@@ -269,6 +273,8 @@ try {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         registrarVacuna();
+        double dosis = 1/(vad.buscarVacunaXNombre(String.valueOf(JCVacunas.getSelectedItem())).getCapacidadDosis());
+        ced.modificarStock(Integer.parseInt(Login.user.substring(0, 2)), dosis, String.valueOf(JCVacunas.getSelectedItem()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -349,9 +355,6 @@ try {
     // End of variables declaration//GEN-END:variables
 
     private void cargarComboBox(){
-        //CentroData ad = new CentroData();
-        //Centro centro = ced.buscarCentroXId(Integer.parseInt(Login.user.substring(0,2)));
-        //List <Centro> centros = new ArrayList <>();
         JCVacunas.removeAllItems();
         List <Vacuna> vacunas = ced.buscarCentroXId(Integer.parseInt(Login.user.substring(0,2))).getVacunas();
         for (Vacuna vacuna: vacunas){
