@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 public class SolicitarTurno extends javax.swing.JFrame {
 
     public static int dni;
+    public static String tramite;
 
     /**
      * Creates new form Main
@@ -156,7 +157,6 @@ public class SolicitarTurno extends javax.swing.JFrame {
             txt_tramite.setText("");
         } else {
             dni = 0;
-            String tramite;
 
             try {
                 dni = Integer.parseInt(txt_doc.getText().trim());
