@@ -358,6 +358,7 @@ public class CitaData {
             Cita cita = new Cita();
             cita.setId(rs.getInt("id"));
             cita.setDni(rs.getInt("dni"));
+            cita.setCentro(ced.buscarCentroXId(rs.getInt("centro")));
             
             
             Ciudadano ciudadano = new Ciudadano();
