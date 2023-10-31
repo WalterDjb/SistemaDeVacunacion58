@@ -22,7 +22,7 @@ public class Registrar_vacunados extends javax.swing.JFrame {
         setSize(800, 629);
         setLocationRelativeTo(null);
         setResizable(false);
-               
+         cargarComboBox();
         
     }
 
@@ -248,7 +248,7 @@ try {
     JOptionPane.showMessageDialog(null, "El DNI debe ser un valor numérico");
     jtDni.setText("");
 }
-    cargarComboBox();
+    //cargarComboBox();
     }//GEN-LAST:event_jbConsultaActionPerformed
 
     private void jtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdActionPerformed
@@ -349,10 +349,11 @@ try {
     // End of variables declaration//GEN-END:variables
 
     private void cargarComboBox(){
-        CentroData ad = new CentroData();
-        Centro cen = new Centro();
-        List <Vacuna> vacunas = new ArrayList <>();
-        vacunas = ad.StockDeVacunas(cen.getId());
+        //CentroData ad = new CentroData();
+        //Centro centro = ced.buscarCentroXId(Integer.parseInt(Login.user.substring(0,2)));
+        //List <Centro> centros = new ArrayList <>();
+        JCVacunas.removeAllItems();
+        List <Vacuna> vacunas = ced.buscarCentroXId(Integer.parseInt(Login.user.substring(0,2))).getVacunas();
         for (Vacuna vacuna: vacunas){
         JCVacunas.addItem(vacuna.getMarca());
         }
@@ -361,8 +362,8 @@ try {
     private void registrarVacuna() {
         String serie = jtSerie.getText();
         int id = Integer.parseInt(jtId.getText());
-        
-        ced.actualizarCitasVacunado(serie, id);
+        String marca = String.valueOf(JCVacunas.getSelectedItem());
+        ced.actualizarCitasVacunado(serie, id, marca);
         Limpiar();
     }
     

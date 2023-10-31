@@ -1,11 +1,12 @@
 package SistemaDeVacunacion.Entidades;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Centro {
     public int id, stock, capacidad, registrados;
     public String domicilio, provincia, localidad;
-    public ArrayList <Vacuna> vacunas;
+    public List <Vacuna> vacunas;
 
     public Centro() {
     }
@@ -37,8 +38,12 @@ public class Centro {
         this.domicilio = domicilio;
     }
 
-    public ArrayList<Vacuna> getVacunas() {
+    public List<Vacuna> getVacunas() {
         return vacunas;
+    }
+
+    public void setVacunas(List<Vacuna> vacunas) {
+        this.vacunas = vacunas;
     }
 
     public String getProvincia() {

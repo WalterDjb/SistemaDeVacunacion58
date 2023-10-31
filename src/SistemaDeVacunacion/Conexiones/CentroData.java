@@ -18,7 +18,7 @@ public class CentroData {
     private static Connection con;
     private static Centro cen = new Centro();
     private ArrayList<Centro> centros = new ArrayList<>();
-    private Vacuna vac = new Vacuna();
+    private static Vacuna vac = new Vacuna();
 
     public CentroData() {
         con = Conexion.getConexion();
@@ -105,6 +105,9 @@ public class CentroData {
                 cen.setLocalidad(rs.getString("localidad"));
                 cen.setCapacidad(rs.getInt("capacidad"));
                 cen.setRegistrados(rs.getInt("registrados"));
+                ArrayList<Vacuna> vacunas = new ArrayList();
+                    vacunas.addAll(StockDeVacunas(id));
+                cen.setVacunas(vacunas);
             }
         } catch (SQLException e) {
             System.out.println("ERROR al buscar el centro por ID");
@@ -219,15 +222,15 @@ public class CentroData {
         return centros;
     }
 
-    public List<Vacuna> StockDeVacunas(int id) {
-        String sql = "SELECT vacuna, stock FROM stock WHERE idCentro = " + id;
+    public static List<Vacuna> StockDeVacunas(int id) {
+        String sql = "SELECT marca, stock FROM stock WHERE idCentro = " + id;
         List<Vacuna> vacunas = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                vac.setMarca(rs.getString("vacuna"));
+                vac.setMarca(rs.getString("marca"));
                 vac.setStock(rs.getInt("stock"));
                 vacunas.add(vac);
             }
@@ -237,13 +240,13 @@ public class CentroData {
         return vacunas;
     }
     
-    public void actualizarCitasVacunado(String serie, int id) {
+    public void actualizarCitasVacunado(String serie, int id, String marca) {
                
         try {
-            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHAplicacion = NOW(), estadoCita = 'CUM',Dosis = Dosis + 1, numeroSerie = ? WHERE id = ?");
+            PreparedStatement ps = con.prepareStatement("UPDATE cita SET fHAplicacion = NOW(), estadoCita = 'CUM',Dosis = Dosis + 1, numeroSerie = ?, Vacuna = ? WHERE id = ?");
             ps.setString(1, serie);
-            ps.setInt(2, id);
-            
+            ps.setInt(3, id);
+            ps.setString(2, marca);
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {
