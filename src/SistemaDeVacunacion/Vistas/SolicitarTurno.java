@@ -171,11 +171,9 @@ public class SolicitarTurno extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "El número de DNI o de trámite es incorrecto", "Error de datos", 0, Icono.ERROR);
                     txt_doc.setText("");
                     txt_tramite.setText("");
-                } else if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3) {
+                } else {
                     new RegistroCiudadano().setVisible(true);
                     dispose();
-                } else {
-                    System.err.println("No se cumplió la condición corroborar");
                 }
 
             } catch (NumberFormatException e) {
