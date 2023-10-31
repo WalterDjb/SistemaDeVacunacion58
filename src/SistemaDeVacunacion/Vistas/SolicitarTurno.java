@@ -164,19 +164,18 @@ public class SolicitarTurno extends javax.swing.JFrame {
                 tramite = txt_tramite.getText().trim();         // y acá si guardo el tramite como String, necesario porque los numeros de tramite arrancan en 0 y si fueron un numero entero ese cero se perdería.
 
                 
-                //PENDIENTE
-                
-                if(CiudadanoData.dniTramiteEncontrados(dni, tramite) == 1 || CiudadanoData.dniTramiteEncontrados(dni, tramite) == 2){
+                if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 1 || CiudadanoData.dniTramiteEncontrados(dni, tramite) == 2) {
                     new DatosTurno().setVisible(true);
                     dispose();
-                } else if(!(CiudadanoData.buscarPorDni(dni) == null)){}
-                
-                
-                if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3) {
+                } else if (CiudadanoData.buscarPorDni(dni) != null || CiudadanoData.buscarPorTramite(Long.valueOf(tramite)) != null) {
+                    JOptionPane.showMessageDialog(null, "El número de DNI o de trámite es incorrecto", "Error de datos", 0, Icono.ERROR);
+                    txt_doc.setText("");
+                    txt_tramite.setText("");
+                } else if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3) {
                     new RegistroCiudadano().setVisible(true);
                     dispose();
                 } else {
-                    
+                    System.err.println("No se cumplió la condición corroborar");
                 }
 
             } catch (NumberFormatException e) {

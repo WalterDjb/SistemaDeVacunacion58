@@ -1,7 +1,6 @@
 package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.CentroData;
-import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Icono;
 import java.awt.Image;

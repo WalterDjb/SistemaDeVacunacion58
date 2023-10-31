@@ -57,7 +57,46 @@ public class CiudadanoData {
                 ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
                 ciudadano.setPatologia(rs.getString("patologia"));
                 ciudadano.setDosis(rs.getInt("aplicaciones"));
-                ciudadano.setUltimaDosis(rs.getTimestamp("ultimaDosis").toLocalDateTime());
+                
+                if(!(rs.getTimestamp("ultimaDosis") == null)){
+                    ciudadano.setUltimaDosis(rs.getTimestamp("ultimaDosis").toLocalDateTime());
+                }
+                
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+        return ciudadano;
+    }
+    
+    public static Ciudadano buscarPorTramite(long tramite) {
+        Ciudadano ciudadano = null; // Inicializamos como null
+
+        try {
+            con = Conexion.getConexion();
+            PreparedStatement ps = con.prepareStatement("select * from ciudadano where tramite = ?");
+            ps.setLong(1, tramite);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                ciudadano = new Ciudadano();
+                ciudadano.setDni(rs.getInt("dni"));
+                ciudadano.setNumTramite(rs.getString("tramite"));
+                ciudadano.setNombre(rs.getString("nombre"));
+                ciudadano.setApellido(rs.getString("apellido"));
+                ciudadano.setProvincia(rs.getString("provincia"));
+                ciudadano.setLocalidad(rs.getString("localidad"));
+                ciudadano.setDomicilio(rs.getString("domicilio"));
+                ciudadano.setEmail(rs.getString("email"));
+                ciudadano.setCelular(rs.getLong("celular"));
+                ciudadano.setAmbito(rs.getString("ambitoTrabajo"));
+                ciudadano.setPatologia(rs.getString("patologia"));
+                ciudadano.setDosis(rs.getInt("aplicaciones"));
+                
+                if(!(rs.getTimestamp("ultimaDosis") == null)){
+                    ciudadano.setUltimaDosis(rs.getTimestamp("ultimaDosis").toLocalDateTime());
+                }
             }
         } catch (SQLException e) {
             System.out.println("ERROR: " + e.getMessage());
