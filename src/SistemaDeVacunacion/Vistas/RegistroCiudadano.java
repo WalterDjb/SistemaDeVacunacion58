@@ -341,7 +341,7 @@ public class RegistroCiudadano extends javax.swing.JFrame {
         
             JOptionPane.showMessageDialog(null, "Número de trámite inválido. Intente nuevamente", "Dato inválido", 0, Icono.ERROR);
             
-        } else if(jtDomicilio.getText().trim().length() < 10){
+        } else if(jtDomicilio.getText().trim().length() < 4){
         
             JOptionPane.showMessageDialog(null, "Domicilio inválido. Intente nuevamente", "Dato inválido", 0, Icono.ERROR);
             
@@ -379,7 +379,8 @@ public class RegistroCiudadano extends javax.swing.JFrame {
             
             CiudadanoData.guardarCiudadano(ciudadano);
             CitaData.cargarCitasPorCentroYDni(Integer.parseInt(jtDoc.getText()), (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0, 2))));
-        
+            Limpiar();
+            JOptionPane.showMessageDialog(null, "Usted se ha Inscripto correctamente.");
         }
     }//GEN-LAST:event_jbInscribirActionPerformed
 
