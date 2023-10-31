@@ -163,12 +163,20 @@ public class SolicitarTurno extends javax.swing.JFrame {
                 Long.valueOf(txt_tramite.getText().trim()); // Esto no lo guardo en una variable porque solo me va a servir para saber si realmente fueron numeros los datos ingresados en txt_tramite, para el tramite necesito un String.
                 tramite = txt_tramite.getText().trim();         // y acá si guardo el tramite como String, necesario porque los numeros de tramite arrancan en 0 y si fueron un numero entero ese cero se perdería.
 
+                
+                //PENDIENTE
+                
+                if(CiudadanoData.dniTramiteEncontrados(dni, tramite) == 1 || CiudadanoData.dniTramiteEncontrados(dni, tramite) == 2){
+                    new DatosTurno().setVisible(true);
+                    dispose();
+                } else if(!(CiudadanoData.buscarPorDni(dni) == null)){}
+                
+                
                 if (CiudadanoData.dniTramiteEncontrados(dni, tramite) == 3) {
                     new RegistroCiudadano().setVisible(true);
                     dispose();
                 } else {
-                    new DatosTurno().setVisible(true);
-                    dispose();
+                    
                 }
 
             } catch (NumberFormatException e) {

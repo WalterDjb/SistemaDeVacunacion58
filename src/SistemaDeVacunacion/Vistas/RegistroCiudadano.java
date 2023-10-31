@@ -381,6 +381,7 @@ public class RegistroCiudadano extends javax.swing.JFrame {
             CitaData.cargarCitasPorCentroYDni(Integer.parseInt(jtDoc.getText()), (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0, 2))));
         
         }
+            
     }//GEN-LAST:event_jbInscribirActionPerformed
 
     private void jtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCelularKeyTyped

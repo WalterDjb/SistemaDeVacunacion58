@@ -17,8 +17,8 @@ public class CentroData {
 
     private static Connection con;
     private static Centro cen = new Centro();
-    private ArrayList<Centro> centros = new ArrayList<>();
-    private Vacuna vac = new Vacuna();
+    private static ArrayList<Centro> centros = new ArrayList<>();
+    private static Vacuna vac = new Vacuna();
 
     public CentroData() {
         con = Conexion.getConexion();
@@ -219,7 +219,7 @@ public class CentroData {
         return centros;
     }
 
-    public List<Vacuna> StockDeVacunas(int id) {
+    public static List<Vacuna> StockDeVacunas(int id) {
         String sql = "SELECT vacuna, stock FROM stock WHERE idCentro = " + id;
         List<Vacuna> vacunas = new ArrayList<>();
         try {

@@ -1,11 +1,13 @@
 package SistemaDeVacunacionG58;
 
+import SistemaDeVacunacion.Conexiones.CentroData;
 import SistemaDeVacunacion.Conexiones.LaboratorioData;
 import SistemaDeVacunacion.Conexiones.VacunaData;
 import SistemaDeVacunacion.Entidades.Correo;
 import SistemaDeVacunacion.Entidades.Laboratorio;
 import SistemaDeVacunacion.Entidades.Vacuna;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class SistemaMain {
     public static void main(String[] args){
@@ -25,5 +27,9 @@ public class SistemaMain {
        //ld.modificarLaboratorio(aa);
        //ld.buscarLaboratorioXCuit(30123);
        Vacuna vacu = vd.buscarVacunaXNombre("vacu");
+       
+       ArrayList<Vacuna> vacunas = new ArrayList();
+       
+       vacunas.addAll(CentroData.StockDeVacunas(0));
     }
 }
