@@ -201,6 +201,7 @@ public class CitaData {
         List <Cita> citas = new ArrayList<>();
         Cita cita = new Cita();
         String sql = "SELECT * FROM cita WHERE centro = '"+id+"' AND dni = '"+dni+"' AND estadoCita IS NULL";
+        
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

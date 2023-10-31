@@ -1,6 +1,7 @@
 package SistemaDeVacunacion.Vistas;
 
 import SistemaDeVacunacion.Conexiones.CentroData;
+import SistemaDeVacunacion.Conexiones.CitaData;
 import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Icono;
 import java.awt.Image;
@@ -168,7 +169,7 @@ public class DatosTurno extends javax.swing.JFrame {
         if(combo_centro.getSelectedItem() == null){
             JOptionPane.showMessageDialog(null, "Debe seleccionar un centro para inscribirse", "Centro no seleccionado", 0, Icono.ERROR);
         } else {
-            //CitaData.cargarCitasPorCentroYDni(Integer.parseInt(jtDoc.getText()), (Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0, 2))));
+            CitaData.cargarCitasPorCentroYDni(SolicitarTurno.dni, (Integer.parseInt(String.valueOf(combo_centro.getSelectedItem()).substring(0, 2))));
         }
     }//GEN-LAST:event_boton_continuarActionPerformed
 
