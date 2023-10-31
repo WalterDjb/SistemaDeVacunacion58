@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class DatosTurno extends javax.swing.JFrame {
 
+    CitaData ct = new CitaData();
     public static int dni;
     private List<String> localidades;
     private List<Centro> centros;
@@ -169,8 +170,10 @@ public class DatosTurno extends javax.swing.JFrame {
         if(combo_centro.getSelectedItem() == null){
             JOptionPane.showMessageDialog(null, "Debe seleccionar un centro para inscribirse", "Centro no seleccionado", 0, Icono.ERROR);
         } else {
-            CitaData.cargarCitasPorCentroYDni(SolicitarTurno.dni, (Integer.parseInt(String.valueOf(combo_centro.getSelectedItem()).substring(0, 2))));
+            ct.CargarCita(SolicitarTurno.dni, (Integer.parseInt(String.valueOf(combo_centro.getSelectedItem()).substring(0, 2))));
         }
+        JOptionPane.showMessageDialog(null, "Inscripto correctamente");
+        //ct.CargarCita(Integer.parseInt(jtDoc.getText()),(Integer.parseInt(String.valueOf(JCcentros.getSelectedItem()).substring(0, 2))));
     }//GEN-LAST:event_boton_continuarActionPerformed
 
     private void combo_centroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_centroActionPerformed

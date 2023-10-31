@@ -384,6 +384,19 @@ public class CitaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar el estado de las Citas");
         }
-    }     
+    }  
+
+public void CargarCita(int dni, int centro) {
+    try {
+        PreparedStatement ps = con.prepareStatement("INSERT INTO cita (dni, centro) VALUES (?, ?)");
+        ps.setInt(1, dni);
+        ps.setInt(2, centro);
+        ps.executeUpdate();
+        ps.close();
+        con.close(); 
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error inesperado al tratar de actualizar las Citas");
+    }
+}   
 }
 
