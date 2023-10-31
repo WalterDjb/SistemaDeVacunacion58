@@ -2,7 +2,6 @@ package SistemaDeVacunacion.Conexiones;
 
 import SistemaDeVacunacion.Entidades.Cita;
 import SistemaDeVacunacion.Entidades.Vacuna;
-import SistemaDeVacunacion.Entidades.Centro;
 import SistemaDeVacunacion.Entidades.Ciudadano;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

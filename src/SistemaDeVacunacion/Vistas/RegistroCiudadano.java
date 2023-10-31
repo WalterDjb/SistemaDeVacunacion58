@@ -157,18 +157,18 @@ public class RegistroCiudadano extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel17.setText("Ámbito de trabajo:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
         jbInscribir.setBackground(new java.awt.Color(15, 75, 94));
         jbInscribir.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jbInscribir.setForeground(new java.awt.Color(255, 255, 255));
-        jbInscribir.setText("Inscribir");
+        jbInscribir.setText("REGISTRARME");
         jbInscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbInscribirActionPerformed(evt);
             }
         });
-        getContentPane().add(jbInscribir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 130, 40));
+        getContentPane().add(jbInscribir, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 150, 40));
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jLabel2.setText("Apellido:");
@@ -189,7 +189,7 @@ public class RegistroCiudadano extends javax.swing.JFrame {
 
         jcbAMbito1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
         jcbAMbito1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Otros", "Salud", "Educacion", "Comercio", "Seguridad", "Justicia" }));
-        getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 150, -1));
+        getContentPane().add(jcbAMbito1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 150, -1));
 
         jtLocalidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
