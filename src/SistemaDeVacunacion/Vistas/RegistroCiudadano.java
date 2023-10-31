@@ -382,6 +382,7 @@ public class RegistroCiudadano extends javax.swing.JFrame {
             Limpiar();
             JOptionPane.showMessageDialog(null, "Usted se ha Inscripto correctamente.");
         }
+            
     }//GEN-LAST:event_jbInscribirActionPerformed
 
     private void jtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCelularKeyTyped
